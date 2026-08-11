@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Catatan kajian: Syariat vs Lifestyle — KH. Dr. Mohammad Shofin Sugito, MA. Masjid Darussalam Kota Wisata, 13 Juni 2026.">
+<meta property="og:title" content="Syariat vs Lifestyle: Bagaimana Cara Ulama Mengambil Keputusan?">
+<meta property="og:description" content="Catatan kajian Ba'da Maghrib — Masjid Darussalam Kota Wisata, 13 Juni 2026">
+<meta property="og:type" content="article">
+<title>Catatan Kajian — Darussalam, 13 Juni 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:   #FDFAF4;
+    --navy:    #1B2E4B;
+    --sage:    #4A7C59;
+    --amber:   #E8A020;
+    --ink:     #2C3E50;
+    --muted:   #6B7A8D;
+    --surface: #F0EDE4;
+    --white:   #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 56px 24px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: var(--sage);
+    opacity: 0.12;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: var(--amber);
+    opacity: 0.08;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--sage);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 7vw, 36px);
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--amber);
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 28px;
+    font-weight: 500;
+  }
+  .ustadz-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+  }
+  .ustadz-pill .u-icon {
+    width: 38px; height: 38px;
+    background: var(--amber);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .ustadz-pill .u-role {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 3px;
+  }
+  .ustadz-pill .u-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.3;
+  }
+  .meta-row {
+    display: flex;
+    gap: 8px;
+  }
+  .meta-chip {
+    flex: 1;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .meta-chip .mc-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 3px;
+  }
+  .meta-chip .mc-val {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.4;
+  }
+
+  /* ── AYAT BANNER ── */
+  .ayat-banner {
+    background: var(--amber);
+    padding: 20px 24px;
+  }
+  .ayat-banner-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .ayat-qmark {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    line-height: 0.75;
+    color: var(--navy);
+    opacity: 0.2;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .ayat-text {
+    font-size: 13px;
+    color: var(--navy);
+    line-height: 1.65;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .ayat-src {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-top: 5px;
+    opacity: 0.65;
+    font-style: normal;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  /* ── SECTION ── */
+  .section { padding: 36px 0 0; }
+
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--surface);
+  }
+
+  /* ── THINK CARDS ── */
+  .think-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .think-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    box-shadow: 0 2px 16px rgba(27,46,75,0.06);
+    border: 1px solid rgba(27,46,75,0.05);
+  }
+  .think-card .tc-num {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .tc-1 .tc-num { background: var(--sage); }
+  .tc-2 .tc-num { background: var(--amber); }
+  .tc-3 .tc-num { background: var(--navy); }
+
+  .tc-body {}
+  .tc-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 5px;
+  }
+  .tc-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .tc-desc strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ── HIGHLIGHT BOXES ── */
+  .box-sage {
+    background: #EEF4F0;
+    border-left: 4px solid var(--sage);
+    border-radius: 0 12px 12px 0;
+    padding: 14px 16px;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #2D4A35;
+    line-height: 1.65;
+  }
+  .box-sage strong { font-weight: 700; color: #1E3827; }
+
+  .box-amber {
+    background: #FFF8E8;
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 14px 16px;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #5A3E00;
+    line-height: 1.65;
+  }
+  .box-amber strong { font-weight: 700; }
+  .box-amber em { font-style: italic; font-weight: 600; }
+
+  /* ── RULE LIST ── */
+  .rule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .rule-item {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 15px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    box-shadow: 0 1px 8px rgba(27,46,75,0.05);
+    border: 1px solid rgba(27,46,75,0.04);
+  }
+  .r-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    line-height: 1;
+  }
+  .r-body {}
+  .r-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .r-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .r-desc strong { color: var(--ink); font-weight: 600; }
+  .r-desc em { font-style: italic; }
+
+  /* ── SHADAQAH CARD ── */
+  .shadaqah-card {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 22px 20px;
+    margin-top: 4px;
+  }
+  .sh-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 8px;
+  }
+  .sh-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .sh-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.7;
+  }
+  .sh-text em {
+    font-style: normal;
+    color: var(--amber);
+    font-weight: 700;
+  }
+
+  /* ── SYNTHESIS BANNER ── */
+  .synthesis-banner {
+    background: var(--sage);
+    border-radius: 16px;
+    padding: 22px 20px;
+    margin-top: 16px;
+    text-align: center;
+  }
+  .syn-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+  }
+  .syn-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  /* ── DRESS CHIPS ── */
+  .dress-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .dress-chip {
+    background: var(--surface);
+    border: 1px solid rgba(27,46,75,0.1);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  /* ── PENDING NOTE ── */
+  .rule-item.pending {
+    background: repeating-linear-gradient(135deg, #FBF7EC, #FBF7EC 10px, #F7F1E0 10px, #F7F1E0 20px);
+    border: 1px dashed #D9C48A;
+  }
+  .pending-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #A6791A;
+    background: #FBEFD0;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* ── SUBHEADING ── */
+  .subheading {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 20px 0 10px;
+  }
+
+  /* ── CLOSING QUOTE ── */
+  .closing-quote {
+    margin-top: 40px;
+    padding: 28px 24px;
+    background: var(--white);
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(27,46,75,0.07);
+    border: 1px solid rgba(27,46,75,0.06);
+  }
+  .cq-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    line-height: 0.7;
+    color: var(--amber);
+    opacity: 0.35;
+    display: block;
+    margin-bottom: 14px;
+  }
+  .cq-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--navy);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .cq-attr {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: var(--surface);
+    margin: 32px 0 0;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--navy);
+    padding: 28px 24px;
+    text-align: center;
+    margin-top: 48px;
+  }
+  .footer-inner { max-width: 600px; margin: 0 auto; }
+  .f-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 5px;
+  }
+  .f-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.38);
+    line-height: 1.6;
+  }
+  .f-dot {
+    display: inline-block;
+    width: 5px; height: 5px;
+    background: var(--amber);
+    border-radius: 50%;
+    margin-top: 16px;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Catatan Kajian</div>
+    <h1 class="hero-title">Syariat vs Lifestyle:<br><em>Bagaimana Cara Ulama<br>Mengambil Keputusan?</em></h1>
+    <p class="hero-sub">Rekap pribadi &middot; bukan transkripsi resmi</p>
+    <div class="ustadz-pill">
+      <div class="u-icon">🎙️</div>
+      <div>
+        <div class="u-role">Pemateri</div>
+        <div class="u-name">KH. Dr. Mohammad Shofin Sugito, MA</div>
+      </div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-chip">
+        <div class="mc-label">Masjid</div>
+        <div class="mc-val">Darussalam<br>Kota Wisata</div>
+      </div>
+      <div class="meta-chip">
+        <div class="mc-label">Waktu</div>
+        <div class="mc-val">Ba'da Maghrib<br>13 Juni 2026</div>
+      </div>
+      <div class="meta-chip">
+        <div class="mc-label">Event</div>
+        <div class="mc-val">Kajian Ilmiah<br>12–14 Juni</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AYAT BANNER -->
+<div class="ayat-banner">
+  <div class="ayat-banner-inner">
+    <div class="ayat-qmark">"</div>
+    <div>
+      <div class="ayat-text">Dan tidak ada suatu binatang melata pun di bumi melainkan Allah-lah yang memberi rezekinya...</div>
+      <span class="ayat-src">QS. Hud: 6</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- SECTION 1: CARA BERPIKIR -->
+  <div class="section reveal">
+    <div class="section-eyebrow">Pola Pikir</div>
+    <h2 class="section-title">3 Cara Berpikir Seorang Ulama</h2>
+    <div class="think-cards">
+      <div class="think-card tc-1">
+        <div class="tc-num">1</div>
+        <div class="tc-body">
+          <div class="tc-title">Berbasis Ilmu</div>
+          <div class="tc-desc">Ilmu diperoleh melalui <strong>pendengaran dan penglihatan</strong>, lalu diolah secara spiritual dan dipikirkan dengan hati nurani. Bila perlu, divalidasi lewat <strong>shalat istikharah</strong> sebagai bentuk tanggung jawab atas kebenaran informasi.</div>
+        </div>
+      </div>
+      <div class="think-card tc-2">
+        <div class="tc-num">2</div>
+        <div class="tc-body">
+          <div class="tc-title">Dilandasi Khasyyatu Allah</div>
+          <div class="tc-desc">Segala sesuatu diberi spirit <strong>rasa takut dan harap hanya kepada Allah</strong> — bukan kepada selain-Nya. Ini yang membedakan cara berpikir ulama dengan orang biasa.</div>
+        </div>
+      </div>
+      <div class="think-card tc-3">
+        <div class="tc-num">3</div>
+        <div class="tc-body">
+          <div class="tc-title">Orientasi Akhirat</div>
+          <div class="tc-desc">Ulama mencari <strong>kebaikan yang menjalar</strong> — bukan yang bersifat personal semata. Dunia dipandang sebagai ladang pahala untuk persiapan akhirat. Referensi: <strong>QS. An-Nisa: 96</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box-sage">
+      🕊️ <strong>Contoh orientasi akhirat:</strong> Berkah jihad di jalan Allah adalah penerusnya bisa beribadah dengan nyaman. Kita bisa shalat dengan tenang hari ini karena berkah para pejuang kemerdekaan.
+    </div>
+
+    <div class="box-amber">
+      📖 Nabi Muhammad saw <strong>haji hanya sekali</strong> (tahun ke-10, tiga bulan sebelum wafat) dan <strong>umrah 4 kali</strong>. Ulama memilih mengalihkan biaya umrah/haji kedua — yang sifatnya sunnah — untuk anak yatim dan masyarakat yang membutuhkan, karena manfaatnya lebih menjalar.<br><br>
+      Ada riwayat hadits: <em>Allah bisa "ditemui" ketika kita mengobati orang sakit</em> — bukan hanya di Ka'bah atau Mekkah/Madinah.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 2: SHADAQAH JARIYAH -->
+  <div class="section reveal">
+    <div class="section-eyebrow">Konsep</div>
+    <h2 class="section-title">Shadaqah Jariyah</h2>
+    <div class="shadaqah-card">
+      <div class="sh-label">Definisi</div>
+      <div class="sh-title">Kebaikan yang Mengalir dari Dunia ke Akhirat</div>
+      <div class="sh-text">
+        <em>Shadaqah</em> = jujur &nbsp;&middot;&nbsp; <em>Jariyah</em> = mengalir<br><br>
+        Cara menciptakan aliran panjang: jujur atas pencapaian dunia, karena pada hakikatnya semua pencapaian berasal dari Allah. Kebaikan yang menjalar lebih diutamakan daripada kebaikan yang bersifat personal.
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 3: KEBAHAGIAAN ULAMA & MAKNA BAPAK -->
+  <div class="section reveal">
+    <div class="section-eyebrow">Kebahagiaan &amp; Peran</div>
+    <h2 class="section-title">Kebahagiaan Ulama, Makna "Bapak"</h2>
+    <div class="rule-list">
+      <div class="rule-item">
+        <div class="r-icon">📿</div>
+        <div class="r-body">
+          <div class="r-title">Ketika ilmunya diestafetkan</div>
+          <div class="r-desc">Kebahagiaan ulama adalah ketika ilmu yang ia ajarkan diteruskan kepada murid dan generasi berikutnya.</div>
+        </div>
+      </div>
+      <div class="rule-item pending">
+        <div class="r-icon">⏳</div>
+        <div class="r-body">
+          <div class="r-title">Ketika anak... <span class="pending-tag">Belum Lengkap</span></div>
+          <div class="r-desc">Poin kedua belum sempat tercatat lengkap saat kajian berlangsung.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subheading">Tiga Makna "Bapak" dalam Islam</div>
+    <div class="rule-list">
+      <div class="rule-item">
+        <div class="r-icon">🧬</div>
+        <div class="r-body">
+          <div class="r-title">Bapak Biologis</div>
+          <div class="r-desc">Yang melahirkan secara nasab.</div>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-icon">📚</div>
+        <div class="r-body">
+          <div class="r-title">Bapak yang Mengajarkan Ilmu</div>
+          <div class="r-desc">Guru yang mewariskan ilmu agama.</div>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-icon">💍</div>
+        <div class="r-body">
+          <div class="r-title">Bapak yang Mengawinkan</div>
+          <div class="r-desc">Yang menikahkan — disebut sebagai bapak karena perannya dalam melanjutkan keturunan dan menjaga kehormatan.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 4: CARA MELIHAT PERISTIWA -->
+  <div class="section reveal">
+    <div class="section-eyebrow">Pandangan</div>
+    <h2 class="section-title">Cara Ulama Melihat Peristiwa</h2>
+    <div class="rule-list">
+      <div class="rule-item">
+        <div class="r-icon">🎯</div>
+        <div class="r-body">
+          <div class="r-title">Semua bergantung pada niat</div>
+          <div class="r-desc">Niat yang baik menghasilkan buah yang baik. Setiap momen bisa diniatkan karena Allah — tidur pun bisa bernilai ibadah jika diniatkan menjauhi maksiat.</div>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-icon">👨‍👦</div>
+        <div class="r-body">
+          <div class="r-title">Nafkah sebagai estafet ilmu</div>
+          <div class="r-desc">Memberi nafkah kepada anak diniatkan agar anak itu kelak menjadi penerus ilmu Allah — bukan sekadar kewajiban biologis.</div>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-icon">🕌</div>
+        <div class="r-body">
+          <div class="r-title">Hidup adalah menunggu waktu shalat</div>
+          <div class="r-desc">Ada tafsir hadits <em>"Allah ciptakan jin dan manusia untuk ibadah"</em>: kehidupan dunia hanyalah penantian antara kematian atau waktu shalat berikutnya.</div>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-icon">🏅</div>
+        <div class="r-body">
+          <div class="r-title">Fardhu didahulukan dari Sunnah</div>
+          <div class="r-desc">Ulama mendahulukan yang wajib sebelum sunnah — karena keterbatasan waktu dan menyesuaikan kondisi subjektif umat.</div>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-icon">👔</div>
+        <div class="r-body">
+          <div class="r-title">Pakaian bagus untuk menjaga wibawa Islam</div>
+          <div class="r-desc">Nabi memakai pakaian bagus saat shalat jamaah, hari raya, dan menerima tamu — demi menjaga wibawa Islam. Selain itu, hukumnya sunnah.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 5: ADAB KEBUTUHAN DUNIA -->
+  <div class="section reveal">
+    <div class="section-eyebrow">Adab</div>
+    <h2 class="section-title">Adab dalam Kebutuhan Dunia</h2>
+    <div class="box-amber" style="margin-top:0;">
+      💡 Makan dan minum secukupnya — tidak berlebihan. Jangan ambil hak orang lain. Prioritas nafkah: <strong>istri didahulukan</strong> sebelum fakir miskin atau memerdekakan budak. Dan anak <strong>wajib merepotkan diri</strong> untuk orangtuanya.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 6: KAIDAH -->
+  <div class="section reveal">
+    <div class="section-eyebrow">Kaidah</div>
+    <h2 class="section-title">Prinsip Hidup Seorang Ulama</h2>
+    <div class="rule-list">
+      <div class="rule-item">
+        <div class="r-icon">📌</div>
+        <div class="r-body">
+          <div class="r-title">Fardhu sebelum Sunnah</div>
+          <div class="r-desc">Menyibukkan diri pada yang wajib lebih utama dari yang sunnah — disesuaikan kondisi dan kapasitas umat.</div>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-icon">🌊</div>
+        <div class="r-body">
+          <div class="r-title">Amalan yang merembet lebih utama</div>
+          <div class="r-desc">Ibadah yang efeknya menjalar dan berdampak luas lebih diutamakan dari ibadah yang bersifat personal.</div>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-icon">⚖️</div>
+        <div class="r-body">
+          <div class="r-title">La dharara wa la dhirara</div>
+          <div class="r-desc">Jangan menciptakan bahaya — baik untuk diri sendiri maupun orang lain.</div>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-icon">💬</div>
+        <div class="r-body">
+          <div class="r-title">Hati-hati dalam publikasi</div>
+          <div class="r-desc">Sebelum mempublish sesuatu, tanya dulu: apakah ini akan menciptakan kedengkian atau keirian?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 7: AGAMA & PERADABAN -->
+  <div class="section reveal">
+    <div class="section-eyebrow">Sintesis</div>
+    <h2 class="section-title">Agama, Peradaban, dan Dakwah</h2>
+    <div class="rule-list">
+      <div class="rule-item">
+        <div class="r-icon">📖</div>
+        <div class="r-body">
+          <div class="r-title">Agama Islam</div>
+          <div class="r-desc">Berlandaskan Al-Qur'an, hadits, dan sumber syar'i — bersifat ilahi dan permanen.</div>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-icon">🏙️</div>
+        <div class="r-body">
+          <div class="r-title">Peradaban</div>
+          <div class="r-desc">Berbasis sosial — bersifat dinamis dan berkembang sesuai zaman dan konteks.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box-sage" style="margin-top:16px;">
+      <strong>Contoh dalam berpakaian (gabungan agama + peradaban):</strong>
+    </div>
+    <div class="dress-chips">
+      <div class="dress-chip">Tutup aurat</div>
+      <div class="dress-chip">Tidak ketat</div>
+      <div class="dress-chip">Tidak transparan</div>
+      <div class="dress-chip">Tidak menyerupai lawan jenis</div>
+      <div class="dress-chip">Sesuai konteks kepantasan</div>
+    </div>
+
+    <div class="synthesis-banner">
+      <div class="syn-label">Prinsip Utama</div>
+      <div class="syn-text">Memakai peradaban sebagai instrumen dakwah Islam</div>
+    </div>
+  </div>
+
+  <!-- CLOSING QUOTE -->
+  <div class="closing-quote reveal">
+    <span class="cq-mark">"</span>
+    <div class="cq-text">Niat yang benar mengubah aktivitas biasa menjadi ibadah. Tidur pun bisa bernilai jika diniatkan menjauhi maksiat — itulah cara ulama melihat dunia.</div>
+    <div class="cq-attr">Intisari Kajian &middot; Darussalam, 13 Juni 2026</div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-inner">
+    <div class="f-title">Masjid Darussalam Kota Wisata</div>
+    <div class="f-sub">Jl. Wisata Utama No.1, Ciangsana, Bogor<br>Ba'da Maghrib &middot; 13 Juni 2026</div>
+    <div class="f-dot"></div>
+  </div>
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

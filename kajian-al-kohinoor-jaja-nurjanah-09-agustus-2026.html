@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kajian Ahad Subuh — Risalah Islam Berkemajuan | Dr. Jaja Nurjanah, M.A.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:       #1a1a18;
+    --ink-soft:  #3d3d38;
+    --ink-faint: #7a7a70;
+    --parchment: #f5f2eb;
+    --paper:     #faf8f3;
+    --gold:      #b5862a;
+    --gold-pale: #e8d9a8;
+    --teal:      #2a6b5e;
+    --teal-pale: #d2e8e3;
+    --rule:      #d6ceb8;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── MASTHEAD ─────────────────────────────────────── */
+  .masthead {
+    background: var(--teal);
+    color: #fff;
+    text-align: center;
+    padding: 3.5rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='28' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'/%3E%3Ccircle cx='30' cy='30' r='20' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+  }
+
+  .masthead-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    margin-bottom: 1.2rem;
+  }
+
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #fff;
+    max-width: 680px;
+    margin: 0 auto 0.5rem;
+  }
+
+  .masthead h1 em {
+    font-style: italic;
+    color: var(--gold-pale);
+  }
+
+  .masthead-sub {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.65);
+    margin-top: 1rem;
+    font-weight: 300;
+  }
+
+  .masthead-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .masthead-meta span strong {
+    display: block;
+    color: rgba(255,255,255,0.9);
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.1rem;
+  }
+
+  /* ── LAYOUT ───────────────────────────────────────── */
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.25rem 5rem;
+  }
+
+  /* ── SECTION ──────────────────────────────────────── */
+  .section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .section:first-of-type {
+    border-top: none;
+    padding-top: 2.5rem;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 4vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── PROSE ────────────────────────────────────────── */
+  p { margin-bottom: 1rem; font-weight: 300; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── PULL QUOTE ───────────────────────────────────── */
+  .pull-quote {
+    background: var(--teal-pale);
+    border-left: 3px solid var(--teal);
+    padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--teal);
+    line-height: 1.5;
+  }
+
+  /* ── TIMELINE ─────────────────────────────────────── */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin-top: 1.25rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.35rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 1px;
+    background: var(--gold-pale);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.65rem;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .timeline-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-body {
+    font-size: 0.9rem;
+    color: var(--ink-faint);
+    font-weight: 300;
+  }
+
+  /* ── PILLAR GRID ──────────────────────────────────── */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .pillar-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 1.25rem 1rem 1rem;
+    position: relative;
+  }
+
+  .pillar-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--teal);
+  }
+
+  .pillar-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* ── AYAT LIST ────────────────────────────────────── */
+  .ayat-list {
+    list-style: none;
+    margin-top: 1rem;
+  }
+
+  .ayat-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 0.85rem;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  .ayat-ref {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    background: var(--gold-pale);
+    color: var(--gold);
+    padding: 0.2rem 0.5rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  /* ── MATRIX ───────────────────────────────────────── */
+  .matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 1.25rem;
+  }
+
+  .matrix-cell {
+    background: var(--paper);
+    padding: 1.1rem 1.25rem;
+  }
+
+  .matrix-cell-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .matrix-cell.pro .matrix-cell-label { color: var(--teal); }
+  .matrix-cell.anti .matrix-cell-label { color: #8b3a2a; }
+
+  .matrix-cell-text {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  /* ── GOAL BANNER ──────────────────────────────────── */
+  .goal-banner {
+    background: var(--ink);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .goal-banner .goal-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    margin-bottom: 1rem;
+  }
+
+  .goal-arabic {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold-pale);
+    margin-bottom: 0.5rem;
+  }
+
+  .goal-translation {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+    border-top: 1px solid var(--rule);
+    margin-top: 0;
+  }
+
+  @media (max-width: 480px) {
+    .matrix { grid-template-columns: 1fr; }
+    .masthead-meta { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <p class="masthead-eyebrow">Catatan Kajian Ahad Subuh</p>
+  <h1>Risalah Islam <em>Berkemajuan</em></h1>
+  <p class="masthead-sub">Catatan Bagi Gerakan dan Peradaban — Sebuah Pengantar</p>
+  <p class="masthead-sub" style="font-size:0.78rem; margin-top:0.6rem; color:rgba(255,255,255,0.45);">Dosen FAI UHAMKA &middot; Ketua Majelis Tabligh PDM Depok &middot; Anggota Lembaga Pengembangan Pesantren PP Muhammadiyah &middot; Sekretaris Komisi Dakwah MUI Pusat</p>
+  <div class="masthead-meta">
+    <span><strong>Pemateri</strong>Dr. Jaja Nurjanah, M.A.</span>
+    <span><strong>Lokasi</strong>Masjid Al Kohinoor, Beji, Depok</span>
+    <span><strong>Sesi</strong>Kajian Ahad Subuh &middot; 9 Agustus 2026</span>
+  </div>
+</header>
+
+<main class="page">
+
+  <!-- PEMBUKAAN -->
+  <section class="section">
+    <p class="section-label">Pembukaan</p>
+    <h2>Islam Bukan Sekadar Ritual</h2>
+    <p>Islam sejatinya mengajarkan hidup yang beradab dan berkemajuan — bukan hanya rangkaian ibadah formal. Ketika Islam hanya dimaknai sebagai ritual, di situlah titik kemunduran umat dimulai.</p>
+    <div class="pull-quote">
+      "Ketika hanya dimaknai ritual, itulah momen mundurnya umat Islam."
+    </div>
+    <p>Kajian ini berperspektif organisasi <strong>Muhammadiyah</strong>, dengan rujukan utama dokumen <em>Risalah Islam Berkemajuan</em> yang disahkan pada Muktamar ke-48.</p>
+  </section>
+
+  <!-- SEJARAH -->
+  <section class="section">
+    <p class="section-label">Akar Sejarah</p>
+    <h2>Tiga Tonggak Kemajuan Muhammadiyah</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <p class="timeline-year">1912 — PONDASI AWAL</p>
+        <p class="timeline-title">KH. Ahmad Dahlan</p>
+        <p class="timeline-body">Memperkenalkan dan mempraktikkan konsep kemajuan melalui institusi pendidikan, kesehatan, dan sosial.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2010 — MUKTAMAR KE-46</p>
+        <p class="timeline-title">Deklarasi Muhammadiyah Abad Kedua</p>
+        <p class="timeline-body">Merumuskan Islam Berkemajuan secara sistematis sebagai pandangan keislaman resmi untuk tantangan modern.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">MUKTAMAR KE-48 — CETAK BIRU</p>
+        <p class="timeline-title">Pengesahan Risalah Islam Berkemajuan</p>
+        <p class="timeline-body">Panduan elaboratif untuk diimplementasikan secara global dan kultural.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEOLOGI -->
+  <section class="section">
+    <p class="section-label">Teologi</p>
+    <h2>Mesin Teologi Peradaban</h2>
+    <p>Empat pilar teologis yang menggerakkan Islam Berkemajuan:</p>
+    <div class="pillar-grid">
+      <div class="pillar-card">
+        <p class="pillar-name">Transendensi</p>
+        <p class="pillar-desc">Keterikatan dan kepasrahan kepada Allah SWT sebagai sumber nilai tertinggi.</p>
+      </div>
+      <div class="pillar-card">
+        <p class="pillar-name">Emansipasi</p>
+        <p class="pillar-desc">Mewujudkan kesetaraan antar manusia tanpa diskriminasi.</p>
+      </div>
+      <div class="pillar-card">
+        <p class="pillar-name">Liberasi</p>
+        <p class="pillar-desc">Membebaskan manusia dari segala bentuk penindasan dan ketidakadilan.</p>
+      </div>
+      <div class="pillar-card">
+        <p class="pillar-name">Humanisasi</p>
+        <p class="pillar-desc">Menjaga dan memuliakan nilai-nilai luhur kemanusiaan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDASAN AYAT -->
+  <section class="section">
+    <p class="section-label">Landasan Ayat</p>
+    <h2>Rujukan Al-Qur'an</h2>
+    <ul class="ayat-list">
+      <li>
+        <span class="ayat-ref">Ali Imran: 104</span>
+        <span>Perintah mengajak kepada kebaikan, menyuruh yang ma'ruf, dan mencegah kemungkaran — sebagai tugas kolektif umat.</span>
+      </li>
+      <li>
+        <span class="ayat-ref">Ali Imran: 110</span>
+        <span>Umat Islam sebagai khairu ummah (umat terbaik) dengan syarat aktif beramar ma'ruf nahi munkar.</span>
+      </li>
+      <li>
+        <span class="ayat-ref">Al-Ma'un</span>
+        <span>Islam harus berwujud nyata dalam kepedulian sosial — bukan sekadar ibadah formal yang terputus dari realitas.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- KEMAJUAN -->
+  <section class="section">
+    <p class="section-label">Dimensi Kemajuan</p>
+    <h2>Dua Keunggulan yang Tidak Terpisah</h2>
+    <p>Kemajuan umat Islam tidak bisa hanya satu dimensi. Keduanya harus hadir bersamaan:</p>
+    <div class="matrix">
+      <div class="matrix-cell pro">
+        <p class="matrix-cell-label">Spiritual / Moral</p>
+        <p class="matrix-cell-text">Akhlak mulia, kedalaman iman, dan ketaqwaan yang membentuk karakter individu dan kolektif.</p>
+      </div>
+      <div class="matrix-cell">
+        <p class="matrix-cell-label">Material / Fisik</p>
+        <p class="matrix-cell-text">Kemampuan sains, teknologi, ekonomi, dan peradaban yang mengangkat taraf kehidupan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATRIKS SIKAP -->
+  <section class="section">
+    <p class="section-label">Matriks Sikap</p>
+    <h2>Orientasi Tindakan</h2>
+    <p>Dua orientasi utama yang harus dipegang dalam setiap keputusan dan tindakan:</p>
+    <div class="matrix">
+      <div class="matrix-cell pro">
+        <p class="matrix-cell-label">Pro Kemaslahatan</p>
+        <p class="matrix-cell-text">Selalu berpihak pada kebaikan dan manfaat nyata bagi umat dan masyarakat luas.</p>
+      </div>
+      <div class="matrix-cell anti">
+        <p class="matrix-cell-label">Anti Kemungkaran</p>
+        <p class="matrix-cell-text">Aktif menolak dan mencegah kerusakan dalam segala bentuknya.</p>
+      </div>
+    </div>
+    <p style="margin-top:1.25rem;">Dengan dua orientasi ini, Islam mampu menjadi <strong>payung bagi keragaman</strong> adat, ras, budaya, dan kelompok — menyatukannya dalam nilai kebaikan tanpa menghapus perbedaan.</p>
+  </section>
+
+  <!-- KERJASAMA -->
+  <section class="section">
+    <p class="section-label">Prinsip Kerjasama</p>
+    <h2>Ta'awun Lintas Batas</h2>
+    <p>Keputusan dan tindakan didasarkan pada prinsip <em>ta'awun 'ala al-birri wa al-taqwa</em> — kerjasama atas dasar kebaikan dan ketaqwaan.</p>
+    <p>Kerjasama terbuka dengan berbagai pihak, <strong>termasuk non-Muslim</strong>, selama berlandaskan pada kebaikan bersama dan tidak bertentangan dengan prinsip Islam.</p>
+  </section>
+
+</main>
+
+<!-- TUJUAN PUNCAK -->
+<div class="goal-banner">
+  <p class="goal-label">Tujuan Puncak</p>
+  <p class="goal-arabic">Rahmatan lil 'alamin</p>
+  <p class="goal-translation">Islam hadir sebagai rahmat bagi seluruh alam semesta — lintas batas agama, suku, dan bangsa.</p>
+</div>
+
+<footer>
+  Kajian Ahad Subuh &nbsp;·&nbsp; Masjid Al Kohinoor, Beji, Depok &nbsp;·&nbsp; Dr. Jaja Nurjanah, M.A. &nbsp;·&nbsp; 9 Agustus 2026
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kajian Akidah Imam Al-Bukhari — Masjid Ar-Riyadh Depok</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0d1f16;
+    --bg-card: #142a1e;
+    --bg-card-2: #17301f;
+    --line: #24402f;
+    --text: #e9efe7;
+    --text-muted: #a9c0ac;
+    --text-faint: #7d9482;
+    --gold: #cba965;
+    --verified: #6fae7e;
+    --check: #d4a656;
+    --personal: #8fa3c9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at top, rgba(203,169,101,0.06), transparent 60%),
+      radial-gradient(ellipse at bottom, rgba(111,174,126,0.05), transparent 55%);
+    color: var(--text);
+    font-family: 'Lora', serif;
+    line-height: 1.65;
+    padding: 0 0 60px 0;
+  }
+  .wrap{ max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  header.hero{
+    text-align:center;
+    padding: 48px 20px 36px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 34px;
+  }
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .arch{
+    width: 46px; height: 46px;
+    margin: 0 auto 18px;
+    border: 1.5px solid var(--gold);
+    border-bottom: none;
+    border-radius: 46px 46px 0 0;
+    opacity: 0.85;
+  }
+  h1.title{
+    font-family:'Amiri', serif;
+    font-weight:700;
+    font-size: 2.15em;
+    line-height:1.25;
+    margin: 0 0 8px;
+    color: #f5f1e6;
+  }
+  .kitab-name{
+    font-family:'Amiri', serif;
+    font-style: normal;
+    color: var(--text-muted);
+    font-size: 1.05em;
+    margin-bottom: 22px;
+  }
+  .meta{
+    font-family:'Inter',sans-serif;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    display:grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 14px;
+    max-width: 480px;
+    margin: 0 auto;
+    text-align:left;
+  }
+  .meta dt{ color: var(--text-faint); font-weight:500; }
+  .meta dd{ margin:0; color: var(--text); }
+
+  .continuation-note{
+    background: var(--bg-card);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+    padding: 14px 18px;
+    font-family:'Inter',sans-serif;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin-bottom: 38px;
+  }
+
+  section.point{
+    margin-bottom: 40px;
+    padding-bottom: 6px;
+  }
+  .section-label{
+    font-family:'Inter',sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom: 14px;
+  }
+  .section-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background: var(--line);
+  }
+  h2.section-title{
+    font-family:'Amiri', serif;
+    font-size: 1.4em;
+    color:#f5f1e6;
+    margin: 0 0 16px;
+  }
+
+  .item{
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .item p{ margin: 0 0 10px; }
+  .item p:last-of-type{ margin-bottom: 0; }
+  .item .arabic-quote{
+    font-family:'Amiri', serif;
+    font-style: italic;
+    color: var(--text);
+    font-size: 1.08em;
+  }
+  .item .who{
+    font-family:'Inter',sans-serif;
+    font-size: 12.5px;
+    color: var(--text-faint);
+    margin-top: 8px;
+  }
+  .sub-note{
+    font-size: 0.94em;
+    color: var(--text-muted);
+    border-top: 1px dashed var(--line);
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+
+  .badge{
+    display:inline-block;
+    font-family:'Inter',sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .badge-verified{ background: rgba(111,174,126,0.15); color: var(--verified); border:1px solid rgba(111,174,126,0.4);}
+  .badge-check{ background: rgba(212,166,86,0.15); color: var(--check); border:1px solid rgba(212,166,86,0.4);}
+  .badge-personal{ background: rgba(143,163,201,0.15); color: var(--personal); border:1px solid rgba(143,163,201,0.4);}
+
+  .ref{
+    font-family:'Inter',sans-serif;
+    font-size: 12px;
+    color: var(--text-faint);
+    margin-top: 8px;
+  }
+  .ref strong{ color: var(--text-muted); }
+
+  .legend{
+    background: var(--bg-card-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin: 44px 0 30px;
+    font-family:'Inter',sans-serif;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+  .legend-title{
+    font-family:'Inter',sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .legend-row{ margin-bottom: 8px; display:flex; gap:10px; align-items:baseline; flex-wrap:wrap;}
+  .legend-row:last-child{ margin-bottom:0; }
+
+  footer{
+    font-family:'Inter',sans-serif;
+    font-size: 12px;
+    color: var(--text-faint);
+    line-height: 1.7;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+  footer strong{ color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="arch"></div>
+    <div class="eyebrow">Kajian Kitab &middot; Bagian Penutup</div>
+    <h1 class="title">Akidah Imam Al-Bukhari</h1>
+    <div class="kitab-name">Kitab Aqidah Abu Muhammad bin Ismail Al-Bukhari</div>
+    <dl class="meta">
+      <dt>Ustadz</dt><dd>Sofyan Chalid Bin Idham Ruray, Lc. (Pembina Ma'had Imam Asy Syafi'i Bekasi)</dd>
+      <dt>Lokasi</dt><dd>Masjid Ar-Riyadh Depok — Jl. Kolintang 2, Mekarjaya, Sukmajaya, Depok</dd>
+      <dt>Waktu</dt><dd>Selasa, 21 Juli 2026 / Malam 7 Shafar 1448 H — Ba'da Maghrib</dd>
+    </dl>
+  </header>
+
+  <div class="continuation-note">
+    Catatan ini mencakup <strong>bagian akhir</strong> dari pembahasan kitab pada sesi ini — bab tentang mendoakan kebaikan untuk pemerintah, hingga kalimat penutup kitab.
+  </div>
+
+  <!-- SECTION 1 -->
+  <section class="point">
+    <div class="section-label">01 — Mendoakan Kebaikan untuk Pemerintah</div>
+
+    <div class="item">
+      <span class="badge badge-verified">Hadits/Dalil Dikenal</span>
+      <p class="arabic-quote">"Andai aku punya satu doa yang pasti dikabulkan, pasti tak akan aku berikan doa itu kecuali untuk pemimpin/penguasa negara, karena jika pemimpin jadi baik maka negeri dan masyarakat juga jadi baik."</p>
+      <p class="who">Al-Fudhail bin 'Iyadh (kunyah: Abu Ali), imam besar Ahlus Sunnah dari generasi Tabi'ut Tabi'in (w. 187 H)</p>
+      <div class="ref"><strong>Koreksi nama:</strong> nama yang tercatat langsung saat kajian ("Abu Ali Alfutoyi bin Iya") dikoreksi menjadi <strong>Al-Fudhail bin 'Iyadh</strong> — "Abu Ali" adalah kunyah beliau. Ucapan ini termuat dalam <em>Syarhu Ushul I'tiqad Ahlissunnah wal Jama'ah</em> karya Imam Al-Lalika'i.</div>
+    </div>
+
+    <div class="item">
+      <span class="badge badge-verified">Hadits/Dalil Dikenal</span>
+      <p>Tiga hal yang tidak akan dibenci/didengki oleh hati seorang muslim:</p>
+      <ol>
+        <li>Mengikhlaskan amal untuk Allah SWT dan hanya berharap balasan dari-Nya.</li>
+        <li>Menaati para pemimpin/penguasa kaum muslimin — termasuk di dalamnya mendoakan kebaikan untuk mereka; tidak mendoakan kebaikan termasuk bentuk keburukan.</li>
+        <li>Selalu berjamaah dengan kaum muslimin, karena doa kaum muslimin akan melindungi dari berbagai arah.</li>
+      </ol>
+      <div class="ref"><strong>Rujukan:</strong> HSR. Tirmidzi (juga diriwayatkan melalui jalur lain oleh Ibnu Majah dan Ahmad).</div>
+    </div>
+
+    <div class="item">
+      <span class="badge badge-personal">Catatan/Tafsir Pribadi</span>
+      <p>Agama adalah nasehat. Makna "nasehat" di sini bukan sebatas memberi masukan — secara bahasa Arab, kata yang seakar dengannya juga dipakai untuk menyebut sesuatu yang murni (madu yang murni disebut bersifat "nasehat"), sehingga nasehat kepada pemimpin bermakna ketulusan.</p>
+      <div class="sub-note">
+        <p><strong>Dua makna "berjamaah dengan kaum muslimin":</strong></p>
+        <ol style="margin:0;">
+          <li>Mengikuti jalan generasi pertama kaum muslimin, yaitu para sahabat Rasulullah ﷺ.</li>
+          <li>Bersama pemimpin kaum muslimin — patuh dan tidak melakukan pemberontakan.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="point">
+    <div class="section-label">02 — Ciri Golongan yang Menyimpang</div>
+
+    <div class="item">
+      <span class="badge badge-verified">Hadits/Dalil Dikenal</span>
+      <p>Para ulama salaf menyebut ahli bidah sebagai pengikut hawa nafsu (ahlul ahwa'), bukan pengikut dalil.</p>
+      <div class="ref"><strong>Rujukan:</strong> dikonfirmasi sebagai istilah baku ulama salaf — Syaikhul Islam Ibnu Taimiyyah menjelaskan bahwa para Salaf menamakan ahli bid'ah dan orang-orang yang menyelisihi Al-Qur'an dan As-Sunnah sebagai "ahlul ahwa'", karena mereka menerima apa yang mereka sukai dan menolak apa yang mereka benci berdasarkan hawa nafsu, bukan petunjuk dari Allah (dimuat di Almanhaj.or.id).</div>
+    </div>
+
+    <div class="item">
+      <span class="badge badge-check">Perlu Dicek</span>
+      <p>Golongan sesat — seperti kaum Khawarij — tidak mau mendoakan kebaikan untuk pemerintah, bahkan mendoakan keburukan bagi mereka.</p>
+      <div class="ref">Konsisten dengan penggambaran umum Ahlus Sunnah terhadap sikap Khawarij (pemberontakan dan takfir terhadap pemimpin) dalam literatur akidah klasik, namun kutipan/rujukan spesifik yang menyebutkan poin "tidak mendoakan kebaikan pemerintah" ini secara eksplisit belum berhasil ditelusuri pada pencarian kedua.</div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="point">
+    <div class="section-label">03 — Batasan Mendoakan Keburukan bagi Pemimpin</div>
+
+    <div class="item">
+      <span class="badge badge-personal">Catatan/Tafsir Pribadi</span>
+      <p>Sebagaimana ada pahala jariyah ketika pemimpin menjadi baik dan berdampak positif ke rakyat, sebaliknya akan ada <strong>dosa jariyah</strong> ketika seseorang berharap/mendoakan keburukan bagi pemimpin dan hal itu berdampak ke rakyat.</p>
+    </div>
+
+    <div class="item">
+      <span class="badge badge-verified">Hadits/Dalil Dikenal</span>
+      <p>Rasulullah ﷺ bersabda akan ada pemimpin yang curang (mendahulukan kepentingan pribadi) sepeninggal beliau. Sahabat bertanya apa yang mesti dilakukan rakyat. Rasulullah ﷺ menjawab: "Tunaikan hak mereka (pemimpin), dan mintalah kepada Allah hak kalian."</p>
+      <div class="ref"><strong>Rujukan:</strong> HR. Al-Bukhari (Kitabul Fitan) dan HR. Muslim no. 1849 — hadits ini masyhur dan sesuai dengan catatan yang diambil langsung saat kajian.</div>
+    </div>
+
+    <div class="item">
+      <span class="badge badge-personal">Catatan/Tafsir Pribadi</span>
+      <p>Ada subhat yang menyebut Rasulullah ﷺ pernah mendoakan keburukan kepada pemimpin — padahal yang dimaksud adalah doa yang bersifat umum, bukan doa keburukan yang ditujukan kepada individu/pemimpin secara spesifik.</p>
+      <p>Kaidahnya: mendoakan keburukan secara umum kepada golongan pendosa/zalim (misalnya kepada kaum yang berbuat zalim secara umum) itu boleh. Yang tidak boleh adalah mendoakan keburukan kepada satu individu tertentu secara spesifik.</p>
+    </div>
+
+    <div class="item">
+      <span class="badge badge-verified">Hadits/Dalil Dikenal</span>
+      <p>Kisah: Rasulullah ﷺ pernah berdoa qunut mendoakan celaka kepada individu tertentu yang menzalimi kaum muslimin, lalu Allah SWT langsung menegur turunnya melalui ayat. Orang yang didoakan tersebut kemudian mendapat hidayah dan masuk Islam.</p>
+      <div class="ref"><strong>Rujukan:</strong> Peristiwa qunut nazilah pasca-Perang Uhud, mendoakan celaka kepada Shafwan bin Umayyah, Suhail bin 'Amr, dan Al-Harits bin Hisyam — HR. Al-Bukhari no. 4070; ayat yang turun adalah <strong>QS. Ali 'Imran (3): 128</strong> ("Tak ada sedikit pun campur tanganmu dalam urusan mereka..."). Ketiganya belakangan masuk Islam.</div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="point">
+    <div class="section-label">04 — Penutup Kitab</div>
+
+    <div class="item">
+      <span class="badge badge-check">Perlu Dicek</span>
+      <p class="arabic-quote">"Siapakah yang berani melakukannya selain engkau."</p>
+      <p class="who">Kalimat penutup kitab, diucapkan oleh salah seorang imam besar Ahlus Sunnah dari generasi salaf.</p>
+      <div class="ref">Ditafsirkan bahwa yang dimaksud (Imam Al-Bukhari) adalah pengajar kebaikan yang patut mencontohkan sikap mendoakan kebaikan bagi pemerintah. Nama pengucap dan rujukan tekstual spesifik dari kalimat penutup ini telah dicari dua kali melalui pencarian web namun belum berhasil ditelusuri secara independen — kemungkinan berasal dari bagian akhir kitab <em>Syarhu Ushul I'tiqad Ahlissunnah wal Jama'ah</em> (sumber yang sama dengan kutipan Al-Fudhail bin 'Iyadh di atas), tetapi ini belum terkonfirmasi.</div>
+    </div>
+  </section>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="legend-title">Keterangan Lencana Validasi</div>
+    <div class="legend-row"><span class="badge badge-verified">Hadits/Dalil Dikenal</span> riwayat/ayat yang berhasil dicocokkan dengan sumber referensi publik (situs rujukan hadits/tafsir) pada sesi penyusunan recap ini.</div>
+    <div class="legend-row"><span class="badge badge-check">Perlu Dicek</span> pernyataan yang belum berhasil ditelusuri ke rujukan primer/spesifik secara independen — bukan berarti salah, hanya belum terverifikasi.</div>
+    <div class="legend-row"><span class="badge badge-personal">Catatan/Tafsir Pribadi</span> penjelasan, elaborasi, atau penalaran ustadz yang bersifat pemaparan pribadi — bukan kutipan langsung dalil.</div>
+  </div>
+
+  <footer>
+    <p>Recap disusun dari catatan langsung selama kajian, mencakup bagian akhir pembahasan sesi ini. Validasi dilakukan dalam dua tahap pencarian web terhadap situs-situs referensi hadits/tafsir publik (Almanhaj.or.id, Islamweb.net, dan sejenisnya) — <strong>bukan</strong> pengecekan langsung terhadap kitab primer/sanad asli. Pada tahap kedua, satu poin ("ahli bidah = pengikut hawa nafsu") naik status dari Perlu Dicek menjadi Hadits/Dalil Dikenal setelah ditemukan rujukan penjelasan Ibnu Taimiyyah. Dua poin — karakterisasi spesifik Khawarij dan kalimat penutup kitab — tetap berstatus Perlu Dicek karena rujukan tekstual langsungnya belum ditemukan meski sudah dicari ulang. Item berlabel "Perlu Dicek" dianjurkan dikonfirmasi lebih lanjut kepada ustadz atau rujukan primer sebelum disebarluaskan sebagai dalil.</p>
+  </footer>
+
+</div>
+</body>
+</html>

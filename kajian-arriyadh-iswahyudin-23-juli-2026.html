@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20 Prinsip Mengagungkan Ilmu — Masjid Ar-Riyadh Depok</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0d1710;
+    --bg-card: #142a1c;
+    --bg-card-2: #16311f;
+    --ink: #eef3ea;
+    --ink-dim: #a9bcae;
+    --gold: #c9a24b;
+    --gold-soft: #e4c878;
+    --line: rgba(201,162,75,0.22);
+    --verified: #7fb87a;
+    --verified-bg: rgba(127,184,122,0.12);
+    --check: #d9a441;
+    --check-bg: rgba(217,164,65,0.12);
+    --personal: #8fa8c9;
+    --personal-bg: rgba(143,168,201,0.12);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(201,162,75,0.07), transparent),
+      radial-gradient(900px 500px at 100% 0%, rgba(127,184,122,0.05), transparent),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.65;
+    padding:0 0 80px 0;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+
+  header{
+    padding:56px 24px 40px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+    margin-bottom:40px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Lora', serif;
+    font-weight:600;
+    font-size:clamp(28px, 5vw, 40px);
+    line-height:1.25;
+    margin:0 0 10px;
+    color:var(--ink);
+  }
+  .arabic-title{
+    font-family:'Amiri', serif;
+    font-size:22px;
+    color:var(--gold-soft);
+    margin:6px 0 18px;
+  }
+  .meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--ink-dim);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:6px 18px;
+    margin-top:18px;
+  }
+  .meta span strong{color:var(--ink);}
+
+  section{margin-bottom:40px;}
+  .point{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:22px 24px;
+    margin-bottom:20px;
+    position:relative;
+  }
+  .point-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--gold);
+    letter-spacing:0.08em;
+    margin-bottom:8px;
+    display:block;
+  }
+  .point h3{
+    font-family:'Lora', serif;
+    font-weight:600;
+    font-size:18px;
+    margin:0 0 10px;
+    color:var(--ink);
+  }
+  .point p{margin:0 0 10px; color:var(--ink);}
+  .point p:last-child{margin-bottom:0;}
+  .point ul, .point ol{margin:8px 0 10px; padding-left:22px;}
+  .point li{margin-bottom:6px;}
+  .analogi{
+    font-style:italic;
+    color:var(--ink-dim);
+    border-left:2px solid var(--gold);
+    padding-left:14px;
+    margin:12px 0;
+  }
+
+  .badge{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:20px;
+    margin:0 6px 10px 0;
+    border:1px solid transparent;
+  }
+  .badge-verified{ color:var(--verified); background:var(--verified-bg); border-color:rgba(127,184,122,0.35); }
+  .badge-check{ color:var(--check); background:var(--check-bg); border-color:rgba(217,164,65,0.35); }
+  .badge-personal{ color:var(--personal); background:var(--personal-bg); border-color:rgba(143,168,201,0.35); }
+
+  .ref{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-dim);
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px dashed var(--line);
+  }
+  .ref strong{color:var(--gold-soft); font-weight:500;}
+
+  .legend{
+    background:var(--bg-card-2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:20px 22px;
+    font-size:13.5px;
+    color:var(--ink-dim);
+    margin-bottom:40px;
+  }
+  .legend div{margin-bottom:8px;}
+  .legend div:last-child{margin-bottom:0;}
+
+  h2.section-title{
+    font-family:'Lora', serif;
+    font-size:14px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    margin:0 0 18px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+  }
+
+  footer{
+    max-width:760px;
+    margin:20px auto 0;
+    padding:24px 24px 0;
+    font-size:12.5px;
+    color:var(--ink-dim);
+    line-height:1.7;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Rekap Kajian &middot; Live Note-Taking</div>
+  <h1>20 Prinsip Mengagungkan Ilmu</h1>
+  <div class="arabic-title">خُلاَصَة تَعْظِيْمِ الْعِلْمِ</div>
+  <div class="meta">
+    <span>Kitab: <strong>Khulashah Ta'zhimil-'Ilmi</strong> — Syaikh Shalih al-'Ushaimiy</span>
+    <span>Pemateri: <strong>Ustadz Iswahyudin Al Bimawy, Lc.</strong></span>
+    <span>Masjid Ar-Riyadh, Depok</span>
+    <span>Ba'da Maghrib, Kamis 23 Juli 2026 / 9 Shafar 1448H</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="legend">
+    <div><span class="badge badge-verified">HADITS/DALIL DIVALIDASI</span> dicek via pencarian web ke situs referensi hadits dan transkrip syarah kitab yang sama (mis. Rumaysho.com, ilmiyyah.com) — bukan pengecekan langsung ke kitab primer/sanad asli.</div>
+    <div><span class="badge badge-personal">CATATAN/PENJELASAN USTADZ</span> penjabaran, analogi, atau simpulan dari penyampaian ustadz — bukan kutipan dalil langsung, dan tidak ditemukan pada teks kitab.</div>
+  </div>
+
+  <section>
+    <h2 class="section-title">Mukadimah</h2>
+
+    <div class="point">
+      <span class="badge badge-verified">HADITS/DALIL DIVALIDASI</span>
+      <p>Dua nikmat yang sering dilalaikan manusia: kesehatan dan waktu luang.</p>
+      <div class="ref"><strong>Rujukan:</strong> HR. Bukhari, dari Ibnu 'Abbas RA (dikutip di sejumlah sumber sebagai no. 6412, sebagian lain no. 5933) — "Dua nikmat yang kebanyakan manusia tertipu di dalamnya: kesehatan dan waktu luang."</div>
+    </div>
+
+    <div class="point">
+      <span class="badge badge-personal">CATATAN/PENJELASAN USTADZ</span>
+      <p>Ketika dua nikmat itu masih kita rasakan, artinya Allah SWT masih sayang pada kita. Diberikan kesempatan menuntut ilmu agama adalah salah satu tandanya.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Simpul 6 — Menjaga Cabang Ilmu, Mendahulukan yang Terpenting</h2>
+
+    <div class="point">
+      <span class="point-num">POIN KE-6</span>
+      <span class="badge badge-verified">HADITS/DALIL DIVALIDASI</span>
+      <h3>Senantiasa memperhatikan cabang ilmu</h3>
+      <p>Mengedepankan yang terpenting (yang paling dibutuhkan dalam hidup, dalam rangka beribadah atau bersosial) di antara yang penting.</p>
+      <div class="analogi">Belajar satu cabang ilmu seperti melihat lukisan yang tertutup sebagian — dibutuhkan ilmu-ilmu lain untuk melihat keseluruhan keindahan lukisan itu.</div>
+      <p>Tauhid dan aqidah adalah ilmu yang terpenting dalam Islam, diikuti dengan fiqh. Di antara alasannya:</p>
+      <ol>
+        <li><em>(tidak tercatat)</em></li>
+        <li>Agar ibadahnya tidak diserahkan kepada hal lain selain Allah SWT.</li>
+        <li><em>(tidak tercatat)</em></li>
+      </ol>
+      <p>Semua ilmu saling berkaitan satu sama lain — belajar fokus hanya pada satu ilmu saja membuat kita tak bisa melihat keindahan ilmu secara utuh. Mengumpulkan banyak ilmu adalah sifat terpuji, dengan catatan bertahap dan konsisten.</p>
+      <div class="ref"><strong>Rujukan:</strong> Sesuai dengan Simpul 6 Kitab Khulashah Ta'zhimil-'Ilmi (dikenal juga sebagai Khulashah Ta'dzhimul 'Ilm) — dikonfirmasi melalui transkrip publik pembahasan kitab yang sama (ilmiyyah.com, Silsilah 'Ilmiyyah Halaqah 8–9). <strong>Catatan pada dua alasan kosong:</strong> transkrip syarah tidak menyusunnya sebagai daftar bernomor, sehingga isi persis alasan #1 dan #3 tidak bisa direkonstruksi dari sumber ini — tetap dibiarkan kosong daripada diisi dengan tebakan.</div>
+    </div>
+
+    <div class="point">
+      <span class="badge badge-verified">HADITS/DALIL DIVALIDASI</span>
+      <h3>Enam perkara mendapatkan ilmu</h3>
+      <ul>
+        <li>memiliki kecerdasan</li>
+        <li>menjaga waktu, istiqomah</li>
+        <li>bersungguh-sungguh</li>
+        <li>mau mengorbankan harta</li>
+        <li>belajar dengan guru</li>
+        <li>sepanjang waktu</li>
+      </ul>
+      <div class="ref"><strong>Rujukan:</strong> Sejalan dengan syair terkenal Imam Asy-Syafi'i (Diwan Imam Syafi'i, bab Qafiyah Nun): "akhii lan tanaalal 'ilma illaa bisittatin... dzakaaun, wa hirsun, wajtihaadun, wa bulghatun, wa suhbatu ustaadzin, wa thuulu zamaan" — kecerdasan, kemauan/hirsh, kesungguhan, bekal/biaya, kedekatan dengan guru, waktu yang panjang. <strong>Catatan perbedaan kecil:</strong> item kedua pada catatan langsung ("menjaga waktu, istiqomah") tidak persis sama dengan "hirsh" (kemauan/keinginan kuat akan ilmu) pada syair aslinya — kemungkinan penyampaian ustadz sendiri atau catatan yang kurang presisi saat kajian berlangsung.</div>
+    </div>
+
+    <div class="point">
+      <span class="badge badge-verified">HADITS/DALIL DIVALIDASI</span>
+      <p>Orang yang datang duduk di majelis ilmu meski tidak memperhatikan, insya Allah tetap mendapat keberkahannya.</p>
+      <div class="ref"><strong>Rujukan:</strong> HR. Bukhari no. 6408 &amp; Muslim no. 2689 — hadits tentang seorang hamba yang "hanya lewat lalu ikut duduk" dalam majelis dzikir, tetap diampuni Allah SWT karena "mereka adalah kaum yang tidak akan sengsara orang yang duduk bersama mereka."</div>
+    </div>
+
+    <div class="point">
+      <span class="badge badge-verified">HADITS/DALIL DIVALIDASI</span>
+      <h3>Dua wasiat penuntut ilmu (nama dikoreksi)</h3>
+      <ol>
+        <li>Tidak pantas bagi penuntut ilmu meninggalkan satu ilmu di antara ilmu-ilmu yang bermanfaat. Jika sengaja ditinggalkan, sama dengan meninggalkan syariat Allah SWT — karena ibadah tidak bisa diwakilkan.</li>
+        <li>Tidak boleh mencela ilmu yang belum ia pahami.</li>
+      </ol>
+      <p>Belajar ilmu agama adalah cara menjaga diri dari api neraka.</p>
+      <div class="ref"><strong>Koreksi &amp; rujukan:</strong> Nama pada catatan langsung ("Muhammad bin Malik") dikoreksi menjadi <strong>Syaikh Muhammad bin Mani' rahimahullah</strong> (disebut dalam kitab sebagai "guru dari guru-guru kami"), dalam kitab beliau <em>Irsyaduth Thullab</em> — dikutip langsung dalam syarah Simpul 6 Khulashah Ta'zhimil-'Ilmi oleh Ustadz Dr. Abdullah Roy, M.A. (transkrip publik ilmiyyah.com, Halaqah 08). Frasa "belajar ilmu agama = menjaga diri dari api neraka" adalah simpulan umum, bukan kutipan langsung dari teks ini.</div>
+    </div>
+
+    <div class="point">
+      <span class="badge badge-verified">HADITS/DALIL DIVALIDASI</span>
+      <p>Lanjutan wasiat yang sama: hendaklah penuntut ilmu menjaga lisan, karena termasuk aib atau kekurangan bagi yang belum bisa menjaga ucapan (berbohong, mencela). Orang yang berakal dan mulia senantiasa bicara dengan ilmu, atau diam dalam kebijaksanaan.</p>
+      <div class="ref"><strong>Rujukan:</strong> Kalimat ini adalah bagian langsung dari passage yang sama (bukan wasiat terpisah) — "al-'aqilu yatakallamu bi 'ilmin aw yaskutu bi hilmin" ("orang yang berakal hendaklah berbicara dengan ilmu, atau diam dengan hilm/kebijaksanaan"), dikutip pada syarah Simpul 6 yang sama (ilmiyyah.com, Halaqah 08).</div>
+    </div>
+
+    <div class="point">
+      <span class="badge badge-verified">HADITS/DALIL DIVALIDASI</span>
+      <p>Orang yang beriman pada hari akhir senantiasa menjaga lisannya.</p>
+      <div class="ref"><strong>Rujukan:</strong> HR. Bukhari no. 6018 (dan beberapa riwayat lain: 6019, 6136, 6475) &amp; Muslim no. 47, dari Abu Hurairah RA — juga dikenal sebagai Hadits Arbain An-Nawawiyah ke-15: "Barangsiapa beriman kepada Allah dan hari akhir, hendaklah ia berkata baik atau diam."</div>
+    </div>
+
+    <div class="point">
+      <span class="badge badge-verified">HADITS/DALIL DIVALIDASI</span>
+      <h3>Dua perkara agar cabang ilmu bermanfaat</h3>
+      <ol>
+        <li>Mengedepankan yang terpenting di antara yang penting. Urutan ilmu yang terpenting: ilmu berkaitan tentang ibadah kepada Allah SWT (tauhid, fiqh ibadah, hadits, tafsir, dll) — dianggap tidak mengagungkan ilmu jika mempelajari usul fiqh lebih dulu daripada tauhid atau fiqh sholat.</li>
+        <li>Di awal belajar, berniat untuk menguasai semua bidang ilmu meskipun dimulai dari ringkasan (mukhtashar). Ketika sudah khatam semua cabang ilmu, barulah dipersilakan memilih ilmu yang ingin didalami lebih jauh sesuai kecenderungan pribadi.</li>
+      </ol>
+      <div class="analogi">Belajar berenang dimulai dari kolam kecil — setelah mahir, barulah dibebaskan berenang di lautan. <span style="font-style:normal; font-size:12px;">(analogi/ilustrasi ustadz sendiri, bukan dari teks kitab)</span></div>
+      <div class="ref"><strong>Rujukan:</strong> Sesuai persis dengan Simpul 6 Kitab Khulashah Ta'zhimil-'Ilmi bagian kedua — dua landasan "rعاية فنون العلم" (mendahulukan ilmu yang dibutuhkan untuk ibadah: tauhid → shalat/wudhu → dzikir, lalu mencari ringkasan/mukhtashar tiap cabang sebelum spesialisasi) — dikonfirmasi langsung terhadap transkrip syarah publik Ustadz Dr. Abdullah Roy, M.A. (ilmiyyah.com, Halaqah 09).</div>
+    </div>
+
+    <div class="point">
+      <span class="badge badge-personal">CATATAN/PENJELASAN USTADZ</span>
+      <p>Syarat belajar yang ditekankan adalah dengan belajar lewat seorang guru.</p>
+    </div>
+
+  </section>
+
+</div>
+
+<footer>
+  Recap disusun dari catatan langsung selama kajian, kemudian divalidasi dua tahap melalui pencarian web terhadap situs referensi hadits dan transkrip syarah publik kitab Khulashah Ta'zhimil-'Ilmi yang sama (ilmiyyah.com, Ustadz Dr. Abdullah Roy, M.A.) — bukan pengecekan langsung ke kitab primer/sanad asli. Satu koreksi nama dilakukan: atribusi wasiat yang tercatat sebagai "Muhammad bin Malik" dikoreksi menjadi Syaikh Muhammad bin Mani' rahimahullah (kitab Irsyaduth Thullab), sesuai transkrip syarah. Dua alasan bernomor pada bagian "tauhid & fiqh sebagai ilmu terpenting" tetap kosong karena tidak tercatat saat kajian dan tidak dapat direkonstruksi dari sumber. Poin berlabel "Catatan/Penjelasan Ustadz" (analogi lukisan, analogi berenang) adalah ilustrasi dari penyampaian ustadz sendiri — tidak ditemukan pada teks kitab maupun transkrip syarah yang dirujuk.
+</footer>
+
+</body>
+</html>

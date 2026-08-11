@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recap Kajian — Syarhus Sunnah #5</title>
+<style>
+  :root {
+    --maroon: #5c1f2e;
+    --maroon-dark: #3d1420;
+    --gold: #b8935a;
+    --gold-light: #e8d5b0;
+    --cream: #faf6ef;
+    --ink: #2a201c;
+    --ink-soft: #5a4d46;
+    --green-bg: #e6f2ea;
+    --green-text: #1f6f43;
+    --green-border: #a9d4bb;
+    --blue-bg: #eaeef6;
+    --blue-text: #33477a;
+    --blue-border: #b9c4de;
+    --amber-bg: #fbf1de;
+    --amber-text: #8a5a12;
+    --amber-border: #e6cd9a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    padding-bottom: 40px;
+  }
+  header {
+    background: linear-gradient(160deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+    color: var(--gold-light);
+    padding: 36px 24px 28px;
+    text-align: center;
+    border-bottom: 3px solid var(--gold);
+  }
+  header .eyebrow {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 11px;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  header h1 { font-size: 26px; margin: 0 0 6px; font-weight: 700; }
+  header .subtitle { font-size: 15px; color: var(--gold-light); opacity: 0.9; margin-bottom: 18px; }
+  .meta {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--cream);
+    display: grid;
+    gap: 4px;
+    max-width: 340px;
+    margin: 0 auto;
+    text-align: left;
+    background: rgba(0,0,0,0.15);
+    padding: 14px 18px;
+    border-radius: 6px;
+  }
+  .meta div span.label { color: var(--gold); display: inline-block; width: 78px; }
+  .legend {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    color: var(--ink-soft);
+    background: #fff;
+    margin: 20px 20px 0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #e4dccb;
+  }
+  .legend strong { color: var(--ink); }
+  .legend .row { margin-top: 4px; }
+  .badge {
+    display: inline-block;
+    font-size: 10.5px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-right: 6px;
+    vertical-align: middle;
+    letter-spacing: 0.02em;
+  }
+  .badge.validated { background: var(--green-bg); color: var(--green-text); border: 1px solid var(--green-border); }
+  .badge.personal { background: var(--blue-bg); color: var(--blue-text); border: 1px solid var(--blue-border); }
+  .badge.check { background: var(--amber-bg); color: var(--amber-text); border: 1px solid var(--amber-border); }
+  main { max-width: 640px; margin: 0 auto; padding: 0 20px; }
+  section.bahasan {
+    margin-top: 30px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e9e1d1;
+    overflow: hidden;
+  }
+  .bahasan-header { background: var(--gold-light); padding: 14px 20px; border-bottom: 2px solid var(--gold); }
+  .bahasan-header .num {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--maroon-dark);
+    font-weight: 700;
+  }
+  .bahasan-header h2 { margin: 4px 0 0; font-size: 19px; color: var(--maroon-dark); }
+  .topic { padding: 16px 20px; border-bottom: 1px solid #f0e9db; }
+  .topic:last-child { border-bottom: none; }
+  .topic h3 { font-size: 15.5px; margin: 0 0 8px; color: var(--maroon); }
+  .topic ul { margin: 8px 0 0; padding-left: 20px; }
+  .topic li { margin-bottom: 7px; font-size: 14.5px; }
+  .topic p { font-size: 14.5px; margin: 6px 0; }
+  .ref-box {
+    margin-top: 8px; padding: 8px 12px;
+    background: var(--green-bg); border: 1px solid var(--green-border);
+    border-radius: 6px; font-size: 13px; color: var(--green-text);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .personal-box {
+    margin-top: 8px; padding: 8px 12px;
+    background: var(--blue-bg); border: 1px solid var(--blue-border);
+    border-radius: 6px; font-size: 13px; color: var(--blue-text);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .check-box {
+    margin-top: 8px; padding: 8px 12px;
+    background: var(--amber-bg); border: 1px solid var(--amber-border);
+    border-radius: 6px; font-size: 13px; color: var(--amber-text);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  footer {
+    max-width: 640px; margin: 30px auto 0; padding: 18px 24px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12.5px; color: var(--ink-soft);
+    border-top: 1px solid #e4dccb;
+  }
+  footer h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--maroon); margin-bottom: 8px; }
+  footer ul { padding-left: 18px; margin: 0 0 14px; }
+  footer li { margin-bottom: 5px; }
+  footer .sources { font-style: italic; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Kajian Kitab Rutin</div>
+  <h1>Syarhus Sunnah #5</h1>
+  <div class="subtitle">Penciptaan Adam dan Esensi Keimanan</div>
+  <div class="meta">
+    <div><span class="label">Kitab</span> Syarhus Sunnah — Imam Al-Muzani</div>
+    <div><span class="label">Pemateri</span> Ustadz Dr. Syafiq Al-Khatieb, Lc., M.A.</div>
+    <div><span class="label">Waktu</span> Ahad, 9 Agustus 2026, 10.00 WIB</div>
+    <div><span class="label">Lokasi</span> Masjid Baiturrahman, Pondok Pinang</div>
+  </div>
+</header>
+
+<div class="legend">
+  <strong>Keterangan lencana:</strong>
+  <div class="row"><span class="badge validated">TERVALIDASI</span> dicek ulang terhadap Qur'an/hadits/rujukan tepercaya, cocok dengan catatan sesi.</div>
+  <div class="row"><span class="badge personal">CATATAN PRIBADI</span> interpretasi jamaah, bukan pernyataan langsung ustadz.</div>
+  <div class="row"><span class="badge check">PERLU VERIFIKASI</span> klaim spesifik yang belum ditemukan rujukan primernya.</div>
+  <div class="row">Poin tanpa lencana adalah penjelasan langsung dari pemateri (kerangka umum aqidah, tidak memerlukan rujukan ayat/hadits spesifik).</div>
+</div>
+
+<main>
+
+  <section class="bahasan">
+    <div class="bahasan-header">
+      <div class="num">Bahasan 1</div>
+      <h2>Kisah Penciptaan &amp; Turunnya Nabi Adam AS</h2>
+    </div>
+
+    <div class="topic">
+      <h3>Latar Belakang Turun ke Bumi</h3>
+      <ul>
+        <li>Nabi Adam AS diturunkan ke bumi karena terbujuk setan untuk memakan buah dari pohon yang dilarang.</li>
+        <li>Takdir penurunannya ke bumi sudah ditetapkan Allah SWT sebelum peristiwa itu terjadi.</li>
+        <li>Maksiat manusia dapat menjadi bentuk hukuman atas maksiat sebelumnya — bermula ketika manusia berpaling dari petunjuk yang telah diberikan.</li>
+      </ul>
+    </div>
+
+    <div class="topic">
+      <h3>Nabi Adam sebagai Bapak Umat Manusia</h3>
+      <p>Kedudukan Nabi Adam AS sebagai bapak seluruh umat manusia diselisihi oleh kaum rasionalis muslim — pemikiran ini disebut keliru menurut penjelasan ustadz.</p>
+    </div>
+
+    <div class="topic">
+      <h3>Keistimewaan Penciptaan Nabi Adam</h3>
+      <ul>
+        <li>Nabi Adam diciptakan setelah malaikat.</li>
+        <li>Meski diciptakan setelah malaikat, Nabi Adam diciptakan langsung dengan kedua tangan Allah SWT — ini yang membuatnya istimewa.</li>
+      </ul>
+      <div class="ref-box">
+        <span class="badge validated">TERVALIDASI</span> QS. Al-Baqarah (2): 30 — Allah mengabarkan rencana penciptaan khalifah di bumi kepada malaikat sebelum Adam diciptakan; ulama (tafsir Ibnu Katsir, dikutip via Celik Tafsir &amp; Detik Hikmah) menjadikan ini dasar urutan penciptaan (malaikat dari cahaya lebih dulu, baru Adam). <br>
+        QS. Shad (38): 75 — "Apa yang menghalangimu sujud kepada yang telah Kuciptakan dengan kedua tangan-Ku?" (kepada Iblis). Ayat yang dirujuk sudah tepat (ayat 75, bukan 74).
+      </div>
+    </div>
+
+    <div class="topic">
+      <h3>Empat Hal yang Diciptakan dengan Tangan Allah</h3>
+      <p>Riwayat dari Ibnu Umar RA (perkara ghaib, bukan hasil ijtihad akal) menyebutkan 4 hal yang diciptakan Allah SWT langsung dengan kedua tangan-Nya:</p>
+      <ul>
+        <li>Nabi Adam AS</li>
+        <li>Surga 'Adn (surga Adam)</li>
+        <li>'Arsy (singgasana Allah)</li>
+        <li>Al-Qalam (pena penulis takdir)</li>
+      </ul>
+      <p>Makhluk selain keempatnya diciptakan Allah SWT lewat firman: <em>kun fayakun</em> ("jadilah, maka jadilah").</p>
+      <div class="ref-box">
+        <span class="badge validated">TERVALIDASI</span> Riwayat Ibnu Umar RA — HR. Ad-Darimi (Ar-Radd 'alal Muraisi), juga disebutkan Ibnu Jarir Ath-Thabari dan Al-Baihaqi; Adz-Dzahabi menilai sanadnya kuat. Susunan 4 hal sudah sesuai (kata "ash" pada catatan asli = 'Arsy). Silsilah riwayat ini juga dipakai pada penjelasan publik kitab Syarhus Sunnah yang sama (salafy.or.id, "Penjelasan Syarhussunnah lil-Muzani Bag. 5").
+      </div>
+    </div>
+
+    <div class="topic">
+      <h3>Adab Bertanya soal Perkara Ghaib dan Takdir</h3>
+      <ul>
+        <li>Kita tidak boleh bertanya <strong>"bagaimana"</strong> soal perkara ghaib, karena di luar cakupan inderawi manusia. Contoh: Allah SWT turun tiap malam — cara ("bagaimana")-nya adalah perkara ghaib, wallahu a'lam.</li>
+        <li>Kita tidak boleh bertanya <strong>"kenapa"</strong> soal hikmah takdir, karena ilmu manusia terbatas sedangkan ilmu Allah SWT tak terhingga.</li>
+      </ul>
+      <div class="personal-box">
+        <span class="badge personal">CATATAN PRIBADI</span> Contoh "kenapa sebuah kejadian mesti terjadi", terutama bila ditanyakan dengan niatan penyesalan — ini tafsir pribadi jamaah atas penjelasan ustadz, bukan kutipan langsung.
+      </div>
+    </div>
+
+    <div class="topic">
+      <h3>Kaidah Hikmah di Balik Takdir</h3>
+      <ul>
+        <li>Kadang Allah SWT menampilkan hikmah suatu takdir langsung, kadang setelah waktu lama.</li>
+        <li>Sebagian besar takdir yang terjadi bisa saja tidak tampak hikmahnya bagi kita — cukup diyakini bahwa setiap takdir pasti mengandung hikmah.</li>
+      </ul>
+    </div>
+
+    <div class="topic">
+      <h3>Surga Adam dan Pohon Khuld</h3>
+      <ul>
+        <li>Surga tempat Nabi Adam ditempatkan adalah surga 'Adn yang sama, yang akan dimasuki umat manusia di akhirat — bukan sekadar taman di bumi seperti pendapat sebagian ulama yang dinilai keliru.</li>
+        <li>Pohon yang dimaksud disebut sebagai pohon <em>khuld</em> — kata "khuld" bermakna kekekalan abadi.</li>
+        <li>Istilah "buah kuldi" yang populer di masyarakat berasal dari godaan setan kepada Nabi Adam: jika ingin menjadi seperti malaikat yang abadi di surga, makanlah buah tersebut.</li>
+      </ul>
+      <div class="ref-box">
+        <span class="badge validated">TERVALIDASI (dengan nuansa)</span> QS. Thaha (20): 120 — Iblis berkata, "Wahai Adam, maukah aku tunjukkan pohon keabadian (<em>syajaratal khuld</em>) dan kerajaan yang tidak akan binasa?" QS. Al-A'raf (7): 20 turut menyebut janji palsu "menjadi malaikat atau menjadi kekal". Sumber tepercaya (Muslim.or.id, Rumah Fiqih Indonesia) mengonfirmasi: nama "pohon keabadian" itu justru ciptaan Iblis untuk membujuk, bukan nama pemberian Allah SWT — sejalan dengan penjelasan ustadz. Istilah populer "kuldi" adalah bentuk serapan/pengucapan Indonesia dari kata Arab "khuld", bukan nama pohon tersendiri.
+      </div>
+    </div>
+
+    <div class="topic">
+      <h3>Kaidah Penghuni Surga dan Neraka</h3>
+      <ul>
+        <li>Allah SWT telah menentukan setiap orang akan masuk surga atau neraka.</li>
+        <li>Penghuni surga terindikasi dipermudah tiap kali melakukan kebaikan; penghuni neraka terindikasi sulit panca inderanya menyadari kebesaran Allah SWT.</li>
+      </ul>
+      <div class="ref-box">
+        <span class="badge validated">TERVALIDASI</span> HR. Muslim no. 2647 (juga HR. Bukhari no. 4949) — sahabat bertanya untuk apa beramal jika segalanya sudah ditakdirkan; Rasulullah ﷺ menjawab: "Beramallah, karena setiap orang akan dipermudah menuju apa yang telah diciptakan baginya" (kullun muyassarun lima khuliqa lahu).
+      </div>
+    </div>
+  </section>
+
+  <section class="bahasan">
+    <div class="bahasan-header">
+      <div class="num">Bahasan 2</div>
+      <h2>Hakikat Keimanan</h2>
+    </div>
+
+    <div class="topic">
+      <h3>Iman: Perkataan dan Perbuatan</h3>
+      <p>Iman terdiri atas perkataan dan perbuatan — keduanya setara dan berpasangan; tak ada kata tanpa perbuatan, dan tak ada perbuatan tanpa perkataan. Ada 4 cakupan iman:</p>
+      <ul>
+        <li><strong>Ucapan hati</strong> — pembenaran dan keyakinan yang wajib ada di hati. Orang munafik bisa mengaku beriman secara lisan namun hatinya tidak demikian.</li>
+        <li><strong>Ucapan lisan</strong> — ikrar lisan yang mengesahkan status iman seseorang; syarat sah masuk Islam adalah mengucap syahadat.</li>
+        <li><strong>Amalan hati</strong> — tunduk, tawakal, ikhlas, rasa takut, dan rasa harap.</li>
+        <li><strong>Amalan anggota badan</strong> — ibadah fisik (sholat, puasa, haji, dll).</li>
+      </ul>
+      <div class="ref-box">
+        <span class="badge validated">TERVALIDASI</span> Kerangka 4 cakupan ini sesuai definisi baku iman menurut Ahlus Sunnah wal Jama'ah: keyakinan hati + ucapan lisan + amalan hati &amp; anggota badan (Rumaysho.com "Keyakinan Iman Menurut Ahlus Sunnah", Almanhaj.or.id "Prinsip Ahlus Sunnah Tentang Dien dan Iman", Muslim.or.id) — didasarkan pada hadits cabang iman 60/70-an (HR. Bukhari &amp; Muslim, dari Abu Hurairah RA): tertinggi laa ilaha illallah (lisan), terendah menyingkirkan gangguan di jalan (anggota badan), dan malu sebagai bagian iman (hati).
+      </div>
+      <div class="check-box">
+        <span class="badge check">PERLU VERIFIKASI</span> Klaim "lebih 100 dalil yang mengaitkan keimanan dengan anggota badan" — angka spesifik ini belum ditemukan rujukan primernya pada sumber yang dicek; kerangka umumnya (amalan anggota badan = bagian iman) sendiri sudah tervalidasi di atas.
+      </div>
+    </div>
+
+    <div class="topic">
+      <h3>Bantahan terhadap Paham Murjiah</h3>
+      <p>Kaum Murjiah berpendapat iman tidak berkaitan dengan amalan anggota badan — keyakinan ini dinilai keliru. Amalan anggota badan adalah <strong>pondasi</strong> keimanan, bukan sekadar penyempurna.</p>
+      <div class="ref-box">
+        <span class="badge validated">TERVALIDASI</span> Rumaysho.com mengonfirmasi definisi Murji'ah persis seperti disampaikan: "iman adalah keyakinan dalam hati dan ucapan di lisan saja" tanpa amalan anggota badan. Almanhaj.or.id turut menegaskan posisi "amal bukan syarat sah/penyempurna iman, melainkan bagian dari hakikat iman itu sendiri" menurut Ahlus Sunnah.
+      </div>
+    </div>
+
+    <div class="topic">
+      <h3>Iman Bertambah dan Berkurang</h3>
+      <p>Iman bertambah dengan ketakwaan dan berkurang dengan maksiat. Contoh: iman terasa lebih kuat di bulan Ramadan dibanding bulan-bulan lain.</p>
+    </div>
+
+    <div class="topic">
+      <h3>Tingkatan Keimanan Kaum Muslimin</h3>
+      <p>Kaum muslim bertingkat sesuai kadar imannya. Terdapat 3 tingkatan utama:</p>
+      <ul>
+        <li><strong>Zalim linafsih</strong> — orang yang menzalimi diri sendiri, melakukan dosa besar namun masih memiliki iman di hati; imannya cukup menjaganya dari status kafir.</li>
+        <li><strong>Muqtasid</strong> — orang yang melakukan kewajiban dan tidak bermaksiat.</li>
+        <li><strong>Sabiqun bil-khairat</strong> — orang yang lebih dahulu berbuat kebaikan: menunaikan kewajiban, ditambah ibadah sunnah, dan menahan diri bukan hanya dari yang haram tapi juga makruh, syubhat, mubah berlebihan, serta menahan diri dari bergantung pada manusia (contoh: sahabat yang turun mengambil sendiri cambuk untanya yang terjatuh, tanpa meminta bantuan).</li>
+      </ul>
+      <div class="ref-box">
+        <span class="badge validated">TERVALIDASI</span> QS. Fatir (35): 32 — ketiga istilah dan urutannya (zalim linafsih, muqtasid, sabiqun bil-khairat) sesuai teks ayat ini (TafsirWeb, Quran NU Online).
+      </div>
+    </div>
+
+    <div class="topic">
+      <h3>Manhaj Ahlus Sunnah wal Jamaah tentang Pelaku Dosa Besar</h3>
+      <p>Pelaku dosa besar tidak keluar dari keimanan selama tidak melakukan pembatal keimanan — statusnya tetap muslim. Empat prinsip manhaj Ahlus Sunnah:</p>
+      <ul>
+        <li>Dosa kecil dapat menggiring pelaku ke dosa besar; dosa besar dapat menggiring keluar dari iman.</li>
+        <li>Pelaku dosa besar tidak boleh dihukumi kafir di dunia — berbeda dari kaidah kaum Khawarij.</li>
+        <li>Nasib pelaku dosa besar berada di bawah kehendak Allah SWT — tidak boleh diklaim pasti kafir/masuk neraka, dan sebaliknya tidak boleh diklaim pasti masuk surga hanya dari amal duniawinya, kecuali telah ditunjuk dalil.</li>
+        <li>Jika pun pelaku dosa besar diazab di neraka, azabnya tidak kekal dan pada akhirnya dipindahkan ke surga.</li>
+      </ul>
+      <div class="ref-box">
+        <span class="badge validated">TERVALIDASI</span> Almanhaj.or.id ("Prinsip Ahlus Sunnah Tentang Dien dan Iman") mengonfirmasi poin kedua secara eksplisit: Ahlus Sunnah tidak mengkafirkan pelaku dosa besar secara mutlak, berbeda dengan Khawarij, dan persaudaraan iman tetap terpelihara meski bermaksiat. Poin ketiga dan keempat sejalan dengan aqidah baku Ahlus Sunnah soal syafa'at dan tidak kekalnya ahli tauhid di neraka.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <h4>Referensi Tervalidasi Sesi Ini</h4>
+  <ul>
+    <li>QS. Al-Baqarah (2): 30 — urutan penciptaan malaikat sebelum Adam</li>
+    <li>QS. Shad (38): 75 — penciptaan Nabi Adam dengan kedua tangan Allah SWT</li>
+    <li>Riwayat Ibnu Umar RA (HR. Ad-Darimi dll., sanad dinilai kuat) — 4 hal diciptakan dengan tangan Allah</li>
+    <li>QS. Thaha (20): 120 &amp; QS. Al-A'raf (7): 20 — asal-usul nama "pohon keabadian/khuld" dari godaan Iblis</li>
+    <li>HR. Muslim no. 2647 / HR. Bukhari no. 4949 — beramal di tengah ketetapan takdir</li>
+    <li>QS. Fatir (35): 32 — tiga golongan pewaris Al-Qur'an</li>
+    <li>Kerangka iman Ahlus Sunnah (Rumaysho.com, Almanhaj.or.id, Muslim.or.id) — definisi iman, bantahan Murjiah, dan posisi Ahlus Sunnah terhadap pelaku dosa besar</li>
+  </ul>
+  <h4>Poin Perlu Verifikasi Lanjutan</h4>
+  <ul>
+    <li>Klaim "100+ dalil" yang mengaitkan keimanan dengan amalan anggota badan (angka spesifik belum ditemukan rujukan primernya)</li>
+  </ul>
+  <p class="sources">Validasi silang menggunakan: Quran.com, TafsirWeb, Quran NU Online, Muslim.or.id, Rumaysho.com, Almanhaj.or.id, Salafy.or.id, Rumah Fiqih Indonesia, Ilmiyyah.com, Detik Hikmah/Celik Tafsir.</p>
+</footer>
+
+</body>
+</html>

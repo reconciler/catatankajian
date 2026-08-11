@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rekap Kajian — Akidah Imam Al-Bukhari | Ar-Riyadh Depok</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e0f10;
+    --paper:#f7f4ee;
+    --gold:#b8935a;
+    --gold-dim:#8a6d43;
+    --line:#2a2b2c;
+    --line-light:#ded7c6;
+    --muted:#8a8578;
+    --validated:#4c7a5e;
+    --unverified:#a5673a;
+    --frame:#c9432e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif;
+    line-height:1.65;
+  }
+  .header{
+    background:var(--ink);
+    color:var(--paper);
+    padding:56px 24px 48px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .header::before{
+    content:"عقيدة";
+    position:absolute;
+    font-family:'Amiri',serif;
+    font-size:220px;
+    color:rgba(184,147,90,0.07);
+    top:-40px;
+    right:-20px;
+    line-height:1;
+    pointer-events:none;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:18px;
+  }
+  .header h1{
+    font-family:'Lora',serif;
+    font-weight:600;
+    font-size:clamp(26px,4.5vw,40px);
+    margin:0 0 12px;
+    max-width:680px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .header .arabic{
+    font-family:'Amiri',serif;
+    font-size:22px;
+    color:var(--gold);
+    margin-bottom:20px;
+    direction:rtl;
+  }
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px 22px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    color:#c9c4b8;
+    margin-top:8px;
+  }
+  .meta-row span::before{content:"— ";color:var(--gold-dim);}
+  .container{
+    max-width:720px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  section.block{
+    padding:44px 0;
+    border-bottom:1px solid var(--line-light);
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+  }
+  section.block.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  .block-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-dim);
+    margin-bottom:10px;
+  }
+  h2{
+    font-family:'Lora',serif;
+    font-weight:600;
+    font-size:24px;
+    margin:0 0 20px;
+    color:var(--ink);
+  }
+  ul, ol{
+    padding-left:22px;
+    margin:14px 0;
+  }
+  li{margin-bottom:10px;}
+  li ul, li ol{margin:8px 0 8px;}
+  .note{
+    background:#eee8da;
+    border-left:3px solid var(--gold);
+    padding:14px 18px;
+    font-size:14.5px;
+    margin:16px 0;
+    color:#3a3630;
+  }
+  .flag{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.05em;
+    padding:2px 8px;
+    border-radius:2px;
+    margin-left:6px;
+    vertical-align:middle;
+    white-space:nowrap;
+  }
+  .flag.validated{
+    background:rgba(76,122,94,0.12);
+    color:var(--validated);
+    border:1px solid rgba(76,122,94,0.35);
+  }
+  .flag.unverified{
+    background:rgba(165,103,58,0.12);
+    color:var(--unverified);
+    border:1px solid rgba(165,103,58,0.35);
+  }
+  .flag.creative{
+    background:rgba(90,90,90,0.1);
+    color:#5a5a5a;
+    border:1px solid rgba(90,90,90,0.3);
+  }
+  .legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:12.5px;
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--muted);
+    padding:20px 0 0;
+  }
+  .legend .flag{margin-left:0;}
+  .divider-num{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--gold);
+    font-weight:500;
+  }
+  footer{
+    text-align:center;
+    padding:40px 24px 56px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--muted);
+  }
+  footer p{margin:4px 0;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="eyebrow">Rekap Kajian · Selasa, 07 Juli 2026</div>
+  <div class="arabic">لَا نُكَفِّرُ أَحَدًا مِنْ أَهْلِ الْقِبْلَةِ</div>
+  <h1>Pandangan Ahli Sunnah terhadap Darah Kaum Muslimin</h1>
+  <div class="meta-row">
+    <span>Ustadz Sofyan Chalid bin Idham Ruray, Lc.</span>
+    <span>Masjid Ar-Riyadh, Depok</span>
+    <span>Ba'da Maghrib</span>
+    <span>Kitab Aqidah Imam Al-Bukhari</span>
+  </div>
+</div>
+
+<div class="container">
+
+<section class="block">
+  <div class="block-label">Pengantar</div>
+  <h2>Prinsip Umum</h2>
+  <p>Ahli Sunnah mengharamkan sesama muslim saling berperang atau saling membunuh. Prinsip ini ditafsirkan ulama ke dalam tiga tingkatan pemahaman.</p>
+  <span class="flag validated">Sesuai kaidah Ahli Sunnah</span>
+</section>
+
+<section class="block">
+  <div class="block-label"><span class="divider-num">01</span> — Tafsir Pertama</div>
+  <h2>Larangan Memberontak pada Pemerintah Muslim</h2>
+  <ul>
+    <li>Larangan mencakup dua hal: perbuatan memberontak dengan kekuatan senjata, <strong>dan</strong> sekadar meyakini bolehnya pemberontakan — keyakinan saja sudah terlarang, meskipun tidak pernah diwujudkan dalam tindakan.</li>
+    <li>Contoh historis yang disampaikan: seorang ahli hadits, ahli fiqih, dan ahli ibadah — sampai pingsan ketika mendengar ancaman azab Allah — tetap dinyatakan oleh ulama sezamannya sebagai sosok yang tidak boleh dijadikan guru. Sebabnya: ia meyakini bolehnya memberontak pada pemerintah muslim yang zalim, walau tidak pernah mengangkat senjata.</li>
+    <li>Kasus ini dikategorikan sebagai mindset Khawarij — menyelisihi ushul pokok Ahli Sunnah pada perkara yang tidak ditoleransi.</li>
+  </ul>
+  <div class="note">
+    Kontradiksi antara keilmuan/ibadah tinggi dan penyimpangan pada satu ushul dapat terjadi dan ditoleransi selama bukan pada perkara pemberontakan.
+    <span class="flag creative">Kerangka penyusun</span>
+  </div>
+</section>
+
+<section class="block">
+  <div class="block-label"><span class="divider-num">02</span> — Tafsir Kedua</div>
+  <h2>Tidak Menghalalkan Darah Kaum Muslimin</h2>
+  <p>
+    Rujukan ayat: barangsiapa membunuh jiwa mukmin dengan sengaja, balasannya neraka jahanam, kekal di dalamnya, dimurkai dan dilaknat Allah, serta disediakan azab yang besar.
+    <span class="flag validated">Terkoreksi &amp; tervalidasi</span>
+  </p>
+  <div class="note">
+    <strong>Koreksi:</strong> dalam sesi disebutkan sebagai Al-An'am ayat 151. Setelah dicek terhadap teks Al-Qur'an, redaksi "barangsiapa membunuh mukmin dengan sengaja, balasannya Jahanam, kekal di dalamnya, dimurkai dan dilaknat Allah, serta disediakan azab besar" secara harfiah adalah <strong>QS. An-Nisa ayat 93</strong>, bukan Al-An'am 151. Al-An'am 151 berisi larangan umum "membunuh jiwa yang diharamkan Allah kecuali dengan alasan yang benar" — tema yang berkaitan namun ayat berbeda. Kemungkinan besar catatan sesi menggabungkan dua rujukan; kutipan ancaman di atas dikoreksi mengacu ke An-Nisa 93.
+    <span class="flag validated" style="margin-left:0;margin-top:8px;display:inline-block;">Sumber: teks Al-Qur'an QS. An-Nisa 93 (Tafsir Kemenag RI, Tafsir Al-Muyassar)</span>
+  </div>
+  <ul>
+    <li>Jalan termudah untuk terlibat dalam pembunuhan: ikut demonstrasi atau sekadar memprovokasi.</li>
+    <li>Tiga alasan sah membunuh seorang muslim (hadits Nabi ﷺ):
+      <span class="flag validated">Tervalidasi — HR. Bukhari &amp; Muslim</span>
+      <ol>
+        <li>Orang yang pernah menikah lalu berzina (ats-tsayyib az-zani) — dihukum rajam oleh <strong>pemerintah</strong>, bukan masyarakat.</li>
+        <li>Qisas — jiwa dibalas dengan jiwa (an-nafsu bin nafs) — dieksekusi oleh pemerintah.</li>
+        <li>Orang yang meninggalkan agamanya dan memisahkan diri dari jamaah (murtad) — dihukum mati oleh pemerintah.</li>
+      </ol>
+      <div class="note" style="margin-top:8px;">
+        Redaksi hadits: <em>"La yahillu damu imri'in Muslimin illa bi-ihda thalatsin: ats-tsayyibu az-zani, wan-nafsu bin nafsi, wat-tariku li dinihil mufariqu lil jama'ah."</em> Diriwayatkan dalam Shahih Bukhari (no. 6878) dan Shahih Muslim (no. 1676).
+      </div>
+    </li>
+    <li>Tambahan hadits: pelaku LGBT (liwath) — hukumannya dibunuh, berdasarkan hadits Ibnu Abbas riwayat Ahmad, Abu Dawud, Ibnu Majah, At-Tirmidzi: <em>"Man wajadtumuhu ya'malu 'amala qaumi Luth faqtulul-fa'ila wal maf'ula bih"</em> (siapa yang mendapati pelaku perbuatan kaum Luth, bunuhlah pelaku dan objeknya).
+      <span class="flag validated">Tervalidasi sebagian</span>
+      <div class="note" style="margin-top:8px;">
+        Ijma sahabat (dinukil Ibnul Qayyim, juga ijma menurut ulama Hanbali) menyepakati hukuman bunuh, dengan perbedaan pendapat pada metode eksekusi — poin ini sesuai penyampaian ustadz. Namun perlu dicatat: sebagian mazhab (a.l. sebagian riwayat Hanbali, dan pandangan yang dinilai <em>arjah</em>/lebih kuat oleh sejumlah ulama) mengategorikan liwath setara zina — rajam bagi yang muhshan (pernah menikah), cambuk &amp; pengasingan bagi yang belum menikah — bukan hukuman bunuh mutlak bagi keduanya. Jadi ada nuansa khilafiyah pada kategorisasi hukuman itu sendiri, bukan semata metode eksekusi.
+      </div>
+    </li>
+  </ul>
+  <div class="note">
+    Catatan penting dari sesi: yang berhak mengeksekusi hukuman adalah <strong>pemerintah</strong>, bukan individu atau masyarakat.
+  </div>
+</section>
+
+<section class="block">
+  <div class="block-label"><span class="divider-num">03</span> — Tafsir Ketiga</div>
+  <h2>Masyarakat Tidak Boleh Main Hakim Sendiri</h2>
+  <ul>
+    <li>Meski seseorang berhak dihukum mati (sesuai poin di atas), eksekusi harus melalui prosedur persidangan resmi oleh pemerintah.</li>
+    <li>Dua alasan masyarakat dilarang mengeksekusi sendiri:
+      <ol>
+        <li>Tidak ada dalil yang membolehkan masyarakat melakukan eksekusi hukuman.</li>
+        <li>Berpotensi menimbulkan mudharat yang lebih besar jika dilakukan oleh masyarakat.</li>
+      </ol>
+    </li>
+  </ul>
+</section>
+
+<section class="block">
+  <div class="block-label">Pengecualian</div>
+  <h2>Kondisi yang Membolehkan Pemberontakan pada Pemerintah</h2>
+  <p>
+    Nabi Muhammad ﷺ mengambil janji dari para sahabat untuk tidak merebut kekuasaan secara paksa, kecuali menyaksikan kekufuran yang nyata.
+    <span class="flag validated">Tervalidasi — HR. Bukhari &amp; Muslim</span>
+  </p>
+  <div class="note">
+    Berdasarkan hadits Ubadah bin Shamit ra.: <em>"...wa an la nunazi'al amra ahlahu illa an tarau kufran bawahan 'indakum minallahi fihi burhan"</em> — "...dan kami berjanji untuk tidak merebut kekuasaan dari pemiliknya, kecuali jika kalian melihat kekufuran yang nyata, yang kalian memiliki bukti dari Allah atasnya." (HR. Bukhari no. 7056, Muslim no. 1709).
+  </div>
+  <p>Lima syarat bolehnya memberontak, menurut tafsir ulama:
+    <span class="flag validated">Kerangka syarat sesuai kaidah ulama Ahlus Sunnah</span>
+  </p>
+  <ol>
+    <li>Melihat sendiri dengan ilmu yang yakin — bukan dari media atau perkataan orang lain — kekufuran yang nyata.</li>
+    <li>Perbuatan tersebut memang tergolong kekufuran. Ijma ulama: pemimpin yang kafir wajib dicopot. Namun jika pemimpin masih menegakkan shalat — meski zalim — tidak boleh dicopot, karena meninggalkan shalat tergolong kekufuran sedangkan ia masih shalat.</li>
+    <li>Kekufuran tersebut jelas dan tidak bisa ditakwil. Takwil yang baik dapat berujung mubah; takwil yang buruk dapat berujung kafir. Contoh yang bukan takwil: pernyataan terang-terangan "saya sudah bukan muslim."</li>
+    <li>Pantas divonis kafir.
+      <span class="flag unverified">Syarat rinci vonis tidak tercatat lengkap dalam sesi</span>
+    </li>
+    <li>Ada kemampuan nyata untuk mencopotnya. Jika tidak mampu, dikhawatirkan justru menimbulkan mudharat yang lebih besar.</li>
+  </ol>
+</section>
+
+<section class="block" style="border-bottom:none;">
+  <div class="block-label">Status Validasi</div>
+  <h2>Ringkasan</h2>
+  <ul>
+    <li><span class="flag validated">Tervalidasi (dicek terhadap sumber primer)</span> — QS. An-Nisa 93 (dikoreksi dari Al-An'am 151); hadits "la yahillu damu imri'in muslim illa bi ihda thalats" (Bukhari 6878, Muslim 1676); hadits hukuman liwath (Ahmad, Abu Dawud, Ibnu Majah, Tirmidzi); hadits "kufran bawahan" dasar syarat pemberontakan (Bukhari 7056, Muslim 1709); larangan eksekusi oleh masyarakat; konsep Khawarij terkait pemberontakan.</li>
+    <li><span class="flag validated">Tervalidasi sebagian</span> — hukuman liwath: poin "ijma sahabat + beda pendapat pada metode eksekusi" sesuai satu pendapat ulama (Hanbali, Ibnul Qayyim), namun mazhab lain mengategorikan liwath setara zina dengan hukuman berbeda tergantung status muhshan — nuansa ini ditambahkan sebagai pelengkap.</li>
+    <li><span class="flag unverified">Masih belum terverifikasi</span> — rincian syarat rinci vonis kafir pada poin 4 bagian pengecualian (tidak tercatat lengkap dalam sesi, tidak dicari lebih lanjut karena butuh konteks kitab spesifik yang dirujuk ustadz).</li>
+    <li><span class="flag creative">Kerangka penyusun</span> — satu catatan penjelas mengenai toleransi kontradiksi di luar isu pemberontakan (bagian 01).</li>
+  </ul>
+  <div class="legend">
+    <span class="flag validated">Validated</span>
+    <span class="flag unverified">Unverified</span>
+    <span class="flag creative">Creative/kerangka Claude</span>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>Rekap disusun dari catatan langsung selama sesi kajian — bukan transkrip resmi.</p>
+  <p>Ar-Riyadh Depok · 07 Juli 2026</p>
+</footer>
+
+<script>
+  const blocks = document.querySelectorAll('.block');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  blocks.forEach(b=>obs.observe(b));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kajian Recap — Menata Hati, Menata Akhir</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ─── TOKENS ─── */
+:root {
+  --ink:        #1C1C1C;
+  --ink-light:  #4A4A4A;
+  --ink-muted:  #7A7A7A;
+  --parchment:  #FAF7F0;
+  --parchment2: #F3EEE4;
+  --gold:       #B48C3C;
+  --gold-light: rgba(180,140,60,0.15);
+  --gold-line:  rgba(180,140,60,0.35);
+  --sage:       #2D4A3E;
+  --sage-light: rgba(45,74,62,0.07);
+  --verify:     #7A4A2A;
+  --verify-bg:  rgba(122,74,42,0.07);
+  --verify-line:rgba(122,74,42,0.3);
+  --sans:       'Inter', sans-serif;
+  --serif:      'Lora', serif;
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.75;
+  min-height: 100vh;
+}
+
+/* ─── LAYOUT ─── */
+.page-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0 48px;
+}
+
+/* ─── HERO ─── */
+.hero {
+  grid-column: 1 / -1;
+  background: var(--sage);
+  margin: 0 -24px;
+  padding: 64px 48px 52px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: 'م';
+  position: absolute;
+  right: 40px;
+  top: -20px;
+  font-size: 280px;
+  color: rgba(255,255,255,0.04);
+  font-family: serif;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  color: #FAF7F0;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-title em {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.meta-item {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: rgba(250,247,240,0.65);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-item::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ─── SIDEBAR TOC ─── */
+.toc {
+  grid-column: 1;
+  grid-row: 2;
+  padding: 40px 0;
+  position: sticky;
+  top: 24px;
+  height: fit-content;
+  align-self: start;
+}
+
+.toc-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gold-line);
+}
+
+.toc-list {
+  list-style: none;
+}
+
+.toc-list li {
+  margin-bottom: 2px;
+}
+
+.toc-list a {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  border-left: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  line-height: 1.4;
+}
+
+.toc-list a:hover {
+  color: var(--gold);
+  border-left-color: var(--gold);
+  background: var(--gold-light);
+}
+
+.toc-list .toc-sub a {
+  font-size: 10.5px;
+  padding-left: 20px;
+  color: #A0A0A0;
+}
+
+.toc-pending {
+  margin-top: 24px;
+  background: var(--verify-bg);
+  border: 1px solid var(--verify-line);
+  padding: 12px 14px;
+}
+
+.toc-pending-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--verify);
+  margin-bottom: 8px;
+}
+
+.toc-pending p {
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--verify);
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+/* ─── MAIN CONTENT ─── */
+.main {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 48px 0 80px;
+  min-width: 0;
+}
+
+/* ─── SESSION BLOCK ─── */
+.session {
+  margin-bottom: 64px;
+}
+
+.session-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--gold-line);
+  position: relative;
+}
+
+.session-num {
+  font-family: var(--serif);
+  font-size: 56px;
+  font-weight: 500;
+  color: var(--gold-light);
+  line-height: 1;
+  flex-shrink: 0;
+  color: rgba(180,140,60,0.2);
+  margin-top: -4px;
+}
+
+.session-meta {}
+
+.session-eyebrow {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.session-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.session-ustadz {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+/* ─── SECTION ─── */
+.section {
+  margin-bottom: 40px;
+}
+
+.section-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--sage-light);
+  max-width: 60px;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+/* ─── RUKUN CARDS ─── */
+.rukun-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.rukun-card {
+  background: var(--parchment2);
+  border: 1px solid rgba(180,140,60,0.2);
+  padding: 18px 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rukun-card::before {
+  content: attr(data-arabic);
+  position: absolute;
+  right: 6px;
+  bottom: -8px;
+  font-size: 52px;
+  color: rgba(180,140,60,0.1);
+  font-family: serif;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.rukun-name {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.rukun-arabic {
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 4px;
+  font-family: serif;
+}
+
+.rukun-def {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  color: var(--ink-light);
+  line-height: 1.5;
+}
+
+/* ─── ANALOGY BOX ─── */
+.analogy {
+  background: var(--sage);
+  padding: 20px 24px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.analogy p {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(250,247,240,0.85);
+  line-height: 1.7;
+}
+
+.analogy strong {
+  color: var(--gold);
+  font-style: normal;
+}
+
+/* ─── VERIFICATION NOTE ─── */
+.verify-note {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--verify-bg);
+  border-left: 2px solid var(--verify-line);
+  padding: 6px 10px;
+  margin: 6px 0;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  color: var(--verify);
+  line-height: 1.5;
+}
+
+.verify-note::before {
+  content: '⚑';
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.verified-note {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(45,74,62,0.06);
+  border-left: 2px solid rgba(45,74,62,0.4);
+  padding: 6px 10px;
+  margin: 6px 0;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  color: var(--sage);
+  line-height: 1.5;
+}
+
+.verified-note::before {
+  content: '✓';
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-weight: 700;
+}
+
+/* ─── BULLET LIST ─── */
+.recap-list {
+  list-style: none;
+  padding: 0;
+}
+
+.recap-list li {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  color: var(--ink-light);
+  padding: 9px 0 9px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+  line-height: 1.6;
+}
+
+.recap-list li:last-child { border-bottom: none; }
+
+.recap-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  transform: rotate(45deg);
+}
+
+.recap-list li strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ─── TWO COLUMN LIST ─── */
+.two-col-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;
+}
+
+/* ─── KIAT GRID ─── */
+.kiat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.kiat-card {
+  background: var(--parchment2);
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 14px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.kiat-num {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1px;
+  flex-shrink: 0;
+  width: 20px;
+  padding-top: 2px;
+}
+
+.kiat-body {}
+
+.kiat-title {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+
+.kiat-desc {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+/* ─── HIGHLIGHT BLOCK ─── */
+.highlight {
+  background: var(--gold-light);
+  border-left: 3px solid var(--gold);
+  padding: 14px 18px;
+  margin: 16px 0;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.highlight strong { color: var(--sage); }
+
+/* ─── KHAUF DIVISION ─── */
+.khauf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.khauf-card {
+  padding: 14px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: var(--parchment2);
+}
+
+.khauf-type {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.khauf-type.syariat { color: var(--sage); }
+.khauf-type.terlarang { color: #8B3A3A; }
+.khauf-type.boleh { color: #5A6E3A; }
+
+.khauf-name {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.khauf-desc {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.sub-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.sub-list li {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  color: var(--ink-light);
+  padding: 5px 0 5px 16px;
+  position: relative;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.sub-list li:last-child { border-bottom: none; }
+
+.sub-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 10px;
+}
+
+/* ─── CLOSING QUOTE ─── */
+.closing-quote {
+  border-top: 1px solid var(--gold-line);
+  border-bottom: 1px solid var(--gold-line);
+  padding: 28px 0;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.closing-quote blockquote {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto 10px;
+}
+
+.closing-quote cite {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-style: normal;
+}
+
+/* ─── PENDING SECTION ─── */
+.pending-section {
+  background: var(--verify-bg);
+  border: 1px solid var(--verify-line);
+  padding: 28px 32px;
+  margin-top: 48px;
+}
+
+.pending-title {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--verify);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--verify-line);
+}
+
+.pending-list {
+  list-style: none;
+  counter-reset: pending;
+}
+
+.pending-list li {
+  counter-increment: pending;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--verify);
+  padding: 8px 0 8px 28px;
+  position: relative;
+  border-bottom: 1px solid var(--verify-line);
+  line-height: 1.5;
+}
+
+.pending-list li:last-child { border-bottom: none; }
+
+.pending-list li::before {
+  content: counter(pending);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: rgba(122,74,42,0.4);
+  font-size: 11px;
+}
+
+/* ─── FOOTER ─── */
+.page-footer {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--gold-line);
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+}
+
+.footer-left {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+.footer-right {
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .page-wrap {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+
+  .hero {
+    margin: 0 -16px;
+    padding: 40px 24px 36px;
+  }
+
+  .hero::before { display: none; }
+
+  .toc {
+    grid-column: 1;
+    grid-row: auto;
+    position: static;
+    border-bottom: 1px solid var(--gold-line);
+    padding: 24px 0;
+  }
+
+  .main {
+    grid-column: 1;
+    grid-row: auto;
+    padding: 32px 0 60px;
+  }
+
+  .rukun-grid { grid-template-columns: 1fr; }
+  .kiat-grid { grid-template-columns: 1fr; }
+  .khauf-grid { grid-template-columns: 1fr; }
+  .two-col-list { grid-template-columns: 1fr; }
+
+  .session-num { font-size: 36px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- ─── HERO ─── -->
+  <header class="hero">
+    <div class="hero-eyebrow">Kajian Recap · Babussalam As-Sunnah</div>
+    <h1 class="hero-title">Menata Hati,<br><em>Menata Akhir</em></h1>
+    <div class="hero-meta">
+      <span class="meta-item">Masjid Babussalam, Depok</span>
+      <span class="meta-item">Sabtu, 13 Juni 2026</span>
+      <span class="meta-item">07.00 – 15.00 WIB</span>
+      <span class="meta-item">Digital Media Babussalam · Tahseel</span>
+    </div>
+  </header>
+
+  <!-- ─── TOC ─── -->
+  <aside class="toc">
+    <div class="toc-label">Daftar Isi</div>
+    <ul class="toc-list">
+      <li><a href="#sesi1">Sesi 1 — Dua Sayap Keimanan</a></li>
+      <li class="toc-sub"><a href="#rukun">Tiga Rukun Ibadah</a></li>
+      <li class="toc-sub"><a href="#keseimbangan">Keseimbangan Raja' & Khauf</a></li>
+      <li class="toc-sub"><a href="#raja-tauhid">Raja' & Tauhid</a></li>
+      <li class="toc-sub"><a href="#raja-berat">Ketika Raja' Lebih Berat</a></li>
+      <li class="toc-sub"><a href="#keyakinan">Sumber Keyakinan</a></li>
+      <li class="toc-sub"><a href="#tumbuhkan">Cara Menumbuhkan</a></li>
+      <li class="toc-sub"><a href="#pembagian-khauf">Pembagian Khauf</a></li>
+      <li><a href="#sesi2">Sesi 2 — Rahasia Akhir yang Baik</a></li>
+      <li class="toc-sub"><a href="#pembuka">Pembuka</a></li>
+      <li class="toc-sub"><a href="#kiat">15 Kiat Khusnul Khotimah</a></li>
+      <li><a href="#pending">Pending Verifikasi</a></li>
+    </ul>
+
+    <div class="toc-pending">
+      <div class="toc-pending-label">Legenda</div>
+      <p><strong style="color:var(--sage);">✓</strong> tervalidasi sumber publik &nbsp;·&nbsp; <strong style="color:var(--verify);">⚑</strong> perlu verifikasi</p>
+      <p style="margin-top:8px;">2 poin masih menunggu verifikasi — lihat bagian bawah halaman.</p>
+    </div>
+  </aside>
+
+  <!-- ─── MAIN ─── -->
+  <main class="main">
+
+    <!-- ══════════════════════════════
+         SESI 1
+    ══════════════════════════════ -->
+    <section class="session" id="sesi1">
+      <div class="session-header">
+        <div class="session-num">١</div>
+        <div class="session-meta">
+          <div class="session-eyebrow">Sesi Pertama</div>
+          <h2 class="session-title">Dua Sayap Keimanan</h2>
+          <div class="session-ustadz">Ustadz Abu Fahd Ega, Lc. &amp; Ustadz Ahmad Bazher</div>
+        </div>
+      </div>
+
+      <!-- Rukun -->
+      <div class="section" id="rukun">
+        <div class="section-label">Tiga Rukun Ibadah</div>
+        <div class="rukun-grid">
+          <div class="rukun-card" data-arabic="١">
+            <div class="rukun-name">Rukun Pertama</div>
+            <div class="rukun-arabic">الحب</div>
+            <div class="rukun-def"><strong>Rasa Cinta kepada Allah</strong> — landasan utama ibadah yang benar</div>
+          </div>
+          <div class="rukun-card" data-arabic="٢">
+            <div class="rukun-name">Rukun Kedua</div>
+            <div class="rukun-arabic">الرجاء</div>
+            <div class="rukun-def"><strong>Raja' — Rasa Harap</strong> — ikatan hati untuk mendapatkan sesuatu di masa depan</div>
+          </div>
+          <div class="rukun-card" data-arabic="٣">
+            <div class="rukun-name">Rukun Ketiga</div>
+            <div class="rukun-arabic">الخوف</div>
+            <div class="rukun-def"><strong>Khauf — Rasa Takut</strong> — rasa takut akan dosa kepada Allah</div>
+          </div>
+        </div>
+
+        <div class="analogy">
+          <p>Raja' dan Khauf diibaratkan <strong>dua sayap burung</strong> — keduanya harus seimbang agar ibadah dapat terbang dengan sempurna. Kekurangan pada salah satu sayap menyebabkan ibadah tidak berfungsi optimal.</p>
+        </div>
+        <div class="verified-note">Analogi ini ditemukan luas di referensi Islam (muslim.or.id, Yayasan Al-Sofwa, dan lainnya). Sumber yang paling sering dikutip adalah perkataan <strong>Abu Ali ar-Raudzabadi</strong> — bukan Ali bin Abi Thalib. Tidak ditemukan sumber yang mengaitkan ungkapan ini dengan Ali bin Abi Thalib; kemungkinan tertukar karena kemiripan bunyi nama "Ali".</div>
+      </div>
+
+      <!-- Keseimbangan -->
+      <div class="section" id="keseimbangan">
+        <div class="section-label">Keseimbangan Raja' & Khauf</div>
+        <ul class="recap-list">
+          <li>Umumnya orang lebih dominan <strong>Raja'</strong> — perlu diimbangi dengan memperbanyak dalil tentang azab</li>
+          <li>Cara mengidentifikasi ketidakseimbangan: lihat dari <strong>realita hidup</strong>
+            <ul style="margin-top:6px;padding-left:16px;list-style:disc;font-size:12.5px;color:#6A6A6A;">
+              <li>Hidup waswas/cemas → dominan Khauf → perbanyak dalil harapan dan rahmat</li>
+              <li>Hidup terlalu lalai → dominan Raja' → perbanyak dalil azab</li>
+            </ul>
+          </li>
+          <li>Ketidakseimbangan adalah kondisi yang perlu <strong>diobati</strong>, bukan dibiarkan</li>
+          <li>Apa yang muncul saat <strong>sakaratul maut</strong> adalah cerminan dari keseharian — kondisi hati yang dilatih sehari-hari menentukan kondisi hati di akhir hayat</li>
+        </ul>
+      </div>
+
+      <!-- Raja & Tauhid -->
+      <div class="section" id="raja-tauhid">
+        <div class="section-label">Raja' yang Selaras dengan Tauhid</div>
+        <ul class="recap-list">
+          <li>Disertai <strong>perendahan diri dan ketundukan diri yang sempurna</strong></li>
+          <li>Harapan tersebut hanya bisa <strong>diwujudkan oleh Allah</strong> — bukan oleh makhluk manapun</li>
+          <li>Hanya boleh ditujukan kepada Allah — jika ditujukan kepada selain Allah, maka <strong>keluar dari tauhid</strong></li>
+        </ul>
+      </div>
+
+      <!-- Raja lebih berat -->
+      <div class="section" id="raja-berat">
+        <div class="section-label">Ketika Raja' Lebih Berat dari Khauf</div>
+        <ul class="recap-list">
+          <li>Orang maksiat yang hanya tahu Allah Maha Pengampun → cenderung <strong>terus bermaksiat</strong> tanpa rasa takut akan konsekuensi</li>
+          <li>Orang yang diberi banyak nikmat dunia tanpa rasa takut → berpotensi <strong>lalai dari perintah Allah</strong></li>
+        </ul>
+        <div class="highlight">
+          <strong>Istidraj</strong> — nikmat yang diberikan Allah sebagai bentuk penjebakan. Semakin diberi, semakin lalai, semakin jauh dari Allah. Balasan azabnya disegerakan secara berangsur-angsur. (QS. Al-An'am: 44)
+        </div>
+      </div>
+
+      <!-- Sumber Keyakinan -->
+      <div class="section" id="keyakinan">
+        <div class="section-label">Sumber Keyakinan</div>
+        <div class="rukun-grid">
+          <div class="rukun-card" data-arabic="١">
+            <div class="rukun-name">Pertama</div>
+            <div class="rukun-def"><strong>Ilmu</strong> — pengetahuan dari wahyu dan pembelajaran</div>
+          </div>
+          <div class="rukun-card" data-arabic="٢">
+            <div class="rukun-name">Kedua</div>
+            <div class="rukun-def"><strong>Lihat</strong> — pengamatan dan pengalaman langsung</div>
+          </div>
+          <div class="rukun-card" data-arabic="٣">
+            <div class="rukun-name">Ketiga</div>
+            <div class="rukun-def"><strong>Rasa</strong> — perasaan dan intuisi batin</div>
+          </div>
+        </div>
+        <ul class="recap-list" style="margin-top:12px;">
+          <li>Urusan <strong>dunia</strong>: bisa dinilai dengan ketiga hal tersebut</li>
+          <li>Urusan <strong>akhirat</strong>: hanya bisa dinilai melalui <strong>ilmu</strong> — karena belum bisa dilihat atau dirasakan secara langsung</li>
+          <li>Implikasi: iman dan keyakinan tentang akhirat perlu terus <strong>diperbarui melalui ilmu</strong></li>
+        </ul>
+
+        <div style="margin-top:20px;">
+          <div class="section-label">Konteks: Klasifikasi Ayat Al-Qur'an</div>
+          <ul class="recap-list">
+            <li><strong>Ayat Makkiyah</strong> — turun sebelum hijrah; mayoritas membahas pondasi akidah dan tauhid</li>
+            <li><strong>Ayat Madaniyah</strong> — turun setelah hijrah; mayoritas membahas hukum dan syariat</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:16px;">
+          <div class="section-label">Penerimaan Amal</div>
+          <ul class="recap-list">
+            <li>Allah hanya menerima amal dari <strong>orang beriman</strong> — ada amal yang ditolak</li>
+            <li>Raja' dan Khauf bukan sekadar perasaan — keduanya memiliki <strong>bentuk ibadahnya sendiri</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cara Menumbuhkan -->
+      <div class="section" id="tumbuhkan">
+        <div class="section-label">Cara Menumbuhkan Raja' (Rasa Harap)</div>
+        <ul class="recap-list">
+          <li>Pelajari luasnya <strong>Rahmat Allah</strong></li>
+          <li>Kenali <strong>Asmaul Husna</strong> yang berkaitan dengan Rahmat Allah</li>
+          <li>Ingat dan renungkan <strong>janji-janji Allah</strong> kepada orang beriman</li>
+          <li>Perbanyak <strong>taubat</strong></li>
+          <li>Ingat <strong>kisah para pendosa yang diampuni</strong> — contoh: pembunuh 100 orang yang diampuni karena hijrah meski meninggal di tengah perjalanan <em>(Hadits Shahih, HR. Bukhari & Muslim)</em></li>
+        </ul>
+
+        <div style="margin-top:24px;">
+          <div class="section-label">Cara Menumbuhkan Khauf (Rasa Takut)</div>
+          <ul class="recap-list">
+            <li>Kenali <strong>sifat-sifat Allah</strong> — terutama yang berkaitan dengan keagungan dan keadilan-Nya</li>
+            <li>Renungkan <strong>ayat Al-Qur'an dan hadits</strong> yang berisi ancaman dan peringatan dari Allah</li>
+            <li>Lihat <strong>bencana alam</strong> sebagai tanda peringatan dari Allah, bukan sekadar fenomena alam</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pembagian Khauf -->
+      <div class="section" id="pembagian-khauf">
+        <div class="section-label">Pembagian Khauf</div>
+        <div class="khauf-grid">
+          <div class="khauf-card">
+            <div class="khauf-type syariat">Disyariatkan</div>
+            <div class="khauf-name">Khashyah<br><span style="font-size:18px;font-family:serif;">خَشْيَة</span></div>
+            <div class="khauf-desc">Rasa takut yang berlandaskan ilmu. Allah memuji ulama karena takut kepada-Nya atas dasar ilmu.</div>
+            <ul class="sub-list" style="margin-top:10px;">
+              <li><em>(Poin 1 belum tercatat)</em></li>
+              <li>Takut dari azab akhirat</li>
+              <li>Takut amal sholeh tidak diterima</li>
+              <li>Takut dari dosa-dosa yang lalu</li>
+              <li>Takut dari maksiat di masa depan</li>
+            </ul>
+            <div class="verified-note" style="margin-top:8px;">Istilah "masruk" dalam catatan kemungkinan besar adalah <strong>Masyru'</strong> (مشروع) — "yang disyariatkan". Kesimpulan berdasarkan kemiripan bunyi dan kesesuaian makna, bukan kutipan langsung dari ustadz.</div>
+            <div class="verify-note" style="margin-top:6px;">Poin 1 dari rincian belum tercatat — tidak dapat direkonstruksi.</div>
+          </div>
+          <div class="khauf-card">
+            <div class="khauf-type terlarang">Terlarang</div>
+            <div class="khauf-name">Khauf Muharram</div>
+            <div class="khauf-desc">Takut yang menyebabkan seseorang meninggalkan kewajiban atau melakukan perkara haram.</div>
+            <div class="verified-note" style="margin-top:8px;">Referensi: muslim.or.id, "Macam-Macam Ibadah Syirik (5)". Kerangka umum sesuai; belum tentu kata-per-kata sama dengan penjelasan di kajian ini.</div>
+          </div>
+          <div class="khauf-card">
+            <div class="khauf-type boleh">Diperbolehkan</div>
+            <div class="khauf-name">Khauf Thabi'i</div>
+            <div class="khauf-desc">Rasa takut yang manusiawi — misalnya takut api, hewan buas, atau jatuh dari tempat tinggi. Hukum asalnya mubah.</div>
+            <div class="verified-note" style="margin-top:8px;">Referensi: muslim.or.id, "Macam-Macam Ibadah Syirik (5)".</div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /sesi1 -->
+
+    <!-- ══════════════════════════════
+         SESI 2
+    ══════════════════════════════ -->
+    <section class="session" id="sesi2">
+      <div class="session-header">
+        <div class="session-num">٢</div>
+        <div class="session-meta">
+          <div class="session-eyebrow">Sesi Kedua</div>
+          <h2 class="session-title">Rahasia Akhir yang Baik</h2>
+          <div class="session-ustadz">Ustadz Najmi Umar Bakkar · <em>Buku: "Rahasia Akhir yang Baik" — tersedia cetak & PDF</em></div>
+        </div>
+      </div>
+
+      <!-- Pembuka -->
+      <div class="section" id="pembuka">
+        <div class="section-label">Pembuka</div>
+        <ul class="recap-list">
+          <li>Amal seseorang dinilai dari <strong>akhirnya</strong> — bukan hanya dari perjalanannya. Setiap orang berpotensi berubah.</li>
+          <li><strong>Sebaik-baik manusia:</strong> panjang umur dan baik amalnya</li>
+          <li><strong>Seburuk-buruk manusia:</strong> panjang umur namun buruk amalnya</li>
+          <li><strong>Mukmin tercerdas:</strong> yang paling banyak mengingat kematian dan paling banyak mempersiapkan diri untuknya
+            <div class="verified-note" style="display:block;margin-top:6px;">Ini adalah <strong>hadits</strong> (bukan atsar), dari Ibnu Umar radhiyallahu 'anhuma. Diriwayatkan oleh At-Tirmidzi dan Ibnu Majah — dinilai <strong>hasan</strong> oleh Syaikh Al-Albani.</div>
+          </li>
+          <li><strong>Ibadah yang terbanyak</strong> adalah taubat</li>
+        </ul>
+      </div>
+
+      <!-- 15 Kiat -->
+      <div class="section" id="kiat">
+        <div class="section-label">15 Kiat Khusnul Khotimah</div>
+        <p style="font-family:var(--sans);font-size:12px;color:var(--ink-muted);margin-bottom:16px;">Sebagian berstatus wajib, sebagian sunnah.</p>
+
+        <div class="kiat-grid">
+          <div class="kiat-card">
+            <div class="kiat-num">01</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Istiqomah di atas Akidah yang Benar</div>
+              <div class="kiat-desc">Akidah yang benar melahirkan ibadah yang benar.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">02</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Ikuti Sunnah Nabi</div>
+              <div class="kiat-desc">Wafat di atas Sunnah → mati membawa semua kebaikan. Mati di atas Islam belum tentu mati di atas Sunnah.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">03</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Senantiasa Bertobat</div>
+              <div class="kiat-desc">Tidak menjadikan dosa sebagai kebiasaan.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">04</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Tidak Menzalimi Orang Lain</div>
+              <div class="kiat-desc">Doa orang terzalimi terkabul meskipun ia ahli maksiat. 3 bentuk zalim: merusak kehormatan, memukul/membunuh, mengambil hak/harta. 3 dosa disegerakan di dunia: zalim, durhaka, putus silaturahmi.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">05</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Berbaik Sangka kepada Allah</div>
+              <div class="kiat-desc">Wujud saat sakaratul maut: berharap Rahmat sekaligus takut dosa tidak diampuni. Mukmin harus punya: rasa harap, rasa takut, dan rasa cinta.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">06</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Amalkan Hal Wajib dan Sunnah</div>
+              <div class="kiat-desc">Rasul mengkhususkan: sedekah, melangkah ke masjid untuk jamaah, menyempurnakan wudhu, menunggu shalat setelah shalat (Maghrib ke Isya). Yang menjaga perbuatan baik → hidup baik dan mati baik.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">07</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Perbanyak Amal Tersembunyi</div>
+              <div class="kiat-desc">Tersembunyi dari manusia, bukan dari Allah. Amal dinilai dari akhir kehidupan.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">08</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Banyak Ingat Kematian</div>
+              <div class="kiat-desc">Tidak berlebihan mencintai dunia. Ingat mati mendorong memperbanyak persiapan.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">09</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Amar Ma'ruf Nahi Munkar</div>
+              <div class="kiat-desc">Mendiamkan kerusakan adalah kelalaian. Urutan: tangan (jika mampu) → lisan → doa/iman dalam hati (selemah-lemahnya iman).</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">10</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Tidak Merasa Aman dari Kesesatan</div>
+              <div class="kiat-desc">Jangan kagum amal seseorang sebelum lihat akhir hidupnya. Jangan sombong karena bisa tersesat di masa depan. Hindari ujub. Senantiasa tawadhu.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">11</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Bergaul dengan Orang Baik</div>
+              <div class="kiat-desc">Seseorang mengikuti agama dan karakter temannya.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">12</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Doa agar Tidak Dikuasai Setan</div>
+              <div class="kiat-desc">Khusus diperbanyak menjelang ajal.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">13</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Doa Meminta Khusnul Khotimah</div>
+              <div class="kiat-desc">Orang yang ikhlas pasti mengikuti Sunnah.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">14</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Berdoa Sayyidul Istighfar</div>
+              <div class="kiat-desc">Lafaz lengkap tersedia di buku.</div>
+            </div>
+          </div>
+          <div class="kiat-card">
+            <div class="kiat-num">15</div>
+            <div class="kiat-body">
+              <div class="kiat-title">Doa Tertentu Sebelum Tidur</div>
+              <div class="kiat-desc">Lafaz lengkap tersedia di buku.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /sesi2 -->
+
+    <!-- Closing Quote -->
+    <div class="closing-quote">
+      <blockquote>"Yang menjaga perbuatan baik, maka hidup baik dan mati baik."</blockquote>
+      <cite>Kajian · Menata Hati, Menata Akhir · Masjid Babussalam, Depok</cite>
+    </div>
+
+    <!-- Pending Verifikasi -->
+    <div class="pending-section" id="pending">
+      <div class="pending-title">⚑ Pending Verifikasi</div>
+      <ol class="pending-list">
+        <li><strong>Poin 1 dari rincian Khashyah</strong> belum sempat tercatat dalam sesi — tidak dapat direkonstruksi dari sumber luar karena spesifik terhadap isi ceramah.</li>
+        <li>Istilah <strong>"Masyru'"</strong> untuk khauf yang disyariatkan adalah inferensi berdasarkan kemiripan bunyi dengan "masruk" dalam catatan — belum dikonfirmasi langsung ke ustadz pemberi materi.</li>
+      </ol>
+      <p style="font-family:var(--sans);font-size:11px;color:var(--verify);margin-top:16px;padding-top:14px;border-top:1px solid var(--verify-line);">Catatan cakupan verifikasi: pengecekan difokuskan pada 4 poin yang sebelumnya ditandai pending. Isi lain dalam recap ini adalah catatan langsung dari kajian (live note-taking) dan secara alami tidak diverifikasi silang dengan sumber eksternal, kecuali disebutkan sebaliknya.</p>
+    </div>
+
+  </main><!-- /main -->
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="page-footer">
+    <div class="footer-left">Menata Hati, Menata Akhir · Masjid Babussalam Depok · 13 Juni 2026<br>Penyelenggara: Babussalam As-Sunnah / Digital Media Babussalam / Tahseel</div>
+    <div class="footer-right">Kajian Recap</div>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+</body>
+</html>
