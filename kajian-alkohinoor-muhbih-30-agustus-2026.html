@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kajian Al Kohinoor — Fastabiqul Khoirot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6EE;
+    --paper: #FFFFFF;
+    --ink: #22281F;
+    --ink-soft: #4A5045;
+    --emerald: #14532D;
+    --emerald-soft: #1D6B3E;
+    --gold: #A87C1E;
+    --gold-soft: #F3E6C4;
+    --line: #E4DCC6;
+    --green-bg: #E5F3EA; --green-fg: #166534; --green-dot:#22C55E;
+    --amber-bg: #FBEEDA; --amber-fg: #92400E; --amber-dot:#F59E0B;
+    --blue-bg: #E5EDFB; --blue-fg: #1E3A8A; --blue-dot:#3B82F6;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.65;
+    padding: 0 0 64px;
+  }
+
+  .arch-header {
+    position: relative;
+    background: linear-gradient(180deg, var(--emerald) 0%, var(--emerald-soft) 100%);
+    color: #F6F1E1;
+    padding: 56px 24px 72px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .arch-header::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 110px;
+    background: var(--cream);
+    border-radius: 110px 110px 0 0;
+  }
+  .arch-header .kicker {
+    font-family: 'Amiri', serif;
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 14px;
+  }
+  .arch-header h1 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: clamp(26px, 5vw, 40px);
+    margin: 0 0 8px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .arch-header .subtitle {
+    font-style: italic;
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    color: #D9E4D3;
+    margin-bottom: 26px;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+  }
+  .meta-pill {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(246,241,225,0.35);
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  main {
+    max-width: 760px;
+    margin: -34px auto 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .legend {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 36px;
+    box-shadow: 0 1px 2px rgba(20,83,45,0.04);
+  }
+  .legend-item { display: flex; align-items: center; gap: 7px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+  section.block { margin-bottom: 34px; }
+
+  .block-title {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--emerald);
+    margin: 0 0 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .block-title .idx {
+    font-family: 'Amiri', serif;
+    color: var(--gold);
+    font-size: 16px;
+  }
+  .block-sub {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+    font-style: italic;
+  }
+
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--emerald);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+  }
+  .card p { margin: 0 0 8px; }
+  .card p:last-child { margin-bottom: 0; }
+  .card ul { margin: 6px 0 8px; padding-left: 20px; }
+  .card li { margin-bottom: 4px; }
+
+  .dalil {
+    background: var(--gold-soft);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14.5px;
+    color: #5B4210;
+    margin: 8px 0;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 11px;
+    border-radius: 999px;
+    margin-top: 6px;
+  }
+  .badge-verified { background: var(--green-bg); color: var(--green-fg); }
+  .badge-verified .dot { background: var(--green-dot); }
+  .badge-check { background: var(--amber-bg); color: var(--amber-fg); }
+  .badge-check .dot { background: var(--amber-dot); }
+  .badge-elaboration { background: var(--blue-bg); color: var(--blue-fg); }
+  .badge-elaboration .dot { background: var(--blue-dot); }
+
+  .note {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--line);
+  }
+
+  .amalan-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .amalan-item {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14.5px;
+  }
+
+  .summary-box {
+    background: var(--emerald);
+    color: #F3EFDF;
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-top: 44px;
+  }
+  .summary-box h3 {
+    font-family: 'Lora', serif;
+    margin: 0 0 12px;
+    font-size: 17px;
+    color: #F6E9C2;
+  }
+  .summary-box ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+  .summary-box li { margin-bottom: 6px; }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  footer code {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-size: 11.5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="arch-header">
+  <div class="kicker">فَاسْتَبِقُوا الْخَيْرَاتِ</div>
+  <h1>Kontekstualisasi Fastabiqul Khoirot</h1>
+  <div class="subtitle">Berlomba-lomba dalam Kebaikan Menuju Akhirat</div>
+  <div class="meta-row">
+    <span class="meta-pill">Masjid Al Kohinoor</span>
+    <span class="meta-pill">Ustadz Muhbih Abdul Wahab</span>
+    <span class="meta-pill">30 Agustus 2026</span>
+  </div>
+</div>
+
+<main>
+
+  <div class="legend">
+    <div class="legend-item"><span class="dot" style="background:var(--green-dot)"></span> Terverifikasi — sesuai sumber primer/rujukan tepercaya</div>
+    <div class="legend-item"><span class="dot" style="background:var(--amber-dot)"></span> Perlu Verifikasi — sumber primer belum ditemukan</div>
+    <div class="legend-item"><span class="dot" style="background:var(--blue-dot)"></span> Penjabaran Ustadz — kontekstualisasi, bukan kutipan dalil langsung</div>
+  </div>
+
+  <section class="block">
+    <p class="block-title"><span class="idx">01</span> Hakikat Menjadi Muslim</p>
+    <p class="block-sub">Syahadat sebagai identitas, bukan kesudahan</p>
+    <div class="card">
+      <p>Mengucapkan kalimat syahadat hanya menjadikan seseorang <strong>beridentitas</strong> muslim, belum tentu menjadikannya muslim/Islam secara hakikat. Menjadi muslim sejati bukan proses instan — dibutuhkan istiqomah dan kesabaran.</p>
+      <span class="badge badge-elaboration"><span class="dot"></span>Penjabaran Ustadz</span>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="block-title"><span class="idx">02</span> Dalil dan Makna Fastabiqul Khoirot</p>
+    <p class="block-sub">Landasan ayat dan definisi bahasa</p>
+    <div class="card">
+      <p>Salah satu kunci sukses seorang muslim adalah berlomba-lomba meraih kebaikan akhirat (fastabiqul khoirot). Perintah ini disebut pada dua ayat:</p>
+      <div class="dalil">"...فَاسْتَبِقُوا الْخَيْرَاتِ..." — "...maka berlomba-lombalah dalam berbagai kebajikan..."<br>QS. Al-Baqarah (2): 148</div>
+      <div class="dalil">"...فَاسْتَبِقُوا الْخَيْرَاتِ..." — "...maka berlomba-lombalah berbuat kebajikan..."<br>QS. Al-Ma'idah (5): 48</div>
+      <span class="badge badge-verified"><span class="dot"></span>Terverifikasi</span>
+      <p class="note"><strong>Makna:</strong> Fastabiqul khoirot berarti berusaha menjadi yang pertama dalam tiap kebaikan. Kata <em>khairat</em> adalah bentuk jamak dari <em>khoir</em> (kebaikan), menunjukkan cakupan kebaikan yang universal — sesuai kaidah bahasa Arab dasar (isim jamak taksir/muannats salim dari akar kata kh-y-r).</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="block-title"><span class="idx">03</span> Ruang Lingkup Fastabiqul Khoirot</p>
+    <p class="block-sub">Sosial, profesi, dan ibadah individual</p>
+    <div class="card">
+      <p>Setiap profesi punya kesempatan berbuat baik sesuai konteksnya masing-masing — pedagang, pemimpin, guru, dan lainnya. Mereka yang mengadaptasi fastabiqul khoirot senantiasa merasa amalannya belum sempurna, dengan tujuan akhir mencari ridho Allah SWT.</p>
+      <p>Fastabiqul khoirot tidak terbatas pada kebaikan sosial, tetapi juga mencakup ibadah individual seperti shalat tepat waktu dan istighfar, termasuk penyempurnaan ibadah — misalnya melengkapi shalat wajib dengan shalat sunnah.</p>
+      <span class="badge badge-elaboration"><span class="dot"></span>Penjabaran Ustadz</span>
+      <p class="note">Prinsip umum (kebaikan mencakup ranah sosial &amp; individual, wajib &amp; sunnah) selaras dengan kerangka fikih ibadah secara umum; tidak ada satu dalil tunggal yang dikutip pemateri untuk poin ini secara spesifik.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="block-title"><span class="idx">04</span> Dunia sebagai Ajang Ujian Amal</p>
+    <p class="block-sub">Landasan tujuan hidup</p>
+    <div class="card">
+      <p>Hidup di dunia hakikatnya adalah ujian untuk membuktikan siapa yang paling baik amalannya.</p>
+      <div class="dalil">"الَّذِي خَلَقَ الْمَوْتَ وَالْحَيَاةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًا" — "...(Allah) menciptakan mati dan hidup untuk menguji kamu, siapa di antara kamu yang lebih baik amalnya..."<br>QS. Al-Mulk (67): 2</div>
+      <span class="badge badge-verified"><span class="dot"></span>Terverifikasi</span>
+      <p class="note">Tafsir Ibnu Katsir menegaskan "ahsanu 'amalan" (amal terbaik) menekankan <em>kualitas</em>, bukan kuantitas amal — sejalan dengan penjelasan pemateri. Respons yang tepat atas ujian ini berbentuk syukur dan sabar; standar utama fastabiqul khoirot adalah takwa (poin standar takwa sebagai penjabaran kontekstual pemateri, bukan kutipan ayat/hadits tunggal).</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="block-title"><span class="idx">05</span> Amalan-amalan Fastabiqul Khoirot</p>
+    <p class="block-sub">Contoh konkret yang disebutkan dalam kajian</p>
+    <div class="amalan-grid">
+      <div class="amalan-item">
+        <strong>Menyegerakan istighfar, minimal 70x sehari</strong>
+        <div class="badge badge-check"><span class="dot"></span>Perlu Verifikasi (nuansa)</div>
+        <p class="note" style="margin-top:8px;">Hadits shahih (HR. Bukhari no. 6307, dari Abu Hurairah RA) mencatat Nabi ﷺ bersabda beliau sendiri beristighfar <em>"lebih dari 70 kali sehari"</em> — ini menggambarkan praktik pribadi Nabi ﷺ sebagai teladan (padahal beliau maksum), bukan perintah eksplisit agar umat membaca istighfar tepat 70x/hari sebagai kewajiban amalan fastabiqul khoirot. Riwayat lain (istighfar 70x menghapus 700 dosa) beredar dari sumber yang lebih lemah/sekunder (dinisbahkan ke Baihaqi).</p>
+      </div>
+      <div class="amalan-item">
+        <strong>Shalat wajib di awal waktu</strong>
+        <div class="badge badge-verified"><span class="dot"></span>Terverifikasi (prinsip umum)</div>
+      </div>
+      <div class="amalan-item">
+        <strong>Berbuat kebaikan wajib dan sunnah setiap ada kesempatan</strong>
+        <div class="badge badge-elaboration"><span class="dot"></span>Penjabaran Ustadz</div>
+      </div>
+      <div class="amalan-item">
+        <strong>Amalan yang dijanjikan surga: wakaf, sedekah, santuni anak yatim, haji, umrah</strong>
+        <div class="badge badge-verified"><span class="dot"></span>Terverifikasi (prinsip umum)</div>
+        <p class="note" style="margin-top:8px;">Kelima amalan ini masing-masing memiliki dalil keutamaan tersendiri dalam hadits-hadits shahih terpisah; pemateri menyebutkannya sebagai daftar ringkas tanpa merinci hadits per amalan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="block-title"><span class="idx">06</span> Mengapa Harus Fastabiqul Khoirot</p>
+    <div class="card">
+      <ul>
+        <li>Umur manusia tidak ada yang mengetahui kapan berakhir</li>
+        <li>Bentuk syukur atas umur dan kesempatan hidup yang diberikan</li>
+        <li>Takwa adalah bekal terbaik menuju akhirat</li>
+        <li>Membuat hidup lebih bermakna</li>
+      </ul>
+      <span class="badge badge-elaboration"><span class="dot"></span>Penjabaran Ustadz</span>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="block-title"><span class="idx">07</span> Kisah Teladan: Penyesalan di Sakaratul Maut</p>
+    <p class="block-sub">Ilustrasi urgensi berlomba dalam kebaikan</p>
+    <div class="card">
+      <p>Diceritakan ada sahabat Nabi yang menyesal ketika sakaratul maut — menyesal tidak memberikan sedekah terbaiknya, dan sejenisnya.</p>
+      <span class="badge badge-check"><span class="dot"></span>Perlu Verifikasi</span>
+      <p class="note">Kisah dengan pola ini (sahabat menyesal saat sakaratul maut karena tidak bersedekah secara maksimal) beredar luas di media dakwah populer Indonesia sebagai <strong>"Kisah Sya'ban"</strong> — bersumber dari buku kumpulan kisah populer <em>115 Kisah Menakjubkan dalam Kehidupan Rasulullah SAW</em>, bukan dari kitab hadits primer (Bukhari, Muslim, Abu Dawud, dll.). Sanad/rujukan primernya tidak ditemukan; statusnya adalah kisah teladan (hikmah) yang beredar populer, bukan hadits shahih yang dapat dinisbahkan langsung kepada Nabi ﷺ. Jika ustadz menyebut nama sahabat secara spesifik saat kajian, disarankan dicatat pada sesi berikutnya untuk verifikasi lebih lanjut.</p>
+    </div>
+  </section>
+
+  <div class="summary-box">
+    <h3>Ringkasan Validasi</h3>
+    <ul>
+      <li><strong>Terverifikasi kuat:</strong> QS. Al-Baqarah 2:148, QS. Al-Ma'idah 5:48 (dalil fastabiqul khoirot), QS. Al-Mulk 67:2 (hidup sebagai ujian amal terbaik).</li>
+      <li><strong>Terverifikasi dengan catatan nuansa:</strong> istighfar 70x/hari — hadits primer (HR. Bukhari 6307) menggambarkan praktik pribadi Nabi ﷺ, bukan kewajiban umat beramal persis 70x.</li>
+      <li><strong>Perlu Verifikasi lanjutan:</strong> kisah sahabat menyesal di sakaratul maut karena sedekah tidak maksimal — pola cerita ini populer dikenal sebagai "Kisah Sya'ban", namun sumber primernya (isnad ke kitab hadits) tidak ditemukan.</li>
+      <li><strong>Penjabaran Ustadz</strong> (kontekstualisasi, bukan kutipan dalil langsung): ruang lingkup lintas-profesi, standar takwa sebagai tolok ukur, dan daftar alasan pentingnya fastabiqul khoirot.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Rekap disusun dari catatan langsung kajian &amp; divalidasi silang terhadap Quran NU Online, TafsirWeb, Rumaysho.com, dan Almanhaj.or.id.<br>
+    <code>kajian-alkohinoor-muhbih-30-agustus-2026.html</code>
+  </footer>
+
+</main>
+
+</body>
+</html>
