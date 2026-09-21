@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Catatan Kajian</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+<style>
+  :root{
+    --cream:#FDFAF4; --navy:#1B2E4B; --sage:#4A7C59; --amber:#E8A020;
+    --ink:#2C3E50; --muted:#6B7A8D; --surface:#F0EDE4; --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  button{font-family:inherit}
+
+  .hero{background:var(--navy);padding:20px 16px 18px;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-60px;right:-60px;width:160px;height:160px;border-radius:50%;background:var(--sage);opacity:.12}
+  .hero-inner{position:relative;z-index:1;max-width:760px;margin:0 auto}
+  .hero-title-link{display:inline-block;text-decoration:none}
+  .hero-title{font-family:'Playfair Display',serif;font-size:clamp(22px,6vw,30px);font-weight:900;color:var(--cream);line-height:1.15}
+  .hero-top-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .jadwal-link{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:6px 11px;margin-top:3px;font-size:11px;font-weight:600;color:rgba(255,255,255,.7);text-decoration:none;white-space:nowrap;flex-shrink:0}
+  .jadwal-link:active{background:rgba(255,255,255,.16);color:rgba(255,255,255,.9)}
+  .hero-stats{font-size:11.5px;color:rgba(255,255,255,.55);margin:6px 0 14px;letter-spacing:.02em}
+  .hero-stats strong{color:rgba(255,255,255,.85);font-weight:700}
+  .searchbox input{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:13px 16px;color:#fff;font-family:inherit;font-size:16px;min-height:46px}
+  .searchbox input::placeholder{color:rgba(255,255,255,.4)}
+  .searchbox input:focus{outline:none;border-color:var(--amber)}
+
+  .disclaimer{background:var(--amber);padding:11px 16px;font-size:12px;color:#4a3300;font-weight:600;text-align:center;line-height:1.5}
+
+  .filterbar{max-width:760px;margin:0 auto;padding:14px 16px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+  .filterbar select{width:100%;min-width:0;background:var(--white);border:1px solid rgba(27,46,75,.14);border-radius:10px;padding:11px 10px;font-family:inherit;font-size:13px;color:var(--ink);min-height:42px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .filterbar .reset{grid-column:1/-1;background:none;border:1px dashed rgba(27,46,75,.2);border-radius:10px;padding:9px;font-family:inherit;font-size:12.5px;color:var(--muted);min-height:38px}
+  .filterbar .reset:active{border-color:var(--sage);color:var(--sage)}
+  .result-count{max-width:760px;margin:12px auto 0;padding:0 16px;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+
+  .main{max-width:760px;margin:0 auto;padding:12px 16px 56px}
+
+  .entity-header{background:var(--white);border-radius:16px;padding:18px 16px;margin-bottom:14px;box-shadow:0 2px 16px rgba(27,46,75,.06);border:1px solid rgba(27,46,75,.05)}
+  .entity-eyebrow{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:6px}
+  .entity-title{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;color:var(--navy);margin-bottom:10px;line-height:1.25}
+  .entity-info{background:var(--surface);border-radius:10px;padding:11px 13px;font-size:12.5px;color:var(--muted);line-height:1.6}
+  .entity-info em{font-style:italic}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--sage);font-weight:600;text-decoration:none;margin-bottom:12px;padding:6px 0;min-height:32px}
+
+  .card-list{display:flex;flex-direction:column;gap:10px}
+  .card{background:var(--white);border-radius:14px;padding:14px 15px;box-shadow:0 2px 12px rgba(27,46,75,.05);border:1px solid rgba(27,46,75,.04)}
+  .card-top{display:flex;gap:12px;align-items:flex-start}
+  .card-date{flex-shrink:0;width:46px;text-align:center;background:var(--surface);border-radius:8px;padding:6px 0}
+  .card-date .d{font-family:'Playfair Display',serif;font-weight:900;font-size:16px;color:var(--navy);line-height:1}
+  .card-date .m{font-size:8.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+  .card-title{flex:1;font-size:14px;font-weight:700;color:var(--navy);line-height:1.4}
+
+  .card-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .chip{display:inline-flex;align-items:center;font-size:11.5px;font-weight:600;padding:6px 11px;border-radius:20px;text-decoration:none;min-height:30px;line-height:1}
+  .chip-place{background:var(--surface);color:var(--ink)}
+  .chip-theme{background:rgba(74,124,89,.12);color:var(--sage)}
+  .chip-kitab{background:rgba(232,160,32,.16);color:#8a5a00}
+  .chip:active{filter:brightness(0.95)}
+
+  .card-bottom{display:flex;justify-content:flex-end;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid rgba(27,46,75,.06)}
+  .btn-open{display:inline-flex;align-items:center;gap:6px;background:var(--sage);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:10px;text-decoration:none;min-height:42px}
+  .btn-open:active{background:#3d6849}
+  .badge-pending{display:inline-flex;align-items:center;background:#FFF3D6;color:#8a5a00;font-weight:700;font-size:11.5px;padding:9px 14px;border-radius:10px;min-height:36px}
+
+  .pagination{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid rgba(27,46,75,.08)}
+  .page-btn{background:var(--white);border:1px solid rgba(27,46,75,.14);border-radius:10px;padding:10px 14px;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--ink);min-height:40px}
+  .page-btn:disabled{opacity:.35}
+  .page-btn:not(:disabled):active{border-color:var(--sage);color:var(--sage)}
+  .page-info{font-size:12px;color:var(--muted);font-weight:600;white-space:nowrap}
+
+  footer{max-width:760px;margin:24px auto 0;padding:22px 16px;text-align:center;border-top:1px solid rgba(27,46,75,.08)}
+  .footer-updated{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.03em;text-transform:uppercase;margin-bottom:10px}
+  .footer-credit{font-size:13px;color:var(--navy);font-weight:600;margin-bottom:6px}
+  .footer-credit a{color:var(--sage);text-decoration:none;border-bottom:1px solid rgba(74,124,89,.3)}
+  .footer-contribute{font-size:11.5px;color:var(--muted);line-height:1.6;max-width:440px;margin:0 auto}
+
+  @media (min-width:600px){
+    .card-top{align-items:center}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-top-row">
+      <a class="hero-title-link" href="#/"><h1 class="hero-title">Catatan Kajian</h1></a>
+      <a class="jadwal-link" href="https://jadwalkajian.netlify.app" target="_blank" rel="noopener">📅 Jadwal Kajian</a>
+    </div>
+    <div class="hero-stats" id="heroStats"></div>
+    <div class="searchbox">
+      <input type="text" id="searchInput" placeholder="Cari topik, kitab, ustadz, atau masjid…">
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  ⚠️ <strong>Catatan pribadi, bukan transkrip resmi.</strong> Isinya bisa saja keliru dan perlu diverifikasi sendiri — termasuk yang sudah pernah dicek terhadap referensi.
+</div>
+
+<div class="filterbar" id="filterBar"></div>
+<div class="result-count" id="resultCount"></div>
+
+<div class="main" id="main"></div>
+
+<footer>
+  <div class="footer-updated">Terakhir diperbarui: <span id="footerDate">—</span></div>
+  <div class="footer-credit">Disusun &amp; dikurasi oleh <a href="https://instagram.com/amalwoodworking" target="_blank" rel="noopener">@amalwoodworking</a></div>
+  <div class="footer-contribute">Menemukan kekeliruan, atau punya catatan kajian yang ingin ditambahkan ke arsip ini? Silakan hubungi lewat Instagram di atas.</div>
+</footer>
+
+<script>
+let DATA = null;
+let fuse = null;
+const PAGE_SIZE = 10;
+const state = { q: "", masjid: "", ustadz: "", theme: "", kitab: "", page: 1 };
+
+const MONTHS = ["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Ags","Sep","Okt","Nov","Des"];
+function fmtDate(d){
+  const dt = new Date(d+"T00:00:00");
+  return { d: String(dt.getDate()).padStart(2,'0'), m: MONTHS[dt.getMonth()] };
+}
+function slugify(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
+
+// Splits "#/masjid/ar-riyadh" -> {path:"masjid/ar-riyadh", query:URLSearchParams{}}
+// Splits "#/?q=ikhlas&theme=aqidah" -> {path:"", query:URLSearchParams{q:"ikhlas",theme:"aqidah"}}
+function currentHashRoute(){
+  const raw = location.hash.replace(/^#\/?/, '');
+  const qIndex = raw.indexOf('?');
+  if(qIndex === -1) return { path: raw, query: new URLSearchParams() };
+  return { path: raw.slice(0, qIndex), query: new URLSearchParams(raw.slice(qIndex+1)) };
+}
+
+// Writes current filter/search state into the URL without creating a new
+// history entry per keystroke — so pressing Back after opening a recap
+// returns to this exact state instead of a blank/earlier one.
+function syncUrlFromState(){
+  const params = new URLSearchParams();
+  if(state.q) params.set('q', state.q);
+  if(state.masjid) params.set('masjid', state.masjid);
+  if(state.ustadz) params.set('ustadz', state.ustadz);
+  if(state.theme) params.set('theme', state.theme);
+  if(state.kitab) params.set('kitab', state.kitab);
+  if(state.page && state.page > 1) params.set('page', state.page);
+  const qs = params.toString();
+  const newHash = '#/' + (qs ? '?' + qs : '');
+  if(location.hash !== newHash) history.replaceState(null, '', newHash);
+}
+
+async function boot(){
+  const res = await fetch('data.json');
+  DATA = await res.json();
+
+  fuse = new Fuse(DATA.sessions, { keys: ['title','masjidRaw','ustadzRaw','kitab','content'], threshold: 0.3, ignoreLocation: true });
+
+  document.getElementById('heroStats').innerHTML =
+    `<strong>${DATA.masjid.length}</strong> Masjid &middot; <strong>${DATA.kitab.length}</strong> Kitab &middot; <strong>${DATA.ustadz.length}</strong> Ustadz &middot; <strong>${DATA.themes.length}</strong> Tema`;
+
+  if(DATA.generatedAt){
+    const dt = new Date(DATA.generatedAt+"T00:00:00");
+    document.getElementById('footerDate').textContent = dt.toLocaleDateString('id-ID', { day:'numeric', month:'long', year:'numeric' });
+  }
+
+  document.getElementById('searchInput').addEventListener('input', e=>{
+    state.q = e.target.value;
+    state.page = 1;
+    syncUrlFromState();
+    render();
+  });
+  window.addEventListener('hashchange', render);
+  render();
+}
+
+function renderFilterBar(){
+  const bar = document.getElementById('filterBar');
+  const opt = (list, val, label) => `<option value="">${label}</option>` +
+    list.map(x=>`<option value="${x.id}" ${state[val]===x.id?'selected':''}>${x.name}</option>`).join('');
+  bar.innerHTML = `
+    <select id="fMasjid" aria-label="Saring berdasarkan masjid">${opt(DATA.masjid,'masjid','Semua Masjid')}</select>
+    <select id="fUstadz" aria-label="Saring berdasarkan ustadz">${opt(DATA.ustadz,'ustadz','Semua Ustadz')}</select>
+    <select id="fKitab" aria-label="Saring berdasarkan kitab">${opt(DATA.kitab,'kitab','Semua Kitab')}</select>
+    <select id="fTheme" aria-label="Saring berdasarkan tema">${opt(DATA.themes,'theme','Semua Tema')}</select>
+    <button class="reset" onclick="resetFilters()">Reset Saringan</button>
+  `;
+  ['Masjid','Ustadz','Kitab','Theme'].forEach(k=>{
+    document.getElementById('f'+k).addEventListener('change', e=>{
+      state[k.toLowerCase()] = e.target.value;
+      state.page = 1;
+      syncUrlFromState();
+      render();
+    });
+  });
+}
+
+function resetFilters(){
+  state.q=""; state.masjid=""; state.ustadz=""; state.theme=""; state.kitab=""; state.page=1;
+  document.getElementById('searchInput').value = "";
+  history.replaceState(null, '', '#/');
+  render();
+}
+
+function matchesFilters(s){
+  if(state.masjid && s.masjidId !== state.masjid) return false;
+  if(state.ustadz && !s.ustadzIds.includes(state.ustadz)) return false;
+  if(state.theme && s.theme !== state.theme) return false;
+  if(state.kitab && slugify(s.kitab||'') !== state.kitab) return false;
+  return true;
+}
+
+function getResults(){
+  let base = state.q ? fuse.search(state.q).map(r=>r.item) : DATA.sessions.slice().sort((a,b)=>b.date.localeCompare(a.date));
+  return base.filter(matchesFilters);
+}
+
+function sessionCard(s){
+  const { d, m } = fmtDate(s.date);
+  const themeName = (DATA.themes.find(t=>t.id===s.theme)||{}).name || '';
+  const pending = s.status !== 'tersedia';
+  const masjidName = s.masjidRaw.split(',')[0];
+  const ustadzChips = s.ustadzIds.length
+    ? s.ustadzIds.map(uid=>`<a class="chip chip-place" href="#/ustadz/${uid}">${DATA.ustadz.find(u=>u.id===uid).name}</a>`).join('')
+    : `<span class="chip chip-place">Ustadz tidak tercatat</span>`;
+  const kitabChip = s.kitab
+    ? `<a class="chip chip-kitab" href="#/kitab/${slugify(s.kitab)}">${s.kitab}</a>`
+    : '';
+  return `
+    <div class="card">
+      <div class="card-top">
+        <div class="card-date"><div class="d">${d}</div><div class="m">${m} '${s.date.slice(2,4)}</div></div>
+        <div class="card-title">${s.title}</div>
+      </div>
+      <div class="card-chips">
+        <a class="chip chip-place" href="#/masjid/${s.masjidId}">${masjidName}</a>
+        ${ustadzChips}
+        ${kitabChip}
+        <a class="chip chip-theme" href="#/theme/${s.theme}">${themeName}</a>
+      </div>
+      <div class="card-bottom">
+        ${pending
+          ? `<span class="badge-pending">Belum Diunggah</span>`
+          : `<a class="btn-open" href="${s.recapUrl}">Buka Rekap &rarr;</a>`}
+      </div>
+    </div>
+  `;
+}
+
+function renderPagination(page, totalPages){
+  return `
+    <div class="pagination">
+      <button class="page-btn" ${page<=1?'disabled':''} onclick="goToPage(${page-1})">&larr; Sebelumnya</button>
+      <span class="page-info">Halaman ${page} / ${totalPages}</span>
+      <button class="page-btn" ${page>=totalPages?'disabled':''} onclick="goToPage(${page+1})">Berikutnya &rarr;</button>
+    </div>
+  `;
+}
+
+function goToPage(n){
+  state.page = n;
+  syncUrlFromState();
+  render();
+  document.getElementById('main').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function renderEntityHeader(eyebrow, title, infoHtml, backLabel){
+  return `
+    <a class="back-link" href="#/">&larr; ${backLabel}</a>
+    <div class="entity-header">
+      <div class="entity-eyebrow">${eyebrow}</div>
+      <div class="entity-title">${title}</div>
+      ${infoHtml ? `<div class="entity-info">${infoHtml}</div>` : ''}
+    </div>
+  `;
+}
+
+function render(){
+  const { path, query } = currentHashRoute();
+  const parts = path.split('/').filter(Boolean);
+  const main = document.getElementById('main');
+  let html = '';
+
+  if(parts[0] === 'masjid' && parts[1]){
+    const m = DATA.masjid.find(x=>x.id===parts[1]);
+    state.masjid = parts[1]; state.ustadz=""; state.theme=""; state.kitab=""; state.q=""; state.page=1;
+    const mapUrl = m ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(m.name + ', ' + (m.address||''))}` : '#';
+    const info = m && m.address
+      ? `${m.address}<br><a href="${mapUrl}" target="_blank" rel="noopener" style="color:var(--sage);font-weight:600">Buka di Google Maps &rarr;</a>`
+      : '<em>Info lokasi belum dilengkapi.</em>';
+    html += renderEntityHeader('Masjid', m ? m.name : parts[1], info, 'Semua Sesi');
+  } else if(parts[0] === 'ustadz' && parts[1]){
+    const u = DATA.ustadz.find(x=>x.id===parts[1]);
+    state.ustadz = parts[1]; state.masjid=""; state.theme=""; state.kitab=""; state.q=""; state.page=1;
+    const info = u && u.bio ? u.bio : '<em>Profil ustadz belum dilengkapi — akan ditambahkan pada iterasi berikutnya.</em>';
+    html += renderEntityHeader('Ustadz', u ? u.name : parts[1], info, 'Semua Sesi');
+  } else if(parts[0] === 'kitab' && parts[1]){
+    const k = DATA.kitab.find(x=>x.id===parts[1]);
+    state.kitab = parts[1]; state.masjid=""; state.ustadz=""; state.theme=""; state.q=""; state.page=1;
+    const info = k && k.description
+      ? `${k.description}${k.author ? `<br><br><strong>Penulis:</strong> ${k.author}` : ''}`
+      : '<em>Deskripsi &amp; penulis kitab belum dilengkapi.</em>';
+    html += renderEntityHeader('Kitab', k ? k.name : parts[1], info, 'Semua Sesi');
+  } else if(parts[0] === 'theme' && parts[1]){
+    const t = DATA.themes.find(x=>x.id===parts[1]);
+    state.theme = parts[1]; state.masjid=""; state.ustadz=""; state.kitab=""; state.q=""; state.page=1;
+    html += renderEntityHeader('Tema', t ? t.name : parts[1], '', 'Semua Sesi');
+  } else {
+    // General browse view — restore search + filters + page from the URL's
+    // query string (this is what makes browser Back bring you back to the
+    // same search/filter/page state instead of a blank dashboard).
+    state.q = query.get('q') || '';
+    state.masjid = query.get('masjid') || '';
+    state.ustadz = query.get('ustadz') || '';
+    state.theme = query.get('theme') || '';
+    state.kitab = query.get('kitab') || '';
+    state.page = parseInt(query.get('page'), 10) || 1;
+    document.getElementById('searchInput').value = state.q;
+
+    // A filter picked from a dropdown (rather than a card chip) lands here
+    // too — show the same entity info in that case, so "Kitab: X" selected
+    // from the filter bar shows its description just like clicking a chip does.
+    if(state.kitab){
+      const k = DATA.kitab.find(x=>x.id===state.kitab);
+      const info = k && k.description
+        ? `${k.description}${k.author ? `<br><br><strong>Penulis:</strong> ${k.author}` : ''}`
+        : '<em>Deskripsi &amp; penulis kitab belum dilengkapi.</em>';
+      html += renderEntityHeader('Kitab', k ? k.name : state.kitab, info, 'Semua Sesi');
+    } else if(state.masjid){
+      const m = DATA.masjid.find(x=>x.id===state.masjid);
+      const mapUrl = m ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(m.name + ', ' + (m.address||''))}` : '#';
+      const info = m && m.address
+        ? `${m.address}<br><a href="${mapUrl}" target="_blank" rel="noopener" style="color:var(--sage);font-weight:600">Buka di Google Maps &rarr;</a>`
+        : '<em>Info lokasi belum dilengkapi.</em>';
+      html += renderEntityHeader('Masjid', m ? m.name : state.masjid, info, 'Semua Sesi');
+    } else if(state.ustadz){
+      const u = DATA.ustadz.find(x=>x.id===state.ustadz);
+      const info = u && u.bio ? u.bio : '<em>Profil ustadz belum dilengkapi — akan ditambahkan pada iterasi berikutnya.</em>';
+      html += renderEntityHeader('Ustadz', u ? u.name : state.ustadz, info, 'Semua Sesi');
+    } else if(state.theme){
+      const t = DATA.themes.find(x=>x.id===state.theme);
+      html += renderEntityHeader('Tema', t ? t.name : state.theme, '', 'Semua Sesi');
+    }
+  }
+
+  renderFilterBar();
+  const results = getResults();
+  const totalPages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
+  if(state.page > totalPages) state.page = totalPages;
+  if(state.page < 1) state.page = 1;
+  const pageResults = results.slice((state.page-1)*PAGE_SIZE, state.page*PAGE_SIZE);
+
+  document.getElementById('resultCount').textContent = `${results.length} dari ${DATA.sessions.length} sesi`;
+  html += `<div class="card-list">${pageResults.map(sessionCard).join('')}</div>`;
+  if(totalPages > 1) html += renderPagination(state.page, totalPages);
+  main.innerHTML = html;
+}
+
+boot();
+</script>
+</body>
+</html>
