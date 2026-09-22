@@ -76,3 +76,46 @@ file rekap ditulis manual mengikuti pola:
 — kalau ditulis manual untuk sesi baru, `build_seo.py` akan memakai teks itu
 apa adanya untuk isi `og:description`/`twitter:description`/JSON-LD, jadi
 pastikan sudah benar sebelum dijalankan.
+
+## Lapor ke sesi "Auditor project kajian"
+
+Amal menugaskan satu sesi Claude terpisah sebagai auditor lintas-project
+(mengawasi `catatankajian` **dan** `jadwalkajian` sekaligus — kredit Netlify
+kedua situs dipakai bersama, lihat bagian kredit di `AUDIT-HANDOFF-*.md`).
+Cari session ID terkini dengan `list_sessions` berdasarkan judul
+**"Auditor project kajian"** (ID bisa berubah kalau sesi lama berakhir),
+atau tanya Amal langsung.
+
+**Wajib lapor untuk** (bukan tiap commit rutin — hanya yang signifikan):
+- Perubahan skema `data.json` (struktur `sessions[]`/`masjid[]`/`ustadz[]`/
+  `kitab[]`, field baru, bukan sekadar entri baru)
+- Perubahan arsitektur/pipeline (pembagian `main`↔`Catatan`,
+  `scripts/build_seo.py`, penambahan `netlify.toml`/workflow deploy)
+- Temuan yang berdampak lintas-project (mis. isu kredit Netlify, error
+  deploy, konflik branch, keandalan cron/trigger)
+- Perubahan besar pada `index.html` di luar penambahan data rutin (mis.
+  restrukturisasi SEO, perubahan struktur HTML)
+
+**Tidak perlu lapor untuk**: penambahan/update rekap kajian rutin — itu
+cukup tercatat di git seperti biasa, auditor bisa cek kapan saja lewat
+commit history.
+
+**Cara lapor** (diperbarui 22 Sep 2026 — pola ini sama persis di
+`jadwalkajian`, sengaja disamakan supaya predictable buat siapa pun,
+termasuk pihak eksternal, yang membaca kedua repo): pesan/trigger otomatis
+lintas-sesi (`ListAgents`/`SendMessage`, `create_trigger` dengan
+`persistent_session_id`, maupun `CronCreate`) **terbukti tidak selalu
+andal** — bisa dilaporkan "sukses" di sisi pengirim tapi tidak sampai di
+sisi penerima, atau job terjadwal hilang begitu saja dari scheduler (lihat
+`AUDIT-HANDOFF-2026-09-22.md` bagian 9 dan `COORDINATION-NOTE-2026-09-22.md`
+untuk kejadian nyata). Untuk apa pun yang wajib dilaporkan di atas, **jangan
+andalkan satu jalur otomatis saja**. Konfirmasikan lewat DUA jalur:
+
+1. Chat langsung ke Amal, kalau sesi Anda sedang aktif berinteraksi dengannya.
+2. Commit file `AUDIT-HANDOFF-<tanggal>.md` (buat baru atau update yang
+   sudah ada) ke root repo — jalur paling andal, karena auditor bisa
+   menemukannya lewat `git log` kapan saja tanpa bergantung notifikasi.
+
+`create_trigger`/`persistent_session_id` ke sesi Auditor boleh tetap
+dicoba sebagai pemberitahuan cepat tambahan, tapi tidak boleh jadi
+satu-satunya jalur untuk hal yang wajib dilaporkan.
