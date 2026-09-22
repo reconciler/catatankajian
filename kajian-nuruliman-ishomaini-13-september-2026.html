@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaedah Bid'ah dalam Sujud — Nurul Iman Blok M, 13 Sep 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3EFE5;
+    --card:#FBF9F4;
+    --ink:#2A2620;
+    --ink-muted:#726A5A;
+    --rule:#DCD3BF;
+    --pine:#1D4A3E;
+    --pine-soft:#E3EBE6;
+    --gold:#9C7A3C;
+    --v-text:#2F6B45; --v-bg:#E4EFE7; --v-border:#BEDFC8;
+    --c-text:#92650F; --c-bg:#FBF0DB; --c-border:#EAD3A0;
+    --n-text:#34518A; --n-bg:#E7ECF7; --n-border:#C4D0EA;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Sans 3', -apple-system, 'Segoe UI', sans-serif;
+    font-size:16.5px;
+    line-height:1.6;
+  }
+  .page{
+    max-width:700px;
+    margin:0 auto;
+    padding:56px 24px 80px;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:600;
+    color:var(--ink);
+    margin:0 0 .3em;
+  }
+  h1{
+    font-size:2.15rem;
+    line-height:1.2;
+    font-weight:500;
+    font-style:italic;
+    color:var(--pine);
+  }
+  h2{ font-size:1.35rem; font-style:normal; }
+  p{ margin:0 0 1em; }
+  a{ color:var(--pine); }
+
+  .masthead{ margin-bottom:8px; }
+  .meta-card{
+    border:1px solid var(--rule);
+    border-radius:3px;
+    background:var(--card);
+    padding:16px 20px;
+    margin:20px 0 32px;
+  }
+  .meta-row{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    padding:6px 0;
+    border-bottom:1px solid var(--rule);
+    font-size:.96rem;
+  }
+  .meta-row:last-child{ border-bottom:none; }
+  .meta-label{ color:var(--ink-muted); }
+  .meta-value{ text-align:right; font-weight:600; }
+
+  .legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:0 0 40px;
+    padding-top:18px;
+    border-top:1px solid var(--rule);
+  }
+  .badge{
+    display:inline-block;
+    font-size:.78rem;
+    font-weight:600;
+    padding:3px 10px;
+    border-radius:100px;
+    border:1px solid transparent;
+    white-space:nowrap;
+  }
+  .badge-verified{ color:var(--v-text); background:var(--v-bg); border-color:var(--v-border); }
+  .badge-check{ color:var(--c-text); background:var(--c-bg); border-color:var(--c-border); }
+  .badge-note{ color:var(--n-text); background:var(--n-bg); border-color:var(--n-border); }
+  .legend-item{ font-size:.86rem; color:var(--ink-muted); display:flex; align-items:center; gap:6px; }
+
+  .point{
+    display:grid;
+    grid-template-columns:52px 1fr;
+    gap:4px 20px;
+    margin-bottom:44px;
+  }
+  .point-number{
+    font-family:'Fraunces', Georgia, serif;
+    font-size:2.6rem;
+    font-weight:500;
+    color:var(--gold);
+    line-height:1;
+    padding-top:2px;
+  }
+  .point-body{ min-width:0; }
+  .point-body h2{ margin-top:2px; }
+  .point-body ul{ padding-left:1.1em; margin:0 0 1em; }
+  .point-body li{ margin-bottom:.4em; }
+
+  .claim{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-left:3px solid var(--pine);
+    border-radius:2px;
+    padding:12px 16px;
+    margin:0 0 14px;
+  }
+  .claim p{ margin:0 0 8px; font-size:.97rem; }
+  .claim p:last-of-type{ margin-bottom:0; }
+  .claim .cite{ color:var(--ink-muted); font-size:.85rem; font-style:italic; }
+
+  .callout{
+    background:var(--pine-soft);
+    border:1px solid #C9DBD1;
+    border-radius:3px;
+    padding:18px 20px;
+    margin:0 0 44px;
+  }
+  .callout h3{ font-size:1.05rem; color:var(--pine); margin-bottom:.5em; }
+
+  .divider{ border:none; border-top:1px solid var(--rule); margin:48px 0; }
+
+  .summary h2{ margin-bottom:16px; }
+  .summary-group{ margin-bottom:20px; }
+  .summary-group h3{
+    font-family:'Source Sans 3', sans-serif;
+    font-weight:700;
+    font-size:.95rem;
+    color:var(--ink-muted);
+    margin-bottom:8px;
+  }
+  .summary-group ul{ padding-left:1.1em; margin:0; }
+  .summary-group li{ margin-bottom:.5em; font-size:.95rem; }
+
+  .sources{ font-size:.9rem; color:var(--ink-muted); }
+  .sources ul{ padding-left:1.1em; columns:2; column-gap:24px; }
+  .sources li{ break-inside:avoid; margin-bottom:.3em; }
+
+  footer{
+    margin-top:56px;
+    padding-top:20px;
+    border-top:1px solid var(--rule);
+    font-size:.82rem;
+    color:var(--ink-muted);
+  }
+
+  @media (max-width:520px){
+    .point{ grid-template-columns:36px 1fr; }
+    .point-number{ font-size:1.9rem; }
+    .meta-value{ text-align:left; }
+    .meta-row{ flex-direction:column; gap:2px; }
+    .sources ul{ columns:1; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <h1>Kaedah Bid'ah dalam Sujud</h1>
+  </div>
+
+  <div class="meta-card">
+    <div class="meta-row"><span class="meta-label">Masjid</span><span class="meta-value">Nurul Iman Blok M Square</span></div>
+    <div class="meta-row"><span class="meta-label">Ustadz</span><span class="meta-value">Ishom Aini, Lc., MA</span></div>
+    <div class="meta-row"><span class="meta-label">Waktu</span><span class="meta-value">Ahad, 13 September 2026 — 13.00 WIB</span></div>
+    <div class="meta-row"><span class="meta-label">Sifat kajian</span><span class="meta-value">Terbuka untuk umum</span></div>
+  </div>
+
+  <p>Bid'ah, dalam konteks kajian ini, merujuk pada amalan dalam ibadah yang diada-adakan tanpa dasar dari Rasulullah ﷺ. Status hukumnya haram, dengan konsekuensi yang bisa membatalkan shalat. Kajian membahas lima praktik keliru yang umum terjadi seputar sujud.</p>
+
+  <div class="legend">
+    <span class="legend-item"><span class="badge badge-verified">Terverifikasi</span> cocok dengan sumber tepercaya</span>
+    <span class="legend-item"><span class="badge badge-check">Perlu Dicek / Nuansa</span> perlu klarifikasi lanjutan</span>
+    <span class="legend-item"><span class="badge badge-note">Penjabaran Ustadz</span> elaborasi, bukan kutipan dalil langsung</span>
+  </div>
+
+  <!-- POINT 1 -->
+  <div class="point">
+    <div class="point-number">1</div>
+    <div class="point-body">
+      <h2>Sujud Tidak Tumakninah atau Tergesa-gesa</h2>
+      <p>Rasulullah ﷺ menganjurkan memperbanyak sujud: dengannya Allah SWT mengangkat derajat dan menghapus dosa, serta menjadi sebab utama seorang muslim dapat menemani Rasulullah ﷺ di surga.</p>
+      <div class="claim">
+        <p>"Bantulah aku (mewujudkan keinginanmu) dengan memperbanyak sujud (shalat)." — jawaban Nabi ﷺ kepada Rabi'ah bin Ka'ab Al-Aslami RA yang meminta dapat menemani beliau di surga.</p>
+        <p class="cite">HR Muslim no. 489</p>
+        <span class="badge badge-verified">Terverifikasi</span>
+      </div>
+      <div class="claim">
+        <p>Tidaklah seorang hamba bersujud satu kali sujud kepada Allah, kecuali dengannya Allah mengangkatnya satu derajat dan menghapus satu kesalahan.</p>
+        <p class="cite">HR Muslim no. 488 (riwayat dari Tsauban RA — hadits terpisah dari poin di atas, temanya sejalan)</p>
+        <span class="badge badge-verified">Terverifikasi</span>
+      </div>
+      <p>Keistimewaan sujud ini berbanding lurus dengan rentannya kesalahan dalam pelaksanaannya — termasuk kisah seseorang yang shalat 60 tahun namun tidak diterima karena ruku' atau sujudnya tidak disempurnakan.</p>
+      <div class="claim">
+        <p>"Sungguh ada orang yang telah shalat 60 tahun, namun tidak ada satu pun shalatnya yang diterima — kadang ia menyempurnakan ruku'nya tapi tidak sujudnya, kadang sebaliknya."</p>
+        <p class="cite">Dihasankan Al-Albani, Shahih At-Targhib no. 529 / As-Silsilah Ash-Shahihah no. 2535</p>
+        <span class="badge badge-check">Perlu Dicek — nuansa sanad</span>
+        <p style="margin-top:8px;">Kajian sanad menunjukkan riwayat ini kemungkinan besar <em>mawquf</em> (perkataan Abu Hurairah RA) dan bukan <em>marfu'</em> (sabda langsung Nabi ﷺ), meski kandungan maknanya didukung riwayat marfu' lain yang shahih tentang pentingnya menyempurnakan ruku' dan sujud.</p>
+      </div>
+      <div class="claim">
+        <p>"Kalau orang ini mati dalam kondisi shalatnya seperti ini (tergesa-gesa, tidak tumakninah), maka ia mati bukan di atas millah (agama) Muhammad ﷺ."</p>
+        <p class="cite">HR Ibnu Abi Syaibah & At-Thabrani, dishahihkan dalam Shahih At-Targhib no. 528</p>
+        <span class="badge badge-verified">Terverifikasi</span>
+      </div>
+      <p>Tumakninah termasuk rukun shalat, sehingga shalat tidak sah bila dikerjakan tergesa-gesa — baik karena lupa maupun disengaja.</p>
+      <div class="claim">
+        <p>Aisyah RA menceritakan qiyamullail Nabi ﷺ: beliau shalat 11 rakaat dengan pola 4 rakaat, 4 rakaat, lalu 3 rakaat (witir), masing-masing dikerjakan dengan panjang dan bagus.</p>
+        <p class="cite">HR Bukhari no. 1147 & Muslim no. 738</p>
+        <span class="badge badge-verified">Terverifikasi</span>
+      </div>
+      <div class="claim">
+        <p>Detail bacaan setelah Al-Fatihah yang berlanjut ke surah Al-Baqarah, An-Nisa, dan Ali Imran dalam satu rakaat — beserta responsnya berupa tasbih, doa, dan ta'awwudz ketika melewati ayat terkait — berasal dari riwayat <strong>Hudzaifah bin Al-Yaman RA</strong> yang shalat malam bermakmum kepada Nabi ﷺ, bukan bagian dari hadits Aisyah RA tentang 11 rakaat 4-4-3 di atas.</p>
+        <p class="cite">HR Muslim no. 772 (Hudzaifah bin Al-Yaman)</p>
+        <span class="badge badge-check">Perlu Koreksi — dua riwayat tercampur</span>
+      </div>
+      <div class="claim">
+        <p>Jubair bin Muth'im RA mendengar Rasulullah ﷺ membaca surah Ath-Thur (bukan "Tur" sebagai judul terpisah, melainkan penyebutan singkat surah Ath-Thur) dalam shalat Maghrib.</p>
+        <p class="cite">HR Bukhari no. 765 & Muslim no. 463</p>
+        <span class="badge badge-verified">Terverifikasi</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- POINT 2 -->
+  <div class="point">
+    <div class="point-number">2</div>
+    <div class="point-body">
+      <h2>Mengkhususkan Doa Hanya di Sujud Terakhir</h2>
+      <p>Sujud adalah momen komunikasi terdekat antara hamba dan Penciptanya, sehingga dianjurkan memperbanyak doa di dalamnya.</p>
+      <div class="claim">
+        <p>"Sedekat-dekatnya seorang hamba dengan Rabb-nya adalah ketika ia sedang sujud, maka perbanyaklah doa ketika itu."</p>
+        <p class="cite">HR Muslim no. 482</p>
+        <span class="badge badge-verified">Terverifikasi</span>
+      </div>
+      <ul>
+        <li>Anjuran ini berlaku di setiap sujud pada shalat wajib maupun sunnah — tidak dikhususkan pada jenis shalat tertentu.</li>
+        <li>Anjuran ini juga berlaku merata di setiap sujud dalam satu shalat — awal, tengah, maupun akhir — bukan hanya sujud terakhir.</li>
+        <li>Sesekali berdoa lebih panjang di sujud terakhir karena baru teringat sesuatu tidak mengapa; namun bila sengaja dikhususkan secara rutin, termasuk bid'ah.</li>
+      </ul>
+      <div class="claim">
+        <p>Tidak ditemukan dalil yang menganjurkan memperpanjang sujud terakhir secara khusus. Pendapat ini sejalan dengan fatwa Syaikh Ibnu Jibrin (Majmu' Fatawa no. 2046) dan Syaikh Muhammad bin Shalih Al-'Utsaimin (Fatawa Nur 'Ala Ad-Darb, XIX/75), yang menegaskan bahwa yang disunnahkan adalah menyeimbangkan durasi antar-gerakan shalat, bukan memanjangkan sujud terakhir saja.</p>
+        <span class="badge badge-verified">Terverifikasi</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- POINT 3 -->
+  <div class="point">
+    <div class="point-number">3</div>
+    <div class="point-body">
+      <h2>Membaca Al-Qur'an Ketika Sujud</h2>
+      <div class="claim">
+        <p>"Ketahuilah, aku dilarang membaca Al-Qur'an ketika ruku' atau sujud. Adapun ruku', agungkanlah Rabb di dalamnya. Adapun sujud, bersungguh-sungguhlah dalam berdoa, karena sangat layak dikabulkan untuk kalian."</p>
+        <p class="cite">HR Muslim no. 479, dari Ibnu Abbas RA</p>
+        <span class="badge badge-verified">Terverifikasi</span>
+      </div>
+      <p>Jika seseorang memotong bagian dari ayat Al-Qur'an dan menjadikannya doa ketika sujud (dengan niat berdoa, bukan bertilawah), hal ini tidak termasuk larangan membaca Al-Qur'an yang dimaksud hadits di atas.</p>
+      <div class="claim">
+        <p>Empat imam madzhab (Hanafi, Maliki, Syafi'i, Hanbali) sepakat: membaca Al-Qur'an ketika ruku', sujud, dan tasyahud hukumnya <strong>makruh</strong> — bukan otomatis membatalkan shalat.</p>
+        <p class="cite">Tabyiinul Haqaiq Syarh Kanzi Ad-Daqaa'iq, 1/115</p>
+        <span class="badge badge-check">Catatan Nuansa</span>
+        <p style="margin-top:8px;">Pernyataan dalam kajian bahwa "konsekuensi dari segala larangan adalah batalnya ibadah" perlu diklarifikasi untuk poin ini secara khusus — status baku fiqihnya adalah makruh, bukan otomatis batal.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- POINT 4 -->
+  <div class="point">
+    <div class="point-number">4</div>
+    <div class="point-body">
+      <h2>Bacaan Sujud Sahwi</h2>
+      <p>Pada dasarnya, bacaan sujud sahwi sama dengan bacaan sujud biasa dalam shalat.</p>
+      <div class="claim">
+        <p>Lafal "Subhaana man laa yanaamu wa laa yashuu" (Mahasuci Dzat yang tidak tidur dan tidak lupa) yang beredar sebagai bacaan sujud sahwi di kalangan madzhab Syafi'i tidak memiliki dalil, baik dari Al-Qur'an, hadits Nabi ﷺ, maupun perbuatan sahabat.</p>
+        <p class="cite">Al-Hafidz Ibnu Hajar Al-Asqalani, Talkhis Al-Khabir, 2:88</p>
+        <span class="badge badge-verified">Terverifikasi</span>
+      </div>
+      <p>Referensi kitab yang disebut dalam kajian sebagai sumber bacaan ini kemungkinan dimaksudkan "Imam Ar-Rafi'i" (ulama besar madzhab Syafi'i, penulis <em>Al-'Aziz Syarh Al-Wajiz</em>) — bukan "Imam Arafai" sebagaimana tercatat saat kajian.</p>
+      <div class="claim">
+        <span class="badge badge-check">Perlu Dicek — koreksi nama</span>
+        <p style="margin-top:8px;">Koreksi ejaan nama di atas cukup meyakinkan (kesamaan bunyi dengan Ar-Rafi'i), namun atribusi bacaan tersebut secara spesifik ke kitab karya Imam Ar-Rafi'i belum ditemukan rujukan primernya dalam pencarian ini.</p>
+      </div>
+      <p>Bila sujud sahwi dilakukan sebelum salam, memasukkan unsur di luar shalat ke dalamnya berarti melanggar rukun shalat. Contoh: seseorang bersin dalam shalat lalu mengucap "Alhamdulillah", kemudian jamaah lain menjawab "Yarhamukallah" — jawaban ini berpotensi membatalkan shalat orang yang mengucapkannya.</p>
+      <div class="claim">
+        <p>"Sesungguhnya shalat ini tidak layak di dalamnya ada perkataan manusia. Ia hanyalah tasbih, takbir, dan bacaan Al-Qur'an." — teguran Nabi ﷺ kepada Mu'awiyah bin Al-Hakam RA yang menjawab "Yarhamukallah" kepada jamaah yang bersin di tengah shalat.</p>
+        <p class="cite">HR Muslim no. 537</p>
+        <span class="badge badge-verified">Terverifikasi</span>
+        <p style="margin-top:8px;">Catatan khilafiyah: menurut kesepakatan ulama Syafi'iyah, lafal dengan <em>khitab</em> langsung ("Yarhamuka<u>lla</u>h" — menyapa "kamu") berpotensi membatalkan shalat, sedangkan lafal tanpa khitab ("Yarhamahullah" — mendoakan pihak ketiga) dinilai sebagai doa murni dan tidak membatalkan shalat.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h3>Catatan Metodologis: Tingkatan dalam Belajar Ilmu</h3>
+    <p style="margin-bottom:10px;"><strong>Muqallid / Taklid</strong> — menukil suatu pendapat tanpa mencari tahu dalilnya, semata karena sumbernya adalah tokoh atau pihak yang dipandang.</p>
+    <p style="margin-bottom:0;"><strong>Ittiba'</strong> — mencari dan memastikan dalil pendukung sebelum mengamalkan suatu pendapat.</p>
+    <p style="margin-top:10px; margin-bottom:0;">Memverifikasi ilmu yang diperoleh penting agar tidak mudah terprovokasi atau memprovokasi, maupun terburu-buru menyimpulkan suatu perbedaan sebagai sekadar "khilafiyah". Akidah Ahlus Sunnah wal Jama'ah menempatkan penghormatan kepada ulama tanpa jatuh pada sikap fanatik yang tetap membela meski keliru.</p>
+    <span class="badge badge-note" style="margin-top:12px;">Penjabaran Ustadz — klasifikasi umum ushul fiqih</span>
+  </div>
+
+  <!-- POINT 5 -->
+  <div class="point">
+    <div class="point-number">5</div>
+    <div class="point-body">
+      <h2>Melakukan Sujud di Luar Shalat untuk Berdoa</h2>
+      <p>Yang dimaksud "sujud" dalam hadits anjuran memperbanyak doa (poin 2) adalah sujud di dalam shalat — kecuali dua pengecualian yang memang disyariatkan di luar shalat: <strong>sujud tilawah</strong> dan <strong>sujud syukur</strong>.</p>
+      <p>Bid'ah pada poin ini tidak berdampak pada keabsahan ibadah shalat, melainkan pada status amalan doa itu sendiri sebagai amalan yang diada-adakan.</p>
+      <span class="badge badge-verified">Terverifikasi — konsep fiqih standar</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="summary">
+    <h2>Ringkasan Validasi</h2>
+
+    <div class="summary-group">
+      <h3>Terverifikasi sesuai sumber tepercaya</h3>
+      <ul>
+        <li>Hadits perbanyak sujud — menemani Nabi ﷺ di surga (HR Muslim 489) dan pengangkatan derajat/penghapusan dosa (HR Muslim 488).</li>
+        <li>Peringatan "mati bukan di atas millah Muhammad ﷺ" bagi yang sujudnya tergesa-gesa (Shahih At-Targhib no. 528).</li>
+        <li>Hadits Aisyah RA 11 rakaat, pola 4-4-3 (HR Bukhari 1147 & Muslim 738).</li>
+        <li>Bacaan surah Ath-Thur oleh Nabi ﷺ dalam shalat Maghrib (HR Bukhari 765 & Muslim 463).</li>
+        <li>Hadits "sedekat-dekatnya hamba dengan Rabb adalah saat sujud" (HR Muslim 482) dan fatwa ulama bahwa tidak ada dalil pengkhususan sujud terakhir.</li>
+        <li>Larangan membaca Al-Qur'an dalam ruku'/sujud (HR Muslim 479).</li>
+        <li>Ketiadaan dalil bacaan "Subhaana man laa yanaamu wa laa yashuu" untuk sujud sahwi (Talkhis Al-Khabir 2:88).</li>
+        <li>Larangan berkata-kata (termasuk "Yarhamukallah" dengan khitab) di tengah shalat (HR Muslim 537).</li>
+        <li>Pengecualian sujud tilawah dan sujud syukur sebagai sujud di luar shalat.</li>
+      </ul>
+    </div>
+
+    <div class="summary-group">
+      <h3>Perlu Dicek / Catatan Nuansa</h3>
+      <ul>
+        <li>Hadits "shalat 60 tahun tidak diterima" — dihasankan Al-Albani, namun jalur sanadnya kemungkinan besar mawquf (perkataan Abu Hurairah RA), bukan marfu' langsung dari Nabi ﷺ.</li>
+        <li>Detail bacaan Al-Baqarah–An-Nisa–Ali Imran dalam satu rakaat dikaitkan dengan hadits Aisyah RA 4-4-3, padahal berasal dari riwayat terpisah Hudzaifah bin Al-Yaman RA (HR Muslim 772).</li>
+        <li>Klaim "konsekuensi larangan membaca Al-Qur'an saat sujud adalah batalnya ibadah" — kesepakatan 4 imam madzhab menyebut hukumnya makruh, bukan otomatis batal.</li>
+        <li>Atribusi bacaan sujud sahwi ke "kitab Imam Arafai" — kemungkinan dimaksud Imam Ar-Rafi'i, namun rujukan kitab spesifiknya belum terverifikasi independen.</li>
+      </ul>
+    </div>
+
+    <div class="summary-group">
+      <h3>Penjabaran Ustadz</h3>
+      <ul>
+        <li>Klasifikasi taklid (muqallid) vs ittiba' sebagai dua tingkatan dalam belajar ilmu — konsep umum ushul fiqih, bukan kutipan dalil tunggal.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sources">
+    <p><strong>Rujukan yang digunakan untuk validasi silang:</strong></p>
+    <ul>
+      <li>Muslim.or.id</li>
+      <li>Rumaysho.com</li>
+      <li>Almanhaj.or.id</li>
+      <li>KonsultasiSyariah.com</li>
+      <li>NU Online</li>
+      <li>Muhammadiyah.or.id</li>
+      <li>Bincang Syariah</li>
+      <li>MuslimAfiyah.com</li>
+      <li>Kajian Tematis Al-Qur'an dan As-Sunnah</li>
+      <li>Kajian Nida Al-Islam (studi sanad)</li>
+    </ul>
+  </div>
+
+  <footer>
+    Catatan disusun dari notulensi langsung kajian dan divalidasi silang terhadap sumber-sumber di atas. Bagian yang ditandai "Perlu Dicek" belum memiliki rujukan primer yang meyakinkan pada saat penyusunan dokumen ini dan disarankan dikonfirmasi ulang ke ustadz pemateri bila diperlukan.
+  </footer>
+
+</div>
+</body>
+</html>
