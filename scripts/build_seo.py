@@ -36,10 +36,12 @@ def load_data():
 
 
 def build_sitemap(data):
+    # Rekap (kajian-*.html) di-host di branch Catatan (GitHub Pages), BUKAN di
+    # branch main/Netlify -- pakai recapUrl apa adanya dari data.json, jangan
+    # direkonstruksi dengan BASE (yang cuma benar untuk index.html sendiri).
     urls = [{"loc": f"{BASE}/", "lastmod": data["generatedAt"], "changefreq": "weekly", "priority": "1.0"}]
     for s in data["sessions"]:
-        fname = s["recapUrl"].rstrip("/").split("/")[-1]
-        urls.append({"loc": f"{BASE}/{fname}", "lastmod": s["date"], "changefreq": "monthly", "priority": "0.7"})
+        urls.append({"loc": s["recapUrl"], "lastmod": s["date"], "changefreq": "monthly", "priority": "0.7"})
 
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -70,11 +72,10 @@ def build_index_jsonld(data):
 
     items = []
     for i, s in enumerate(sorted(data["sessions"], key=lambda x: x["date"], reverse=True), start=1):
-        fname = s["recapUrl"].rstrip("/").split("/")[-1]
         items.append({
             "@type": "ListItem",
             "position": i,
-            "url": f"{BASE}/{fname}",
+            "url": s["recapUrl"],
             "name": s["title"],
         })
     item_list = {
@@ -115,15 +116,20 @@ def esc_attr(s):
 
 
 def build_kajian_pages(data):
+    """File kajian-*.html sekarang di-host di branch Catatan (GitHub Pages),
+    bukan di branch main lagi. Fungsi ini jadi no-op kalau dijalankan di main
+    (tidak ada file untuk diproses) -- itu normal. Kalau perlu regenerasi
+    OG/JSON-LD file rekap, jalankan script ini di checkout branch Catatan."""
     masjid_by_id = {m["id"]: m for m in data["masjid"]}
     theme_by_id = {t["id"]: t["name"] for t in data["themes"]}
 
     updated = 0
+    skipped = 0
     for s in data["sessions"]:
         fname = s["recapUrl"].rstrip("/").split("/")[-1]
         path = os.path.join(REPO_ROOT, fname)
         if not os.path.exists(path):
-            print(f"WARNING: {fname} tidak ditemukan di disk, dilewati")
+            skipped += 1
             continue
 
         with open(path, encoding="utf-8") as f:
@@ -132,7 +138,7 @@ def build_kajian_pages(data):
         m = re.search(r'<meta name="description" content="(.*?)">', content)
         description = m.group(1) if m else f"Catatan kajian: {s['title']}"
 
-        canonical_url = f"{BASE}/{fname}"
+        canonical_url = s["recapUrl"]
         masjid = masjid_by_id.get(s["masjidId"])
         theme_name = theme_by_id.get(s["theme"], s["theme"])
 
@@ -169,7 +175,7 @@ def build_kajian_pages(data):
             f'<meta name="twitter:title" content="{esc_attr(s["title"])}">\n'
             f'<meta name="twitter:description" content="{esc_attr(description)}">\n'
             f'<meta name="twitter:image" content="{BASE}/og-image.png">\n'
-            f'<link rel="icon" type="image/svg+xml" href="/favicon.svg">\n'
+            f'<link rel="icon" type="image/svg+xml" href="{BASE}/favicon.svg">\n'
             f'<script type="application/ld+json">{json.dumps(article, ensure_ascii=False, separators=(",", ":"))}</script>\n'
             "<!--SEO_BLOCK_END-->"
         )
