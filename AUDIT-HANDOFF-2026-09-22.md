@@ -158,3 +158,34 @@ https://github.com/reconciler/catatankajian/pull/1#issuecomment-5780659161
 - `CLAUDE.md` (branch `main`) — dokumentasi arsitektur & alur kerja lengkap
 - PR #1: https://github.com/reconciler/catatankajian/pull/1
 - Branch `Catatan`: https://github.com/reconciler/catatankajian/tree/Catatan
+- `COORDINATION-NOTE-2026-09-22.md` (branch `claude/sinkronisasi-catatan-kajian-j9cx52`,
+  commit `f96041c`, dari sesi "Integrasi dua project kajian") — dokumentasi
+  independen soal keandalan pesan lintas-sesi, lihat bagian 9 di bawah
+
+## 9. Addendum (22 Sep 2026, ~17:35 UTC) — keandalan otomasi & instruksi baru user
+
+**Cron/scheduled check-in terbukti tidak andal di sesi ini**: job pengecekan
+Jumat (25 Sep) yang saya buat lewat `CronCreate` hilang dari scheduler
+sebanyak 3× berturut-turut sepanjang sesi ini (dicek via `CronList`, hasilnya
+"No scheduled jobs" tiap kali, tanpa error yang jelas kenapa). Ini konsisten
+dengan temuan independen sesi "Integrasi dua project kajian" di
+`COORDINATION-NOTE-2026-09-22.md`: 2 dari 3 percobaan pesan lintas-sesi ke
+sesi ini dilaporkan "terkirim sukses" oleh sistem tapi tidak pernah sampai.
+
+**Instruksi eksplisit user (22 Sep 2026) sebagai respons atas temuan ini,
+berlaku untuk sesi mana pun yang melanjutkan pekerjaan di repo ini:**
+> "dicatat saja. apapun yang statusnya diragukan, ambil aksi manual lalu
+> konfirmasi ke saya serta sesi 'auditor project kajian'"
+
+Artinya: **jangan andalkan cron/trigger/pesan lintas-sesi otomatis** untuk
+apa pun yang penting. Kalau status sesuatu meragukan (deploy, merge, saldo
+kredit, dll.), cek manual lewat API/git langsung, lalu konfirmasikan hasilnya
+lewat DUA jalur: (1) chat ke user langsung, (2) commit ke repo (jalur yang
+terbukti andal — bukan pesan/notifikasi) supaya sesi "Auditor project
+kajian" (atau sesi mana pun) menemukannya lewat `git log` tanpa bergantung
+mekanisme pesan yang sudah terbukti bisa gagal diam-diam.
+
+Konsekuensi praktis untuk item tertunda di bagian 5 dan 7: **tidak ada
+pengecekan otomatis terjadwal untuk PR #1 menjelang 12 Oktober 2026** — user
+sudah diberi tahu untuk follow up manual sendiri, bukan menunggu reminder
+dari sesi mana pun.
