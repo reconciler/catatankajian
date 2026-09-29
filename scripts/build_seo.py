@@ -16,7 +16,7 @@ import json
 import re
 import os
 
-BASE = "https://catatankajian.netlify.app"
+BASE = "https://reconciler.github.io/catatankajian"
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 BULAN_ID = {
@@ -36,9 +36,9 @@ def load_data():
 
 
 def build_sitemap(data):
-    # Rekap (kajian-*.html) di-host di branch Catatan (GitHub Pages), BUKAN di
-    # branch main/Netlify -- pakai recapUrl apa adanya dari data.json, jangan
-    # direkonstruksi dengan BASE (yang cuma benar untuk index.html sendiri).
+    # recapUrl di data.json sudah termasuk path folder rekap/ -- pakai apa
+    # adanya, jangan direkonstruksi dengan BASE (yang cuma benar untuk
+    # index.html sendiri).
     urls = [{"loc": f"{BASE}/", "lastmod": data["generatedAt"], "changefreq": "weekly", "priority": "1.0"}]
     for s in data["sessions"]:
         urls.append({"loc": s["recapUrl"], "lastmod": s["date"], "changefreq": "monthly", "priority": "0.7"})
@@ -116,10 +116,9 @@ def esc_attr(s):
 
 
 def build_kajian_pages(data):
-    """File kajian-*.html sekarang di-host di branch Catatan (GitHub Pages),
-    bukan di branch main lagi. Fungsi ini jadi no-op kalau dijalankan di main
-    (tidak ada file untuk diproses) -- itu normal. Kalau perlu regenerasi
-    OG/JSON-LD file rekap, jalankan script ini di checkout branch Catatan."""
+    """File kajian-*.html ada di folder rekap/, satu branch dengan dashboard
+    (main) -- semuanya di-host GitHub Pages sebagai satu situs. Nama file
+    diambil apa adanya dari recapUrl di data.json."""
     masjid_by_id = {m["id"]: m for m in data["masjid"]}
     theme_by_id = {t["id"]: t["name"] for t in data["themes"]}
 
@@ -127,7 +126,7 @@ def build_kajian_pages(data):
     skipped = 0
     for s in data["sessions"]:
         fname = s["recapUrl"].rstrip("/").split("/")[-1]
-        path = os.path.join(REPO_ROOT, fname)
+        path = os.path.join(REPO_ROOT, "rekap", fname)
         if not os.path.exists(path):
             skipped += 1
             continue

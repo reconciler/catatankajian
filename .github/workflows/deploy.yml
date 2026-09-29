@@ -1,0 +1,52 @@
+name: Build & deploy situs (GitHub Pages)
+
+# Migrasi dari Netlify ke GitHub Pages, 29 Sep 2026.
+# Situs sekarang satu branch (main): dashboard di root, 62 halaman rekap di
+# folder rekap/. GitHub Pages source (Settings -> Pages -> Build and
+# deployment) harus di-set ke "GitHub Actions".
+#
+# Beda dengan jadwalkajian: tidak ada jadwal mingguan/gerbang tanggal di sini
+# -- situs ini terbit langsung tiap push ke main, sama seperti perilaku
+# aslinya sebelum ada isu kredit Netlify (arsip pribadi, diperbarui kapan
+# pun Amal selesai mencatat kajian baru, bukan siklus mingguan).
+#
+# Sebelum commit sesi/rekap baru, jalankan manual:
+#   python3 scripts/build_seo.py
+# (lihat CLAUDE.md bagian "Alur kerja") -- workflow ini TIDAK menjalankan
+# build_seo.py otomatis, murni build+deploy dari isi repo apa adanya.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Ambil repo
+        uses: actions/checkout@v4
+
+      - name: Siapkan Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact situs
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Terbitkan ke GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

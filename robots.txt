@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://catatankajian.netlify.app/sitemap.xml
+Sitemap: https://reconciler.github.io/catatankajian/sitemap.xml
