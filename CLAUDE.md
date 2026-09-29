@@ -58,12 +58,11 @@ per rekap). `meta description` per file rekap ditulis manual mengikuti pola:
 apa adanya untuk isi `og:description`/`twitter:description`/JSON-LD, jadi
 pastikan sudah benar sebelum dijalankan.
 
-## Lapor ke sesi "Auditor project kajian"
+## Lapor ke sesi "Auditor Project"
 
 Amal menugaskan satu sesi Claude terpisah sebagai auditor lintas-project
 (mengawasi `catatankajian` **dan** `jadwalkajian` sekaligus). Cari session ID
-terkini dengan `list_sessions` berdasarkan judul **"Auditor project
-kajian"** (ID bisa berubah kalau sesi lama berakhir), atau tanya Amal
+terkini dengan `list_sessions` berdasarkan judul **"Auditor Project"** (ID bisa berubah kalau sesi lama berakhir), atau tanya Amal
 langsung.
 
 **Wajib lapor untuk** (bukan tiap commit rutin — hanya yang signifikan):
