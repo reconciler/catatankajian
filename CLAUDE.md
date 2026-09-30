@@ -58,6 +58,41 @@ per rekap). `meta description` per file rekap ditulis manual mengikuti pola:
 apa adanya untuk isi `og:description`/`twitter:description`/JSON-LD, jadi
 pastikan sudah benar sebelum dijalankan.
 
+## Aturan satu origin dan tautan antarproyek
+
+Ketiga situs (`catatankajian`, `jadwalkajian`, `bikin-cv-taaruf`) dilayani dari
+origin yang sama, `https://reconciler.github.io`. Path tidak ikut membentuk
+origin, jadi `localStorage` dipakai bersama. Ditemukan PIC `bikin-cv-taaruf`
+(30 Sep 2026); sebabnya migrasi ke GitHub Pages 29 Sep 2026. Draf CV di
+`bikin-cv-taaruf` (kunci `ctgv1_draft_v1`) memuat data sensitif, maka:
+
+- Antarproyek **hanya tautan biasa**. Jangan berbagi skrip, penyimpanan,
+  `fetch`, iframe, atau parameter pelacak.
+- Bila repo ini suatu saat memakai `localStorage`/`sessionStorage`, kuncinya
+  wajib berawalan unik. Jangan membaca atau menghapus kunci proyek lain.
+
+**Menu "Tentang" dan proyek lain** — diminta Amal (30 Sep 2026, lewat handoff PIC
+`bikin-cv-taaruf`). Pola lengkap dan alasan desainnya ada di `CLAUDE.md` repo
+`bikin-cv-taaruf`. Ringkas: satu akordeon "Menu" di header (tertutup, menutup
+dengan klik di luar dan Esc), isi berurutan bagian khusus proyek, Tentang,
+Proyek lain; tanpa deskripsi singkat; tinggi header tidak bertambah (uji lebar
+320 sampai 430 px); tautan luar `target="_blank" rel="noopener noreferrer"`.
+**Status: belum dipasang di repo ini.** Yang memasang PIC repo ini
+(`index.html` berkas inti). Repo ini terbit otomatis tiap push ke `main`, jadi
+uji lengkap sebelum push.
+
+**Daftar resmi** (dijaga Auditor; bila URL berubah, Auditor memperbarui ketiga
+repo dan memberi tahu PIC):
+- Pembuat: `@amalwoodworking`, https://www.instagram.com/amalwoodworking/
+- Jadwal Kajian: https://reconciler.github.io/jadwalkajian/
+- Catatan Kajian: https://reconciler.github.io/catatankajian/
+- Bikin CV Taaruf: https://reconciler.github.io/bikin-cv-taaruf/
+- Kode sumber repo ini: https://github.com/reconciler/catatankajian
+
+Menu di repo ini menampilkan proyek lain (Jadwal Kajian, Bikin CV Taaruf),
+bukan dirinya sendiri. Pil Jadwal Kajian yang sudah ada di header boleh tetap; standardisasi bentuknya
+diputuskan PIC bersama Amal.
+
 ## Lapor ke sesi "Auditor Project"
 
 Amal menugaskan satu sesi Claude terpisah sebagai auditor lintas-project
