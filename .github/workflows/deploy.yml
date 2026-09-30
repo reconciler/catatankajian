@@ -42,10 +42,20 @@ jobs:
       - name: Siapkan Pages
         uses: actions/configure-pages@v5
 
+      - name: Susun folder situs (_site/) -- hanya berkas publik
+        run: |
+          set -e
+          mkdir -p _site
+          cp index.html data.json og-image.png favicon.svg robots.txt sitemap.xml _site/
+          cp -r rekap _site/rekap
+          if [ -d lib ]; then cp -r lib _site/lib; fi
+          # Berkas internal (CLAUDE.md, AUDIT-HANDOFF-*.md, COORDINATION-NOTE-*.md,
+          # scripts/, .github/) SENGAJA tidak disalin -- tidak boleh tayang publik.
+
       - name: Upload artifact situs
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "_site"
 
       - name: Terbitkan ke GitHub Pages
         id: deployment
