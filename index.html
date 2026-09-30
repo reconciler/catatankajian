@@ -21,7 +21,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>Catatan Kajian</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+<script src="lib/fuse.min.js"></script>
 <style>
   :root{
     --cream:#FDFAF4; --navy:#1B2E4B; --sage:#4A7C59; --amber:#E8A020;
@@ -41,6 +41,18 @@
   .hero-top-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap}
   .jadwal-link{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:6px 11px;margin-top:3px;font-size:11px;font-weight:600;color:rgba(255,255,255,.7);text-decoration:none;white-space:nowrap;flex-shrink:0}
   .jadwal-link:active{background:rgba(255,255,255,.16);color:rgba(255,255,255,.9)}
+  .hero-actions{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap}
+  .menu-wrap{position:relative;margin-top:3px}
+  .menu-toggle{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:6px 11px;font-size:11px;font-weight:600;color:rgba(255,255,255,.7);white-space:nowrap;flex-shrink:0;cursor:pointer}
+  .menu-toggle:active,.menu-toggle[aria-expanded="true"]{background:rgba(255,255,255,.16);color:rgba(255,255,255,.9)}
+  .menu-panel{position:fixed;z-index:30;width:250px;max-width:calc(100vw - 32px);background:var(--white);border-radius:12px;box-shadow:0 8px 28px rgba(27,46,75,.22);border:1px solid rgba(27,46,75,.08);padding:14px 16px}
+  .menu-panel[hidden]{display:none}
+  .menu-section+.menu-section{margin-top:14px;padding-top:14px;border-top:1px solid rgba(27,46,75,.08)}
+  .menu-section-title{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage);margin-bottom:6px}
+  .menu-text{font-size:12.5px;color:var(--ink);line-height:1.6}
+  .menu-text a{color:var(--sage);font-weight:600;text-decoration:underline}
+  .menu-link{display:block;font-size:13px;font-weight:600;color:var(--navy);text-decoration:none;padding:5px 0}
+  .menu-link:active{color:var(--sage)}
   .hero-stats{font-size:11.5px;color:rgba(255,255,255,.55);margin:6px 0 14px;letter-spacing:.02em}
   .hero-stats strong{color:rgba(255,255,255,.85);font-weight:700}
   .searchbox input{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:13px 16px;color:#fff;font-family:inherit;font-size:16px;min-height:46px}
@@ -111,7 +123,23 @@
   <div class="hero-inner">
     <div class="hero-top-row">
       <a class="hero-title-link" href="#/"><h1 class="hero-title">Catatan Kajian</h1></a>
-      <a class="jadwal-link" href="https://reconciler.github.io/jadwalkajian" target="_blank" rel="noopener">📅 Jadwal Kajian</a>
+      <div class="hero-actions">
+        <a class="jadwal-link" href="https://reconciler.github.io/jadwalkajian/" target="_blank" rel="noopener noreferrer">📅 Jadwal Kajian</a>
+        <div class="menu-wrap">
+          <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="menuPanel">☰ Menu</button>
+          <div class="menu-panel" id="menuPanel" hidden>
+            <div class="menu-section">
+              <div class="menu-section-title">Tentang</div>
+              <p class="menu-text">Dashboard pribadi yang mengindeks catatan kajian Islam yang saya hadiri — catatan pribadi, bukan transkrip resmi, perlu diverifikasi sendiri. Disusun &amp; dikurasi oleh <a href="https://www.instagram.com/amalwoodworking/" target="_blank" rel="noopener noreferrer">@amalwoodworking</a>.</p>
+            </div>
+            <div class="menu-section">
+              <div class="menu-section-title">Proyek lain</div>
+              <a class="menu-link" href="https://reconciler.github.io/jadwalkajian/" target="_blank" rel="noopener noreferrer">Jadwal Kajian</a>
+              <a class="menu-link" href="https://reconciler.github.io/bikin-cv-taaruf/" target="_blank" rel="noopener noreferrer">Bikin CV Taaruf</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="hero-stats" id="heroStats"></div>
     <div class="searchbox">
@@ -131,7 +159,7 @@
 
 <footer>
   <div class="footer-updated">Terakhir diperbarui: <span id="footerDate">—</span></div>
-  <div class="footer-credit">Disusun &amp; dikurasi oleh <a href="https://instagram.com/amalwoodworking" target="_blank" rel="noopener">@amalwoodworking</a></div>
+  <div class="footer-credit">Disusun &amp; dikurasi oleh <a href="https://www.instagram.com/amalwoodworking/" target="_blank" rel="noopener noreferrer">@amalwoodworking</a></div>
   <div class="footer-contribute">Menemukan kekeliruan, atau punya catatan kajian yang ingin ditambahkan ke arsip ini? Silakan hubungi lewat Instagram di atas.</div>
 </footer>
 
@@ -380,6 +408,34 @@ function render(){
 }
 
 boot();
+
+(function(){
+  const btn = document.getElementById('menuToggle');
+  const panel = document.getElementById('menuPanel');
+  if(!btn || !panel) return;
+  function closeMenu(){ panel.hidden = true; btn.setAttribute('aria-expanded','false'); }
+  function openMenu(){
+    const r = btn.getBoundingClientRect();
+    const margin = 16;
+    let right = window.innerWidth - r.right;
+    if(right < margin) right = margin;
+    if(window.innerWidth - right - 250 < margin) right = window.innerWidth - margin - 250;
+    panel.style.top = (r.bottom + 8) + 'px';
+    panel.style.right = right + 'px';
+    panel.hidden = false;
+    btn.setAttribute('aria-expanded','true');
+  }
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    if(panel.hidden) openMenu(); else closeMenu();
+  });
+  document.addEventListener('click', function(e){
+    if(!panel.hidden && !panel.contains(e.target) && e.target !== btn) closeMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !panel.hidden) closeMenu();
+  });
+})();
 </script>
 </body>
 </html>
