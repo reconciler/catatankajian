@@ -82,3 +82,36 @@ Latar: ketiga situs berbagi origin `https://reconciler.github.io`, jadi
 - Sumbernya migrasi Auditor (`1b1b978`), bukan PIC. Menunggu keputusan Amal.
   **[Usulan Auditor]** Bila Amal ingin berkas itu tidak tayang: langkah workflow
   menyalin hanya berkas situs ke folder `_site/` dan mengunggah folder itu.
+
+## 4. Keputusan Amal (30 Sep 2026) dan instruksi eksekusi
+
+Amal menjawab kelima keputusan. Yang berlaku untuk repo ini:
+
+1. **Fuse.js: opsi (a) disetujui.** PIC langsung mengeksekusi tanpa menunggu
+   Amal lagi: salin `fuse.min.js` 6.6.2 ke `lib/`, cocokkan integritas dengan
+   tarball npm `fuse.js@6.6.2`, ganti tag script ke path lokal, uji pencarian.
+   Pernyataan Amal: keputusan yang tidak mengubah tampilan atau fungsi tidak
+   perlu menunggu persetujuannya. Bila langkah ini ternyata mengubah tampilan
+   atau fungsi, hentikan dan tanya Amal.
+2. **`hits.sh`: hapus.** Hapus blok `<img>` penghitung (beserta pembungkusnya
+   bila jadi kosong) dari dua rekap yang tercantum di bagian 1. Alasan Amal:
+   tidak bisa memantau angkanya. Jangan menyentuh blok `SEO_BLOCK`.
+3. **Menu "Tentang": tayang segera** (bagian 2). Repo ini terbit otomatis, jadi
+   berlaku setelah uji lengkap lulus.
+4. **Berkas internal tidak boleh tayang di situs.** **[Dilaporkan Amal]** berkas
+   `CLAUDE.md` terbuka di URL publik; Amal meminta berkas internal hanya bisa
+   diakses internal.
+   - Instruksi (`deploy.yml` adalah berkas inti PIC): salin hanya berkas situs
+     ke `_site/`, lalu `upload-pages-artifact` memakai `path: _site`. Daftar
+     berkas situs ditentukan PIC dengan memeriksa semua referensi di
+     `index.html` dan `rekap/`. Perkiraan Auditor: `index.html`, `data.json`,
+     `rekap/`, `lib/`, `og-image.png`, `favicon.svg`, `robots.txt`,
+     `sitemap.xml`. Berkas yang lupa disalin berarti situs rusak.
+   - **[Usulan Auditor]** Kerjakan sebagai push terpisah dari butir 1 sampai 3
+     dan dahulukan, supaya mudah di-revert bila situs rusak. Sesudah run
+     sukses, minta Amal membuka beranda, satu rekap, dan
+     `.../catatankajian/CLAUDE.md` (harus 404).
+   - Batasan: berkas tetap terbaca di repo GitHub-nya (status publik atau
+     privat repo belum Auditor verifikasi), dan cache mesin pencari bisa
+     bertahan. Keputusan ini hanya menyembunyikan dari situs.
+5. Catat hasilnya di handoff PIC dan beri tahu Auditor.
