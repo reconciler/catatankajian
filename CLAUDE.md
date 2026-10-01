@@ -71,15 +71,22 @@ origin, jadi `localStorage` dipakai bersama. Ditemukan PIC `bikin-cv-taaruf`
 - Bila repo ini suatu saat memakai `localStorage`/`sessionStorage`, kuncinya
   wajib berawalan unik. Jangan membaca atau menghapus kunci proyek lain.
 
-**Menu "Tentang" dan proyek lain** — diminta Amal (30 Sep 2026, lewat handoff PIC
-`bikin-cv-taaruf`). Pola lengkap dan alasan desainnya ada di `CLAUDE.md` repo
-`bikin-cv-taaruf`. Ringkas: satu akordeon "Menu" di header (tertutup, menutup
-dengan klik di luar dan Esc), isi berurutan bagian khusus proyek, Tentang,
-Proyek lain; tanpa deskripsi singkat; tinggi header tidak bertambah (uji lebar
-320 sampai 430 px); tautan luar `target="_blank" rel="noopener noreferrer"`.
-**Status: belum dipasang di repo ini.** Yang memasang PIC repo ini
-(`index.html` berkas inti). Repo ini terbit otomatis tiap push ke `main`, jadi
-uji lengkap sebelum push.
+**Tombol "Tentang" dan proyek lain** — diminta Amal (30 Sep 2026, lewat handoff PIC
+`bikin-cv-taaruf`; direvisi 1 Okt 2026). Pola desain ada di `CLAUDE.md` repo
+`bikin-cv-taaruf`. Ketentuan yang berlaku:
+- Satu akordeon di header bernama **"Tentang"** (bukan "Menu"), tertutup,
+  menutup dengan klik di luar dan Esc.
+- Isinya hanya kredit pembuat (Instagram) dan Proyek lain. **Tanpa tautan
+  kode sumber/GitHub** dan tanpa deskripsi singkat.
+- Tinggi header tidak bertambah (uji lebar 320 sampai 430 px). Tautan luar
+  `target="_blank" rel="noopener noreferrer"`.
+- Tautan antarproyek lama di luar panel **dihapus**; proyek lain hanya lewat
+  panel. Di repo ini: pil "📅 Jadwal Kajian" (`jadwal-link`) di header.
+- Repo ini terbit otomatis tiap push ke `main`, jadi uji lengkap sebelum push.
+
+**Status (1 Okt 2026):** akordeon terpasang berlabel "Menu" (tanpa tautan kode sumber); pil lama masih ada. Perubahan di atas diminta Amal pada
+1 Okt 2026 dan dikerjakan PIC dalam satu push. PIC memperbarui baris status ini
+setelah selesai.
 
 **Daftar resmi** (dijaga Auditor; bila URL berubah, Auditor memperbarui ketiga
 repo dan memberi tahu PIC):
@@ -87,11 +94,9 @@ repo dan memberi tahu PIC):
 - Jadwal Kajian: https://reconciler.github.io/jadwalkajian/
 - Catatan Kajian: https://reconciler.github.io/catatankajian/
 - Bikin CV Taaruf: https://reconciler.github.io/bikin-cv-taaruf/
-- Kode sumber repo ini: https://github.com/reconciler/catatankajian
 
-Menu di repo ini menampilkan proyek lain (Jadwal Kajian, Bikin CV Taaruf),
-bukan dirinya sendiri. Pil Jadwal Kajian yang sudah ada di header boleh tetap; standardisasi bentuknya
-diputuskan PIC bersama Amal.
+Panel di repo ini menampilkan proyek lain (Jadwal Kajian, Bikin CV Taaruf), bukan dirinya
+sendiri. Situs tidak memuat tautan kode sumber/GitHub (keputusan Amal, 1 Okt 2026).
 
 ## Lapor ke sesi "Auditor Project"
 
