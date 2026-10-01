@@ -60,3 +60,75 @@ jobs:
       - name: Terbitkan ke GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Uji otomatis pasca-deploy
+        run: |
+          set -u
+          BASE="${{ steps.deployment.outputs.page_url }}"
+          BASE="${BASE%/}"
+          SHA="${{ github.sha }}"
+          MARKER="Catatan Kajian"
+          FAILED=0
+
+          # Hanya curl + shell bawaan runner. Tanpa action pihak ketiga, tanpa
+          # mengirim data apa pun ke pihak lain.
+
+          # 1. Beranda: retry sampai ~2 menit (Pages bisa butuh waktu propagasi
+          #    cache), lalu wajib 200 + memuat teks penanda stabil.
+          home_ok=0
+          for i in $(seq 1 12); do
+            code=$(curl -s -o /tmp/home.html -w "%{http_code}" "${BASE}/?v=${SHA}")
+            if [ "$code" = "200" ] && grep -q "$MARKER" /tmp/home.html; then
+              echo "OK  beranda 200 + teks penanda '$MARKER' ditemukan (percobaan $i)"
+              home_ok=1
+              break
+            fi
+            echo "... beranda belum siap (percobaan $i/12, code=$code), tunggu 10 detik"
+            sleep 10
+          done
+          if [ "$home_ok" != "1" ]; then
+            echo "FAIL beranda tidak 200+marker setelah ~2 menit (code terakhir=$code)"
+            FAILED=1
+          fi
+
+          # Helper: cek satu URL, retry singkat (cache harusnya sudah hangat
+          # setelah loop beranda di atas berhasil).
+          check_url() {
+            local url="$1" expect="$2" desc="$3" code=""
+            for i in 1 2 3; do
+              code=$(curl -s -o /dev/null -w "%{http_code}" "${url}?v=${SHA}")
+              [ "$code" = "$expect" ] && { echo "OK  [$desc] $url -> $code"; return 0; }
+              sleep 5
+            done
+            echo "FAIL [$desc] $url -> $code (diharapkan $expect)"
+            return 1
+          }
+
+          # 2. Setiap berkas langsung di _site/ (top-level) harus 200 --
+          #    diambil dari isi _site/ saat ini supaya berkas baru otomatis ikut.
+          while IFS= read -r f; do
+            check_url "${BASE}/${f}" "200" "berkas publik" || FAILED=1
+          done < <(find _site -maxdepth 1 -type f -printf '%f\n')
+
+          # Sampel 1-3 berkas per subfolder langsung di _site/ (rekap/, lib/, dst).
+          while IFS= read -r d; do
+            dname=$(basename "$d")
+            while IFS= read -r f; do
+              check_url "${BASE}/${dname}/${f}" "200" "sampel $dname" || FAILED=1
+            done < <(find "$d" -maxdepth 1 -type f -printf '%f\n' | head -3)
+          done < <(find _site -mindepth 1 -maxdepth 1 -type d)
+
+          # 3. Berkas internal WAJIB 404 -- bukti tidak ikut ter-publish.
+          for f in CLAUDE.md AUDIT-HANDOFF-2026-09-30.md COORDINATION-NOTE-2026-09-22.md scripts/build_seo.py; do
+            check_url "${BASE}/${f}" "404" "internal (harus 404)" || FAILED=1
+          done
+
+          if [ "$FAILED" = "1" ]; then
+            echo ""
+            echo "Uji pasca-deploy GAGAL -- lihat baris FAIL di atas. Jangan dilonggarkan,"
+            echo "selidiki penyebabnya (lihat AUDIT-HANDOFF-2026-09-30-auditor.md bagian 6)."
+            exit 1
+          fi
+          echo ""
+          echo "Semua uji pasca-deploy lolos. (Catatan: ini tidak menilai tampilan --"
+          echo "tinggi header/font/tata letak tetap perlu dicek manusia.)"

@@ -84,9 +84,10 @@ origin, jadi `localStorage` dipakai bersama. Ditemukan PIC `bikin-cv-taaruf`
   panel. Di repo ini: pil "📅 Jadwal Kajian" (`jadwal-link`) di header.
 - Repo ini terbit otomatis tiap push ke `main`, jadi uji lengkap sebelum push.
 
-**Status (1 Okt 2026):** akordeon terpasang berlabel "Menu" (tanpa tautan kode sumber); pil lama masih ada. Perubahan di atas diminta Amal pada
-1 Okt 2026 dan dikerjakan PIC dalam satu push. PIC memperbarui baris status ini
-setelah selesai.
+**Status (1 Okt 2026):** selesai. Akordeon berlabel "Tentang" (bukan "Menu"
+lagi), pil "📅 Jadwal Kajian" (`jadwal-link`) dan CSS-nya sudah dihapus dari
+header — Jadwal Kajian tetap tersedia lewat panel "Proyek lain". Diuji lebar
+320-430px: tinggi header tidak berubah, buka/tutup (klik luar + Esc) normal.
 
 **Daftar resmi** (dijaga Auditor; bila URL berubah, Auditor memperbarui ketiga
 repo dan memberi tahu PIC):
