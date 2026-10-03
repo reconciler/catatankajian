@@ -44,13 +44,21 @@ Workflow `deploy.yml` **tidak** mengunggah seluruh root repo. Langkah "Susun fol
 ## Alur kerja: menambah rekap kajian baru
 
 1. Cek `data.json` dulu untuk cegah duplikat masjid/ustadz/kitab (termasuk
-   variasi ejaan/gelar — lihat `id` yang sudah ada sebelum bikin baru)
-   dan kitab (riset penulis+deskripsi kalau kitab baru). Bio ustadz/kitab baru ditulis dari riset web **dengan catatan
-   transparan bila tidak ditemukan sumber yang solid**; jangan mengarang.
+   variasi ejaan/gelar — lihat `id` yang sudah ada sebelum bikin baru),
+   kitab (riset penulis+deskripsi kalau kitab baru), dan masjid (riset alamat
+   lengkap kalau masjid baru). Bio ustadz/kitab baru ditulis dari riset web **dengan catatan
+   transparan bila tidak ditemukan sumber yang solid**; jangan mengarang. `id` baru
+   memakai slug huruf kecil, spasi/tanda baca jadi tanda hubung, konsisten dengan pola
+   yang sudah ada (mis. "Sofyan Chalid Bin Idham Ruray, Lc." → `sofyan-chalid-bin-idham-ruray-lc`).
 2. Taruh file HTML rekap baru di `rekap/`, ikuti pola nama file yang sudah ada.
 3. Tambah entri sesi baru di `data.json` (`sessions[]`), plus entri baru di
    `masjid[]`/`ustadz[]`/`kitab[]` kalau memang belum ada. `recapUrl` selalu
    `https://reconciler.github.io/catatankajian/rekap/kajian-(masjid)-(ustadz)-(tanggal).html`.
+   `theme` wajib salah satu dari 8 nilai baku di `themes[]` (`aqidah`, `fiqih-ibadah`,
+   `fiqih-muamalah`, `tafsir-quran`, `sirah-tarikh`, `tazkiyatun-nafs`, `keluarga-dakwah`,
+   `isu-kontemporer`) — jangan buat kategori baru. `content` ditulis padat satu paragraf
+   untuk mesin pencari (bukan naratif untuk dibaca langsung). Semua teks deskriptif
+   (bio, deskripsi masjid/kitab, `content`) wajib Bahasa Indonesia.
 4. **Jalankan `python3 scripts/build_seo.py`** — ini meregenerasi:
    - `sitemap.xml` (index + seluruh rekap, `lastmod` dari `date` tiap sesi)
    - JSON-LD (`WebSite`+`ItemList`) di `index.html`, antara marker
