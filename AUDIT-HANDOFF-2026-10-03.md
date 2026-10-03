@@ -36,7 +36,35 @@ Total tambahan ke `CLAUDE.md`: ±9 baris. Tidak ada data pribadi/sensitif disali
   menyentuh `deploy.yml`, sesuai aturan standing eksekusi.
 - **Butir C** (baseline axe-core): dikerjakan menyusul, dilaporkan terpisah.
 
-## 4. Catatan
+## 4. Butir C — baseline axe-core (axe-core 4.13.0, via Playwright + Chromium lokal)
+
+Diuji: beranda (`index.html`) dan satu halaman rekap
+(`kajian-al-kohinoor-jaja-nurjanah-09-agustus-2026.html`), masing-masing lebar 320px dan
+430px, tag `wcag2a`+`wcag2aa`. Server lokal (`python3 -m http.server`), bukan situs live
+(sesi ini tidak bisa mengakses `reconciler.github.io`).
+
+**Hasil: 1 pelanggaran (serius) di keempat kombinasi, sama persis di 320px dan 430px karena
+sifatnya warna, bukan layout: `color-contrast`.**
+
+- Beranda: 26 elemen. Terutama teks `color: var(--muted)` (`#6B7A8D`) di atas latar terang
+  (`.reset`, `#resultCount`, tanggal kartu `.m`, `.page-info`, `.footer-updated`,
+  `.footer-contribute`), plus chip tema (`.chip-theme`, warna `var(--sage)` `#4A7C59` di atas
+  `rgba(74,124,89,.12)`).
+- Rekap: 21 elemen, pola serupa (`.section-label`, `.timeline-year`, `.timeline-body`,
+  `.pillar-desc`, `.ayat-ref`, `footer`) — kemungkinan warna muted yang sama dipakai lintas
+  template rekap.
+
+**Tidak diperbaiki langsung** — ini perubahan warna, bukan atribut aksesibilitas murni, jadi
+termasuk "mengubah tampilan" dan menunggu keputusan Amal per instruksi Butir C
+(`AUDIT-HANDOFF-2026-10-03-auditor.md` bagian 2.1). Tidak ada temuan lain (struktur
+landmark/alt/label) di luar `color-contrast` pada kedua halaman ini.
+
+Catatan: console menunjukkan `ERR_CERT_AUTHORITY_INVALID`/`ERR_TUNNEL_CONNECTION_FAILED` saat
+memuat resource eksternal (kemungkinan Google Fonts) — ini artefak proxy TLS sandbox sesi ini,
+bukan temuan aksesibilitas; browser pengguna sungguhan tidak akan mengalami ini.
+
+## 5. Catatan
 
 Tidak ada data pribadi/sensitif (isi CV, kontak, kredensial, token) disalin ke handoff ini —
-semua butir di atas adalah aturan proses/praktik kerja, bukan data pengguna.
+semua butir di atas adalah aturan proses/praktik kerja atau temuan teknis publik, bukan data
+pengguna.
