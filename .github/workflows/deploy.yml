@@ -119,7 +119,15 @@ jobs:
           done < <(find _site -mindepth 1 -maxdepth 1 -type d)
 
           # 3. Berkas internal WAJIB 404 -- bukti tidak ikut ter-publish.
-          for f in CLAUDE.md AUDIT-HANDOFF-2026-09-30.md COORDINATION-NOTE-2026-09-22.md scripts/build_seo.py; do
+          #    CLAUDE.md dan scripts/build_seo.py tetap; AUDIT-HANDOFF-*.md dan
+          #    COORDINATION-NOTE-*.md diperiksa dinamis (glob) supaya handoff baru
+          #    otomatis ikut terjaga tanpa perlu edit workflow tiap kali (usulan
+          #    Auditor 3 Okt 2026, simetri dengan bikin-cv-taaruf).
+          INTERNAL_FILES="CLAUDE.md scripts/build_seo.py"
+          while IFS= read -r f; do
+            INTERNAL_FILES="$INTERNAL_FILES $f"
+          done < <(find . -maxdepth 1 -type f \( -name 'AUDIT-HANDOFF-*.md' -o -name 'COORDINATION-NOTE-*.md' \) -printf '%f\n')
+          for f in $INTERNAL_FILES; do
             check_url "${BASE}/${f}" "404" "internal (harus 404)" || FAILED=1
           done
 

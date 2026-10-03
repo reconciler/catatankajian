@@ -35,9 +35,10 @@ Workflow `deploy.yml` **tidak** mengunggah seluruh root repo. Langkah "Susun fol
   berkas tidak tayang dan situs memberi 404.
 - **Uji otomatis setelah terbit** (langkah "Uji otomatis pasca-deploy", `curl` di runner, atas keputusan Amal 1 Okt 2026):
   beranda 200 dengan teks penanda "Catatan Kajian", setiap berkas langsung di `_site/` 200, sampel 1-3 berkas per
-  subfolder 200, dan berkas internal (`CLAUDE.md`, `AUDIT-HANDOFF-2026-09-30.md`, `COORDINATION-NOTE-2026-09-22.md`,
-  `scripts/build_seo.py`) 404. **Jangan dilonggarkan supaya hijau**; bila gagal, selidiki penyebabnya. Uji ini tidak
-  menilai tampilan. Bila nama berkas internal di daftar uji berubah atau bertambah, perbarui daftarnya.
+  subfolder 200, dan berkas internal 404: `CLAUDE.md` + `scripts/build_seo.py` (tetap), plus **semua** `AUDIT-HANDOFF-*.md`
+  dan `COORDINATION-NOTE-*.md` di root repo (dicek dinamis via glob sejak 3 Okt 2026, atas usulan Auditor — handoff baru
+  otomatis ikut terjaga tanpa perlu edit workflow). **Jangan dilonggarkan supaya hijau**; bila gagal, selidiki penyebabnya.
+  Uji ini tidak menilai tampilan.
 - Sesi kerja tidak bisa mengakses `reconciler.github.io` (egress diblokir); verifikasi situs live dilakukan oleh langkah
   uji otomatis di atas (hasilnya ada di log run Actions).
 
