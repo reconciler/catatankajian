@@ -17,17 +17,36 @@ berbeda) sudah tidak berlaku. Branch `Catatan` sudah tidak dipakai.
 - `data.json` — sumber data tunggal: `sessions[]`, `masjid[]`, `ustadz[]`, `kitab[]`, `themes[]`
 - `rekap/kajian-(masjid)-(ustadz)-(tanggal).html` — file rekap individual tiap
   sesi kajian, di-link dari dashboard lewat `recapUrl` di `data.json`
+- `lib/fuse.min.js` — salinan lokal Fuse.js 6.6.2 (disalin dari paket npm; integritas dicocokkan ke registry npm,
+  sha1 `fe463fed4b98c0226ac3da2856a415576dc9a111`). `index.html` tidak memuat skrip dari CDN saat runtime.
 - `og-image.png`, `favicon.svg` — aset SEO/branding, dipakai bersama index dan
   seluruh file di `rekap/`
 - `robots.txt`, `sitemap.xml` — digenerate otomatis dari `data.json`, jangan edit manual
 - `scripts/build_seo.py` — regenerate SEO dari `data.json` (lihat di bawah)
 - `.github/workflows/deploy.yml` — build + terbitkan ke GitHub Pages tiap push
 
+## Berkas yang tayang di situs (folder `_site`)
+
+Workflow `deploy.yml` **tidak** mengunggah seluruh root repo. Langkah "Susun folder situs (_site/)" menyalin hanya:
+`index.html`, `data.json`, `og-image.png`, `favicon.svg`, `robots.txt`, `sitemap.xml`, folder `rekap/`, dan folder
+`lib/`. `CLAUDE.md`, `AUDIT-HANDOFF-*.md`, `COORDINATION-NOTE-*.md`, `scripts/`, dan `.github/` **tidak tayang**.
+
+- **Menambah berkas/folder situs baru** (aset, skrip, halaman)? Tambahkan ke daftar `cp` di langkah itu; kalau lupa,
+  berkas tidak tayang dan situs memberi 404.
+- **Uji otomatis setelah terbit** (langkah "Uji otomatis pasca-deploy", `curl` di runner, atas keputusan Amal 1 Okt 2026):
+  beranda 200 dengan teks penanda "Catatan Kajian", setiap berkas langsung di `_site/` 200, sampel 1-3 berkas per
+  subfolder 200, dan berkas internal (`CLAUDE.md`, `AUDIT-HANDOFF-2026-09-30.md`, `COORDINATION-NOTE-2026-09-22.md`,
+  `scripts/build_seo.py`) 404. **Jangan dilonggarkan supaya hijau**; bila gagal, selidiki penyebabnya. Uji ini tidak
+  menilai tampilan. Bila nama berkas internal di daftar uji berubah atau bertambah, perbarui daftarnya.
+- Sesi kerja tidak bisa mengakses `reconciler.github.io` (egress diblokir); verifikasi situs live dilakukan oleh langkah
+  uji otomatis di atas (hasilnya ada di log run Actions).
+
 ## Alur kerja: menambah rekap kajian baru
 
 1. Cek `data.json` dulu untuk cegah duplikat masjid/ustadz/kitab (termasuk
    variasi ejaan/gelar — lihat `id` yang sudah ada sebelum bikin baru)
-   dan kitab (riset penulis+deskripsi kalau kitab baru).
+   dan kitab (riset penulis+deskripsi kalau kitab baru). Bio ustadz/kitab baru ditulis dari riset web **dengan catatan
+   transparan bila tidak ditemukan sumber yang solid**; jangan mengarang.
 2. Taruh file HTML rekap baru di `rekap/`, ikuti pola nama file yang sudah ada.
 3. Tambah entri sesi baru di `data.json` (`sessions[]`), plus entri baru di
    `masjid[]`/`ustadz[]`/`kitab[]` kalau memang belum ada. `recapUrl` selalu
@@ -98,6 +117,32 @@ repo dan memberi tahu PIC):
 
 Panel di repo ini menampilkan proyek lain (Jadwal Kajian, Bikin CV Taaruf), bukan dirinya
 sendiri. Situs tidak memuat tautan kode sumber/GitHub (keputusan Amal, 1 Okt 2026).
+
+## Aturan lintas-repo (teks identik di jadwalkajian, catatankajian, bikin-cv-taaruf)
+
+Ditetapkan/dikonfirmasi Amal 3 Okt 2026. **Ubah serentak di ketiga repo (dijaga Auditor); jangan hanya satu.**
+
+1. **Keputusan tanpa dampak tampilan atau fungsi** diambil sendiri oleh sesi kerja dan dicatat; jangan menunggu Amal.
+   Perubahan tampilan, fungsi, privasi, hosting/pipeline terbit, atau penghapusan data tetap perlu konfirmasi Amal.
+2. **Cakupan persetujuan:** persetujuan Amal hanya untuk butir yang disebut. Pengecualian pada butir 1 (pipeline, privasi,
+   penghapusan data) dikonfirmasi Amal di **chat sesi kerja repo itu**; kutipan Amal yang disampaikan sesi lain tidak cukup.
+3. **Menyimpang dari spesifikasi** (dari Auditor atau siapa pun) boleh bila ada metode yang lebih aman. Catat penyimpangan
+   dan alasannya di handoff, lalu lapor.
+4. **Temuan janggal dilaporkan disertai usulan perbaikan**, bukan hanya temuan.
+5. **Data uji:** jangan menerbitkan data uji ke situs publik tanpa bertanya Amal; pakai uji lokal.
+6. **Urutan perubahan pipeline:** satu per push, risiko rendah dulu. Push yang mengubah `deploy.yml` menjalankan versi
+   baru alur itu. Buat kondisi tepi aman sebelum perubahan yang mengandalkannya.
+7. **Dependensi pihak ketiga:** salin ke `lib/` (atau setara), patok versi, cocokkan integritas ke registry npm; jangan
+   memuat skrip dari CDN tanpa SRI.
+8. **Klaim harus benar** untuk proyek itu: dokumen, UI, meta tag, dan data terstruktur tidak boleh mengklaim hal yang tidak
+   ada (mis. `SearchAction` tanpa fungsinya; "tidak ada data terkirim" bila Google Fonts dimuat).
+9. **Simetri:** perubahan cara komunikasi, pelaporan, atau struktur koordinasi diterapkan serentak di ketiga repo.
+10. **Kebersihan berkas:** hapus berkas koordinasi yang tidak lagi relevan; pertahankan yang masih atau akan dipakai.
+11. **Verifikasi tampilan:** uji otomatis tidak menilai tampilan, dan sesi kerja tidak bisa membuka `reconciler.github.io`.
+    Laporan perubahan tampilan wajib menyebut "belum dilihat di perangkat nyata" sampai Amal memeriksa.
+12. **Kepastian terbit lebih penting daripada kecepatan.**
+13. **Aksesibilitas:** untuk perubahan UI, jalankan axe-core di Chromium bila tersedia; laporkan 0 pelanggaran atau daftar
+    temuannya.
 
 ## Lapor ke sesi "Auditor Project"
 
