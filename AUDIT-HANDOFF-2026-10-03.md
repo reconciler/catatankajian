@@ -29,12 +29,13 @@ Total tambahan ke `CLAUDE.md`: ±9 baris. Tidak ada data pribadi/sensitif disali
 | Jangan pernah mengarang hasil uji/verifikasi; bila alat atau akses tidak tersedia (mis. axe-core gagal terpasang, situs live tak terjangkau), katakan itu secara eksplisit, jangan menebak hasilnya. | Praktik, ditegaskan instruksi Auditor 3 Okt 2026 ("Bila axe-core tidak bisa dipasang, katakan itu") | Lintas-repo | Belum tertulis sebagai prinsip umum | "Jangan mengarang hasil uji/verifikasi; bila alat/akses tak tersedia, katakan itu secara eksplisit." |
 | Bila status suatu hal (terutama verifikasi otomatis atau klaim relay antar-sesi) diragukan, lakukan verifikasi manual sendiri dulu, baru konfirmasikan ke Amal dan sesi Auditor — jangan langsung percaya klaim "sukses" dari jalur otomatis. | **[Keputusan Amal]** chat langsung: "dicatat saja. apapun yang statusnya diragukan, ambil aksi manual lalu konfirmasi ke saya serta sesi 'auditor project kajian'" | Lintas-repo | Sebagian — rule 2 "Aturan lintas-repo" (cakupan persetujuan, kutipan relay tidak cukup) dan rule 11 (keterbatasan akses situs live) sudah dekat, tapi belum eksplisit soal "ambil aksi manual saat ragu" | "Bila status sesuatu diragukan (termasuk klaim relay otomatis), verifikasi manual dulu sebelum konfirmasi ke Amal dan Auditor." |
 
-## 3. Status Butir B dan C (terpisah, tidak termasuk ekstraksi ini)
+## 3. Status Butir B dan C — **selesai** (koreksi 5 Okt 2026, lihat AUDIT-HANDOFF-2026-10-03-auditor.md bagian 3.1.1)
 
-- **Butir B** (longgarkan uji 404 pasca-deploy ke glob `AUDIT-HANDOFF-*.md`/`COORDINATION-NOTE-*.md`):
-  belum disampaikan ke Amal — menunggu konfirmasi langsung "lanjut" di chat PIC sebelum
-  menyentuh `deploy.yml`, sesuai aturan standing eksekusi.
-- **Butir C** (baseline axe-core): dikerjakan menyusul, dilaporkan terpisah.
+- **Butir B**: Amal konfirmasi "lanjut" langsung di chat PIC (3 Okt 2026). Dieksekusi: uji 404 pasca-deploy
+  di `deploy.yml` jadi glob `AUDIT-HANDOFF-*.md`/`COORDINATION-NOTE-*.md`, divalidasi lokal (jalur sukses+gagal)
+  sebelum push. Commit `811ce74`, run [#18](https://github.com/reconciler/catatankajian/actions/runs/37116186650) — **success** (diverifikasi via API Actions).
+- **Butir C**: baseline axe-core selesai, lihat bagian 4 — 1 pelanggaran (`color-contrast`). Tindak lanjutnya di
+  bagian 6.
 
 ## 4. Butir C — baseline axe-core (axe-core 4.13.0, via Playwright + Chromium lokal)
 
@@ -68,3 +69,15 @@ bukan temuan aksesibilitas; browser pengguna sungguhan tidak akan mengalami ini.
 Tidak ada data pribadi/sensitif (isi CV, kontak, kredensial, token) disalin ke handoff ini —
 semua butir di atas adalah aturan proses/praktik kerja atau temuan teknis publik, bukan data
 pengguna.
+
+## 6. Perbaikan color-contrast (instruksi 5 Okt, bagian 3.1 poin 2-5) — **ditahan, menunggu konfirmasi langsung**
+
+AUDIT-HANDOFF-2026-10-03-auditor.md bagian 3 menulis "[Keputusan Amal] ... konfirmasi Amal sudah ada, tidak perlu
+tanya lagi" — ini kutipan dari chat Amal dengan sesi Auditor, bukan konfirmasi langsung di chat PIC. Rule 1+2
+"Aturan lintas-repo" (`CLAUDE.md`): perubahan tampilan tetap perlu konfirmasi Amal, dikonfirmasi di chat sesi
+kerja repo itu sendiri — kutipan relay sesi lain tidak cukup. Konsisten dengan pola Butir B (3 Okt): PIC tanya
+langsung ke Amal di chat PIC sebelum eksekusi, bukan menjalankan atas klaim relay.
+
+**Status:** sudah disiapkan usulan perubahan warna minimal (target >= 4,5:1) untuk `--muted` (#6B7A8D) dan chip
+tema (`--sage` di atas latar sage transparan) — lihat tabel di chat PIC. Menunggu "lanjut" Amal langsung di chat
+PIC sebelum push ke `index.html`/`rekap/*.html`.
