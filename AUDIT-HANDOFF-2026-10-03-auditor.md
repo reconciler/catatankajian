@@ -67,3 +67,8 @@ Dasar: **[Keputusan Amal]** 5 Okt 2026 (chat Auditor):
    terskrip. Cek `build_seo.py` tetap tidak menghasilkan diff di blok SEO; sample 3 rekap + axe.
 4. Re-run axe (320 + 430) di beranda + 1 rekap. Harapan: 0 pelanggaran. Sisa (gradien/overlap) cukup dilist.
 5. Before/after screenshot; sebut "belum dilihat di perangkat nyata" (butir 11). Catat hasil + run di handoff PIC.
+
+### 3.2 Keputusan Amal 5 Okt 2026 (chat Auditor): rekap tidak diubah
+
+- Kontras warna `rekap/*.html` **tidak perlu diubah** (final). Tugas rekap di 3.1 dibatalkan. Dicatat di `CLAUDE.md` supaya tidak muncul lagi.
+- Tidak ada tugas tersisa untuk catatankajian dari instruksi 5 Okt.

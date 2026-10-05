@@ -86,6 +86,12 @@ per rekap). `meta description` per file rekap ditulis manual mengikuti pola:
 apa adanya untuk isi `og:description`/`twitter:description`/JSON-LD, jadi
 pastikan sudah benar sebelum dijalankan.
 
+## Keputusan: kontras warna rekap
+
+Kontras warna (`color-contrast`, axe) di `rekap/*.html` **sengaja tidak diubah** (keputusan Amal 5 Okt 2026, final;
+sebelumnya "ditunda"). Alasan teknis: ~49 dari 62 file punya palet unik, 11 file hex hardcode. Jangan diusulkan lagi,
+kecuali Amal meminta. `index.html` sudah diperbaiki (5 Okt 2026).
+
 ## Aturan satu origin dan tautan antarproyek
 
 Ketiga situs (`catatankajian`, `jadwalkajian`, `bikin-cv-taaruf`) dilayani dari
