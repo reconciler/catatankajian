@@ -47,3 +47,23 @@ atau belum) | usulan teks (maksimal dua baris).
 - **Jangan menyalin data pribadi atau sensitif** (isi CV, kontak, kredensial, token); kutip seperlunya.
 
 **Lapor:** commit ke repo (jalur utama). Beri tahu Auditor lewat pesan hanya sebagai tambahan.
+
+## 3. Instruksi 5 Okt 2026: aturan bersama baru + perbaikan visual axe-core
+
+Dasar: **[Keputusan Amal]** 5 Okt 2026 (chat Auditor):
+- Butir lintas-repo N1-N7 dan butir baru "bahasa campur ID+English, concise" **masuk** `CLAUDE.md`; N8 dan N9 tidak.
+- Temuan visual axe-core: **langsung dieksekusi** (tampilan berubah; konfirmasi Amal sudah ada, tidak perlu tanya lagi).
+- Bagian bersama baru di ketiga `CLAUDE.md` (diff identik): `Aturan lintas-repo` butir 14-19 + `Preferensi melapor`.
+  Baca dan patuhi. Mulai sekarang tulis handoff/laporan dengan gaya itu (concise, simpel, spesifik, campur English).
+- `CLAUDE.md` catatankajian: bagian `Preferensi melapor` ditambahkan (sebelumnya tidak ada di repo ini).
+
+### 3.1 Tugas PIC catatankajian
+1. **Perbaiki handoff PIC**: `AUDIT-HANDOFF-2026-10-03.md` bagian 3 masih menulis Butir B "menunggu konfirmasi", padahal komit
+   `811ce74` sudah mengerjakannya (run #18 `success`). Koreksi.
+2. **Kontras warna (`color-contrast`)**: beranda (26 elemen) dan rekap (21 elemen). Cari perubahan **minimal** yang mencapai
+   >= 4.5:1 terhadap latar sebenarnya: `--muted` (`#6B7A8D`) dan chip tema (`--sage` di atas `rgba(74,124,89,.12)`).
+   Pertahankan hue/nuansa; hanya gelapkan. Hitung kontras tiap pasangan (teks, latar) dan catat tabel before/after.
+3. **Dua push, urut risiko** (aturan 6): (a) `index.html` dulu; (b) lalu `rekap/*.html` (file inti, banyak) via replace
+   terskrip. Cek `build_seo.py` tetap tidak menghasilkan diff di blok SEO; sample 3 rekap + axe.
+4. Re-run axe (320 + 430) di beranda + 1 rekap. Harapan: 0 pelanggaran. Sisa (gradien/overlap) cukup dilist.
+5. Before/after screenshot; sebut "belum dilihat di perangkat nyata" (butir 11). Catat hasil + run di handoff PIC.
