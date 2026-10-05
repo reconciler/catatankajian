@@ -70,14 +70,28 @@ Tidak ada data pribadi/sensitif (isi CV, kontak, kredensial, token) disalin ke h
 semua butir di atas adalah aturan proses/praktik kerja atau temuan teknis publik, bukan data
 pengguna.
 
-## 6. Perbaikan color-contrast (instruksi 5 Okt, bagian 3.1 poin 2-5) — **ditahan, menunggu konfirmasi langsung**
+## 6. Perbaikan color-contrast — **index.html selesai; rekap/*.html ditunda**
 
-AUDIT-HANDOFF-2026-10-03-auditor.md bagian 3 menulis "[Keputusan Amal] ... konfirmasi Amal sudah ada, tidak perlu
-tanya lagi" — ini kutipan dari chat Amal dengan sesi Auditor, bukan konfirmasi langsung di chat PIC. Rule 1+2
-"Aturan lintas-repo" (`CLAUDE.md`): perubahan tampilan tetap perlu konfirmasi Amal, dikonfirmasi di chat sesi
-kerja repo itu sendiri — kutipan relay sesi lain tidak cukup. Konsisten dengan pola Butir B (3 Okt): PIC tanya
-langsung ke Amal di chat PIC sebelum eksekusi, bukan menjalankan atas klaim relay.
+Ditanya langsung ke Amal di chat PIC 5 Okt 2026 (bukan eksekusi atas klaim relay Auditor — lihat alasan di
+commit `90127aa`). Amal konfirmasi: index.html lanjut sekarang; rekap/*.html ditunda sepenuhnya.
 
-**Status:** sudah disiapkan usulan perubahan warna minimal (target >= 4,5:1) untuk `--muted` (#6B7A8D) dan chip
-tema (`--sage` di atas latar sage transparan) — lihat tabel di chat PIC. Menunggu "lanjut" Amal langsung di chat
-PIC sebelum push ke `index.html`/`rekap/*.html`.
+**Temuan tambahan (kesimpulan sendiri, diverifikasi baca langsung 62 file):** instruksi awal mengusulkan
+"replace terskrip" untuk rekap/*.html, tapi tidak bisa — 11 file tanpa CSS variable (hex hardcode), ~49 file
+masing-masing punya palet warna unik berbeda (nama variable dan nilai beda-beda), hanya 2 pasang yang sama.
+Satu scripted find-replace tidak aman/tidak berlaku untuk semuanya. Perbaikan rekap, kalau dilanjutkan nanti,
+perlu analisis kontras per file — bukan 1-2 push seperti dibayangkan.
+
+**index.html — before/after (commit `73ae704`, run [#21](https://github.com/reconciler/catatankajian/actions/runs/37274948002) success):**
+
+| Variable | Dipakai untuk | Before | Kontras before (vs `--surface`, kasus terburuk) | After | Kontras after |
+|---|---|---|---|---|---|
+| `--muted` | tanggal, result-count, page-info, footer | `#6B7A8D` | 3.74:1 (gagal 4.5) | `#606D7E` | 4.50:1 |
+| `--sage` | teks chip-tema di atas latar sage transparan | `#4A7C59` | 4.17:1 (gagal 4.5) | `#477655` | 4.51:1 |
+
+Efek samping dicek: tombol putih di atas `--sage` (background) tetap aman, membaik 4.86:1 -> 5.26:1. Hue
+dipertahankan, hanya digelapkan.
+
+**Validasi sebelum push:** axe-core 4.13.0 re-run beranda 320px+430px -> **0 pelanggaran** (sebelumnya 1 serius,
+26 elemen). Search tetap jalan ("tauhid" 62->12, 0 JS error). Screenshot before/after 320px dan 430px
+dibandingkan — perubahan visual halus (warna teks/chip sedikit lebih gelap), tidak ada regresi layout.
+**Belum dilihat di perangkat nyata** (sesi kerja tidak bisa akses `reconciler.github.io`).
