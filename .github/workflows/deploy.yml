@@ -131,6 +131,31 @@ jobs:
             check_url "${BASE}/${f}" "404" "internal (harus 404)" || FAILED=1
           done
 
+          # 4. Konsistensi canonical: tiap rekap harus punya tepat satu
+          #    <link rel="canonical"> yang sama dengan recapUrl di data.json.
+          #    Murni cek berkas di checkout (tanpa jaringan); penjaga bila
+          #    scripts/build_seo.py lupa dijalankan. Berjalan setelah deploy,
+          #    jadi tidak menahan terbit -- run berwarna merah = perlu diperbaiki.
+          python3 - <<'PY' || FAILED=1
+          import json, os, re, sys
+          d = json.load(open("data.json", encoding="utf-8"))
+          bad = []
+          for s in d["sessions"]:
+              url = s["recapUrl"]
+              f = os.path.join("rekap", url.rsplit("/", 1)[1])
+              if not os.path.exists(f):
+                  bad.append(f + ": berkas tidak ada")
+                  continue
+              c = re.findall(r'<link rel="canonical" href="([^"]*)"', open(f, encoding="utf-8").read())
+              if c != [url]:
+                  bad.append(f + ": canonical=" + repr(c) + " diharapkan " + url)
+          for b in bad:
+              print("FAIL [canonical] " + b)
+          if bad:
+              sys.exit(1)
+          print("OK  [canonical] " + str(len(d["sessions"])) + " rekap: canonical sama dengan recapUrl")
+          PY
+
           if [ "$FAILED" = "1" ]; then
             echo ""
             echo "Uji pasca-deploy GAGAL -- lihat baris FAIL di atas. Jangan dilonggarkan,"

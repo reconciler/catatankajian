@@ -39,6 +39,8 @@ Workflow `deploy.yml` **tidak** mengunggah seluruh root repo. Langkah "Susun fol
   dan `COORDINATION-NOTE-*.md` di root repo (dicek dinamis via glob sejak 3 Okt 2026, atas usulan Auditor — handoff baru
   otomatis ikut terjaga tanpa perlu edit workflow). **Jangan dilonggarkan supaya hijau**; bila gagal, selidiki penyebabnya.
   Uji ini tidak menilai tampilan.
+- Uji pasca-deploy juga memeriksa (dari berkas repo, tanpa jaringan) bahwa `<link rel="canonical">` tiap rekap sama dengan
+  `recapUrl` di `data.json` (ditambah 11 Okt 2026). Berjalan setelah terbit, jadi run merah = perbaiki, bukan penahan terbit.
 - Sesi kerja tidak bisa mengakses `reconciler.github.io` (egress diblokir); verifikasi situs live dilakukan oleh langkah
   uji otomatis di atas (hasilnya ada di log run Actions).
 
