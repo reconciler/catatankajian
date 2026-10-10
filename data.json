@@ -1065,6 +1065,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-alkohinoor-unknown-11-oktober-2026.html",
    "status": "tersedia",
    "content": "Tafsir ringkas Juz 19: QS Al-Furqan ayat 21 sampai QS An-Naml ayat 55, mencakup QS Asy-Syu'ara. Kisah Nabi Sulaiman dalam QS An-Naml: pasukan dari manusia, jin, dan burung (An-Naml 17); sebagian setan ditundukkan untuk menyelam (Al-Anbiya 82). Semut memperingatkan kaumnya masuk sarang agar tidak terinjak pasukan Sulaiman (An-Naml 18) — hikmah dari ustadz: pemimpin mendengar suara rakyat kecil. Hud-Hud tidak hadir dan diancam hukuman kecuali membawa alasan jelas (An-Naml 20-21) — hikmah dari ustadz: ketegasan pemimpin. Hud-Hud melapor membawa berita dari Saba' dan mendapati ratu beserta kaumnya menyembah matahari (An-Naml 22-24); Nabi Sulaiman mengirim surat lewat Hud-Hud dan memintanya menjauh untuk menyimak reaksi mereka (An-Naml 28). Perlu dicek: lokasi Nabi Sulaiman \"di Palestina\" tidak ditemukan di tafsir yang diperiksa, serta penyamaan Ratu Saba dengan Ratu Syeba di Perjanjian Lama belum terverifikasi ke sumber tafsir. Masjid Al Kohinoor, Ahad pagi, 11 Oktober 2026."
+  },
+  {
+   "id": 64,
+   "date": "2026-10-03",
+   "masjidId": "ar-riyadh",
+   "masjidRaw": "Ar-Riyadh, Depok",
+   "ustadzIds": [
+    "amrullah-tekko-lc"
+   ],
+   "ustadzRaw": "Amrullah Tekko, Lc.",
+   "kitab": "Al-Kaba'ir",
+   "theme": "keluarga-dakwah",
+   "title": "Al-Kaba'ir — Meninggalkan Amar Makruf Nahi Mungkar (Dosa Besar yang Diperkirakan)",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-arriyadh-amrullah-03-oktober-2026-v2.html",
+   "status": "tersedia",
+   "content": "Kajian kitab Al-Kaba'ir (Imam Adz-Dzahabi), pembahasan perbuatan yang diperkirakan termasuk dosa besar: meninggalkan amar makruf nahi mungkar. Hadits Abu Sa'id Al-Khudri (HR Muslim, Arbain Nawawi 34): ubah kemungkaran dengan tangan, lisan, atau hati — tingkat ketiga adalah hati (bukan \"doa\" seperti pada catatan awal), sesuai kemampuan. Keutamaan amar makruf nahi mungkar: umat terbaik (QS Ali Imran 110); dikuatkan kedudukannya di bumi (QS Al-Hajj 41, penjabaran ustadz); beruntung (QS Ali Imran 104); meredakan api fitnah (QS Al-Anfal 25; dialog Umar dan Huzaifah dalam hadits Huzaifah, HR Bukhari dan Muslim, dengan beberapa koreksi redaksi); berita gembira dan peringatan sebagai satu kesatuan dakwah Nabi (QS Al-Baqarah 119). Arahan saat fitnah: tahan lisan atau jempol di dunia online (berkata baik atau diam, Arbain Nawawi 15), pastikan kebenaran (QS Al-Hujurat 6), pertimbangkan maslahat dan mudarat sebelum membagikan informasi meski benar (penjabaran ustadz). Perlu dicek lebih lanjut: klasifikasi bahwa meninggalkan amar makruf nahi mungkar termasuk dosa besar belum ditemukan secara eksplisit di Al-Kaba'ir pada sumber yang diperiksa. Ustadz Amrullah Tekko, Lc., Masjid Ar-Riyadh, Depok, 3 Oktober 2026. Kitab Al-Kaba'ir."
   }
  ],
  "masjid": [
@@ -1394,6 +1411,11 @@
    "id": "waskito-aji-nugroho-lc-m-a",
    "name": "Waskito Aji Nugroho, Lc., M.A.",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
+  },
+  {
+   "id": "amrullah-tekko-lc",
+   "name": "Amrullah Tekko, Lc.",
+   "bio": "Pemateri kajian kitab rutin di Masjid Ar-Riyadh, Depok (jadwal Oktober 2026). Riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   }
  ],
  "themes": [
@@ -1502,6 +1524,12 @@
    "name": "Tadzkiratus Saami'",
    "author": "Badruddin Ibnu Jama'ah (639–733 H)",
    "description": "Judul lengkap: Tadzkiratus Saami' Wal Mutakallim Fii Adabil 'Alim Wal Muta'allim. Kitab klasik tentang adab guru dan murid dalam menuntut ilmu — dinilai cukup komprehensif karena mencakup lima bidang adab yang jarang ditemukan bersamaan di kitab adab lainnya."
+  },
+  {
+   "id": "al-kaba-ir",
+   "name": "Al-Kaba'ir",
+   "author": "Imam Adz-Dzahabi (Syamsuddin Muhammad bin Ahmad bin Utsman Adz-Dzahabi, 673–748 H)",
+   "description": "Kitab klasik tentang dosa-dosa besar menurut Al-Qur'an dan Sunnah, disusun per jenis dosa (sekitar 70 pembahasan) dengan dalil dan peringatan akibatnya. Terbit dalam berbagai edisi; derajat sebagian riwayat di dalamnya perlu dicek ke ahli hadits sebelum dijadikan dalil."
   }
  ]
 }
