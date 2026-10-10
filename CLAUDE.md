@@ -66,6 +66,9 @@ Workflow `deploy.yml` **tidak** mengunggah seluruh root repo. Langkah "Susun fol
      `<!--LD_JSON_START-->`...`<!--LD_JSON_END-->`
    - Per file di `rekap/`: OG/Twitter meta tags, favicon link, dan JSON-LD
      `Article`, antara marker `<!--SEO_BLOCK_START-->`...`<!--SEO_BLOCK_END-->`
+   - `<link rel="canonical">` per file rekap (di luar marker): dipaksa sama dengan
+     `recapUrl` di `data.json` (diganti bila beda, disisipkan bila belum ada; peringatan
+     `WARNING` bila ada tag ganda — perbaiki manual)
    - **Jangan edit manual apa pun di antara marker-marker itu** — akan
      tertimpa saat script dijalankan lagi.
 5. Validasi sebelum commit: JSON well-formed/valid, tidak ada ID duplikat di

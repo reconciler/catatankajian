@@ -5,6 +5,9 @@ Regenerate SEO artifacts for Catatan Kajian dari data.json:
   2. JSON-LD (WebSite + ItemList) di index.html, antara marker LD_JSON_START/END
   3. Per file kajian-*.html: OG/Twitter tags + favicon link + JSON-LD Article,
      antara marker SEO_BLOCK_START/END (idempotent — dihapus & ditulis ulang tiap run)
+  4. Per file kajian-*.html: <link rel="canonical"> dipaksa sama dengan recapUrl
+     di data.json (diganti bila beda, disisipkan bila belum ada). Tag ini ada di
+     luar marker, jadi tidak ikut tertimpa blok SEO -- ditangani terpisah.
 
 Jalankan setelah data.json diperbarui (sesi baru ditambah/diubah):
     python3 scripts/build_seo.py
@@ -111,6 +114,28 @@ def build_index_jsonld(data):
     return len(items)
 
 
+CANONICAL_RE = re.compile(r'<link rel="canonical" href="[^"]*"\s*/?>')
+
+
+def ensure_canonical(content, canonical_url):
+    """Pastikan tepat satu <link rel="canonical"> berisi canonical_url.
+    Return (konten_baru, status): status "ok" | "diperbaiki" | "disisipkan" | "ganda"
+    ("ganda" = lebih dari satu tag, tidak diubah -- perlu ditangani manual)."""
+    tag = f'<link rel="canonical" href="{canonical_url}">'
+    found = CANONICAL_RE.findall(content)
+    if len(found) > 1:
+        return content, "ganda"
+    if len(found) == 1:
+        if found[0] == tag:
+            return content, "ok"
+        return CANONICAL_RE.sub(lambda m: tag, content, count=1), "diperbaiki"
+    # belum ada: sisipkan setelah <meta charset>, atau sebelum <meta name="description">
+    new, n = re.subn(r'(<meta charset="[^"]*">)', lambda m: m.group(1) + "\n" + tag, content, count=1)
+    if n == 0:
+        new, n = re.subn(r'(<meta name="description")', lambda m: tag + "\n" + m.group(1), content, count=1)
+    return (new, "disisipkan") if n else (content, "ganda")
+
+
 def esc_attr(s):
     return s.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;").replace(">", "&gt;")
 
@@ -124,6 +149,7 @@ def build_kajian_pages(data):
 
     updated = 0
     skipped = 0
+    canonical_fixed = 0
     for s in data["sessions"]:
         fname = s["recapUrl"].rstrip("/").split("/")[-1]
         path = os.path.join(REPO_ROOT, "rekap", fname)
@@ -132,12 +158,18 @@ def build_kajian_pages(data):
             continue
 
         with open(path, encoding="utf-8") as f:
-            content = f.read()
+            original = f.read()
+
+        canonical_url = s["recapUrl"]
+        content, canon_status = ensure_canonical(original, canonical_url)
+        if canon_status == "ganda":
+            print(f"WARNING: {fname} punya lebih dari satu/tanpa titik sisip <link rel=\"canonical\">, tidak diubah")
+        elif canon_status != "ok":
+            canonical_fixed += 1
 
         m = re.search(r'<meta name="description" content="(.*?)">', content)
         description = m.group(1) if m else f"Catatan kajian: {s['title']}"
 
-        canonical_url = s["recapUrl"]
         masjid = masjid_by_id.get(s["masjidId"])
         theme_name = theme_by_id.get(s["theme"], s["theme"])
 
@@ -197,22 +229,23 @@ def build_kajian_pages(data):
                 print(f"WARNING: tidak ketemu titik insersi (meta description) di {fname}, dilewati")
                 continue
 
-        if new_content != content:
+        if new_content != original:
             with open(path, "w", encoding="utf-8") as f:
                 f.write(new_content)
             updated += 1
 
-    return updated
+    return updated, canonical_fixed
 
 
 def main():
     data = load_data()
     n_urls = build_sitemap(data)
     n_items = build_index_jsonld(data)
-    n_pages = build_kajian_pages(data)
+    n_pages, n_canon = build_kajian_pages(data)
     print(f"sitemap.xml: {n_urls} URL")
     print(f"index.html JSON-LD: {n_items} item ItemList")
     print(f"Halaman rekap diperbarui: {n_pages}")
+    print(f"Canonical diperbaiki/disisipkan: {n_canon}")
 
 
 if __name__ == "__main__":
