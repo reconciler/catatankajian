@@ -70,11 +70,36 @@ satu 200 terhadap situs live. Independen dari isi `_site/`, jadi menangkap tepat
 log Actions sungguhan menunjukkan ketujuh baris `OK [aset dirujuk sumber]` terhadap domain live
 `reconciler.github.io`, bukan simulasi.
 
+## Verifikasi Auditor (dicatat di `AUDIT-HANDOFF-2026-10-22-auditor.md` bagian 4)
+
+Auditor memeriksa ulang gelombang 1-3 langsung (git, Actions, uji ulang) — **diterima semua**, termasuk sampel
+3 rekap untuk Gelombang 3 (dinilai cukup, tidak perlu diperluas). Kebiasaan melaporkan+memperbaiki kesalahan
+sendiri (bug process-substitution) dicatat sebagai praktik baik.
+
+## Usulan opsional Auditor — dikerjakan: landmark `<header>`/`<main>`
+
+Auditor menemukan (axe semua rule, bukan cuma WCAG A/AA, pada hasil Gelombang 1): `landmark-one-main` (1) dan
+`region` (11-12) sudah ada **sebelum** perubahan ini (bukan akibat tautan Kenali Calon). Usulan: tambah landmark
+semantik seperti pola `jadwalkajian`. Ditandai rule 1 (tanpa dampak tampilan/fungsi) — PIC putuskan sendiri,
+syarat: screenshot identik piksel + tinggi header tak berubah.
+
+**Dikerjakan** (commit `fcc89c4`, run [#36 success](https://github.com/reconciler/catatankajian/actions/runs/39715962255)):
+`<div class="hero">` -> `<header class="hero">`; `<main>` membungkus disclaimer+filterbar+result-count+`#main`.
+Tidak ada perubahan CSS/JS (dicek: tidak ada selector tag-spesifik atau DOM traversal yang bergantung struktur ini).
+
+**Hasil uji (320/375/430px):**
+- axe-core semua rule: `landmark-one-main`+`region`, 2 pelanggaran -> **0**, di ketiga lebar.
+- Screenshot full-page before/after, pixelmatch: **0 piksel beda** dari total ~1 juta piksel per lebar, di
+  ketiga lebar.
+- Tinggi `.hero`: sama persis sebelum/sesudah di ketiga lebar (151,4 / 151,4 / 152,0 px).
+- Search ("tauhid" -> 12/65) dan panel "Tentang" tetap jalan, 0 error JS.
+- `build_seo.py`: tidak ada diff lain.
+
 ## Yang perlu diketahui
 
-- Tampilan (Gelombang 1) belum dilihat di perangkat nyata oleh Amal — per rule 11, dianggap tidak bermasalah
-  sampai ada laporan sebaliknya, tidak menahan pekerjaan.
+- Tampilan (Gelombang 1, dan landmark di atas — meski piksel identik) belum dilihat di perangkat nyata oleh
+  Amal — per rule 11, dianggap tidak bermasalah sampai ada laporan sebaliknya, tidak menahan pekerjaan.
 - Uji pasca-deploy sekarang 5 lapis: beranda, berkas top-level+subfolder dari `_site/`, berkas internal 404,
-  canonical rekap, dan (baru) aset dirujuk sumber. Celah kelas "lupa cp" untuk berkas yang dirujuk dari
-  `rekap/*.html` selain 3 sampel masih mungkin lolos — kalau Auditor mau memperluas sampel, itu usulan terpisah.
+  canonical rekap, dan aset dirujuk sumber. Celah kelas "lupa cp" untuk berkas yang dirujuk dari `rekap/*.html`
+  selain 3 sampel masih mungkin lolos — kalau Auditor mau memperluas sampel, itu usulan terpisah.
 - Tidak ada data pribadi/sensitif ditulis di handoff ini.
