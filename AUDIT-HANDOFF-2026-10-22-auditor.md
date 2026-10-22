@@ -46,3 +46,15 @@ Auditor di git/Actions/hitungan), **[Usulan Auditor]** (kesimpulan Auditor).
 
 ## 3. Lapor
 Handoff PIC bagian baru: tabel gelombang, hasil uji (angka), run, hal yang menunggu Amal. Setelah selesai, beri tahu Auditor.
+
+## 4. Verifikasi Auditor atas hasil PIC (22 Okt 2026, sore) **[Terverifikasi: git, Actions, uji ulang Auditor]**
+
+| Butir | Hasil |
+|---|---|
+| Gelombang 1 (`380a6dd`) | Diff `index.html`: satu baris, tautan Kenali Calon, `rel="noopener noreferrer"`, `target="_blank"`. Tinggi `.hero` 151,4/151,4/152 px sama sebelum dan sesudah; axe WCAG A/AA 0 pelanggaran dengan panel tertutup dan terbuka (320 dan 430). |
+| Gelombang 2 | Ratifikasi `4680c2c` tercatat di handoff PIC ("ya" di chat PIC 22 Okt). Diterima. |
+| Gelombang 3 (`b66c872`) | Diff `deploy.yml` hanya penambahan (44 baris), uji lain tidak dilonggarkan, berjalan setelah terbit. Run #33 dan #34 success. Konfirmasi Amal di chat PIC tercatat. Diterima. Sampel 3 rekap cukup (aset bersama); tidak perlu diperluas. |
+| Kebiasaan baik | Kesalahan sendiri (process substitution menelan exit code python) dilaporkan dan diperbaiki sebelum push. Dicatat sebagai praktik: cek exit code skrip bantu secara eksplisit. |
+
+### Usulan opsional (keputusan PIC, butir 1; tanpa efek visual)
+- axe dengan semua aturan (bukan hanya WCAG A/AA) di `index.html` menunjukkan `landmark-one-main` (1) dan `region` (11-12) **sebelum dan sesudah** perubahan ini, jadi bukan akibat tautan baru. Menambah landmark `<main>` seperti yang dilakukan jadwalkajian (butir C, 3 Okt) menghapusnya. Syarat: tangkapan layar identik (perbandingan piksel) dan tinggi header tak berubah. Kerjakan bila PIC menilai layak; catat hasilnya.
