@@ -156,6 +156,50 @@ jobs:
           print("OK  [canonical] " + str(len(d["sessions"])) + " rekap: canonical sama dengan recapUrl")
           PY
 
+          # 5. Aset yang dirujuk markup SUMBER (index.html + sampel 3 rekap, bukan isi
+          #    _site/) WAJIB 200 -- menjaga dari kasus lupa menambah berkas baru ke
+          #    langkah "Susun folder situs" (celah [Terverifikasi] Auditor 22 Okt 2026:
+          #    uji lama hanya mengecek apa yang SUDAH ada di _site/, jadi berkas yang
+          #    dirujuk tapi lupa di-cp tidak pernah diuji dan run tetap hijau).
+          ASSET_LIST=$(mktemp)
+          python3 - > "$ASSET_LIST" <<'PY'
+          import os, re
+          local_paths = set()
+
+          def extract(text):
+              for m in re.findall(r'(?:href|src|content)="(https://reconciler\.github\.io/catatankajian/[^"]*)"', text):
+                  rel = m[len("https://reconciler.github.io/catatankajian/"):]
+                  if rel:
+                      local_paths.add(rel)
+              for val in re.findall(r'(?:href|src)="([^"]+)"', text):
+                  if val.startswith(("http://", "https://", "#", "mailto:", "data:", "javascript:")):
+                      continue
+                  if "${" in val or not val or " " in val:
+                      continue
+                  local_paths.add(val)
+              for val in re.findall(r"fetch\(['\"]([^'\"]+)['\"]", text):
+                  if not val.startswith(("http://", "https://")):
+                      local_paths.add(val)
+
+          extract(open("index.html", encoding="utf-8").read())
+          for f in sorted(os.listdir("rekap"))[:3]:
+              extract(open(os.path.join("rekap", f), encoding="utf-8").read())
+              local_paths.add("rekap/" + f)
+
+          for p in sorted(local_paths):
+              print(p)
+          PY
+          PY_EXIT=$?
+          if [ "$PY_EXIT" != "0" ]; then
+            echo "FAIL [aset dirujuk sumber] skrip ekstraksi python gagal (exit $PY_EXIT)"
+            FAILED=1
+          fi
+          while IFS= read -r p; do
+            [ -z "$p" ] && continue
+            check_url "${BASE}/${p}" "200" "aset dirujuk sumber" || FAILED=1
+          done < "$ASSET_LIST"
+          rm -f "$ASSET_LIST"
+
           if [ "$FAILED" = "1" ]; then
             echo ""
             echo "Uji pasca-deploy GAGAL -- lihat baris FAIL di atas. Jangan dilonggarkan,"
