@@ -5,7 +5,10 @@ kajian Islam — bisa difilter/dicari berdasarkan masjid, ustadz, kitab, dan
 tema. Live di **https://reconciler.github.io/catatankajian/**, di-host
 GitHub Pages, terbit otomatis tiap push ke `main`.
 
-Migrasi dari Netlify ke GitHub Pages: **29 September 2026**. Sebelumnya
+Migrasi dari Netlify ke GitHub Pages: **29 September 2026**. Project Netlify lama
+(`catatankajian.netlify.app`) ternyata masih menerima deploy otomatis dari tiap push ke `main`
+(ditemukan Auditor 22 Okt 2026) dan **ditangguhkan Amal (keterangan Amal 23 Okt 2026; belum dihapus)**.
+Jangan memakai atau menautkan URL itu. Sebelumnya
 sempat ada arsitektur 2-branch (`main`→Netlify, `Catatan`→GitHub Pages,
 lihat riwayat git kalau perlu) — sudah digabung kembali jadi **satu branch**
 begitu Netlify ditinggalkan, karena alasan pemisahannya (dua platform hosting

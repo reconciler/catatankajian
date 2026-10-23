@@ -58,3 +58,9 @@ Handoff PIC bagian baru: tabel gelombang, hasil uji (angka), run, hal yang menun
 
 ### Usulan opsional (keputusan PIC, butir 1; tanpa efek visual)
 - axe dengan semua aturan (bukan hanya WCAG A/AA) di `index.html` menunjukkan `landmark-one-main` (1) dan `region` (11-12) **sebelum dan sesudah** perubahan ini, jadi bukan akibat tautan baru. Menambah landmark `<main>` seperti yang dilakukan jadwalkajian (butir C, 3 Okt) menghapusnya. Syarat: tangkapan layar identik (perbandingan piksel) dan tinggi header tak berubah. Kerjakan bila PIC menilai layak; catat hasilnya.
+
+## 5. Verifikasi lanjutan Auditor (23 Okt 2026) **[Terverifikasi kecuali disebut lain]**
+
+- **Landmark `<header>`/`<main>` (`fcc89c4`, run #36 success):** Auditor mengulang uji pada `main`: screenshot halaman penuh **identik** (hash sama) dibanding `2fa531f` di 320/375/430 px, tinggi hero sama (151,4/151,4/152), axe semua aturan 0 pelanggaran (sebelumnya `landmark-one-main` dan `region`). Diterima.
+- **Temuan Netlify (22 Okt):** project Netlify `catatankajian` masih terhubung ke repo dan membuat deploy production tiap push ke `main`, termasuk push yang hanya mengubah dokumen (deploy 22 Okt 03:17 UTC dari komit `ac67346`, "1 asset changed"). Kemungkinan seluruh isi repo ikut tayang di `netlify.app` **[inferensi, tidak terkonfirmasi]**. Amal melaporkan 23 Okt (chat Auditor) bahwa kedua project Netlify sudah ditangguhkan. Auditor memeriksa efeknya dengan melihat apakah push ini memicu deploy baru; hasilnya dicatat di handoff berikutnya.
+- **Untuk PIC:** jangan menyatakan "Netlify tidak dipakai" di dokumen atau laporan tanpa bukti dari sisi Netlify. Jangan mengubah apa pun di Netlify. `CLAUDE.md` bagian awal sudah dikoreksi Auditor.
