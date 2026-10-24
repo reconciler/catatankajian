@@ -1131,6 +1131,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-alkohinoor-aliwartadinata-18-oktober-2026.html",
    "status": "tersedia",
    "content": "Kriteria manusia berkualitas dalam tiga pilar: hablum minallah (spiritual dan takwa), bina' an-nafs (karakter dan ketangguhan diri, terus belajar dan menempa diri), dan hablum minannas (keluarga dan sosial). Pilar spiritual: literasi Al-Qur'an, hadits sebaik-baik kalian adalah yang mempelajari dan mengajarkan Al-Qur'an (HR Bukhari 5027; koreksi redaksi: lafaznya tanpa kata membaca); sinkron iman dan amal saleh serta tidak menunda amal (QS Al-'Ashr 3, HR Muslim 118); khusyuk shalat dengan ciri paling lembut bahunya (HR Abu Dawud 672; makna tumakninah menurut Al-Khattabi, juga makna memberi ruang di shaf); konsisten shalat di awal waktu (hadits Ummu Farwah HR Abu Dawud 426 dan Tirmidzi 170, HR Bukhari 527, amal kontinu HR Bukhari 6464). Pilar diri: mengelola emosi, bersyukur saat diberi kelebihan dan sabar saat kekurangan (HR Muslim 2999, QS Saba 13), akhlak baik sepanjang waktu (HR Tirmidzi 1162, Arbain Nawawi 18). Pilar sosial sebagai penyempurna: terbaik kepada keluarga (HR Tirmidzi 3895). Manusia berkualitas bukan klaim diri (QS An-Najm 32) dan bukan hasil instan. Perlu dicek: istilah qada dalam catatan kemungkinan maksudnya ada' (shalat pada waktunya). Masjid Al Kohinoor, Ahad Subuh, 18 Oktober 2026."
+  },
+  {
+   "id": 68,
+   "date": "2026-10-17",
+   "masjidId": "nurul-iman",
+   "masjidRaw": "Nurul Iman, Blok M Square",
+   "ustadzIds": [
+    "umar-lathif"
+   ],
+   "ustadzRaw": "Umar Lathif",
+   "kitab": "Nur at-Taqwa wa Zhulumatil Ma'ashi",
+   "theme": "tazkiyatun-nafs",
+   "title": "Nur at-Taqwa wa Zhulumatil Ma'ashi: Hukuman Syar'i, Hukuman Qadari, Sabar dan Syukur",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-nuruliman-lathif-17-oktober-2026.html",
+   "status": "tersedia",
+   "content": "Lanjutan kitab Nur at-Taqwa wa Zhulumat al-Ma'ashi karya Sa'id bin Ali bin Wahf Al-Qahtani, bab kegelapan maksiat: peringatan atas pelanggaran syariat, qishash untuk pelanggaran berat dan larangan hakim memutus dengan kepentingan pribadi; hikmah hukuman syariat sebagai penghapus dosa (hadits Ubadah bin Shamit, HR Muslim 1709, Bukhari 18 dan 6784); perbedaan ta'zir dan hudud (HR Muslim 1708, batas sepuluh cambukan kecuali had); hadits tiga hakim, satu di surga dan dua di neraka (Buraidah, HR Abu Dawud 3573, Tirmidzi 1322, Ibnu Majah 2315, shahih menurut Al-Albani); pembagian hukuman dosa menjadi syar'iyyah dan qadariyyah menurut Ibnul Qayyim dalam Al-Jawab al-Kafi; takdir baik disyukuri dan takdir buruk disabari (hadits Shuhaib, HR Muslim 2999); sabar dan syukur sebagai kebutuhan jiwa, iman separuh sabar dan separuh syukur ('Uddat ash-Shabirin bab 19; shahih mauquf dari Ibnu Mas'ud, lemah bila marfu'). Masjid Nurul Iman Blok M Square, Sabtu ba'da Maghrib, 17 Oktober 2026."
   }
  ],
  "masjid": [
@@ -1558,8 +1575,8 @@
   {
    "id": "nur-at-taqwa-wa-zhulumatil-ma-ashi",
    "name": "Nur at-Taqwa wa Zhulumatil Ma'ashi",
-   "author": "Penulis belum terkonfirmasi dari sumber publik",
-   "description": "Kitab yang membahas cahaya ketakwaan dan kegelapan akibat kemaksiatan — dikaji rutin secara berseri oleh Ustadz Umar Lathif di Masjid Nurul Iman Blok M Square."
+   "author": "Sa'id bin Ali bin Wahf Al-Qahtani",
+   "description": "Judul lengkap Nur at-Taqwa wa Zhulumat al-Ma'ashi fi Dhau' al-Kitab wa as-Sunnah. Kitab yang membahas cahaya ketakwaan dan kegelapan akibat kemaksiatan berdasarkan Al-Qur'an dan Sunnah, dikaji rutin secara berseri oleh Ustadz Umar Lathif di Masjid Nurul Iman Blok M Square."
   },
   {
    "id": "riyadush-shalihin",
