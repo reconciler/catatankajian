@@ -1148,6 +1148,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-nuruliman-lathif-17-oktober-2026.html",
    "status": "tersedia",
    "content": "Lanjutan kitab Nur at-Taqwa wa Zhulumat al-Ma'ashi karya Sa'id bin Ali bin Wahf Al-Qahtani, bab kegelapan maksiat: peringatan atas pelanggaran syariat, qishash untuk pelanggaran berat dan larangan hakim memutus dengan kepentingan pribadi; hikmah hukuman syariat sebagai penghapus dosa (hadits Ubadah bin Shamit, HR Muslim 1709, Bukhari 18 dan 6784); perbedaan ta'zir dan hudud (HR Muslim 1708, batas sepuluh cambukan kecuali had); hadits tiga hakim, satu di surga dan dua di neraka (Buraidah, HR Abu Dawud 3573, Tirmidzi 1322, Ibnu Majah 2315, shahih menurut Al-Albani); pembagian hukuman dosa menjadi syar'iyyah dan qadariyyah menurut Ibnul Qayyim dalam Al-Jawab al-Kafi; takdir baik disyukuri dan takdir buruk disabari (hadits Shuhaib, HR Muslim 2999); sabar dan syukur sebagai kebutuhan jiwa, iman separuh sabar dan separuh syukur ('Uddat ash-Shabirin bab 19; shahih mauquf dari Ibnu Mas'ud, lemah bila marfu'). Masjid Nurul Iman Blok M Square, Sabtu ba'da Maghrib, 17 Oktober 2026."
+  },
+  {
+   "id": 69,
+   "date": "2026-10-25",
+   "masjidId": "salman-itb",
+   "masjidRaw": "Salman ITB, Bandung (daring via Zoom)",
+   "ustadzIds": [
+    "elma-fitria-st"
+   ],
+   "ustadzRaw": "Elma Fitria, S.T.",
+   "kitab": null,
+   "theme": "keluarga-dakwah",
+   "title": "Bincang Keluarga: Dedikasi Istri Mendukung Suami",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-elma-25-oktober-2026-v2.html",
+   "status": "tersedia",
+   "content": "Bincang Keluarga Bidang Dakwah Masjid Salman ITB bersama Elma Fitria, S.T. tentang dedikasi istri mendukung suami: tujuan pernikahan, dedikasi dan sinergi suami-istri; suami sebagai qawwam (QS An-Nisa 34, tafsir Ibnu Katsir); perempuan dalam perwalian sebagai anak, saudari, istri, dan ibu (HR Muslim 2631; hadits fafihima fajahid berlaku untuk kedua orang tua, HR Bukhari dan Muslim); fitrah peran ayah dan bunda dari kerangka Fitrah Based Education; 4 kuadran dinamika karakter moral dan kepribadian; aktualisasi diri istri dan wanita salehah sebagai sebaik-baik perhiasan dunia (HR Muslim 1467); Sailboat of Needs Scott Barry Kaufman (security: safety, connection, self-esteem; growth: exploration, love, purpose) sebagai revisi piramida Maslow; menghadapi masa lalu dan tobat (HR Tirmidzi, Arbain 18), menutup aib masa lalu; kisah Ibrahim dan Hajar (HR Bukhari, QS Ibrahim 37); tanya jawab istri bekerja dan kewajiban nafkah suami, klaim usia 8 tahun dan fiqh hadhanah, koreksi lafaz doa orang tua (QS Al-Isra 24 rabbirhamhuma, QS Nuh 28 rabbighfir li wa liwalidayya, QS Ibrahim 41 rabbanaghfir li), kriteria agama dan akhlak calon pasangan (HR Tirmidzi); 10 langkah dedikasi istri. Daring via Zoom, Ahad pagi, 25 Oktober 2026."
   }
  ],
  "masjid": [
@@ -1245,6 +1262,11 @@
    "id": "nurullah-kalibata-city",
    "name": "Nurullah, Kalibata City",
    "address": "Apartemen Tower Cendana, Kalibata City, RT.9/RW.4, Rawajati, Kec. Pancoran, Jakarta Selatan 12750"
+  },
+  {
+   "id": "salman-itb",
+   "name": "Salman ITB, Bandung",
+   "address": "Jl. Ganesa No.7, Lb. Siliwangi, Kec. Coblong, Kota Bandung, Jawa Barat 40132"
   }
  ],
  "ustadz": [
@@ -1487,6 +1509,11 @@
    "id": "h-ali-wartadinata",
    "name": "H. Ali Wartadinata",
    "bio": "Ketua Pimpinan Daerah Muhammadiyah (PDM) Kota Depok periode 2022-2027 menurut situs resmi PDM Kota Depok (pdmdepok.com); masih disebut sebagai Ketua dalam artikel PDM Depok bertanggal Februari 2026. Riwayat pendidikan formal belum ditemukan dari sumber publik."
+  },
+  {
+   "id": "elma-fitria-st",
+   "name": "Elma Fitria, S.T.",
+   "bio": "Narasumber perempuan (bukan ustadzah). Menurut deskripsi acara dari penyelenggara Bidang Dakwah Masjid Salman ITB: Woman Well-Being Coach, Co-Leader Social & Family Education Fitrah World Movement, praktisi dan trainer Talents Mapping, serta penulis buku Dedikasi Istri Mendukung Suami. Belum ditemukan sumber web publik lain yang mengonfirmasi profil ini."
   }
  ],
  "themes": [
