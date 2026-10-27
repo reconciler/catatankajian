@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25",
+ "generatedAt": "2026-10-27",
  "sessions": [
   {
    "id": 1,
@@ -1165,6 +1165,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-elma-25-oktober-2026-v2.html",
    "status": "tersedia",
    "content": "Bincang Keluarga Bidang Dakwah Masjid Salman ITB bersama Elma Fitria, S.T. tentang dedikasi istri mendukung suami: tujuan pernikahan, dedikasi dan sinergi suami-istri; suami sebagai qawwam (QS An-Nisa 34, tafsir Ibnu Katsir); perempuan dalam perwalian sebagai anak, saudari, istri, dan ibu (HR Muslim 2631; hadits fafihima fajahid berlaku untuk kedua orang tua, HR Bukhari dan Muslim); fitrah peran ayah dan bunda dari kerangka Fitrah Based Education; 4 kuadran dinamika karakter moral dan kepribadian; aktualisasi diri istri dan wanita salehah sebagai sebaik-baik perhiasan dunia (HR Muslim 1467); Sailboat of Needs Scott Barry Kaufman (security: safety, connection, self-esteem; growth: exploration, love, purpose) sebagai revisi piramida Maslow; menghadapi masa lalu dan tobat (HR Tirmidzi, Arbain 18), menutup aib masa lalu; kisah Ibrahim dan Hajar (HR Bukhari, QS Ibrahim 37); tanya jawab istri bekerja dan kewajiban nafkah suami, klaim usia 8 tahun dan fiqh hadhanah, koreksi lafaz doa orang tua (QS Al-Isra 24 rabbirhamhuma, QS Nuh 28 rabbighfir li wa liwalidayya, QS Ibrahim 41 rabbanaghfir li), kriteria agama dan akhlak calon pasangan (HR Tirmidzi); 10 langkah dedikasi istri. Daring via Zoom, Ahad pagi, 25 Oktober 2026."
+  },
+  {
+   "id": 70,
+   "date": "2026-10-27",
+   "masjidId": "akademi-orang-tua",
+   "masjidRaw": "Akademi Orang Tua (daring via Zoom)",
+   "ustadzIds": [
+    "damar-wahyu-wijayanti-sikom-dipl-montessori-ed"
+   ],
+   "ustadzRaw": "Damar Wahyu Wijayanti, S.I.Kom., Dipl. Montessori Ed.",
+   "kitab": null,
+   "theme": "keluarga-dakwah",
+   "title": "Menanam Fondasi Anak Sholih Sejak Hari Pertama",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-akademiorangtua-damar-27-oktober-2026.html",
+   "status": "tersedia",
+   "content": "Kajian parenting Islami program Roadmap Parenting Akademi Orang Tua bersama Rahmatan Lil'Alamin dan SIDAQ, narasumber Damar Wahyu Wijayanti (Founder Good Enough Parents): hakikat anak sholeh yang sadar diawasi Allah, berakal kritis, dan memahami manusia sebagai khalifah di bumi (QS Al-Baqarah 30); becoming murabbi: makna Rabb, tarbiyah, dan murabbi, analogi gardener vs carpenter Alison Gopnik; sikap murabbi hadir, rahmah, hikmah, uswah; tahap psikososial Erik Erikson trust vs mistrust, autonomy vs shame and doubt, initiative vs guilt beserta peran murabbi dan implementasi Asmaul Husna (Ar-Rahman, Ar-Rahim, Al-Muqit, Al-Mujib, Ar-Ra'uf, Al-Lathif, Al-Ghafur, Al-Ghaffar, Al-Halim, Asy-Syakur); mitos bayi bau tangan; interaksi serve and return Harvard Center on the Developing Child; aturan screen time WHO, AAP, dan IDAI (zero screen time di bawah 2 tahun, maksimal 1 jam usia 2-5 tahun, zona bebas layar, speech delay); satu sosok responsif saat kedua orang tua bekerja; mendidik anak shalat, hadits perintah shalat usia 7 tahun (HR Abu Dawud 495); doa Nabi Ibrahim QS Ibrahim 40 dan koreksi terjemahan tanpa kata sebagian; isti'anah; membicarakan kejadian traumatis dengan anak (name it to tame it, Daniel Siegel) dan rasio 5:1 John Gottman. Daring via Zoom, Selasa malam, 27 Oktober 2026."
   }
  ],
  "masjid": [
@@ -1267,6 +1284,10 @@
    "id": "salman-itb",
    "name": "Salman ITB, Bandung",
    "address": "Jl. Ganesa No.7, Lb. Siliwangi, Kec. Coblong, Kota Bandung, Jawa Barat 40132"
+  },
+  {
+   "id": "akademi-orang-tua",
+   "name": "Akademi Orang Tua (daring)"
   }
  ],
  "ustadz": [
@@ -1514,6 +1535,11 @@
    "id": "elma-fitria-st",
    "name": "Elma Fitria, S.T.",
    "bio": "Narasumber perempuan (bukan ustadzah). Menurut deskripsi acara dari penyelenggara Bidang Dakwah Masjid Salman ITB: Woman Well-Being Coach, Co-Leader Social & Family Education Fitrah World Movement, praktisi dan trainer Talents Mapping, serta penulis buku Dedikasi Istri Mendukung Suami. Belum ditemukan sumber web publik lain yang mengonfirmasi profil ini."
+  },
+  {
+   "id": "damar-wahyu-wijayanti-sikom-dipl-montessori-ed",
+   "name": "Damar Wahyu Wijayanti, S.I.Kom., Dipl. Montessori Ed.",
+   "bio": "Narasumber perempuan (bukan ustadzah). Menurut flyer resmi penyelenggara (Akademi Orang Tua): Founder Good Enough Parents, bergelar S.I.Kom. dan Dipl. Montessori Ed. Good Enough Parents (@goodenoughparents.id) adalah platform belajar parenting daring yang berfokus pada positive discipline parenting (menurut skripsi UPN Veteran Jawa Timur). Belum ditemukan sumber web publik lain yang mengonfirmasi profil pribadi narasumber."
   }
  ],
  "themes": [
