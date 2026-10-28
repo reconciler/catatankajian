@@ -210,6 +210,21 @@ function fmtDate(d){
 }
 function slugify(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
 
+// Tema terpilih jadi filter utama: masjid/ustadz/kitab di dropdown dipersempit
+// ke yang punya sesi di tema itu. Tanpa tema (""), daftar lengkap seperti biasa.
+function themeFilteredLists(themeId){
+  if(!themeId) return { masjid: DATA.masjid, ustadz: DATA.ustadz, kitab: DATA.kitab };
+  const sessions = DATA.sessions.filter(s=>s.theme===themeId);
+  const masjidIds = new Set(sessions.map(s=>s.masjidId));
+  const ustadzIds = new Set(sessions.flatMap(s=>s.ustadzIds));
+  const kitabIds = new Set(sessions.map(s=>slugify(s.kitab||'')).filter(Boolean));
+  return {
+    masjid: DATA.masjid.filter(m=>masjidIds.has(m.id)),
+    ustadz: DATA.ustadz.filter(u=>ustadzIds.has(u.id)),
+    kitab: DATA.kitab.filter(k=>kitabIds.has(k.id)),
+  };
+}
+
 // Splits "#/masjid/ar-riyadh" -> {path:"masjid/ar-riyadh", query:URLSearchParams{}}
 // Splits "#/?q=ikhlas&theme=aqidah" -> {path:"", query:URLSearchParams{q:"ikhlas",theme:"aqidah"}}
 function currentHashRoute(){
@@ -263,10 +278,11 @@ function renderFilterBar(){
   const bar = document.getElementById('filterBar');
   const opt = (list, val, label) => `<option value="">${label}</option>` +
     list.map(x=>`<option value="${x.id}" ${state[val]===x.id?'selected':''}>${x.name}</option>`).join('');
+  const lists = themeFilteredLists(state.theme);
   bar.innerHTML = `
-    <select id="fMasjid" aria-label="Saring berdasarkan masjid">${opt(DATA.masjid,'masjid','Semua Masjid')}</select>
-    <select id="fUstadz" aria-label="Saring berdasarkan ustadz/ustadzah">${opt(DATA.ustadz,'ustadz','Semua Ustadz/Ustadzah')}</select>
-    <select id="fKitab" aria-label="Saring berdasarkan kitab">${opt(DATA.kitab,'kitab','Semua Kitab')}</select>
+    <select id="fMasjid" aria-label="Saring berdasarkan masjid">${opt(lists.masjid,'masjid','Semua Masjid')}</select>
+    <select id="fUstadz" aria-label="Saring berdasarkan ustadz/ustadzah">${opt(lists.ustadz,'ustadz','Semua Ustadz/Ustadzah')}</select>
+    <select id="fKitab" aria-label="Saring berdasarkan kitab">${opt(lists.kitab,'kitab','Semua Kitab')}</select>
     <button class="reset" onclick="resetFilters()">Reset Saringan</button>
   `;
   ['Masjid','Ustadz','Kitab'].forEach(k=>{
@@ -320,6 +336,13 @@ function renderThemeChips(){
   row.querySelectorAll('.theme-chip').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       state.theme = btn.dataset.theme;
+      // Tema jadi filter utama: masjid/ustadz/kitab yang sudah dipilih tapi
+      // tidak lagi punya sesi di tema baru direset (bukan dibiarkan jadi
+      // pilihan tak valid yang bikin hasil 0 tanpa penjelasan).
+      const lists = themeFilteredLists(state.theme);
+      if(state.masjid && !lists.masjid.some(m=>m.id===state.masjid)) state.masjid = '';
+      if(state.ustadz && !lists.ustadz.some(u=>u.id===state.ustadz)) state.ustadz = '';
+      if(state.kitab && !lists.kitab.some(k=>k.id===state.kitab)) state.kitab = '';
       state.page = 1;
       syncUrlFromState();
       render();
