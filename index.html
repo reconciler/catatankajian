@@ -64,6 +64,12 @@
   .filterbar .reset{grid-column:1/-1;background:none;border:1px dashed rgba(27,46,75,.2);border-radius:10px;padding:9px;font-family:inherit;font-size:12.5px;color:var(--muted);min-height:38px}
   .filterbar .reset:active{border-color:var(--sage);color:var(--sage)}
   .result-count{max-width:760px;margin:12px auto 0;padding:0 16px;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+  .theme-chips{max-width:760px;margin:14px auto 0;padding:0 16px}
+  .theme-chips-label{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .theme-chip-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+  .theme-chip{flex-shrink:0;white-space:nowrap;padding:8px 13px;border-radius:20px;font-size:12.5px;font-weight:600;font-family:inherit;background:var(--surface);color:var(--ink);border:1px solid rgba(27,46,75,.1);cursor:pointer}
+  .theme-chip.active{background:var(--sage);color:#fff;border-color:var(--sage)}
+  .theme-chip:active{filter:brightness(0.95)}
 
   .main{max-width:760px;margin:0 auto;padding:12px 16px 56px}
 
@@ -151,6 +157,11 @@
   ⚠️ <strong>Catatan pribadi, bukan transkrip resmi.</strong> Isinya bisa saja keliru dan perlu diverifikasi sendiri — termasuk yang sudah pernah dicek terhadap referensi.
 </div>
 
+<div class="theme-chips">
+  <div class="theme-chips-label">Jelajahi Tema</div>
+  <div class="theme-chip-row" id="themeChipRow" role="group" aria-label="Saring berdasarkan tema"></div>
+</div>
+
 <div class="filterbar" id="filterBar"></div>
 <div class="result-count" id="resultCount"></div>
 
@@ -233,12 +244,31 @@ function renderFilterBar(){
     <select id="fMasjid" aria-label="Saring berdasarkan masjid">${opt(DATA.masjid,'masjid','Semua Masjid')}</select>
     <select id="fUstadz" aria-label="Saring berdasarkan ustadz/ustadzah">${opt(DATA.ustadz,'ustadz','Semua Ustadz/Ustadzah')}</select>
     <select id="fKitab" aria-label="Saring berdasarkan kitab">${opt(DATA.kitab,'kitab','Semua Kitab')}</select>
-    <select id="fTheme" aria-label="Saring berdasarkan tema">${opt(DATA.themes,'theme','Semua Tema')}</select>
     <button class="reset" onclick="resetFilters()">Reset Saringan</button>
   `;
-  ['Masjid','Ustadz','Kitab','Theme'].forEach(k=>{
+  ['Masjid','Ustadz','Kitab'].forEach(k=>{
     document.getElementById('f'+k).addEventListener('change', e=>{
       state[k.toLowerCase()] = e.target.value;
+      state.page = 1;
+      syncUrlFromState();
+      render();
+    });
+  });
+}
+
+function renderThemeChips(){
+  const row = document.getElementById('themeChipRow');
+  const counts = {};
+  DATA.sessions.forEach(s=>{ counts[s.theme] = (counts[s.theme]||0) + 1; });
+  let html = `<button type="button" class="theme-chip${state.theme===""?' active':''}" data-theme="">Semua</button>`;
+  html += DATA.themes.map(t=>{
+    const active = state.theme===t.id ? ' active' : '';
+    return `<button type="button" class="theme-chip${active}" data-theme="${t.id}">${t.name} (${counts[t.id]||0})</button>`;
+  }).join('');
+  row.innerHTML = html;
+  row.querySelectorAll('.theme-chip').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      state.theme = btn.dataset.theme;
       state.page = 1;
       syncUrlFromState();
       render();
@@ -401,6 +431,7 @@ function render(){
   }
 
   renderFilterBar();
+  renderThemeChips();
   const results = getResults();
   const totalPages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
   if(state.page > totalPages) state.page = totalPages;
