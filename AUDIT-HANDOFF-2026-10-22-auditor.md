@@ -75,3 +75,18 @@ Penanda: **[Diperiksa Auditor]** dijalankan Auditor sendiri; **[Laporan PIC]** t
 - **[Laporan PIC, tidak dijalankan ulang]** axe 0 pelanggaran, `build_seo.py` tanpa diff lain.
 - **[Inferensi, sama dengan pengakuan PIC]** 47 nilai awal diisi dari gelar, kunya, dan pola nama, tidak dicek per orang ke sumber publik; satu nilai (Dr. Jaja Nurjanah, M.A.) dari konfirmasi langsung Amal. Auditor membaca 48 nama berlabel L: tidak ada penanda nama perempuan (ustadzah, binti, Hj., Siti, dll.). Risiko residu: label keliru di profil publik satu orang bila ada nama yang sebenarnya perempuan; fallback gabungan bukan salah satu gender sehingga aman bila dikosongkan.
 - **Klasifikasi wajib lapor: tepat** (perubahan skema `data.json`). Tidak ada tindak lanjut untuk PIC. Usulan ringan untuk Amal: bila ada nama yang ragu, cukup kosongkan `gender`-nya.
+
+## 7. Verifikasi Auditor atas restrukturisasi filter `index.html` (28 Okt 2026; laporan PIC `AUDIT-HANDOFF-2026-10-28.md`, komit `08e15c1`..`f8eb320`)
+
+Penanda: **[Diperiksa Auditor]** dijalankan Auditor sendiri; **[Laporan PIC]** tidak dijalankan ulang; **[Usulan]** menunggu keputusan Amal.
+
+- **[Diperiksa Auditor]** Chromium, server lokal, jaringan luar diblokir, head `3fc1702`. **15/15 lulus:**
+  - Accordion diuji lewat `getComputedStyle(...).display` (bukan atribut): tertutup default = `none`; klik "Filter" = `grid` dan `aria-expanded=true`; klik lagi = `none`.
+  - Baris chip: "Semua" + 8 tema; angka tiap chip = jumlah sesi di `data.json` (33, 9, 9, 5, 4, 4, 4, 2); urut dari terbanyak.
+  - Kaskade: untuk **ke-8 tema**, opsi dropdown masjid/ustadz/kitab = himpunan yang Auditor hitung sendiri dari `data.json`; ganti tema mereset masjid yang tak punya sesi di tema baru.
+  - axe 0 pelanggaran dan tanpa geser horizontal pada 320/375/430 px, terang dan gelap, dengan accordion tertutup, terbuka, dan tema terpilih; 0 galat halaman.
+- **[Diperiksa Auditor, via API Actions]** Run `success` untuk kelima komit dan head.
+- **[Diperiksa Auditor] Bug accordion yang dilaporkan PIC terbukti dan sudah benar diperbaiki:** pemindai Auditor (elemen berstatus `hidden` yang `display`-nya bukan `none`) mendeteksi `#filterBar` = `grid` pada `6a17ce8` dan 0 temuan pada head. Pemindai yang sama dijalankan di keempat situs (lihat bagian bersama di bawah).
+- **[Temuan Auditor, keparahan rendah, bukan regresi berat; [Usulan]]** Tautan dengan kombinasi tema + masjid yang tidak punya sesi bersama (contoh: `#/?theme=aqidah&masjid=al-ikhlas-dukuh-bima`, sesi sebenarnya 0) menghasilkan keadaan tak konsisten: chip "Aqidah" aktif, badge Filter "1" dan ringkasan menyebut masjid, tetapi dropdown masjid menampilkan "Semua Masjid" (opsinya tersaring), dan hasil "0 dari 70 sesi" tanpa penjelasan. UI sendiri tidak bisa membuat kombinasi ini (chip mereset); hanya tautan buatan tangan atau tautan lama. **Usulan perbaikan:** setelah membaca URL (`state` dari query), terapkan reset yang sama dengan klik chip (`themeFilteredLists`), atau tampilkan pesan hasil kosong. Aplikasi memang tidak punya pesan hasil kosong sebelum perubahan ini juga (dicek di `9bba790`). Perubahan ini menyentuh perilaku, jadi menunggu keputusan Amal; tidak mendesak.
+- **[Laporan PIC, tidak dijalankan ulang]** `build_seo.py` tanpa diff lain di semua komit.
+- **Tampilan berubah signifikan** (baris chip + accordion); belum dilihat di perangkat nyata (aturan 11).
