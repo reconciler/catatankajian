@@ -1295,86 +1295,103 @@
   {
    "id": "aa-gym",
    "name": "Aa Gym",
+   "gender": "L",
    "bio": "Nama lengkap KH. Abdullah Gymnastiar, lahir di Bandung, 29 Januari 1962. Pendiri Pondok Pesantren Daarut Tauhiid (1990) dan pencetus konsep dakwah \"Manajemen Qolbu\" (MQ) yang populer sejak awal 2000-an."
   },
   {
    "id": "abdullah-sya-roni",
    "name": "Abdullah Sya'roni",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "abdurrahman-dani",
    "name": "Abdurrahman Dani",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "abdurrahman-zahier-b-b-a",
    "name": "Abdurrahman Zahier, B.B.A",
+   "gender": "L",
    "bio": "Lulusan Bachelor of Business Administration, LIPIA Jakarta (Universitas Imam Muhammad bin Saud), fokus Ekonomi Islam dan Fiqh Muamalah. Sempat belajar di Pesantren Modern Daarul 'Uluum Lido dan mengikuti Pendidikan Dasar Ulama di MUI. Imam dan pengajar di Yayasan Insan Mulia Pama."
   },
   {
    "id": "abu-ayyub-ramadhan-ma",
    "name": "Abu Ayyub Ramadhan, MA",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "abu-fahd-ega",
    "name": "Abu Fahd Ega",
+   "gender": "L",
    "bio": "Pengajar rutin di Yayasan Babussalam As-Sunnah, Depok. Riwayat pendidikan formal belum ditemukan dari sumber publik."
   },
   {
    "id": "abu-hurairah-ma",
    "name": "Abu Hurairah, MA",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "afdhallul-ziqri-lc",
    "name": "Afdhallul Ziqri, Lc.",
+   "gender": "L",
    "bio": "Terafiliasi dengan STDI Imam Syafi'i Jember dan Universitas Islam Madinah. Pengajar rutin di Masjid Nurul Iman Blok M Square."
   },
   {
    "id": "ahmad-bamualim",
    "name": "Ahmad Bamualim",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "ahmad-bazher",
    "name": "Ahmad Bazher",
+   "gender": "L",
    "bio": "Pengajar rutin di Yayasan Babussalam As-Sunnah, Depok, bersama Ustadz Abu Fahd Ega. Riwayat pendidikan formal belum ditemukan dari sumber publik."
   },
   {
    "id": "ahmad-faris-bq-lc-m-si",
    "name": "Ahmad Faris BQ, Lc., M.Si",
+   "gender": "L",
    "bio": "S1 Universitas Al-Azhar, Kairo (2003); S2 Universitas Indonesia (2006); S3 Hubungan Internasional, Universitas Ankara, Turki. Dosen UIN Syarif Hidayatullah Jakarta; CEO ImanPath Human Development. Pengajar rutin di Masjid Darussalam Kota Wisata."
   },
   {
    "id": "ahmad-zainuddin-lc",
    "name": "Ahmad Zainuddin, Lc.",
+   "gender": "L",
    "bio": "Pengajar rutin dan penceramah tetap di Radio Rodja 756 AM/Rodja TV serta Masjid Jami' Al-Barkah, Cileungsi. Riwayat pendidikan formal belum dapat dipastikan dari sumber publik independen — beberapa tokoh lain memakai nama serupa, sehingga atribusi riwayat pendidikan berisiko keliru jika dipaksakan."
   },
   {
    "id": "ardhan-misa-tonadisiki",
    "name": "Ardhan Misa Tonadisiki",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "buya-yahya",
    "name": "Buya Yahya",
+   "gender": "L",
    "bio": "Nama lengkap Yahya Zainul Ma'arif, lahir di Blitar, 10 Agustus 1973. Belajar di Ponpes Darullughah Wadda'wah, Bangil, lalu 9 tahun di Universitas Al-Ahgaff, Yaman. Pendiri dan pengasuh Lembaga Pengembangan Dakwah (LPD) Al-Bahjah, Cirebon — kini bercabang di berbagai kota."
   },
   {
    "id": "daniel-barkah",
    "name": "Daniel Barkah",
+   "gender": "L",
    "bio": "Gelar S.Sy, MA. Aktif mengajar sirah/sejarah Islam di berbagai masjid dan kantor Jabodetabek, dikenal jamaah karena penguasaan detail sejarah yang luas. Riwayat kampus/almamater belum ditemukan dari sumber publik."
   },
   {
    "id": "dr-firanda-andirja-ma",
    "name": "Dr. Firanda Andirja, MA",
+   "gender": "L",
    "bio": "Nama lengkap Firanda Andirja Abidin, lahir di Surabaya, 28 Oktober 1979. S1 Fakultas Hadits dan S3 Jurusan Akidah, Universitas Islam Madinah (lulus 2016, summa cumlaude). Penceramah tetap berbahasa Indonesia di Masjid Nabawi, Madinah (2012–2018). Staf pengajar STDI Imam Syafi'i, Jember; narasumber tetap Radio Rodja."
   },
   {
    "id": "dr-h-buya-ibdalsyah-ma",
    "name": "Dr. H. Buya Ibdalsyah, MA",
+   "gender": "L",
    "bio": "Berasal dari Bukittinggi. Wakil Direktur Bidang Sumberdaya, Kerjasama dan Dakwah, Sekolah Pascasarjana UIKA (Universitas Ibn Khaldun) Bogor, sekaligus Ketua Program Magister Ekonomi Islam di kampus yang sama. Dikenal jamaah dengan sapaan \"Buya Ibdal.\""
   },
   {
@@ -1385,161 +1402,193 @@
   {
    "id": "dr-khairan-muhammad-arif-ma",
    "name": "Dr. Khairan Muhammad Arif, MA",
+   "gender": "L",
    "bio": "Lahir di Palu, 29 Juli 1972. S1 STAI Al Hikmah, Depok (1999); S2 & S3 Institut Riset dan Studi Arab, Universitas Liga Arab, Kairo (2005). Pengajar rutin di Masjid Darussalam Kota Wisata, Cibubur."
   },
   {
    "id": "dr-syafiq-al-khatieb-lc-m-a",
    "name": "Dr. Syafiq Al-Khatieb, Lc., M.A",
+   "gender": "L",
    "bio": "Pengajar rutin di Masjid Nurul Iman Blok M Square dan Masjid Al-Fattah Jatinegara (kajian kitab Ad-Daa wa Ad-Dawaa karya Ibnul Qayyim). Riwayat pendidikan formal belum ditemukan dari sumber publik."
   },
   {
    "id": "erfandoni-tarmizi-lc-m-h-i",
    "name": "Erfandoni Tarmizi, Lc., M.H.I",
+   "gender": "L",
    "bio": "Lahir di Pekanbaru, 25 Mei 1981. S1 Syariah LIPIA Jakarta; S2 Syariah Universitas Muhammadiyah Surakarta. Pembina Yayasan Ahlu Shuffah Indonesia, Dewan Pengawas Syariah Lariba Consulting, pakar fiqih muamalat kontemporer, dosen takhosus di Masjid Al-Barkah Cileungsi."
   },
   {
    "id": "farhan-abu-furaihan",
    "name": "Farhan Abu Furaihan",
+   "gender": "L",
    "bio": "Menurut akun resminya: alumnus Darul Hadits, Yaman. Pembina Media Sunnah Aceh TV dan Radio Syiar Tauhid Aceh 96.1 FM."
   },
   {
    "id": "fatahillah-aly-s-ag",
    "name": "Fatahillah Aly, S.Ag",
+   "gender": "L",
    "bio": "Da'i aktif, dikenal lewat Yayasan Surabaya Mengaji dan kajian rutin di Masjid Nurul Iman Srengseng. Riwayat pendidikan formal belum ditemukan dari sumber publik."
   },
   {
    "id": "gigih-surya-nugraha-s-h",
    "name": "Gigih Surya Nugraha, S.H",
+   "gender": "L",
    "bio": "Berasal dari Sorong, Papua. Menempuh studi di STDI Imam Syafi'i, Jember, dan Studi Islam Pascasarjana Universitas Muhammadiyah Jakarta. Da'i aktif dengan kajian tematik (fiqih, akhlak, pernikahan) di berbagai masjid Jabodetabek dan Bandung."
   },
   {
    "id": "harits-abu-naufal",
    "name": "Harits Abu Naufal",
+   "gender": "L",
    "bio": "Alumnus Darul Hadits, Dammaj, Yaman. Aktif berdakwah lewat Markaz Dakwah dan media Syiar Tauhid Aceh (Radio 96.1 FM); riwayat pendidikan formal lainnya belum ditemukan dari sumber publik independen."
   },
   {
    "id": "hudzaifah-bin-muhammad",
    "name": "Hudzaifah bin Muhammad",
+   "gender": "L",
    "bio": "Disebut sebagai alumnus Darul Hadits, Yaman, dalam catatan kajian beliau sendiri — belum ditemukan sumber independen di luar itu."
   },
   {
    "id": "ishom-aini-lc-ma",
    "name": "Ishom Aini, Lc., MA",
+   "gender": "L",
    "bio": "Pengajar rutin fikih nikah dan tafsir di Masjid Nurul Iman Blok M Square, juga aktif lewat Yayasan Al Sofwa, Surabaya Mengaji, dan Islamic Center Mu'adz (Muadz TV)."
   },
   {
    "id": "iswahyudin-al-bimawy-lc",
    "name": "Iswahyudin Al Bimawy, Lc.",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "kh-dr-mohammad-shofin-sugito-ma",
    "name": "KH. Dr. Mohammad Shofin Sugito, MA",
+   "gender": "L",
    "bio": "Menempuh pendidikan dari Ponpes Hajroh Basyir Salafiyah (Kajen, Pati), S1 Dirasat Islamiyah UIN Jakarta (cabang Al-Azhar Mesir), hingga S2 dan S3 di Universitas Sidi Mohamed Ben Abdellah, Fez, Maroko (S3 predikat Summa Cumlaude). Dosen tetap ASN di UIN Sultan Maulana Hasanuddin Banten; juga mengajar di Universitas Indonesia dan Universitas Al-Azhar Indonesia."
   },
   {
    "id": "luthfi-abdul-jabbar-lc",
    "name": "Luthfi Abdul Jabbar, Lc.",
+   "gender": "L",
    "bio": "Pengajar tetap kajian manhaj salaf di Masjid Nurullah, Kalibata City, juga mengajar di Masjid Al Ukhuwah BSD dan Al Istiqomah Yasmin Bogor. Riwayat pendidikan formal belum ditemukan dari sumber publik."
   },
   {
    "id": "m-halid-syar-ie",
    "name": "M. Halid Syar'ie",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "maksum-badruzaman",
    "name": "Maksum Badruzaman",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "muflih-safitra-m-sc",
    "name": "Muflih Safitra, M.Sc",
+   "gender": "L",
    "bio": "Lahir di Balikpapan, 19 Juli 1984. S1 Teknik Industri, Universitas Islam Indonesia (UII) Yogyakarta (cumlaude, IPK 3,89); S2 King Saud University, Arab Saudi. Pernah bermulazamah kepada Syaikh Shalih Al Fauzan dan Syaikh Prof. Dr. Sa'ad Asy-Syatsri. Pendiri Yayasan Muflih Untuk Islam dan Dakwah (MUFID), Balikpapan (2018)."
   },
   {
    "id": "mufy-hanif-thalib-lc",
    "name": "Mufy Hanif Thalib, Lc.",
+   "gender": "L",
    "bio": "Da'i aktif dengan basis jamaah besar di media sosial dan sering melakukan safari dakwah ke berbagai kota. Riwayat pendidikan formal belum ditemukan dari sumber publik."
   },
   {
    "id": "muhammad-arif-sulle",
    "name": "Muhammad Arif Sulle",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "muhammad-nuzul-dzikri-lc",
    "name": "Muhammad Nuzul Dzikri, Lc.",
+   "gender": "L",
    "bio": "Lahir di Jakarta, 1983. S1 Ilmu Syariah, Universitas Imam Muhammad bin Su'ud, Arab Saudi (lulus 2009). Mengisi kajian rutin kitab Tadzkiratus Saami' Wal Mutakallim setiap Sabtu ba'da Maghrib di Masjid Nurul Iman, Blok M Square. Pendiri lembaga sosial Aksi Cepat Tanggap Masjid Nusantara (ACTMN)."
   },
   {
    "id": "muhammad-setiawan-s-pd",
    "name": "Muhammad Setiawan, S.Pd",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "muhbih-abdul-wahab",
    "name": "Muhbih Abdul Wahab",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "musabbih-rusydi-lc",
    "name": "Musabbih Rusydi, Lc.",
+   "gender": "L",
    "bio": "Pengajar kitab Riyadush Shalihin dan Zaadul Ma'ad secara rutin di berbagai masjid Bekasi (Al Ikhlas Dukuh Bima, At-Taqwa Rawalumbu, dan lainnya), juga kerap menjadi khatib Jumat. Riwayat kampus belum ditemukan dari sumber publik."
   },
   {
    "id": "najmi-umar-bakkar",
    "name": "Najmi Umar Bakkar",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "sahal-abu-abdillah",
    "name": "Sahal Abu Abdillah",
+   "gender": "L",
    "bio": "Disebut sebagai alumnus Darul Hadits, Yaman, dalam catatan kajian beliau sendiri — belum ditemukan sumber independen di luar itu."
   },
   {
    "id": "sofyan-chalid-bin-idham-ruray-lc",
    "name": "Sofyan Chalid Bin Idham Ruray, Lc.",
+   "gender": "L",
    "bio": "Pembina Ma'had Imam Asy-Syafi'i (Program Pendidikan Da'i Sunnah), Jakarta. S1 Fakultas Syari'ah di LIPIA Jakarta (cabang Universitas Muhammad bin Su'ud Al-Islamiyah, Arab Saudi), serta talaqqi langsung di Buraidah, Arab Saudi. Di antara gurunya: Syaikh Abdul Muhsin Al-'Abbad Al-Badr dan Syaikh Prof. Dr. Abdurrazzaq Al-Badr. Menulis beberapa buku, di antaranya 2 Kalimat Syahadat dan 10 Kaidah Tauhid."
   },
   {
    "id": "subhan-bawazier",
    "name": "Subhan Bawazier",
+   "gender": "L",
    "bio": "Nama lengkap Muhammad Subhan bin Umar Bawazier. Bermarga Bawazier (Banu Al-Wazir), garis keturunan Hadhrami dari Bani Hasyim yang berhijrah dari Irak ke Yaman. Pengajar rutin Tabligh Akbar di Masjid Al-Falah, Cipayung."
   },
   {
    "id": "teuku-muhammad-sanusi",
    "name": "Teuku Muhammad Sanusi",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "umar-lathif",
    "name": "Umar Lathif",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "waskito-aji-nugroho-lc-m-a",
    "name": "Waskito Aji Nugroho, Lc., M.A.",
+   "gender": "L",
    "bio": "Aktif mengajar rutin sesuai catatan kajian di arsip ini — riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "amrullah-tekko-lc",
    "name": "Amrullah Tekko, Lc.",
+   "gender": "L",
    "bio": "Pemateri kajian kitab rutin di Masjid Ar-Riyadh, Depok (jadwal Oktober 2026). Riwayat pendidikan formal belum ditemukan dari sumber publik independen."
   },
   {
    "id": "h-ali-wartadinata",
    "name": "H. Ali Wartadinata",
+   "gender": "L",
    "bio": "Ketua Pimpinan Daerah Muhammadiyah (PDM) Kota Depok periode 2022-2027 menurut situs resmi PDM Kota Depok (pdmdepok.com); masih disebut sebagai Ketua dalam artikel PDM Depok bertanggal Februari 2026. Riwayat pendidikan formal belum ditemukan dari sumber publik."
   },
   {
    "id": "elma-fitria-st",
    "name": "Elma Fitria, S.T.",
+   "gender": "P",
    "bio": "Narasumber perempuan (bukan ustadzah). Menurut deskripsi acara dari penyelenggara Bidang Dakwah Masjid Salman ITB: Woman Well-Being Coach, Co-Leader Social & Family Education Fitrah World Movement, praktisi dan trainer Talents Mapping, serta penulis buku Dedikasi Istri Mendukung Suami. Belum ditemukan sumber web publik lain yang mengonfirmasi profil ini."
   },
   {
    "id": "damar-wahyu-wijayanti-sikom-dipl-montessori-ed",
    "name": "Damar Wahyu Wijayanti, S.I.Kom., Dipl. Montessori Ed.",
+   "gender": "P",
    "bio": "Narasumber perempuan (bukan ustadzah). Menurut flyer resmi acara (Masjid Rahmatan Lil'Alamin, Akademi Orang Tua, SIDAQ): Founder Good Enough Parents, bergelar S.I.Kom. dan Dipl. Montessori Ed. Good Enough Parents (@goodenoughparents.id) adalah platform belajar parenting daring yang berfokus pada positive discipline parenting (menurut skripsi UPN Veteran Jawa Timur). Belum ditemukan sumber web publik lain yang mengonfirmasi profil pribadi narasumber."
   }
  ],

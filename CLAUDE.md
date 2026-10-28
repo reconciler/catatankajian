@@ -56,6 +56,11 @@ Workflow `deploy.yml` **tidak** mengunggah seluruh root repo. Langkah "Susun fol
    transparan bila tidak ditemukan sumber yang solid**; jangan mengarang. `id` baru
    memakai slug huruf kecil, spasi/tanda baca jadi tanda hubung, konsisten dengan pola
    yang sudah ada (mis. "Sofyan Chalid Bin Idham Ruray, Lc." → `sofyan-chalid-bin-idham-ruray-lc`).
+   Entri `ustadz[]` baru: isi `gender` (`"L"` atau `"P"`, ditambahkan 28 Okt 2026 atas
+   permintaan Amal, dipakai index.html untuk label "Ustadz"/"Ustadzah" spesifik per profil)
+   **hanya bila cukup yakin** (gelar/kunya/nama yang jelas menunjukkan gender, atau sumber
+   eksplisit) — kalau ragu, **jangan mengarang**, biarkan field itu kosong (UI otomatis
+   jatuh ke label gabungan "Ustadz/Ustadzah").
 2. Taruh file HTML rekap baru di `rekap/`, ikuti pola nama file yang sudah ada.
 3. Tambah entri sesi baru di `data.json` (`sessions[]`), plus entri baru di
    `masjid[]`/`ustadz[]`/`kitab[]` kalau memang belum ada. `recapUrl` selalu

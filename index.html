@@ -315,6 +315,12 @@ function goToPage(n){
   document.getElementById('main').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+function ustadzLabel(u){
+  if(u && u.gender === 'P') return 'Ustadzah';
+  if(u && u.gender === 'L') return 'Ustadz';
+  return 'Ustadz/Ustadzah';
+}
+
 function renderEntityHeader(eyebrow, title, infoHtml, backLabel){
   return `
     <a class="back-link" href="#/">&larr; ${backLabel}</a>
@@ -344,7 +350,7 @@ function render(){
     const u = DATA.ustadz.find(x=>x.id===parts[1]);
     state.ustadz = parts[1]; state.masjid=""; state.theme=""; state.kitab=""; state.q=""; state.page=1;
     const info = u && u.bio ? u.bio : '<em>Profil ustadz/ustadzah belum dilengkapi — akan ditambahkan pada iterasi berikutnya.</em>';
-    html += renderEntityHeader('Ustadz/Ustadzah', u ? u.name : parts[1], info, 'Semua Sesi');
+    html += renderEntityHeader(ustadzLabel(u), u ? u.name : parts[1], info, 'Semua Sesi');
   } else if(parts[0] === 'kitab' && parts[1]){
     const k = DATA.kitab.find(x=>x.id===parts[1]);
     state.kitab = parts[1]; state.masjid=""; state.ustadz=""; state.theme=""; state.q=""; state.page=1;
@@ -387,7 +393,7 @@ function render(){
     } else if(state.ustadz){
       const u = DATA.ustadz.find(x=>x.id===state.ustadz);
       const info = u && u.bio ? u.bio : '<em>Profil ustadz/ustadzah belum dilengkapi — akan ditambahkan pada iterasi berikutnya.</em>';
-      html += renderEntityHeader('Ustadz/Ustadzah', u ? u.name : state.ustadz, info, 'Semua Sesi');
+      html += renderEntityHeader(ustadzLabel(u), u ? u.name : state.ustadz, info, 'Semua Sesi');
     } else if(state.theme){
       const t = DATA.themes.find(x=>x.id===state.theme);
       html += renderEntityHeader('Tema', t ? t.name : state.theme, '', 'Semua Sesi');
