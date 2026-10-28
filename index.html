@@ -59,7 +59,13 @@
 
   .disclaimer{background:var(--amber);padding:11px 16px;font-size:12px;color:#4a3300;font-weight:600;text-align:center;line-height:1.5}
 
-  .filterbar{max-width:760px;margin:0 auto;padding:14px 16px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+  .filter-toggle-wrap{max-width:760px;margin:0 auto;padding:14px 16px 0}
+  .filter-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:var(--white);border:1px solid rgba(27,46,75,.14);border-radius:10px;padding:11px 14px;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink);min-height:42px;cursor:pointer}
+  .filter-badge{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;border-radius:9px;background:var(--sage);color:#fff;font-size:10.5px;font-weight:700;padding:0 5px;margin-left:8px}
+  .filter-toggle-chevron{display:inline-block;transition:transform .15s;color:var(--muted)}
+  .filter-toggle.expanded .filter-toggle-chevron{transform:rotate(180deg)}
+  .filter-summary{font-size:11.5px;color:var(--muted);margin-top:6px;padding:0 2px}
+  .filterbar{max-width:760px;margin:0 auto;padding:10px 16px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
   .filterbar select{width:100%;min-width:0;background:var(--white);border:1px solid rgba(27,46,75,.14);border-radius:10px;padding:11px 10px;font-family:inherit;font-size:13px;color:var(--ink);min-height:42px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .filterbar .reset{grid-column:1/-1;background:none;border:1px dashed rgba(27,46,75,.2);border-radius:10px;padding:9px;font-family:inherit;font-size:12.5px;color:var(--muted);min-height:38px}
   .filterbar .reset:active{border-color:var(--sage);color:var(--sage)}
@@ -162,6 +168,8 @@
   <div class="theme-chip-row" id="themeChipRow" role="group" aria-label="Saring berdasarkan tema"></div>
 </div>
 
+<div class="filter-toggle-wrap" id="filterToggleWrap"></div>
+
 <div class="filterbar" id="filterBar"></div>
 <div class="result-count" id="resultCount"></div>
 
@@ -178,7 +186,7 @@
 let DATA = null;
 let fuse = null;
 const PAGE_SIZE = 10;
-const state = { q: "", masjid: "", ustadz: "", theme: "", kitab: "", page: 1 };
+const state = { q: "", masjid: "", ustadz: "", theme: "", kitab: "", page: 1, filterExpanded: false };
 
 const MONTHS = ["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Ags","Sep","Okt","Nov","Des"];
 function fmtDate(d){
@@ -254,6 +262,32 @@ function renderFilterBar(){
       render();
     });
   });
+}
+
+function renderFilterToggle(){
+  const wrap = document.getElementById('filterToggleWrap');
+  const activeCount = [state.masjid, state.ustadz, state.kitab].filter(Boolean).length;
+  const badge = activeCount > 0 ? `<span class="filter-badge">${activeCount}</span>` : '';
+  let summaryHtml = '';
+  if(activeCount > 0){
+    const labels = [];
+    const m = DATA.masjid.find(x=>x.id===state.masjid); if(m) labels.push(m.name);
+    const u = DATA.ustadz.find(x=>x.id===state.ustadz); if(u) labels.push(u.name);
+    const k = DATA.kitab.find(x=>x.id===state.kitab); if(k) labels.push(k.name);
+    summaryHtml = `<div class="filter-summary">${labels.join(' &middot; ')}</div>`;
+  }
+  wrap.innerHTML = `
+    <button type="button" id="filterToggle" class="filter-toggle${state.filterExpanded?' expanded':''}" aria-expanded="${state.filterExpanded}" aria-controls="filterBar">
+      <span>Filter${badge}</span>
+      <span class="filter-toggle-chevron">&#9662;</span>
+    </button>
+    ${summaryHtml}
+  `;
+  document.getElementById('filterToggle').addEventListener('click', ()=>{
+    state.filterExpanded = !state.filterExpanded;
+    render();
+  });
+  document.getElementById('filterBar').hidden = !state.filterExpanded;
 }
 
 function renderThemeChips(){
@@ -431,6 +465,7 @@ function render(){
   }
 
   renderFilterBar();
+  renderFilterToggle();
   renderThemeChips();
   const results = getResults();
   const totalPages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
