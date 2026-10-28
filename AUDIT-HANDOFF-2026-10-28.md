@@ -36,10 +36,15 @@ bukan salah satu gender yang salah).
 3 kasus diuji (gender `"L"` -> "Ustadz", `"P"` -> "Ustadzah", kosong -> fallback gabungan) — semua benar.
 Label agregat dipastikan tidak berubah jadi salah satu gender.
 
+## Update: 50/50 terisi (komit `5835eb5`, run [#50 success](https://github.com/reconciler/catatankajian/actions/runs/40608241187))
+
+Amal konfirmasi langsung di chat PIC: **"Beliau ustadz"** — `dr-jaja-nurjanah-m-a` diisi `"L"`.
+Semua 50 entri `ustadz[]` sekarang punya `gender` terisi. Tidak ada lagi yang menunggu.
+
 ## Yang perlu diketahui
 
-- Field `gender` **opsional** — 49/50 ustadz terisi, 1 sengaja kosong menunggu konfirmasi Amal.
+- Field `gender` **opsional** di skema, tapi saat ini 50/50 ustadz sudah terisi.
 - Untuk entri `ustadz[]` baru ke depan: isi `gender` hanya kalau cukup yakin (didokumentasikan di
-  `CLAUDE.md` langkah 1 alur kerja); kalau ragu, biarkan kosong — jangan mengarang.
+  `CLAUDE.md` langkah 1 alur kerja); kalau ragu, biarkan kosong — jangan mengarang, tanya Amal.
 - Tidak ada data pribadi/sensitif di luar yang memang sudah publik di `data.json` (nama narasumber
   kajian umum, bukan data pribadi rahasia).
