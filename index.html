@@ -141,7 +141,7 @@
     </div>
     <div class="hero-stats" id="heroStats"></div>
     <div class="searchbox">
-      <input type="text" id="searchInput" placeholder="Cari topik, kitab, ustadz, atau masjid…">
+      <input type="text" id="searchInput" placeholder="Cari topik, kitab, ustadz/ustadzah, atau masjid…">
     </div>
   </div>
 </header>
@@ -208,7 +208,7 @@ async function boot(){
   fuse = new Fuse(DATA.sessions, { keys: ['title','masjidRaw','ustadzRaw','kitab','content'], threshold: 0.3, ignoreLocation: true });
 
   document.getElementById('heroStats').innerHTML =
-    `<strong>${DATA.masjid.length}</strong> Masjid &middot; <strong>${DATA.kitab.length}</strong> Kitab &middot; <strong>${DATA.ustadz.length}</strong> Ustadz &middot; <strong>${DATA.themes.length}</strong> Tema`;
+    `<strong>${DATA.masjid.length}</strong> Masjid &middot; <strong>${DATA.kitab.length}</strong> Kitab &middot; <strong>${DATA.ustadz.length}</strong> Ustadz/Ustadzah &middot; <strong>${DATA.themes.length}</strong> Tema`;
 
   if(DATA.generatedAt){
     const dt = new Date(DATA.generatedAt+"T00:00:00");
@@ -231,7 +231,7 @@ function renderFilterBar(){
     list.map(x=>`<option value="${x.id}" ${state[val]===x.id?'selected':''}>${x.name}</option>`).join('');
   bar.innerHTML = `
     <select id="fMasjid" aria-label="Saring berdasarkan masjid">${opt(DATA.masjid,'masjid','Semua Masjid')}</select>
-    <select id="fUstadz" aria-label="Saring berdasarkan ustadz">${opt(DATA.ustadz,'ustadz','Semua Ustadz')}</select>
+    <select id="fUstadz" aria-label="Saring berdasarkan ustadz/ustadzah">${opt(DATA.ustadz,'ustadz','Semua Ustadz/Ustadzah')}</select>
     <select id="fKitab" aria-label="Saring berdasarkan kitab">${opt(DATA.kitab,'kitab','Semua Kitab')}</select>
     <select id="fTheme" aria-label="Saring berdasarkan tema">${opt(DATA.themes,'theme','Semua Tema')}</select>
     <button class="reset" onclick="resetFilters()">Reset Saringan</button>
@@ -343,8 +343,8 @@ function render(){
   } else if(parts[0] === 'ustadz' && parts[1]){
     const u = DATA.ustadz.find(x=>x.id===parts[1]);
     state.ustadz = parts[1]; state.masjid=""; state.theme=""; state.kitab=""; state.q=""; state.page=1;
-    const info = u && u.bio ? u.bio : '<em>Profil ustadz belum dilengkapi — akan ditambahkan pada iterasi berikutnya.</em>';
-    html += renderEntityHeader('Ustadz', u ? u.name : parts[1], info, 'Semua Sesi');
+    const info = u && u.bio ? u.bio : '<em>Profil ustadz/ustadzah belum dilengkapi — akan ditambahkan pada iterasi berikutnya.</em>';
+    html += renderEntityHeader('Ustadz/Ustadzah', u ? u.name : parts[1], info, 'Semua Sesi');
   } else if(parts[0] === 'kitab' && parts[1]){
     const k = DATA.kitab.find(x=>x.id===parts[1]);
     state.kitab = parts[1]; state.masjid=""; state.ustadz=""; state.theme=""; state.q=""; state.page=1;
@@ -386,8 +386,8 @@ function render(){
       html += renderEntityHeader('Masjid', m ? m.name : state.masjid, info, 'Semua Sesi');
     } else if(state.ustadz){
       const u = DATA.ustadz.find(x=>x.id===state.ustadz);
-      const info = u && u.bio ? u.bio : '<em>Profil ustadz belum dilengkapi — akan ditambahkan pada iterasi berikutnya.</em>';
-      html += renderEntityHeader('Ustadz', u ? u.name : state.ustadz, info, 'Semua Sesi');
+      const info = u && u.bio ? u.bio : '<em>Profil ustadz/ustadzah belum dilengkapi — akan ditambahkan pada iterasi berikutnya.</em>';
+      html += renderEntityHeader('Ustadz/Ustadzah', u ? u.name : state.ustadz, info, 'Semua Sesi');
     } else if(state.theme){
       const t = DATA.themes.find(x=>x.id===state.theme);
       html += renderEntityHeader('Tema', t ? t.name : state.theme, '', 'Semua Sesi');
