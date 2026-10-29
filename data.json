@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-27",
+ "generatedAt": "2026-10-29",
  "sessions": [
   {
    "id": 1,
@@ -1182,6 +1182,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-rahmatan-damar-27-oktober-2026.html",
    "status": "tersedia",
    "content": "Kajian parenting Islami daring Masjid Rahmatan Lil'Alamin Wonosari Gunungkidul bersama Akademi Orang Tua dan SIDAQ, program Roadmap Parenting, narasumber Damar Wahyu Wijayanti (Founder Good Enough Parents): hakikat anak sholeh yang sadar diawasi Allah, berakal kritis, dan memahami manusia sebagai khalifah di bumi (QS Al-Baqarah 30); becoming murabbi: makna Rabb, tarbiyah, dan murabbi, analogi gardener vs carpenter Alison Gopnik; sikap murabbi hadir, rahmah, hikmah, uswah; tahap psikososial Erik Erikson trust vs mistrust, autonomy vs shame and doubt, initiative vs guilt beserta peran murabbi dan implementasi Asmaul Husna (Ar-Rahman, Ar-Rahim, Al-Muqit, Al-Mujib, Ar-Ra'uf, Al-Lathif, Al-Ghafur, Al-Ghaffar, Al-Halim, Asy-Syakur); mitos bayi bau tangan; interaksi serve and return Harvard Center on the Developing Child; aturan screen time WHO, AAP, dan IDAI (zero screen time di bawah 2 tahun, maksimal 1 jam usia 2-5 tahun, zona bebas layar, speech delay); satu sosok responsif saat kedua orang tua bekerja; mendidik anak shalat, hadits perintah shalat usia 7 tahun (HR Abu Dawud 495); doa Nabi Ibrahim QS Ibrahim 40 dan koreksi terjemahan tanpa kata sebagian; isti'anah; membicarakan kejadian traumatis dengan anak (name it to tame it, Daniel Siegel) dan rasio 5:1 John Gottman. Daring via Zoom, Selasa malam, 27 Oktober 2026."
+  },
+  {
+   "id": 71,
+   "date": "2026-10-29",
+   "masjidId": "rahmatan-lil-alamin-wonosari",
+   "masjidRaw": "Rahmatan Lil'Alamin, Wonosari (daring via Zoom, Akademi Orang Tua)",
+   "ustadzIds": [
+    "fadhilah-ramadhani-m-psi-psikolog"
+   ],
+   "ustadzRaw": "Fadhilah Ramadhani, M.Psi., Psikolog",
+   "kitab": null,
+   "theme": "keluarga-dakwah",
+   "title": "Mengajak Ibadah Tanpa Membuat Anak Benci",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-rahmatan-fadhilah-29-oktober-2026.html",
+   "status": "tersedia",
+   "content": "Kajian parenting Islami daring Masjid Rahmatan Lil'Alamin Wonosari Gunungkidul bersama Akademi Orang Tua dan SIDAQ, program Roadmap Parenting, narasumber Fadhilah Ramadhani (Psikolog Perkembangan dan Asesmen Anak): mengajak anak shalat tanpa membuat anak benci; alasan anak menolak shalat dan seruan shalat sebagai beban kepatuhan semu; mindset dari koreksi ke koneksi, omelan ke keteladanan, dogma ke alasan jelas; hadits perintah shalat usia 7 tahun dan pukul usia 10 tahun (HR Tirmidzi 407 dari Sabrah bin Ma'bad, HR Abu Dawud 495 dari Amr bin Syu'aib dengan pemisahan tempat tidur); makna pukulan sebagai opsi terakhir, tidak melukai, bukan karena emosi, larangan memukul wajah, siwak dari atsar Ibnu Abbas, Nabi tidak pernah memukul (HR Muslim 2328); parenting authoritative (Adamczyk dan Smith); 5.400 kali pengulangan shalat usia 7-10 tahun; tahap operasional konkret Piaget dan tahap moral Kohlberg; usia baligh dalam fiqih; warning time dan otonomi anak; validasi perasaan; tiga makna shalat bagi anak: syukur (HR Bukhari 1130), istirahat jiwa (HR Abu Dawud 4985), komunikasi dengan Allah lewat Al-Fatihah (HR Muslim 395); keteladanan merespons adzan (HR Bukhari 676); shalat berjamaah di rumah; anak usia 4 tahun menemani shalat; smartphone usia 14 tahun (Jonathan Haidt) dan screen time WHO; tiga langkah untuk anak 7 tahun ke atas yang belum terbiasa shalat. Daring via Zoom, Kamis malam, 29 Oktober 2026."
   }
  ],
  "masjid": [
@@ -1591,6 +1608,12 @@
    "name": "Damar Wahyu Wijayanti, S.I.Kom., Dipl. Montessori Ed.",
    "gender": "P",
    "bio": "Narasumber perempuan (bukan ustadzah). Menurut flyer resmi acara (Masjid Rahmatan Lil'Alamin, Akademi Orang Tua, SIDAQ): Founder Good Enough Parents, bergelar S.I.Kom. dan Dipl. Montessori Ed. Good Enough Parents (@goodenoughparents.id) adalah platform belajar parenting daring yang berfokus pada positive discipline parenting (menurut skripsi UPN Veteran Jawa Timur). Belum ditemukan sumber web publik lain yang mengonfirmasi profil pribadi narasumber."
+  },
+  {
+   "id": "fadhilah-ramadhani-m-psi-psikolog",
+   "name": "Fadhilah Ramadhani, M.Psi., Psikolog",
+   "gender": "P",
+   "bio": "Narasumber perempuan (bukan ustadzah). Menurut flyer resmi acara (Masjid Rahmatan Lil'Alamin, Akademi Orang Tua, SIDAQ): Psikolog Perkembangan & Asesmen Anak, bergelar M.Psi., Psikolog. Belum ditemukan sumber web publik lain yang mengonfirmasi profil pribadi narasumber."
   }
  ],
  "themes": [
