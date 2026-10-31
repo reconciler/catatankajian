@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-31",
+ "generatedAt": "2026-11-01",
  "sessions": [
   {
    "id": 1,
@@ -1216,6 +1216,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-alaman-sidoarum-ammi-30-oktober-2026-v2.html",
    "status": "tersedia",
    "content": "Kajian tematik Masjid Al Aman Sidoarum Godean Sleman bersama Ustadz Ammi Nur Baits dari buku Bila Kumati: husnuzhan menjelang mati; hukum suuzhan haram hingga kekufuran; suuzhan kepada Allah (QS Al-Fath 6) dan malaikat; Raqib dan Atid sifat malaikat pencatat amal (QS Qaf 17-18, Al-Infithar 10-12); sekte Ghurabiyah yang menuduh Jibril salah menyampaikan wahyu; suuzhan kepada orang baik haram dan kepada pelaku keburukan dibolehkan (QS Al-Hujurat 12); prasangka sedusta-dusta perkataan (HR Bukhari); empat jahiliyah dalam Al-Qur'an: zhann jahiliyah Perang Uhud (QS Ali Imran 154), hukum jahiliyah (QS Al-Maidah 50), tabarruj jahiliyah (QS Al-Ahzab 33), hamiyyah jahiliyah fanatisme golongan (QS Al-Fath 26, hadits Muhajirin dan Anshar); wanita disebut lebih dulu dalam QS An-Nur 2; wasiat Nabi tiga hari sebelum wafat agar mati dalam keadaan husnuzhan (HR Muslim 2877); hadits siapa senang bertemu Allah (HR Bukhari 6507); musibah orang saleh bukan azab; amal saleh dan raja'; larangan tolong-menolong dalam dosa (QS Al-Maidah 2); sayyidul istighfar dzikir pagi petang dan keutamaan ahli surga (HR Bukhari 6306); mati di atas fitrah dari doa sebelum tidur (HR Bukhari 247); rasa takut kepada Allah sebagai penyelamat (HR Bukhari 3481); husnuzhan bukan ghurur (Ibnul Qayyim); hadits qudsi Aku sesuai prasangka hamba-Ku (HR Bukhari 7405, Muslim 2675). Jumat, 30 Oktober 2026."
+  },
+  {
+   "id": 73,
+   "date": "2026-11-01",
+   "masjidId": "al-kohinoor-depok",
+   "masjidRaw": "Al Kohinoor, Depok",
+   "ustadzIds": [
+    "dr-kh-ahmad-fikri-ma"
+   ],
+   "ustadzRaw": "Dr. KH. Ahmad Fikri, MA",
+   "kitab": null,
+   "theme": "fiqih-ibadah",
+   "title": "Menjadi Imam Shalat",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-alkohinoor-fikri-01-november-2026-v2.html",
+   "status": "tersedia",
+   "content": "Kajian Ahad Subuh Masjid Al Kohinoor Depok bersama Dr. KH. Ahmad Fikri, MA tentang menjadi imam shalat: Islam sebagai panduan hidup (fiqh, akidah, muamalah); shalat bukan balas budi kepada Allah melainkan kebutuhan hamba (QS Fathir 15) dan syukur (HR Bukhari 4837, Muslim 2820); fiqh baligh dan melatih anak shalat sejak usia 7 tahun (HR Abu Dawud 495); karakteristik imam: fiqh shalat, tahsin Al-Fatihah, adab; syarat sah imam: Islam, berakal, laki-laki, suci dari hadas dan najis, bacaan benar dan fasih, tidak sedang menjadi makmum, imam gagap; perbedaan mani suci wajib mandi dan madzi najis membatalkan wudhu (HR Bukhari 269, Muslim 303); makmum masbuq langsung ikut sujud bersama imam (HR Tirmidzi 591, Abu Dawud 893); anak mumayyiz menjadi imam menurut mazhab Syafi'i, kisah Amr bin Salimah (HR Bukhari 4302); urutan prioritas imam HR Muslim 673: paling baik bacaan, paling paham sunnah, paling awal hijrah, paling awal Islam; elaborasi fiqh Syafi'i: pemimpin wilayah, imam rawatib, tuan rumah, wara', nasab, bersih pakaian, suara merdu, penampilan, sudah berkeluarga; afqah dan aqra' menurut Imam Nawawi; adab imam meringankan shalat termasuk tarawih (HR Bukhari 703, Muslim 467). Ahad, 1 November 2026."
   }
  ],
  "masjid": [
@@ -1642,6 +1659,12 @@
    "name": "Ammi Nur Baits, S.T., B.A.",
    "gender": "L",
    "bio": "Lulusan S1 Teknik Nuklir Universitas Gadjah Mada (2006) dan S1 Fikih dan Ushul Fikih Madinah International University (2011). Selama kuliah di UGM aktif mengikuti kajian Ustadz Aris Munandar. Tercantum sebagai salah satu ustadz pengampu KonsultasiSyariah.com, kontributor Yufid.TV, dan penulis buku Islam, di antaranya Bila Kumati, Riba di Sakumu, dan Tafsir Shalat."
+  },
+  {
+   "id": "dr-kh-ahmad-fikri-ma",
+   "name": "Dr. KH. Ahmad Fikri, MA",
+   "gender": "L",
+   "bio": "Pemateri Kajian Ahad Subuh Masjid Al Kohinoor Depok, membawakan tema fiqih imam shalat (1 November 2026). Riwayat pendidikan, afiliasi, dan profil lengkap belum ditemukan dari sumber publik yang solid; nama Ahmad Fikri dipakai banyak akademisi sehingga identitasnya tidak dapat dipastikan dari pencarian web."
   }
  ],
  "themes": [
