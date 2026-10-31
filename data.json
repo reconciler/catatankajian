@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-29",
+ "generatedAt": "2026-10-31",
  "sessions": [
   {
    "id": 1,
@@ -1199,6 +1199,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-rahmatan-fadhilah-29-oktober-2026.html",
    "status": "tersedia",
    "content": "Kajian parenting Islami daring Masjid Rahmatan Lil'Alamin Wonosari Gunungkidul bersama Akademi Orang Tua dan SIDAQ, program Roadmap Parenting, narasumber Fadhilah Ramadhani (Psikolog Perkembangan dan Asesmen Anak): mengajak anak shalat tanpa membuat anak benci; alasan anak menolak shalat dan seruan shalat sebagai beban kepatuhan semu; mindset dari koreksi ke koneksi, omelan ke keteladanan, dogma ke alasan jelas; hadits perintah shalat usia 7 tahun dan pukul usia 10 tahun (HR Tirmidzi 407 dari Sabrah bin Ma'bad, HR Abu Dawud 495 dari Amr bin Syu'aib dengan pemisahan tempat tidur); makna pukulan sebagai opsi terakhir, tidak melukai, bukan karena emosi, larangan memukul wajah, siwak dari atsar Ibnu Abbas, Nabi tidak pernah memukul (HR Muslim 2328); parenting authoritative (Adamczyk dan Smith); 5.400 kali pengulangan shalat usia 7-10 tahun; tahap operasional konkret Piaget dan tahap moral Kohlberg; usia baligh dalam fiqih; warning time dan otonomi anak; validasi perasaan; tiga makna shalat bagi anak: syukur (HR Bukhari 1130), istirahat jiwa (HR Abu Dawud 4985), komunikasi dengan Allah lewat Al-Fatihah (HR Muslim 395); keteladanan merespons adzan (HR Bukhari 676); shalat berjamaah di rumah; anak usia 4 tahun menemani shalat; smartphone usia 14 tahun (Jonathan Haidt) dan screen time WHO; tiga langkah untuk anak 7 tahun ke atas yang belum terbiasa shalat. Daring via Zoom, Kamis malam, 29 Oktober 2026."
+  },
+  {
+   "id": 72,
+   "date": "2026-10-30",
+   "masjidId": "al-aman-sidoarum",
+   "masjidRaw": "Al Aman Sidoarum, Godean, Sleman",
+   "ustadzIds": [
+    "ammi-nur-baits-st-ba"
+   ],
+   "ustadzRaw": "Ammi Nur Baits",
+   "kitab": "Bila Kumati",
+   "theme": "aqidah",
+   "title": "Husnuzhan Menjelang Mati",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-alaman-sidoarum-ammi-30-oktober-2026-v2.html",
+   "status": "tersedia",
+   "content": "Kajian tematik Masjid Al Aman Sidoarum Godean Sleman bersama Ustadz Ammi Nur Baits dari buku Bila Kumati: husnuzhan menjelang mati; hukum suuzhan haram hingga kekufuran; suuzhan kepada Allah (QS Al-Fath 6) dan malaikat; Raqib dan Atid sifat malaikat pencatat amal (QS Qaf 17-18, Al-Infithar 10-12); sekte Ghurabiyah yang menuduh Jibril salah menyampaikan wahyu; suuzhan kepada orang baik haram dan kepada pelaku keburukan dibolehkan (QS Al-Hujurat 12); prasangka sedusta-dusta perkataan (HR Bukhari); empat jahiliyah dalam Al-Qur'an: zhann jahiliyah Perang Uhud (QS Ali Imran 154), hukum jahiliyah (QS Al-Maidah 50), tabarruj jahiliyah (QS Al-Ahzab 33), hamiyyah jahiliyah fanatisme golongan (QS Al-Fath 26, hadits Muhajirin dan Anshar); wanita disebut lebih dulu dalam QS An-Nur 2; wasiat Nabi tiga hari sebelum wafat agar mati dalam keadaan husnuzhan (HR Muslim 2877); hadits siapa senang bertemu Allah (HR Bukhari 6507); musibah orang saleh bukan azab; amal saleh dan raja'; larangan tolong-menolong dalam dosa (QS Al-Maidah 2); sayyidul istighfar dzikir pagi petang dan keutamaan ahli surga (HR Bukhari 6306); mati di atas fitrah dari doa sebelum tidur (HR Bukhari 247); rasa takut kepada Allah sebagai penyelamat (HR Bukhari 3481); husnuzhan bukan ghurur (Ibnul Qayyim); hadits qudsi Aku sesuai prasangka hamba-Ku (HR Bukhari 7405, Muslim 2675). Jumat, 30 Oktober 2026."
   }
  ],
  "masjid": [
@@ -1306,6 +1323,11 @@
    "id": "rahmatan-lil-alamin-wonosari",
    "name": "Rahmatan Lil'Alamin, Wonosari",
    "address": "Walikan, Pulutan, Kec. Wonosari, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55851"
+  },
+  {
+   "id": "al-aman-sidoarum",
+   "name": "Al Aman Sidoarum, Godean, Sleman",
+   "address": "Perumahan Sidoarum I, Sidoarum, Kec. Godean, Kabupaten Sleman, Daerah Istimewa Yogyakarta"
   }
  ],
  "ustadz": [
@@ -1614,6 +1636,12 @@
    "name": "Fadhilah Ramadhani, M.Psi., Psikolog",
    "gender": "P",
    "bio": "Narasumber perempuan (bukan ustadzah). Menurut flyer resmi acara (Masjid Rahmatan Lil'Alamin, Akademi Orang Tua, SIDAQ): Psikolog Perkembangan & Asesmen Anak, bergelar M.Psi., Psikolog. Belum ditemukan sumber web publik lain yang mengonfirmasi profil pribadi narasumber."
+  },
+  {
+   "id": "ammi-nur-baits-st-ba",
+   "name": "Ammi Nur Baits, S.T., B.A.",
+   "gender": "L",
+   "bio": "Lulusan S1 Teknik Nuklir Universitas Gadjah Mada (2006) dan S1 Fikih dan Ushul Fikih Madinah International University (2011). Selama kuliah di UGM aktif mengikuti kajian Ustadz Aris Munandar. Tercantum sebagai salah satu ustadz pengampu KonsultasiSyariah.com, kontributor Yufid.TV, dan penulis buku Islam, di antaranya Bila Kumati, Riba di Sakumu, dan Tafsir Shalat."
   }
  ],
  "themes": [
@@ -1728,6 +1756,12 @@
    "name": "Al-Kaba'ir",
    "author": "Imam Adz-Dzahabi (Syamsuddin Muhammad bin Ahmad bin Utsman Adz-Dzahabi, 673–748 H)",
    "description": "Kitab klasik tentang dosa-dosa besar menurut Al-Qur'an dan Sunnah, disusun per jenis dosa (sekitar 70 pembahasan) dengan dalil dan peringatan akibatnya. Terbit dalam berbagai edisi; derajat sebagian riwayat di dalamnya perlu dicek ke ahli hadits sebelum dijadikan dalil."
+  },
+  {
+   "id": "bila-kumati",
+   "name": "Bila Kumati",
+   "author": "Ammi Nur Baits, S.T., B.A.",
+   "description": "Buku berbahasa Indonesia terbitan Muamalah Publishing (261 halaman) tentang kematian: mengajak pembaca mengingat mati, menjelaskan peristiwa saat kematian, akidah Ahlus Sunnah tentang iman kepada hari akhir, dan beberapa kasus fikih seputar kematian. Tahun terbit dan ISBN belum ditemukan di sumber publik."
   }
  ]
 }
