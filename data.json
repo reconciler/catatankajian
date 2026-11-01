@@ -1233,6 +1233,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-alkohinoor-fikri-01-november-2026-v2.html",
    "status": "tersedia",
    "content": "Kajian Ahad Subuh Masjid Al Kohinoor Depok bersama Dr. KH. Ahmad Fikri, MA tentang menjadi imam shalat: Islam sebagai panduan hidup (fiqh, akidah, muamalah); shalat bukan balas budi kepada Allah melainkan kebutuhan hamba (QS Fathir 15) dan syukur (HR Bukhari 4837, Muslim 2820); fiqh baligh dan melatih anak shalat sejak usia 7 tahun (HR Abu Dawud 495); karakteristik imam: fiqh shalat, tahsin Al-Fatihah, adab; syarat sah imam: Islam, berakal, laki-laki, suci dari hadas dan najis, bacaan benar dan fasih, tidak sedang menjadi makmum, imam gagap; perbedaan mani suci wajib mandi dan madzi najis membatalkan wudhu (HR Bukhari 269, Muslim 303); makmum masbuq langsung ikut sujud bersama imam (HR Tirmidzi 591, Abu Dawud 893); anak mumayyiz menjadi imam menurut mazhab Syafi'i, kisah Amr bin Salimah (HR Bukhari 4302); urutan prioritas imam HR Muslim 673: paling baik bacaan, paling paham sunnah, paling awal hijrah, paling awal Islam; elaborasi fiqh Syafi'i: pemimpin wilayah, imam rawatib, tuan rumah, wara', nasab, bersih pakaian, suara merdu, penampilan, sudah berkeluarga; afqah dan aqra' menurut Imam Nawawi; adab imam meringankan shalat termasuk tarawih (HR Bukhari 703, Muslim 467). Ahad, 1 November 2026."
+  },
+  {
+   "id": 74,
+   "date": "2026-11-01",
+   "masjidId": "salman-itb",
+   "masjidRaw": "Salman ITB, Bandung (daring, Sekolah Pranikah Salman)",
+   "ustadzIds": [
+    "fitrian-kadir-lc-m-si"
+   ],
+   "ustadzRaw": "Fitrian Kadir, Lc., M.Si",
+   "kitab": null,
+   "theme": "keluarga-dakwah",
+   "title": "Fondasi Akidah dan Niat Pernikahan",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-fitrian-01-november-2026.html",
+   "status": "tersedia",
+   "content": "Kajian pranikah daring Sekolah Pranikah Salman (SPN) Online Batch 23 Day 1 Sesi 1, Bidang Dakwah YPM Salman ITB, bersama Ustadz Fitrian Kadir, Lc., M.Si tentang fondasi akidah dan niat pernikahan: WHY sebelum HOW, tanpa niat dan tujuan pernikahan menjadi beban; era instan dan smartphone menghilangkan deep thinking dan refleksi; menikah karena ikut-ikutan; pernikahan sebagai perjudian; keyakinan kuat dalam Perang Khandaq (Ahzab) saat kaum muslimin kelaparan (HR Bukhari 4101); hadits amal tergantung niat (HR Bukhari 1, Muslim 1907); larangan menjadi imma'ah atau pengekor (HR Tirmidzi 2007); definisi akidah secara bahasa al-'aqdu mengikat dan mengokohkan, secara istilah keyakinan yang diikat kuat di hati; akad nikah dari akar yang sama; enam rukun iman hadits Jibril (HR Muslim 8); hakikat kehidupan dan tujuan penciptaan; kritik life, liberty and the pursuit of happiness; kebahagiaan sebagai pemberian Allah; ibadah (QS Adz-Dzariyat 56) dan memakmurkan bumi (QS Hud 61) dimulai dari keluarga; sebaik-baik manusia yang paling bermanfaat; tujuan pernikahan sakinah, mawaddah, dan rahmah (QS Ar-Rum 21); makna sakinah tenang setelah bergejolak; QS Al-A'raf 189 dan kisah Adam bertanya kepada Hawa (atsar As-Suddi, Tafsir Ibnu Katsir QS Al-Baqarah 35); definisi mawaddah dan rahmah; long distance marriage (LDM), kecurigaan, dan larangan tajassus; KPI pernikahan suami istri masuk surga; hukum asal nikah sunnah menurut jumhur; sakinah diusahakan dan tidak permanen; konflik rumah tangga Nabi dalam QS At-Tahrim 1-5; tren marriage is scary; ta'aruf sebagai proses ikhtiar; ilmu, ikhtiar, dan tawakal; pernikahan dimulai dari komitmen; hisab suami dan istri sesuai peran (HR Bukhari 893, Muslim 1829)."
   }
  ],
  "masjid": [
@@ -1665,6 +1682,12 @@
    "name": "Dr. KH. Ahmad Fikri, MA",
    "gender": "L",
    "bio": "Pemateri Kajian Ahad Subuh Masjid Al Kohinoor Depok, membawakan tema fiqih imam shalat (1 November 2026). Riwayat pendidikan, afiliasi, dan profil lengkap belum ditemukan dari sumber publik yang solid; nama Ahmad Fikri dipakai banyak akademisi sehingga identitasnya tidak dapat dipastikan dari pencarian web."
+  },
+  {
+   "id": "fitrian-kadir-lc-m-si",
+   "name": "Fitrian Kadir, Lc., M.Si",
+   "gender": "L",
+   "bio": "Menurut flyer resmi penyelenggara (Sekolah Pranikah Salman x Bidang Dakwah YPM Salman ITB): pengajar dan peneliti Al-Qur'an, Sharia Compliance Supervisor Kuttab Al-Fatih Bandung, dan penasihat komunitas @taubatters. Pemateri Sekolah Pranikah Salman Online Batch 23 dengan tema Fondasi Akidah dan Niat Pernikahan (1 November 2026). Belum ditemukan sumber web publik lain yang mengonfirmasi profil ini."
   }
  ],
  "themes": [
