@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://reconciler.github.io/catatankajian/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -459,6 +459,12 @@
   <url>
     <loc>https://reconciler.github.io/catatankajian/rekap/kajian-rahmatan-somad-03-november-2026.html</loc>
     <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-michelle-07-november-2026.html</loc>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

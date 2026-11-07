@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-03",
+ "generatedAt": "2026-11-07",
  "sessions": [
   {
    "id": 1,
@@ -1284,6 +1284,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-rahmatan-somad-03-november-2026.html",
    "status": "tersedia",
    "content": "Kajian parenting Islami daring Masjid Rahmatan Lil'Alamin Wonosari Gunungkidul bersama Akademi Orang Tua dan SIDAQ, program Roadmap Parenting Muslim sesi 5, narasumber Ustadz Prof. H. Abdul Somad Batubara (UAS) tentang dari menjaga pergaulan sampai siap berumah tangga: runutan menjaga perilaku; jaga lisan, larangan melembutkan suara (QS Al-Ahzab 32) dan larangan laki-laki menyerupai perempuan (HR Bukhari 5885); jaga raga, tetap di rumah dan larangan tabarruj jahiliah (QS Al-Ahzab 33); jaga tampilan, tidak bersolek berlebihan; jaga mata dan jaga kemaluan (QS An-Nur 30-31); perintah menikahkan yang belum berpasangan (QS An-Nur 32); mahar Nabi Musa menggembala kambing delapan atau sepuluh tahun dan perempuan berjalan dengan malu (QS Al-Qashash 25-27, HR Bukhari 2684); sakinah, mawaddah, dan rahmah (QS Ar-Rum 21); suami sebagai pengganti ayah, ibu, saudara, dan rumah bagi istri; hakikat kematian, atsar Ali bin Abi Thalib manusia tidur dan terbangun ketika mati; komunikasi dengan anak sebagai tameng di era fitnah; prolog sebelum menyekolahkan anak ke pesantren atau boarding school; tiga jenis pondok pesantren: akidah, tahfizh Al-Qur'an, dan pondok modern seperti Gontor; perempuan tidak boleh dilarang ke masjid dan rumah lebih baik baginya (HR Abu Dawud 565, 567, 568); pintu khusus perempuan Masjid Nabawi (HR Abu Dawud 462); i'tikaf istri-istri Nabi setelah beliau wafat (HR Bukhari 2026); ungkapan ibu madrasah pertama dari syair Hafiz Ibrahim; peran ayah sebagai penasihat, teladan shalat Subuh di masjid dan membaca Al-Qur'an, mendoakan anak, reward dan punishment, rezeki halal, nasihat Luqman (QS Luqman 13); memilih calon istri yang sederhana, lulusan pesantren, validasi lewat teman dan ustadz, doa dan ikhtiar, memilih karena agamanya (HR Bukhari 5090, Muslim 1466)."
+  },
+  {
+   "id": 77,
+   "date": "2026-11-07",
+   "masjidId": "salman-itb",
+   "masjidRaw": "Salman ITB, Bandung (daring, Sekolah Pranikah Salman)",
+   "ustadzIds": [
+    "michelle-ronida-ch-cht"
+   ],
+   "ustadzRaw": "Michelle Ronida, CH., CHt",
+   "kitab": null,
+   "theme": "keluarga-dakwah",
+   "title": "Praktik Mengelola Luka Masa Lalu",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-michelle-07-november-2026.html",
+   "status": "tersedia",
+   "content": "Kajian pranikah daring Sekolah Pranikah Salman (SPN) Online Batch 23 Day 2 Sesi 2 (materi psikomotorik), Bidang Dakwah YPM Salman ITB, bersama Michelle Ronida, CH., CHt (Trainer Spiritual Motherhood, Emotional Healing Practitioner, Founder Lentera Ibu) tentang praktik mengelola luka masa lalu: fenomena marriage is scary, tren stop the wedding, childfree (data BPS 8,2 persen), dan luka masa lalu; rasa takut wajar tetapi bukan alasan mundur dari pernikahan; fase perkembangan fisik, emosional, dan sosial yang tidak selalu paralel; hutang pengasuhan akibat kebutuhan emosional masa kecil tidak terpenuhi (asah, asih, asuh); luka pengasuhan akibat trauma tidak tuntas dan respon berlebihan; adverse childhood experiences (ACEs) dan pewarisan antargenerasi yang bisa diputus; alasan membasuh luka pengasuhan sebelum menikah dan punya anak, value diri, mindset pernikahan dan pengasuhan, luka baru; bakti kepada orang tua (QS Al-Isra 23-24); gerbang berdamai: penerimaan, ridha terhadap takdir termasuk orang tua tempat dilahirkan (HR Tirmidzi 2396, Ibnu Majah 4031), dan memaafkan; ridha takdir tidak berarti meridhai maksiat (fatwa Ibnu Utsaimin); memaafkan dan berlapang dada (QS An-Nur 22, QS Ali Imran 134), al-'afw dan ash-shafh; memaafkan bukan melupakan, dari negatif ke netral ke positif (forgiveness, APA); pulih bukan selalu bahagia tetapi punya bekal."
   }
  ],
  "masjid": [
@@ -1734,6 +1751,12 @@
    "name": "Prof. H. Abdul Somad Batubara, Lc., D.E.S.A., Ph.D.",
    "gender": "L",
    "bio": "Dikenal sebagai Ustadz Abdul Somad (UAS). Menurut Wikipedia, lahir 18 Mei 1977 di Silo Lama, Asahan, Sumatera Utara; menempuh pendidikan di Universitas Al-Azhar (Mesir), Dar al-Hadith al-Hassaniyah (Maroko), dan Universitas Islam Omdurman (Sudan); pernah menjadi dosen UIN Sultan Syarif Kasim Riau. Menerima gelar Visiting Professor dari Fakultas Usuluddin UNISSA Brunei (2020-2021) dan dilantik sebagai Profesor Adjung Fakultas Pengajian Islam Universiti Malaysia Sabah. Penulisan nama dan gelar mengikuti informasi penyelenggara; belum ditemukan sumber yang menyebut gelar guru besar tetap. Narasumber Roadmap Parenting Muslim sesi 5 (3 November 2026)."
+  },
+  {
+   "id": "michelle-ronida-ch-cht",
+   "name": "Michelle Ronida, CH., CHt",
+   "gender": "P",
+   "bio": "Narasumber perempuan (bukan ustadzah). Menurut flyer resmi penyelenggara (Sekolah Pranikah Salman x Bidang Dakwah YPM Salman ITB): Trainer Spiritual Motherhood, Emotional Healing Practitioner, dan Founder Lentera Ibu. Pemateri Sekolah Pranikah Salman Online Batch 23 Day 2 Sesi 2 dengan tema Praktik Mengelola Luka Masa Lalu (7 November 2026). Belum ditemukan sumber web publik lain yang mengonfirmasi profil ini."
   }
  ],
  "themes": [
