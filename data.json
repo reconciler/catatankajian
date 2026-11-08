@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-07",
+ "generatedAt": "2026-11-08",
  "sessions": [
   {
    "id": 1,
@@ -1318,6 +1318,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-sofiana-07-november-2026.html",
    "status": "tersedia",
    "content": "Kajian pranikah daring Sekolah Pranikah Salman (SPN) Online Batch 23 Day 2 Sesi 1, Bidang Dakwah YPM Salman ITB, bersama psikolog Sofiana Indraswari, M.Psi. tentang mengenal diri, luka masa lalu, dan kesehatan mental pranikah: tidak ada yang benar-benar siap menikah, yang siap adalah yang mau didewasakan oleh pernikahan; keluarga sebagai tempat bertumbuh sekaligus tempat pertama luka; memahami diri sebagai tugas personal dan fondasi memahami pasangan; komunikasi dalam pernikahan dan klaim 70 persen pernikahan isinya ngobrol (Nietzsche, pernikahan sebagai percakapan panjang); kutipan satu orang mengupayakan dan dua orang menghancurkan pernikahan; indikator tidak kenal diri sebelum dan sesudah menikah; kedewasaan untuk mengakui kesalahan, menerima kekecewaan, dan mensyukuri kebaikan (HR Tirmidzi 2499, QS Al-Baqarah 216, QS Ibrahim 7); indikator rendah diri (low self-esteem): kritik diri berlebihan, abai hal positif, membandingkan diri, takut gagal, merasa jadi korban; inner child menurut John Bradshaw (Homecoming, 1990); skema masa kecil dan early maladaptive schemas Jeffrey Young; trait narsistik normal vs Narcissistic Personality Disorder (NPD) menurut DSM-5; tanda calon pasangan temperamental atau berpotensi KDRT: self-centered, mendominasi, merendahkan dengan kata-kata; red signal dan stop the wedding; ciri pria dewasa: tauhid dan akidah teguh, konsep keluarga, mandiri, problem solving dengan akal, adaptif, mental entrepreneurship (HR Tirmidzi 1084)."
+  },
+  {
+   "id": 79,
+   "date": "2026-11-08",
+   "masjidId": "salman-itb",
+   "masjidRaw": "Salman ITB, Bandung (daring, Sekolah Pranikah Salman)",
+   "ustadzIds": [
+    "dr-yunita-sari-m-psi-psikolog"
+   ],
+   "ustadzRaw": "Dr. Yunita Sari, M.Psi., Psikolog",
+   "kitab": null,
+   "theme": "keluarga-dakwah",
+   "title": "Komunikasi dan Manajemen Konflik Rumah Tangga",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-yunita-08-november-2026.html",
+   "status": "tersedia",
+   "content": "Kajian pranikah daring Sekolah Pranikah Salman (SPN) Online Batch 23 Day 3 Sesi 1, Bidang Dakwah YPM Salman ITB, bersama psikolog Dr. Yunita Sari, M.Psi. tentang komunikasi dan manajemen konflik rumah tangga: kenali diri sendiri sebagai awal sakinah mawaddah wa rahmah (QS Ar-Rum 21), status ungkapan man arafa nafsahu faqad arafa rabbahu bukan hadits Nabi melainkan perkataan Yahya bin Muadz; menikah menyatukan dua keluarga, nilai dan prinsip hidup, kriteria pasangan dan konsekuensinya; kenali pasangan dan siap menerima perbedaan gender, budaya, keluarga, ekonomi, pendidikan; tiga batas saat konflik: tidak KDRT, tidak mencaci, tidak pergi dari rumah (HR Abu Dawud 2142); tipe konflik: isu sehari-hari, isu serius selingkuh dan kecanduan, perubahan sistem keluarga, keluarga tiri; penyebab konflik: komunikasi, keuangan, peran gender, harapan, kepercayaan; 69 persen konflik pasangan perpetual problems riset John Gottman; studi kasus perselingkuhan era digital: kehampaan emosional, pihak ketiga daring, boundaries (QS Al-Isra 32); tips menyelesaikan konflik: menang bareng, satu masalah satu waktu, hindari ultimatum dan silent treatment, time-out saat marah (HR Abu Dawud 4782), kalimat saya merasa; 6 langkah mengatasi konflik Olson, DeFrain dan Skogrand 2011 dibandingkan Ten Steps PREPARE/ENRICH; tantangan lelaki memahami perasaan perempuan, perempuan memahami laki-laki saat diam; strategi komunikasi intim pasutri: self-disclosure, active listening, confirmation, sexual communication; teladan komunikasi Nabi dengan keluarga: niat ibadah (HR Bukhari 56, HR Tirmidzi 3895), panggilan Ya Aisy, lemah lembut (HR Muslim 2594), gestur, tidak bertele-tele, memaafkan (QS Ali Imran 159); memilih memeluk padahal hati ingin memukul."
   }
  ],
  "masjid": [
@@ -1780,6 +1797,12 @@
    "name": "Sofiana Indraswari, M.Psi., Psikolog",
    "gender": "P",
    "bio": "Narasumber perempuan (bukan ustadzah), psikolog. Menurut flyer resmi penyelenggara (Sekolah Pranikah Salman x Bidang Dakwah YPM Salman ITB): Founder Firdaus Amany Psychological Center, Psikolog Pusat Pembelajaran Keluarga Kota Bandung, dan Konsultan Psikolog Sekolah Islam dan Boarding School. Pemateri Sekolah Pranikah Salman Online Batch 23 Day 2 Sesi 1 dengan tema Mengenal Diri, Luka Masa Lalu, dan Kesehatan Mental Pranikah (7 November 2026). Belum ditemukan sumber web publik lain yang mengonfirmasi profil ini."
+  },
+  {
+   "id": "dr-yunita-sari-m-psi-psikolog",
+   "name": "Dr. Yunita Sari, M.Psi., Psikolog",
+   "gender": "P",
+   "bio": "Narasumber perempuan (bukan ustadzah), psikolog. Menurut flyer resmi penyelenggara (Sekolah Pranikah Salman x Bidang Dakwah YPM Salman ITB): Dosen Fakultas Psikologi Universitas Islam Bandung (Unisba), Psikolog Lembaga Bimbingan Konseling ITB, dan Psikolog Unit Layanan Psikologi Terpadu Unisba. Profil penulis di portal Garuda Kemdiktisaintek mencatat Yunita Sari dari Fakultas Psikologi Universitas Islam Bandung dengan tulisan antara lain \"Membangun Komunikasi Intim Pasangan Muslim Nikah Muda dalam Pendekatan Psikologi Perkembangan dan Agama\" (Psympathic, 2008) dan \"Benarkah Dosa Turunan Itu Ada? Gambaran Relasi Romantis Anak yang Terpapar Kekerasan dalam Perspektif Psikologi dan Islam\" (Marwah, 2017). Pemateri Sekolah Pranikah Salman Online Batch 23 Day 3 Sesi 1 dengan tema Komunikasi dan Manajemen Konflik Rumah Tangga (8 November 2026)."
   }
  ],
  "themes": [
