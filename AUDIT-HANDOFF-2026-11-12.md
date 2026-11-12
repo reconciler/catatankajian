@@ -14,6 +14,7 @@
 | 43138329582 #1 | push `fa19247` | success | failure | `AUDIT-HANDOFF-2026-10-03.md -> 503` |
 | 43138329582 #2 | re-run failed jobs | failure | - | "Multiple artifacts named github-pages" (efek re-run dalam run yang sama, bukan masalah situs) |
 | 43139080515 | workflow_dispatch, `fa19247` | success | failure | `AUDIT-HANDOFF-2026-10-28.md -> 503` |
+| 43139294120 | push `0403a2f` (handoff ini; isi situs sama + rekap sesi 81) | success | **success** | - (semua uji lolos, canonical 81 rekap OK) |
 
 **Tervalidasi (log Actions):**
 - Semua cek lain OK, termasuk beranda 200, berkas publik 200, sampel rekap 200, berkas internal lain 404,
@@ -26,7 +27,8 @@
 - Penyebab kemungkinan gangguan sesaat GitHub Pages pada respons 404 (bukan isi commit; commit ini tidak
   menyentuh berkas internal maupun `deploy.yml`). Status resmi GitHub hari ini tidak bisa dibuka dari sesi
   (githubstatus.com tidak ada di allowlist); pencarian web tidak menemukan insiden Pages tercatat 12 Nov 2026.
-- Situs terbit (langkah publish success dua kali), jadi rekap baru seharusnya sudah tayang.
+- Situs terbit (langkah publish success tiga kali). Run ketiga hijau mendukung dugaan gangguan sesaat, tetapi
+  belum membuktikan penyebabnya.
 
 **Catatan:** re-run "failed jobs" di run yang sama tidak bisa dipakai untuk workflow ini (artifact `github-pages`
 ganda). Untuk mengulang uji, pakai `workflow_dispatch` (run baru).
