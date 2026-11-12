@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-08",
+ "generatedAt": "2026-11-12",
  "sessions": [
   {
    "id": 1,
@@ -1335,6 +1335,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-yunita-08-november-2026.html",
    "status": "tersedia",
    "content": "Kajian pranikah daring Sekolah Pranikah Salman (SPN) Online Batch 23 Day 3 Sesi 1, Bidang Dakwah YPM Salman ITB, bersama psikolog Dr. Yunita Sari, M.Psi. tentang komunikasi dan manajemen konflik rumah tangga: kenali diri sendiri sebagai awal sakinah mawaddah wa rahmah (QS Ar-Rum 21), status ungkapan man arafa nafsahu faqad arafa rabbahu bukan hadits Nabi melainkan perkataan Yahya bin Muadz; menikah menyatukan dua keluarga, nilai dan prinsip hidup, kriteria pasangan dan konsekuensinya; kenali pasangan dan siap menerima perbedaan gender, budaya, keluarga, ekonomi, pendidikan; tiga batas saat konflik: tidak KDRT, tidak mencaci, tidak pergi dari rumah (HR Abu Dawud 2142); tipe konflik: isu sehari-hari, isu serius selingkuh dan kecanduan, perubahan sistem keluarga, keluarga tiri; penyebab konflik: komunikasi, keuangan, peran gender, harapan, kepercayaan; 69 persen konflik pasangan perpetual problems riset John Gottman; studi kasus perselingkuhan era digital: kehampaan emosional, pihak ketiga daring, boundaries (QS Al-Isra 32); tips menyelesaikan konflik: menang bareng, satu masalah satu waktu, hindari ultimatum dan silent treatment, time-out saat marah (HR Abu Dawud 4782), kalimat saya merasa; 6 langkah mengatasi konflik Olson, DeFrain dan Skogrand 2011 dibandingkan Ten Steps PREPARE/ENRICH; tantangan lelaki memahami perasaan perempuan, perempuan memahami laki-laki saat diam; strategi komunikasi intim pasutri: self-disclosure, active listening, confirmation, sexual communication; teladan komunikasi Nabi dengan keluarga: niat ibadah (HR Bukhari 56, HR Tirmidzi 3895), panggilan Ya Aisy, lemah lembut (HR Muslim 2594), gestur, tidak bertele-tele, memaafkan (QS Ali Imran 159); memilih memeluk padahal hati ingin memukul."
+  },
+  {
+   "id": 80,
+   "date": "2026-11-02",
+   "masjidId": "salman-itb",
+   "masjidRaw": "Salman ITB, Bandung (daring, Sekolah Pranikah Salman)",
+   "ustadzIds": [
+    "zulkarnain-s-th-i"
+   ],
+   "ustadzRaw": "Zulkarnain, S.Th.I",
+   "kitab": null,
+   "theme": "keluarga-dakwah",
+   "title": "Hakikat Pernikahan dalam Islam, Rukun dan Syarat Pernikahan",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-zulkarnain-02-november-2026-v3.html",
+   "status": "tersedia",
+   "content": "Kajian pranikah daring Kelas Fikih Munakahat sesi 1 dari 4, Sekolah Pranikah Salman (SPN) Online Batch 23, Bidang Dakwah Masjid Salman ITB, bersama Ustadz Zulkarnain, S.Th.I tentang hakikat pernikahan dalam Islam, rukun dan syarat pernikahan; catatan dari foto tulisan tangan: empat model pernikahan Arab pra-Islam al-wiladah, ar-rayah, al-istibdha, ar-rahth (HR Bukhari 5127), koreksi bendera ar-rayah dipasang perempuan dan ar-rahth kurang dari sepuluh laki-laki; landasan filosofis QS Ar-Rum 21 dan QS An-Nisa 21, sunnatullah, mitsaqan ghalizha, ibadah (KHI Pasal 2); hukum menikah wajib, sunnah, mubah sebagai pertengahan, makruh, haram; tujuan dan hikmah pernikahan, menjaga keturunan, menyempurnakan separuh agama (HR Baihaqi, hasan li ghairihi); rukun nikah lima (KHI Pasal 14, PMA 30/2024 Pasal 10); syarat mempelai pria dan wanita, dua saksi, shighat ijab qabul; nikah tanpa izin wali batal (HR Abu Dawud 2083, Tirmidzi 1102); jenis wali nasab, wali mu'tiq, wali hakim; urutan wali nasab PMA 30/2024 Pasal 12; syarat wali, tidak sedang ihram (HR Muslim 1409); wali fasik menurut mazhab Syafi'i, Hanafi, Maliki; syarat adil wali di Pasal 12 ayat 2, PMA 22/2024 dicabut PMA 30/2024; wali adhal QS Al-Baqarah 232, Ma'qil bin Yasar (HR Bukhari 5130), penetapan pengadilan (KHI Pasal 23); memilih restu orang tua; wali disabilitas (KHI Pasal 22); taukil wali; anak hasil zina nasab ke ibu dan wali hakim (KHI Pasal 100, Fatwa MUI 11/2012); anak angkat tidak memindahkan nasab (QS Al-Ahzab 4-5); mahar wajib bukan rukun (KHI Pasal 34), mahar ditangguhkan menjadi utang (KHI Pasal 33), mahar harta, jasa, manfaat, hafalan Al-Qur'an (HR Bukhari 5135), mahar dicicil, diminta kembali, dijual; ijab qabul lafaz jelas, satu majelis, hukum akad nikah online menurut MUI, NU, Muhammadiyah, kesesuaian ijab dan qabul, kesegeraan tanpa jeda (KHI Pasal 27)."
   }
  ],
  "masjid": [
@@ -1803,6 +1820,12 @@
    "name": "Dr. Yunita Sari, M.Psi., Psikolog",
    "gender": "P",
    "bio": "Narasumber perempuan (bukan ustadzah), psikolog. Menurut flyer resmi penyelenggara (Sekolah Pranikah Salman x Bidang Dakwah YPM Salman ITB): Dosen Fakultas Psikologi Universitas Islam Bandung (Unisba), Psikolog Lembaga Bimbingan Konseling ITB, dan Psikolog Unit Layanan Psikologi Terpadu Unisba. Profil penulis di portal Garuda Kemdiktisaintek mencatat Yunita Sari dari Fakultas Psikologi Universitas Islam Bandung dengan tulisan antara lain \"Membangun Komunikasi Intim Pasangan Muslim Nikah Muda dalam Pendekatan Psikologi Perkembangan dan Agama\" (Psympathic, 2008) dan \"Benarkah Dosa Turunan Itu Ada? Gambaran Relasi Romantis Anak yang Terpapar Kekerasan dalam Perspektif Psikologi dan Islam\" (Marwah, 2017). Pemateri Sekolah Pranikah Salman Online Batch 23 Day 3 Sesi 1 dengan tema Komunikasi dan Manajemen Konflik Rumah Tangga (8 November 2026)."
+  },
+  {
+   "id": "zulkarnain-s-th-i",
+   "name": "Zulkarnain, S.Th.I",
+   "gender": "L",
+   "bio": "Menurut poster resmi penyelenggara (Sekolah Pranikah Salman x Bidang Dakwah Masjid Salman ITB): Koordinator Program Studi Islam dan Bahasa Arab, Bidang Dakwah Masjid Salman ITB. Pemateri Kelas Fikih Munakahat (4 sesi) Sekolah Pranikah Salman Online Batch 23, sesi 1 dengan tema Hakikat Pernikahan dalam Islam, Rukun dan Syarat Pernikahan (2 November 2026). Belum ditemukan sumber web publik lain yang mengonfirmasi profil ini."
   }
  ],
  "themes": [
