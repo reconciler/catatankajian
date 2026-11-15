@@ -1386,6 +1386,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-alkohinoor-imanuddin-15-november-2026.html",
    "status": "tersedia",
    "content": "Kajian Ahad Subuh Masjid Al Kohinoor Depok bersama Ustadz Imanuddin Mukhtar tentang ujian iman dalam peristiwa Thaif: 'Amul Huzni (tahun kesedihan, koreksi ejaan dari Amul Husni) tahun ke-10 kenabian, wafatnya Abu Thalib dalam keadaan kafir (HR Bukhari 4675) dan Khadijah RA (riwayat jarak wafat beragam, tiga hari hingga dua-tiga bulan); Abu Thalib pelindung dakwah dari luar, Khadijah RA pendukung finansial dan mental sejak wahyu pertama (HR Bukhari 3); gangguan Quraisy meningkat setelah Abu Thalib wafat (Ibnu Ishaq), Abu Lahab tidak melindungi Nabi; Nabi berjalan kaki ke Thaif mencari dukungan Bani Tsaqif (Ath-Thabrani, Majma' az-Zawaid 9851); unta hijrah dibeli dari Abu Bakar dengan harga (HR Bukhari 3905); hadits Aisyah hari yang lebih berat dari Uhud yaitu hari 'Aqabah, Jibril dan malaikat gunung, Allah mendengar ucapan kaummu, harapan keturunan Thaif menyembah Allah (HR Bukhari 3231, Muttafaq 'alaih); ridha Allah tidak diukur dari kenyamanan dunia (QS Al-Fajr 15-16, hadits Allah memberi dunia kepada yang dicintai dan tidak); dunia adalah ujian (QS Al-Mulk 2); jika Allah mencintai suatu kaum Dia menguji mereka (HR Tirmidzi 2396, Ibnu Majah 4031); tawakal tetap bergerak, ikatlah unta lalu bertawakal (HR Tirmidzi 2517); doa Thaif jika Allah tidak murka aku tidak peduli (sanad diperselisihkan, Ibnu Ishaq mudallis); mengadu hanya kepada Allah seperti Nabi Ya'qub (QS Yusuf 86) dan Nabi Ayyub (QS Al-Anbiya 83); menangis manusiawi, mata menangis hati bersedih (HR Bukhari 1303), larangan meratap (HR Bukhari 1294); kemuliaan dari ketakwaan (QS Al-Hujurat 13); sabar memberi ruang, tawakal memberi jalan, doa menjaga hubungan. Ahad, 15 November 2026."
+  },
+  {
+   "id": 83,
+   "date": "2026-11-15",
+   "masjidId": "salman-itb",
+   "masjidRaw": "Salman ITB, Bandung (daring, Sekolah Pranikah Salman)",
+   "ustadzIds": [
+    "farida-agustiani-s-keb"
+   ],
+   "ustadzRaw": "Farida Agustiani, S.Keb",
+   "kitab": null,
+   "theme": "keluarga-dakwah",
+   "title": "Kesehatan Reproduksi dan Intimasi Halal",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-farida-15-november-2026.html",
+   "status": "tersedia",
+   "content": "Kajian pranikah daring Sekolah Pranikah Salman (SPN) Online Batch 23 Day 5 Sesi 1, Bidang Dakwah YPM Salman ITB, bersama bidan Farida Agustiani, S.Keb tentang kesehatan reproduksi dan intimasi halal suami istri: mempelajari seks agar tenteram (QS Ar-Rum 21); seksualitas dalam Islam sebagai ibadah berpahala, jima adalah sedekah (HR Muslim 1006), meneruskan keturunan gharizah an-nau dan hifzh an-nasl, ilmu sebelum amal (Shahih Bukhari Kitab al-Ilm), kebutuhan dasar seperti makan minum (hierarki Maslow), menjaga kehormatan (HR Bukhari 5066, Muslim 1400); seks dalam pernikahan bukan sekadar syahwat, solusi penyimpangan LGBT; QS Al-Baqarah 223 istri ladang, beragam posisi hanya di qubul, dubur haram (HR Abu Dawud 2162), tidak saat haid (QS Al-Baqarah 222); tujuan hubungan intim: amal shalih, menjaga fitrah, merawat cinta, menjaga kesehatan, klaim terapi penyakit perlu dicek; adab jima: suci, ruangan tertutup, menjaga privasi dan rahasia ranjang (HR Muslim 1437), saling memuji, pakaian sesuai kesepakatan, doa sebelum jima (HR Bukhari 6388, Muslim 1434), foreplay (hadits Jabir HR Bukhari 5367, Muslim 715), wudhu bila mengulang (HR Muslim 308), bersyukur atas nafkah batin; boleh melihat aurat pasangan (hadits Bahz bin Hakim, Abu Dawud 4017, Tirmidzi 2769); jarak kehamilan minimal 2 tahun karena menyusui (QS Al-Baqarah 233, rekomendasi WHO 24 bulan), jarak psikologis 5 tahun dibandingkan anjuran BKKBN 3 tahun."
   }
  ],
  "masjid": [
@@ -1866,6 +1883,12 @@
    "name": "Imanuddin Mukhtar",
    "gender": "L",
    "bio": "Pemateri Kajian Ahad Subuh Masjid Al Kohinoor Depok, membawakan tema sirah peristiwa Thaif dan 'Amul Huzni (15 November 2026). Riwayat pendidikan, afiliasi, dan profil lengkap belum ditemukan dari sumber publik yang solid; pencarian web tidak menemukan profil yang dapat dipastikan sebagai pemateri ini."
+  },
+  {
+   "id": "farida-agustiani-s-keb",
+   "name": "Farida Agustiani, S.Keb",
+   "gender": "P",
+   "bio": "Narasumber perempuan (bukan ustadzah), bidan (S.Keb). Menurut flyer resmi penyelenggara (Sekolah Pranikah Salman x Bidang Dakwah YPM Salman ITB): Owner Klinik Bumi Sehat Bahagia. Pemateri Sekolah Pranikah Salman Online Batch 23 Day 5 Sesi 1 (Pertemuan ke-5) dengan tema Kesehatan Reproduksi dan Intimasi Halal (15 November 2026). Belum ditemukan sumber web publik lain yang mengonfirmasi profil ini."
   }
  ],
  "themes": [
