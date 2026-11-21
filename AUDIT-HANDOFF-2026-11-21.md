@@ -69,6 +69,13 @@ artifact di job yang sama gagal. Isi commit tidak relevan.
 
 **Dampak:** situs live masih 84 sesi. Sesi 85 dan 86 sudah di repo dan tayang otomatis begitu deploy berhasil.
 
+**Hasil (tervalidasi, log Actions):** run 44882147791 (push `bbf440c`, handoff di atas, 07:51 UTC) **sukses**:
+`Found 1 artifact(s)`, terbit, uji pasca-deploy lolos semua (beranda 200, berkas internal 404, canonical 86 rekap =
+`recapUrl`). Sesi 85 dan 86 sudah tayang. Tanpa perubahan `deploy.yml`.
+
+**Kesimpulan sendiri:** error bersifat sementara (5 run gagal ~07:38-07:49 UTC, lalu pulih). Usulan 1-2 di atas
+**tidak dieksekusi**; disimpan sebagai cadangan bila error berulang. Keputusan tetap di Amal.
+
 ## Untuk repo lain
 
 - Workflow ketiga repo lain memakai pola serupa (satu origin, deploy-pages). Bila error yang sama muncul di sana,
