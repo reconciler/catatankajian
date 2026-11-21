@@ -104,15 +104,25 @@ jobs:
           fi
 
           # Helper: cek satu URL, retry singkat (cache harusnya sudah hangat
-          # setelah loop beranda di atas berhasil).
+          # setelah loop beranda di atas berhasil). Respons 5xx = gangguan sesaat
+          # GitHub Pages ("belum siap", lihat AUDIT-HANDOFF-2026-11-12.md dan
+          # -11-21.md): jendela retry diperpanjang jadi 9 percobaan, jeda 10 detik.
+          # Kriteria lulus TIDAK dilonggarkan: hanya kode yang persis sama dengan
+          # $expect yang lulus; 5xx tidak pernah dihitung lulus.
           check_url() {
-            local url="$1" expect="$2" desc="$3" code=""
-            for i in 1 2 3; do
+            local url="$1" expect="$2" desc="$3" code="" i=0 max=3 delay=5
+            while [ "$i" -lt "$max" ]; do
+              i=$((i+1))
               code=$(curl -s -o /dev/null -w "%{http_code}" "${url}?v=${SHA}")
               [ "$code" = "$expect" ] && { echo "OK  [$desc] $url -> $code"; return 0; }
-              sleep 5
+              case "$code" in
+                5??) max=9; delay=10
+                     echo "... [$desc] $url -> $code (5xx, belum siap; percobaan $i/$max)" ;;
+                *)   delay=5 ;;
+              esac
+              [ "$i" -lt "$max" ] && sleep "$delay"
             done
-            echo "FAIL [$desc] $url -> $code (diharapkan $expect)"
+            echo "FAIL [$desc] $url -> $code (diharapkan $expect, $i percobaan)"
             return 1
           }
 
