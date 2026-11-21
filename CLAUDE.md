@@ -46,7 +46,9 @@ untuk artifact, dan job `deploy` untuk uji) menyalin hanya:
   subfolder 200, dan berkas internal 404: `CLAUDE.md` + `scripts/build_seo.py` (tetap), plus **semua** `AUDIT-HANDOFF-*.md`
   dan `COORDINATION-NOTE-*.md` di root repo (dicek dinamis via glob sejak 3 Okt 2026, atas usulan Auditor — handoff baru
   otomatis ikut terjaga tanpa perlu edit workflow). **Jangan dilonggarkan supaya hijau**; bila gagal, selidiki penyebabnya.
-  Uji ini tidak menilai tampilan.
+  Uji ini tidak menilai tampilan. Respons 5xx (gangguan sesaat GitHub Pages) diperlakukan "belum siap": retry hingga
+  9 percobaan jeda 10 detik, dan tidak pernah dihitung lulus (21 Nov 2026, disetujui Amal; lihat
+  `AUDIT-HANDOFF-2026-11-21.md` bagian 7).
 - Uji pasca-deploy juga memeriksa (dari berkas repo, tanpa jaringan) bahwa `<link rel="canonical">` tiap rekap sama dengan
   `recapUrl` di `data.json` (ditambah 11 Okt 2026). Berjalan setelah terbit, jadi run merah = perbaiki, bukan penahan terbit.
 - Sesi kerja tidak bisa mengakses `reconciler.github.io` (egress diblokir); verifikasi situs live dilakukan oleh langkah

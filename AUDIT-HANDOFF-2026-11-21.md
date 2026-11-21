@@ -112,7 +112,29 @@ simulasi langkah uji terhadap server lokal: jalur sukses exit 0, jalur gagal (CL
 - 2 run merah karena 503 sesaat pada cek "internal harus 404" — masalah lama yang sama dengan bagian 2 handoff
   12 Nov, bukan akibat pisah job. Situs tetap terbit di kedua run itu.
 
-## 6. Usulan menunggu: retry 5xx di uji pasca-deploy (belum di-push)
+## 7. Retry 5xx diterapkan (commit `d44cdae`, ~10:25 UTC)
+
+**Persetujuan:** Amal di chat PIC (21 Nov 2026, 17:22 WIB): "setuju retry 5xx". Isi perubahan sama dengan bagian 6
+(patch yang ditolak sebelumnya, diterapkan apa adanya). Lint dan simulasi lokal diulang sebelum push: hasil sama.
+
+**Hasil (tervalidasi, log Actions), 6 run pada `d44cdae`:**
+
+| Run | Pemicu | Hasil | Kena 5xx lalu pulih |
+|---|---|---|---|
+| 44894233046 | push | success | `AUDIT-HANDOFF-2026-09-22.md`: 503 x3, lalu 404 |
+| 44894449038 | dispatch | success | - |
+| 44894502153 | dispatch | success | `rekap/kajian-aladhim-setiawan-12-juli-2026.html`: 503 x1, lalu 200 |
+| 44894568023 | dispatch | success | - |
+| 44894624768 | dispatch | success | `AUDIT-HANDOFF-2026-09-22.md`: 503 x1, lalu 404 |
+| 44894699510 | dispatch | success | - |
+
+Semua `Found 1 artifact(s)`, 0 baris FAIL.
+
+**Kesimpulan sendiri:** 3 dari 6 run kena 503 sesaat; dengan aturan lama (3 percobaan) run 44894233046 pasti merah.
+503 juga muncul pada berkas yang harus 200 (rekap), jadi ini gangguan umum GitHub Pages, bukan khusus berkas internal.
+Sampel kecil; pantau di push berikutnya.
+
+## 6. Usulan menunggu: retry 5xx di uji pasca-deploy (diterapkan di bagian 7)
 
 - Isi (dari usulan 12 Nov bagian 3): `check_url` memperlakukan 5xx sebagai "belum siap", retry hingga 9 percobaan
   jeda 10 detik. Kriteria lulus tidak dilonggarkan: hanya kode persis sama dengan yang diharapkan yang lulus, 5xx
@@ -129,3 +151,5 @@ simulasi langkah uji terhadap server lokal: jalur sukses exit 0, jalur gagal (CL
   penyebabnya kemungkinan sama. Auditor yang menyalurkan; PIC repo ini tidak mengubah repo lain.
 - Pola pisah job (bagian 5) sudah terbukti di repo ini untuk masalah artifact (6/6 terbit). Usulan ke Auditor:
   pertimbangkan untuk jadwalkajian, bikin-cv-taaruf, kenalicalon bila workflow mereka masih satu job.
+- Pola retry 5xx di `check_url` (bagian 7) terbukti di repo ini (6/6 hijau, 3 run pulih dari 503). Usulan ke Auditor:
+  sebarkan ke tiga repo lain bila uji pasca-deploy mereka memakai pola `check_url` serupa.
