@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-15",
+ "generatedAt": "2026-11-21",
  "sessions": [
   {
    "id": 1,
@@ -1420,6 +1420,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-arif-15-november-2026.html",
    "status": "tersedia",
    "content": "Kajian pranikah daring Sekolah Pranikah Salman (SPN) Online Batch 23 Day 5 Sesi 2, Bidang Dakwah YPM Salman ITB, bersama Ust. Arif Rahman Lubis tentang ta'aruf, calon pasangan, mertua, dan relasi sosial: visi masuk surga sekeluarga (QS Ar-Ra'd 23, Az-Zukhruf 70, Ath-Thur 21); menikah ibadah sekaligus amanah (HR Muslim 1218); keutamaan menikah: sunnah Rasul (HR Bukhari 5063), menyempurnakan separuh agama (hasan li ghairihi), ladang pahala, anak saleh (HR Muslim 1631), sakinah mawaddah rahmah (QS Ar-Rum 21), suami terbaik bagi keluarga (HR Tirmidzi 3895), istri masuk surga dari pintu mana saja dengan empat syarat; faktor menentukan pilihan: akal sehat, perasaan, petunjuk Allah; kriteria memilih pasangan: wajib agama dan akhlak (HR Bukhari 5090, Tirmidzi 1084), good husband material qawwam nafkah akhlak pendidik (QS An-Nisa 34, Ath-Thalaq 7, At-Tahrim 6), good wife material mau belajar taat dan bersyukur, menyelaraskan visi; sekufu kafa'ah empat mazhab, hak perempuan dan wali, qana'ah (HR Muslim 1054); ketertarikan dan nazhar melihat calon (HR Tirmidzi 1087); lima prinsip ta'aruf; tahapan ta'aruf: tukar CV, komunikasi dengan pendamping, bertemu tanpa khalwat (HR Bukhari 5233), bertanya ke orang terdekat sesuai atsar Umar (tetangga, muamalah harta, safar); doa istikharah (HR Bukhari 1162); orangtua sebagai partner, ridha Allah pada ridha orangtua (HR Tirmidzi 1899); mengelola konflik keluarga besar; tanya jawab: wali nikah perempuan (KHI Pasal 19 dan 21), perbedaan ekonomi, harta istri milik istri, waris istri 1/4 atau 1/8 (QS An-Nisa 12), komunikasi chat dan khalwat (HR Tirmidzi 2165), tanda jawaban istikharah tidak harus mimpi, lama ta'aruf."
+  },
+  {
+   "id": 85,
+   "date": "2026-11-21",
+   "masjidId": "salman-itb",
+   "masjidRaw": "Salman ITB, Bandung (daring, Sekolah Pranikah Salman)",
+   "ustadzIds": [
+    "faisyal-muhammad-syahri-alwi-m-i-kom"
+   ],
+   "ustadzRaw": "Faisyal Muhammad Syahri Alwi, M.I.Kom",
+   "kitab": null,
+   "theme": "keluarga-dakwah",
+   "title": "Praktik Pembuatan Visi Pernikahan dan Visi Keluarga",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-faisyal-21-november-2026.html",
+   "status": "tersedia",
+   "content": "Kajian pranikah daring Sekolah Pranikah Salman (SPN) Online Batch 23 Day 6 Sesi 2 (pertemuan ke-6), Bidang Dakwah YPM Salman ITB, bersama Faisyal Muhammad Syahri Alwi, M.I.Kom (praktisi Talents Mapping, Kepala Sekolah Ahlan School) tentang praktik membuat visi pernikahan dan visi keluarga: keluarga adalah amanah, setiap kalian pemimpin dan dimintai pertanggungjawaban, laki-laki pemimpin atas keluarganya, wanita atas rumah suami dan anaknya (HR Bukhari 7138, Muslim 1829); doa 'ibadurrahman pasangan dan keturunan penyejuk mata qurrata a'yun, jadikan kami imam bagi orang bertakwa (QS Al-Furqan 74); tujuh unsur jati diri keluarga: visi, core value, value, filosofi, budaya, ikon, motto; visi memberi arah, nilai menjadi pegangan, budaya mewujudkan dalam keseharian; mission lebih penting dari passion, misi memberi arah dan potensi membantu memilih cara berkontribusi; worksheet visi keluarga dan arah regenerasi 10 latihan: value of life, pertimbangan motif, given factor, nilai keluarga asal, karakter, desain dan narasi jati diri keluarga, regenerasi value, breaking the chain, catatan diskusi calon pasangan. Sabtu, 21 November 2026."
   }
  ],
  "masjid": [
@@ -1912,6 +1929,12 @@
    "name": "Arif Rahman Lubis, S.T., M.Hum",
    "gender": "L",
    "bio": "Menurut flyer resmi penyelenggara (Sekolah Pranikah Salman x Bidang Dakwah YPM Salman ITB): Founder Media Teladan Rasul, Founder Kajian Half A Deen, dan Founder Jalur Jodoh. Pemateri Sekolah Pranikah Salman Online Batch 23 Day 5 Sesi 2 (Pertemuan ke-5) dengan tema Ta'aruf: Calon Pasangan, Mertua, dan Relasi Sosial (15 November 2026). Katalog perpustakaan dan toko buku mencatat penulis bernama sama dengan karya bertema keteladanan Nabi, antara lain Teladan Rasul (Qultum Media, 2019) dan Open Your Heart, Follow Your Prophet; kesamaan nama dengan media Teladan Rasul mengarah ke orang yang sama, tetapi belum dikonfirmasi sumber eksplisit. Institusi asal gelar S.T. dan M.Hum belum ditemukan dari sumber publik."
+  },
+  {
+   "id": "faisyal-muhammad-syahri-alwi-m-i-kom",
+   "name": "Faisyal Muhammad Syahri Alwi, M.I.Kom",
+   "gender": "L",
+   "bio": "Menurut flyer resmi penyelenggara (Sekolah Pranikah Salman x Bidang Dakwah YPM Salman ITB): Praktisi Talents Mapping; Founder dan Kepala Sekolah Ahlan School; Sekretaris Majelis Dakwah dan Pengembangan Umat Darul Hikam. Pemateri Sekolah Pranikah Salman Online Batch 23 Day 6 Sesi 2 (Pertemuan ke-6) dengan tema Praktik Pembuatan Visi Pernikahan dan Visi Keluarga (21 November 2026). Belum ditemukan sumber web publik lain yang mengonfirmasi profil ini; institusi asal gelar M.I.Kom belum ditemukan."
   }
  ],
  "themes": [
