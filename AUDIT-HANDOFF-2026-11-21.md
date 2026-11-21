@@ -73,8 +73,13 @@ artifact di job yang sama gagal. Isi commit tidak relevan.
 `Found 1 artifact(s)`, terbit, uji pasca-deploy lolos semua (beranda 200, berkas internal 404, canonical 86 rekap =
 `recapUrl`). Sesi 85 dan 86 sudah tayang. Tanpa perubahan `deploy.yml`.
 
-**Kesimpulan sendiri:** error bersifat sementara (5 run gagal ~07:38-07:49 UTC, lalu pulih). Usulan 1-2 di atas
-**tidak dieksekusi**; disimpan sebagai cadangan bila error berulang. Keputusan tetap di Amal.
+**Koreksi (07:52 UTC):** kesimpulan "pulih" di commit `10199fb` keliru. Run berikutnya 44882211088 (push `10199fb`,
+isi situs sama) **gagal lagi** dengan error yang sama. Hari ini 1 dari 7 run sukses.
+
+**Kesimpulan sendiri:** error **intermiten**, bukan sudah pulih; cocok dengan pola issue #451 (lookup di job yang sama).
+Situs live tetap versi run sukses 44882147791 (86 sesi): langkah deploy gagal sebelum membuat deployment, jadi tidak
+menimpa situs. Risiko ke depan: tiap push rekap baru berpeluang gagal terbit dan perlu `workflow_dispatch` ulang.
+Usulan 1 (pisah job) disarankan; menunggu konfirmasi Amal.
 
 ## Untuk repo lain
 
