@@ -37,6 +37,38 @@
   (`build` upload artifact, `deploy` dengan `needs: build`), sesuai pola yang direkomendasikan README actions/deploy-pages.
   Kriteria uji pasca-deploy tidak diubah.
 
+## 4. Update ~07:50 UTC (sesi PIC berikutnya)
+
+**Rekap baru (rutin):**
+- Commit `bd9aa20`: sesi 86, Salman ITB (daring), SPN Salman Online Batch 23 Day 6 Sesi 1, Sri Haryati, S.E., M.Ag,
+  "Parenting dan Visi Keluarga" (21 Nov 2026). Entri `ustadz[]` baru `sri-haryati-s-e-m-ag` (bio dari flyer resmi;
+  tidak ada sumber web publik lain). Rekap menautkan sesi 85 (Day 6 Sesi 2) dan rekap Sofiana (Day 2 Sesi 1).
+  SEO diregenerasi.
+- Validasi lokal sebelum push: JSON round-trip identik, ID unik, rujukan ID sesi baru ada, HTML rekap well-formed,
+  canonical = `recapUrl`, dashboard lokal 320 dan 430 px menampilkan sesi baru tanpa overflow, rekap baru 200.
+
+**Deploy:** run 44882005112 (push `bd9aa20`) gagal dengan error yang sama (`Found 0 artifact(s)`). Total 5 run gagal hari ini.
+
+**Tervalidasi tambahan:**
+- Runner image beda: run sukses 15 Nov `ubuntu-26.04` versi 20261111.82.6; run gagal 21 Nov versi 20261116.202.1.
+  Runner version sama (2.338.2). Kaitannya dengan error belum terbukti.
+- Error yang sama dilaporkan publik di repo lain dengan `deploy-pages@v4`, satu job:
+  - indextables/indextables-site PR #4 (20 Nov 2026): artifact ada menurut API; solusi mereka naik ke
+    `upload-pages-artifact` v5 + `deploy-pages` v5. Hasilnya belum terbukti di PR itu.
+  - Hawaii-Appleseed/Hawaii-Appleseed-website issue #125 (19 Nov 2026).
+  - actions/deploy-pages issue #451 (7 Okt 2026): lookup artifact kosong bila upload dan deploy di job yang sama.
+    Pelapor: memisah job build/deploy memperbaikinya. Belum ada respons maintainer.
+
+**Kesimpulan sendiri (belum terbukti):** kemungkinan perubahan di sisi GitHub sejak sekitar 19 Nov membuat lookup
+artifact di job yang sama gagal. Isi commit tidak relevan.
+
+**Usulan (menunggu konfirmasi Amal di chat PIC; mengubah `deploy.yml`), satu perubahan per push (aturan 6):**
+1. Pisah job: `build` (checkout, configure-pages, susun `_site`, upload) dan `deploy` (`needs: build`, deploy-pages,
+   lalu uji pasca-deploy). Kriteria uji tidak diubah.
+2. Bila masih gagal: naikkan `upload-pages-artifact` ke v5 dan `deploy-pages` ke v5.
+
+**Dampak:** situs live masih 84 sesi. Sesi 85 dan 86 sudah di repo dan tayang otomatis begitu deploy berhasil.
+
 ## Untuk repo lain
 
 - Workflow ketiga repo lain memakai pola serupa (satu origin, deploy-pages). Bila error yang sama muncul di sana,
