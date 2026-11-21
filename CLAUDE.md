@@ -26,15 +26,20 @@ berbeda) sudah tidak berlaku. Branch `Catatan` sudah tidak dipakai.
   seluruh file di `rekap/`
 - `robots.txt`, `sitemap.xml` — digenerate otomatis dari `data.json`, jangan edit manual
 - `scripts/build_seo.py` — regenerate SEO dari `data.json` (lihat di bawah)
-- `.github/workflows/deploy.yml` — build + terbitkan ke GitHub Pages tiap push
+- `scripts/susun_site.sh` — menyusun folder `_site/` (daftar berkas publik), dipanggil workflow
+- `.github/workflows/deploy.yml` — terbitkan ke GitHub Pages tiap push; dua job sejak 21 Nov 2026:
+  `build` (susun `_site/`, upload artifact) lalu `deploy` (`needs: build`; terbitkan + uji pasca-deploy).
+  Alasan: deploy-pages intermiten gagal menemukan artifact bila upload dan deploy di job yang sama
+  (lihat `AUDIT-HANDOFF-2026-11-21.md`). "Re-run failed jobs" kini aman: hanya mengulang job `deploy`.
 
 ## Berkas yang tayang di situs (folder `_site`)
 
-Workflow `deploy.yml` **tidak** mengunggah seluruh root repo. Langkah "Susun folder situs (_site/)" menyalin hanya:
+Workflow `deploy.yml` **tidak** mengunggah seluruh root repo. Skrip `scripts/susun_site.sh` (dipanggil job `build`
+untuk artifact, dan job `deploy` untuk uji) menyalin hanya:
 `index.html`, `data.json`, `og-image.png`, `favicon.svg`, `robots.txt`, `sitemap.xml`, folder `rekap/`, dan folder
 `lib/`. `CLAUDE.md`, `AUDIT-HANDOFF-*.md`, `COORDINATION-NOTE-*.md`, `scripts/`, dan `.github/` **tidak tayang**.
 
-- **Menambah berkas/folder situs baru** (aset, skrip, halaman)? Tambahkan ke daftar `cp` di langkah itu; kalau lupa,
+- **Menambah berkas/folder situs baru** (aset, skrip, halaman)? Tambahkan ke daftar `cp` di `scripts/susun_site.sh`; kalau lupa,
   berkas tidak tayang dan situs memberi 404.
 - **Uji otomatis setelah terbit** (langkah "Uji otomatis pasca-deploy", `curl` di runner, atas keputusan Amal 1 Okt 2026):
   beranda 200 dengan teks penanda "Catatan Kajian", setiap berkas langsung di `_site/` 200, sampel 1-3 berkas per

@@ -29,12 +29,15 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+# Dua job sejak 21 Nov 2026 (disetujui Amal di chat PIC): "build" upload artifact,
+# "deploy" (needs: build) menerbitkan lalu menguji. Sebelumnya satu job; deploy-pages
+# intermiten gagal "No artifacts named github-pages" bila upload dan deploy di job yang
+# sama (actions/deploy-pages issue #451; 6 dari 8 run gagal 21 Nov). Lihat
+# AUDIT-HANDOFF-2026-11-21.md. Bonus: "Re-run failed jobs" kini hanya mengulang job
+# deploy, jadi tidak lagi membuat artifact ganda.
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Ambil repo
         uses: actions/checkout@v4
@@ -43,23 +46,32 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Susun folder situs (_site/) -- hanya berkas publik
-        run: |
-          set -e
-          mkdir -p _site
-          cp index.html data.json og-image.png favicon.svg robots.txt sitemap.xml _site/
-          cp -r rekap _site/rekap
-          if [ -d lib ]; then cp -r lib _site/lib; fi
-          # Berkas internal (CLAUDE.md, AUDIT-HANDOFF-*.md, COORDINATION-NOTE-*.md,
-          # scripts/, .github/) SENGAJA tidak disalin -- tidak boleh tayang publik.
+        run: bash scripts/susun_site.sh
 
       - name: Upload artifact situs
         uses: actions/upload-pages-artifact@v3
         with:
           path: "_site"
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Terbitkan ke GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # Uji di bawah membaca _site/ dan berkas repo (data.json, rekap/, index.html,
+      # handoff). Job ini runner baru, jadi ambil repo + susun ulang _site/ dengan
+      # skrip yang sama persis dengan job build (commit yang sama).
+      - name: Ambil repo (untuk uji)
+        uses: actions/checkout@v4
+
+      - name: Susun ulang _site/ untuk uji (skrip sama dengan job build)
+        run: bash scripts/susun_site.sh
 
       - name: Uji otomatis pasca-deploy
         run: |
