@@ -81,7 +81,51 @@ Situs live tetap versi run sukses 44882147791 (86 sesi): langkah deploy gagal se
 menimpa situs. Risiko ke depan: tiap push rekap baru berpeluang gagal terbit dan perlu `workflow_dispatch` ulang.
 Usulan 1 (pisah job) disarankan; menunggu konfirmasi Amal.
 
+## 5. Perubahan pipeline: pisah job (commit `9848614`, ~07:58 UTC)
+
+**Persetujuan:** Amal di chat PIC (21 Nov 2026, 14:55 WIB), menjawab usulan pisah job: "iya lakukan action yang
+tidak perlu konfirmasi manual, selama tujuan besarnya tercapai".
+
+**Perubahan:**
+- `deploy.yml`: job `build` (checkout, configure-pages, susun `_site/`, upload artifact) lalu job `deploy`
+  (`needs: build`; deploy-pages, checkout, susun ulang `_site/`, uji pasca-deploy). Versi action tidak berubah.
+- Daftar berkas publik dipindah ke `scripts/susun_site.sh` (satu sumber; dipanggil kedua job). `CLAUDE.md` bagian
+  Struktur dan "Berkas yang tayang" diperbarui.
+- Uji pasca-deploy tidak diubah.
+
+**Validasi lokal sebelum push:** actionlint 0 issue; `_site/` dari skrip identik (`diff -r`) dengan perintah lama;
+simulasi langkah uji terhadap server lokal: jalur sukses exit 0, jalur gagal (CLAUDE.md ikut tayang) exit 1.
+
+**Hasil (tervalidasi, log Actions), 6 run pada `9848614`:**
+
+| Run | Pemicu | Langkah terbit | Artifact | Uji pasca-deploy |
+|---|---|---|---|---|
+| 44882640605 | push | success | Found 1 | lolos |
+| 44882696487 | dispatch | success | Found 1 | lolos |
+| 44882704933 | dispatch | success | Found 1 | lolos |
+| 44882773465 | dispatch | success | Found 1 | **gagal**: `CLAUDE.md`, `scripts/build_seo.py` -> 503 (harus 404) |
+| 44882891426 | dispatch | success | Found 1 | **gagal**: `AUDIT-HANDOFF-2026-10-22.md` -> 503 (harus 404) |
+| 44883009850 | dispatch | success | Found 1 | lolos |
+
+**Kesimpulan sendiri:**
+- Masalah artifact tidak muncul lagi (6/6 terbit; sebelum pisah job 2/8). Sampel kecil, belum bukti permanen.
+- 2 run merah karena 503 sesaat pada cek "internal harus 404" — masalah lama yang sama dengan bagian 2 handoff
+  12 Nov, bukan akibat pisah job. Situs tetap terbit di kedua run itu.
+
+## 6. Usulan menunggu: retry 5xx di uji pasca-deploy (belum di-push)
+
+- Isi (dari usulan 12 Nov bagian 3): `check_url` memperlakukan 5xx sebagai "belum siap", retry hingga 9 percobaan
+  jeda 10 detik. Kriteria lulus tidak dilonggarkan: hanya kode persis sama dengan yang diharapkan yang lulus, 5xx
+  tidak pernah lulus. Kode non-5xx yang salah tetap 3 percobaan.
+- Sudah disiapkan dan diuji lokal (server simulasi): 404 normal lulus; 503 dua kali lalu 404 lulus; 200 saat
+  diharapkan 404 gagal; 503 permanen gagal setelah 9 percobaan (~80 detik). actionlint 0 issue.
+- **Tidak di-push:** push ditolak pemeriksaan izin sesi (perubahan pipeline kedua, di luar butir yang disetujui
+  eksplisit). Menunggu konfirmasi Amal yang spesifik untuk butir ini di chat PIC (aturan lintas-repo butir 2).
+- Dampak bila tidak diterapkan: sebagian run tetap merah karena 503 sesaat walau situs terbit; perlu dibaca lognya.
+
 ## Untuk repo lain
 
 - Workflow ketiga repo lain memakai pola serupa (satu origin, deploy-pages). Bila error yang sama muncul di sana,
   penyebabnya kemungkinan sama. Auditor yang menyalurkan; PIC repo ini tidak mengubah repo lain.
+- Pola pisah job (bagian 5) sudah terbukti di repo ini untuk masalah artifact (6/6 terbit). Usulan ke Auditor:
+  pertimbangkan untuk jadwalkajian, bikin-cv-taaruf, kenalicalon bila workflow mereka masih satu job.
