@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-21",
+ "generatedAt": "2026-11-22",
  "sessions": [
   {
    "id": 1,
@@ -1454,6 +1454,23 @@
    "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-salmanitb-sri-21-november-2026.html",
    "status": "tersedia",
    "content": "Kajian pranikah daring Sekolah Pranikah Salman (SPN) Online Batch 23 Day 6 Sesi 1 (pertemuan ke-6), Bidang Dakwah YPM Salman ITB, bersama Sri Haryati, S.E., M.Ag (Founder Hayat School & Coaching.id, praktisi pendidikan) tentang parenting dan visi keluarga: keluarga tidak cukup dijalani tetapi dirancang, visi bersifat visual (etimologi visio dari videre, melihat) dan didampingi misi; keluarga bukan sekadar tempat pulang, banyak keluarga punya rutinitas tanpa arah yang disepakati; doa 'ibadurrahman pasangan dan keturunan penyejuk mata qurrata a'yun (QS Al-Furqan 74); menjaga diri dan keluarga (QS At-Tahrim 6); keluarga ruang pertama pembentuk manusia, budaya keluarga yang memberi rasa nyaman pada anak, hadits fitrah (HR Bukhari 1385, Muslim 2658); konsep iman tidak boleh hilang; hakikat kisah mendatangkan hikmah, 'ibrah (QS Yusuf 111); spirituality design mendesain hidup dengan panduan rabbani: makna, arah, pilihan nilai, amal kebiasaan; tujuan penciptaan (QS Adz-Dzariyat 56); Allah menentukan bidang fokus hidup, hadits kullun muyassar (HR Bukhari 4949) konteks asli takdir dan perintah beramal; luka dan kebaikan sama-sama diwariskan, kesalehan ayah menjaga anak (QS Al-Kahfi 82); lima aspek calon pasangan: spiritual, emosi, sosial, intelektual, fisik; strength-based parenting (Lea Waters, The Strength Switch 2017): kenali, hargai, fasilitasi keunikan anak; kekuatan diarahkan nilai, potensi ditumbuhkan dengan tanggung jawab; orang tua bertumbuh lebih dulu: siapkan diri dari pola asuh warisan dan luka, kemitraan ayah-ibu dengan musyawarah (QS Al-Baqarah 233), pengasuhan sesuai tahapan usia (HR Abu Dawud 495); family design canvas: alasan, arah, nilai, potensi, budaya, legacy; berdoa lalu journaling untuk mengurai luka masa lalu, mengadu kepada Allah (QS Yusuf 86), expressive writing Pennebaker dan Beall 1986 beserta batasannya. Sabtu, 21 November 2026."
+  },
+  {
+   "id": 87,
+   "date": "2026-11-22",
+   "masjidId": "al-kohinoor-depok",
+   "masjidRaw": "Al Kohinoor, Depok",
+   "ustadzIds": [
+    "wayan"
+   ],
+   "ustadzRaw": "Wayan",
+   "kitab": "Fikih Kebencanaan",
+   "theme": "fiqih-ibadah",
+   "title": "Tata Cara Ibadah saat Terjadi Bencana menurut Tarjih Muhammadiyah",
+   "sourceChatUrl": null,
+   "recapUrl": "https://reconciler.github.io/catatankajian/rekap/kajian-alkohinoor-wayan-22-november-2026.html",
+   "status": "tersedia",
+   "content": "Kajian Ahad Subuh Masjid Al Kohinoor Depok bersama Ustadz Wayan tentang tata cara ibadah saat bencana menurut Fikih Kebencanaan Majelis Tarjih dan Tajdid PP Muhammadiyah (SK No. 102/KEP/I.0/B/2015): bencana mencakup bencana alam dan bencana non-alam atau akibat manusia seperti kegagalan teknologi, wabah atau epidemi Covid, konflik sosial, dan teror; bencana sebagai wujud kasih sayang Allah, ujian iman, dan sarana introspeksi, contoh banjir karena membuang sampah sembarangan (QS Yunus 44); sepuluh kaifiyat ibadah saat bencana: tayamum bagi yang berhadas besar saat tidak ada air (hadits Ammar bin Yasir, HR Bukhari 338), shalat tetap sah dengan pakaian terkena najis karena darurat (kaidah adh-dharurat tubihul mahzhurat), shalat dengan aurat tidak tertutup sempurna (QS At-Taghabun 16 bertakwalah semampumu), jamak shalat tanpa qashar bagi korban yang tidak musafir (hadits Ibnu Abbas, HR Muslim 705), shalat saat evakuasi (perlu dicek), batas qashar 19 hari dalam kondisi normal (HR Bukhari 1080) dan tanpa batas hari selama darurat bencana, keringanan tidak berpuasa bagi korban bencana (QS Al-Hajj 78), jenazah korban bencana boleh tidak dimandikan dan dikafani namun tetap wajib dishalatkan, penguburan lebih dari satu jenazah dalam satu liang, shalat ghaib bagi korban hilang yang diyakini wafat (hadits Raja Najasyi dari Habasyah, muttafaq 'alaih), dan zakat untuk korban bencana yang kehilangan harta sebagai golongan fakir (Fikih Zakat Kontemporer, Munas Tarjih ke-31). Ahad, 22 November 2026."
   }
  ],
  "masjid": [
@@ -1958,6 +1975,12 @@
    "name": "Sri Haryati, S.E., M.Ag",
    "gender": "P",
    "bio": "Narasumber perempuan, praktisi pendidikan (flyer tidak memakai sebutan Ustadzah). Menurut flyer resmi penyelenggara (Sekolah Pranikah Salman x Bidang Dakwah YPM Salman ITB): Founder Hayat School & Coaching.id, Praktisi Pendidikan. Pemateri Sekolah Pranikah Salman Online Batch 23 Day 6 Sesi 1 (Pertemuan ke-6) dengan tema Parenting dan Visi Keluarga (21 November 2026). Belum ditemukan sumber web publik lain yang mengonfirmasi profil ini."
+  },
+  {
+   "id": "wayan",
+   "name": "Wayan",
+   "gender": "L",
+   "bio": "Pemateri Kajian Ahad Subuh Masjid Al Kohinoor Depok, membawakan tema tata cara ibadah saat bencana menurut Tarjih Muhammadiyah (22 November 2026). Nama lengkap, riwayat pendidikan, dan afiliasi belum tercatat; pencarian di arsip catatan sebelumnya dan pencarian web tidak menemukan profil yang dapat dipastikan sebagai pemateri ini."
   }
  ],
  "themes": [
@@ -2078,6 +2101,12 @@
    "name": "Bila Kumati",
    "author": "Ammi Nur Baits, S.T., B.A.",
    "description": "Buku berbahasa Indonesia terbitan Muamalah Publishing (261 halaman) tentang kematian: mengajak pembaca mengingat mati, menjelaskan peristiwa saat kematian, akidah Ahlus Sunnah tentang iman kepada hari akhir, dan beberapa kasus fikih seputar kematian. Tahun terbit dan ISBN belum ditemukan di sumber publik."
+  },
+  {
+   "id": "fikih-kebencanaan",
+   "name": "Fikih Kebencanaan",
+   "author": "Majelis Tarjih dan Tajdid Pimpinan Pusat Muhammadiyah",
+   "description": "Putusan Musyawarah Nasional Tarjih XXIX (2015) yang disahkan melalui SK No. 102/KEP/I.0/B/2015 tanggal 16 Juni 2015 dan dimuat dalam Himpunan Putusan Tarjih Jilid 3. Membahas konsep bencana, cara memaknai bencana, pengelolaan bencana, pemenuhan hak korban, dan ketentuan ibadah dalam situasi bencana."
   }
  ]
 }
